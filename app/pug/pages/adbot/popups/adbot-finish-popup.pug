@@ -1,0 +1,41 @@
+include /partials/close
+include /partials/button
+include /partials/replay-item
+include /partials/textarea
+
+.popup.modal(data-popup="adbot-finish-popup")
+
+  .popup__close.popup__close--outer
+    +close({mdLight:true})(data-popup-close="adbot-finish-popup")
+
+  .popup__body
+    .column-group
+
+      .column-group__item
+        +replay-item({image:'images/adbot/ads/image-1.png'})
+
+      .column-group__item
+        .popup__box
+          p.text-center Do you like this ad?
+
+      .column-group__item
+        .popup__box
+          .button-group.button-group--fluid.button-group--column
+            +button({size:'xl', fluid:true, type:'bordered', classes:'button-group__button'})(type="button")
+              span.button__icon
+                +icon('heart-filled', 'svg-icon svg-icon--light')(width="20" height="18")
+              span I love it
+            +button({size:'xl', fluid:true, type:'bordered', classes:'button-group__button'})(type="button")| Not for me
+
+      .column-group__item
+        .popup__box
+          form.form
+            .form__line
+              .form-group
+                .form-group__header
+                  label.p Leave a comment
+                +textarea()(placeholder="What do you think about it?")
+            .form__line
+              .button-group.button-group--fluid
+                +button({size:'xl', type:'bordered', classes:'button-group__button'})(type="button" data-popup-close="adbot-finish-popup")| Skip
+                +button({size:'xl', type:'white', classes:'button-group__button'})(type="submit")| Submit

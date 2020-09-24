@@ -1,0 +1,130 @@
+.button
+  position: relative
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  padding: 13px 20px
+  font-size: rem(18px)
+  line-height: 1
+  font-weight: 500
+  color: $text-light
+  text-align: center
+  user-select: none
+  cursor: pointer
+  overflow: hidden
+  z-index: 1
+  &:before
+    position: absolute
+    content: ''
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: $gradient-accent
+    border-radius: $radius-primary
+    z-index: -1
+    transition: 0.2s
+  &:focus,
+  &:hover
+    &:before
+      opacity: 0.8
+
+  // Modifiers
+  &--xl
+    padding: 18px 13px 18px
+  &--sm
+    padding: 10px 13px
+    font-size: rem(16px)
+    font-weight: 400
+  &--xs
+    padding: 6px 13px
+    font-size: rem(16px)
+  &--fluid
+    width: 100%
+  &--white
+    color: $text-primary
+    &:focus
+      color: $text-primary
+    &:before
+      background: $color-light
+  &--bordered
+    &:before
+      border: 1px solid $color-light
+      background: none
+    &:hover
+      &:before
+        opacity: 0.4
+  &--info
+    font-weight: 400
+    font-size: rem(16px)
+    &:before
+      border: 1px solid $border-primary
+      background: $color-secondary
+    &:hover
+      &:before
+        opacity: 0.7
+    &.is-active
+      &:before
+        border-color: $color-yellow
+        opacity: 0.7
+      &:hover
+        &:before
+          opacity: 0.7
+  &--action
+    min-width: 140px
+    padding: 7px 15px
+    color: $color-green
+    font-size: rem(14px)
+    text-transform: uppercase
+    &:before
+      border: 1px solid $color-green
+      background: none
+    &:focus,
+    &:hover
+      color: $color-green
+      &:before
+        opacity: 0.4
+  &--round
+    padding: 0
+    width: 56px
+    height: 56px
+    &:focus,
+    &:before
+      background: $color-light
+      border-radius: 50%
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    &:hover
+      &:before
+        opacity: 1
+        box-shadow: none
+  &--bordered-danger
+    color: $color-red
+    &:before
+      border: 1px solid $color-red
+      background: none
+    &:hover
+      &:before
+        opacity: 0.4
+  &--400
+    max-width: 400px
+    width: 100%
+  &--250
+    max-width: 250px
+    width: 100%
+  &--210
+    max-width: 210px
+    width: 100%
+  &--170
+    max-width: 170px
+    width: 100%
+
+  &__append
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    right: 10px
+  &__icon
+    &:first-child
+      margin-right: 5px
+    &:last-child
+      margin-left: 5px

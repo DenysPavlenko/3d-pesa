@@ -1,0 +1,41 @@
+extends /layouts/main
+include /partials/sidebar
+include /partials/header
+include /partials/todo-list
+include /partials/fixed-button
+include /partials/calendar-popup/calendar-popup
+include /partials/date-picker-popup
+include /partials/time-picker-popup
+include /partials/timezone-picker-popup
+include /partials/event-popup
+include /partials/task-popup
+include /partials/reminder-popup
+
+block variables
+  - const title = 'Calendar'
+
+block content
+  .calendar-page
+    +calendar-popup()
+    +date-picker-popup()
+    +time-picker-popup()
+    +timezone-picker-popup()
+    +event-popup()
+    +task-popup()
+    +reminder-popup()
+
+    +fixed-button({icon:'images/icons/plus-colored.svg'})(data-popup-open="calendar-popup")
+
+    .content-page__sidebar
+      +sidebar({navActive:'calendar'})
+
+    .calendar-page__container
+      +header({title:'Calendar'})
+      include /pages/calendar/greetings
+
+      .calendar-page__wrap
+        .calendar-page__left
+          div(data-simplebar class="custom-scroll calendar-page__box")
+            +todo-list()
+        .calendar-page__right.calendar-page__box.calendar-page__box--pb-0
+          include /pages/calendar/calendar-full

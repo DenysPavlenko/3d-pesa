@@ -1,0 +1,7 @@
+mixin tabs-mobile(tabs = [])
+
+  .tabs-mobile.js-tabs
+    each tab in tabs
+      -const { isActive, dataTab, title } = tab
+      div(class=`tabs-mobile__tab js-tab ${isActive ? 'is-active' : ''}` data-tab=dataTab)
+        h5.text-uppercase #{title}

@@ -1,0 +1,40 @@
+extends /layouts/main
+include /partials/sidebar
+include /partials/header
+include /partials/add-card-popup
+include /partials/qr-code-popup
+include /partials/send-popup
+include /partials/transactions
+
+block variables
+  - const title = 'Wallet'
+  - const userMenu = 'wallet'
+
+block content
+  .wallet-page
+    +add-card-popup()
+    +qr-code-popup()
+    +send-popup()
+
+    .wallet-page__sidebar
+      +sidebar()
+
+    .wallet-page__container
+      +header({title:'Wallet'})
+
+      .wallet-page__wrap
+        .wallet-page__left
+          .wallet-page__left-widgets
+            include /pages/user-wallet/coins-tabs
+          .wallet-page__left-body
+            div(data-simplebar class="custom-scroll")
+              .js-tab-content(data-content="g-coin")
+                include /pages/user-wallet/g-coin-content
+              .js-tab-content(data-content="l-coin")
+                include /pages/user-wallet/l-coin-content
+
+        .wallet-page__right
+          div(data-simplebar class="custom-scroll wallet-page__box")
+            +transactions()
+
+    include /pages/user-wallet/mobile-footer

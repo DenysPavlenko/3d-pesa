@@ -1,0 +1,43 @@
+.chat
+  display: flex
+  height: 100%
+  flex-direction: column
+  background-color: $color-primary
+  &__body
+    min-height: 0
+    flex: 1
+    &-box
+      padding: 20px
+  &__timing
+    margin: 5px 0
+  &__message-wrap
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    .chat__message
+      margin-bottom: 4px
+    &--right
+      .chat__message
+        margin-left: auto
+        background-color: $color-yellow
+      .chat__message--first
+        border-radius: 10px 10px 0 10px
+      .chat__message--last
+        border-radius: 10px 0 10px 10px
+  &__message
+    padding: 12px
+    width: auto
+    max-width: 295px
+    background-color: $color-gray
+    border-radius: 10px 0 0 10px
+    +media-max($bp-xs)
+      max-width: 100%
+    &--first
+      border-radius: 10px 10px 10px 0
+    &--last
+      border-radius: 0 10px 10px 10px
+  &__footer
+    padding: 0 20px
+    background-color: $color-secondary
+    display: flex
+    align-items: center

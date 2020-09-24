@@ -1,0 +1,57 @@
+extends /layouts/main
+include /partials/sidebar
+include /partials/header
+include /partials/tabs-mobile
+include /partials/button
+include /pages/user-time-recorder/time-recorder-image-popup
+include /pages/user-time-recorder/time-recorder-video-popup
+include /pages/user-time-recorder/time-recorder-location-popup
+
+block variables
+  - const title = 'Time recorder'
+  - const userMenu = 'timeRecorder'
+
+block content
+  -
+    const tabs = [
+      {title: 'Images', dataTab:'images', isActive:true},
+      {title: 'Videos', dataTab:'videos'},
+      {title: 'Locations', dataTab:'locations'},
+    ]
+
+  .time-recorder-page
+    +time-recorder-image-popup()
+    +time-recorder-video-popup()
+    +time-recorder-location-popup()
+
+    .time-recorder-page__sidebar
+      +sidebar()
+    .time-recorder-page__container
+      +header({title:'Time recorder'})
+
+      .time-recorder-page__tabs-mobile
+        +tabs-mobile(tabs)
+
+      .time-recorder-page__wrap
+        div(data-simplebar class="custom-scroll time-recorder-page__box")
+          .time-recorder-page__tabs
+            .button-group.js-tabs
+              +button({classes:'js-tab button-group__button is-active', type:'info'})(type="button" data-tab="images")| Images
+              +button({classes:'js-tab button-group__button', type:'info'})(type="button" data-tab="videos")| Videos
+              +button({classes:'js-tab button-group__button', type:'info'})(type="button" data-tab="locations")| Locations
+
+          .time-recorder-page__content.js-tab-content(data-content="images")
+            +times(4)
+              .time-recorder-page__content-item
+                div(class="cursor-pointer" data-popup-open="time-recorder-image-popup")
+                  img(src="images/social-app/post/post-image.jpg", class="image" alt="post-image")
+          .time-recorder-page__content.js-tab-content(data-content="videos")
+            +times(4)
+              .time-recorder-page__content-item
+                .video-preview(data-popup-open="time-recorder-video-popup")
+                  img(src="images/social-app/post/post-image.jpg", class="image" alt="post-image")
+          .time-recorder-page__content.js-tab-content(data-content="locations")
+            +times(4)
+              .time-recorder-page__content-item
+                .map-preview(data-popup-open="time-recorder-location-popup")
+                  .map-preview__box.js-time-recorder-map-preview

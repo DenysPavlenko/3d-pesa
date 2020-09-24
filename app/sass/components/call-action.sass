@@ -1,0 +1,36 @@
+.call-action
+  display: flex
+  flex-direction: column
+  align-items: center
+  &--filled
+    .call-action__icon
+      border-color: transparent
+  &.is-active
+    .call-action__icon
+      border-color: $color-yellow
+      &-svg
+        fill: $color-yellow
+      &:hover
+        opacity: 1
+    .call-action__title
+      color: $text-yellow
+
+  &--bg-red
+    .call-action__icon
+      background-color: $color-red
+  &--bg-green
+    .call-action__icon
+      background-color: $color-green
+  &__icon
+    border: 1px solid $border-light
+    border-radius: 50%
+    width: 80px
+    height: 80px
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-bottom: 5px
+    cursor: pointer
+    transition: 0.2s
+    &:hover
+      opacity: 0.5

@@ -1,0 +1,17 @@
+include /partials/timetable
+include /partials/description-item
+
+mixin shop-item(props = {})
+  -const { noTitle } = props
+  -const title = noTitle ? '' : '<h5>Shop#1</h5>'
+
+  +description-item({
+    header:`
+      ${title}
+      <h5>5 km away</h5>
+    `,
+    body:[
+      `<p class="text-muted"> Dar st, 16, Bahir Dar, Amhara, Ethiopiay</p>`,
+      {partial:'timetable', params:{}}
+    ],
+  })

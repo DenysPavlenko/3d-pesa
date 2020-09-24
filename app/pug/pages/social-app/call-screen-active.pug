@@ -1,0 +1,26 @@
+include /partials/avatar
+include /partials/call-action
+
+.call-screen
+  div(data-simplebar class="custom-scroll")
+    .call-screen__wrap
+      .call-screen__preview
+        figure(style="background-image:url('images/call-screen/user.jpg')")
+
+      .call-screen__right
+        .column-group
+          .column-group__item
+            img(src="images/call-screen/user-preview.jpg", alt="user")
+          .column-group__item
+            img(src="images/call-screen/user-preview.jpg", alt="user")
+
+      .call-screen__bottom
+        .call-screen__actions
+          .call-screen__action
+            +call-action({icon:{name:'speaker', width:'30', height:'21'}, title:'Speaker'})
+          .call-screen__action
+            +call-action({icon:{name:'video', width:'30', height:'21'}, title:'Video', modifiers:'is-active'})
+          .call-screen__action
+            +call-action({icon:{name:'muted', width:'28', height:'36'}, title:'Mute'})
+          .call-screen__action.call-screen__action--last
+            +call-action({icon:{name:'phone-horizontal', width:'36', height:'15'}, filled:true, color:'red'})

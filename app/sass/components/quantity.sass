@@ -1,0 +1,38 @@
+.quantity
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
+  &__buttons
+    display: flex
+    align-items: center
+  &__button
+    position: relative
+    border: 1px solid $border-primary
+    background-color: $color-primary
+    height: 45px
+    width: 90px
+    display: flex
+    justify-content: center
+    align-items: center
+    transition: 0.2s
+    &:first-child
+      border-radius: $radius-primary 0 0 $radius-primary
+    &:last-child
+      border-radius: 0 $radius-primary $radius-primary 0
+      border-left: none
+    &--plus
+      &:after
+        position: absolute
+        height: 16px
+        width: 2px
+    &:before,
+    &:after
+      content: ''
+      display: block
+      background-color: $color-yellow
+    &:before
+      width: 16px
+      height: 2px
+    &:hover
+      background-color: rgba($color-primary, 0.5)

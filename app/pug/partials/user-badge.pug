@@ -1,0 +1,20 @@
+include /partials/avatar
+include /partials/button
+
+mixin user-badge(props = {})
+  -const { badgeSize, avatarSize, name, link } = props
+  -
+    const classnames = classNames({
+      'row-group': true,
+      'row-group--align-center': true,
+      [`row-group--${badgeSize}`]: badgeSize,
+    })
+
+  div(class=classnames)
+    .row-group__item
+      +avatar({image:'images/user/avatar.jpg', size:avatarSize})
+    .row-group__item
+      | !{name}
+    if(link)
+      .row-group__item
+        +button({type:'bordered'})(href=link)| Go to Shop

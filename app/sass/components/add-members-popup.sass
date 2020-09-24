@@ -1,0 +1,21 @@
+.add-members-popup
+  &__body
+    padding-left: 0
+    padding-right: 0
+    +media-max($bp-md)
+      height: calc( 100% - #{$header-height} )
+      display: flex
+      flex-direction: column
+  &__search
+    padding: 0 20px
+    margin-bottom: 20px
+  &__list
+    margin-bottom: 20px
+    height: 400px
+    min-height: 0
+    +media-max($bp-md)
+      flex: 1
+      height: auto
+  &__footer
+    padding: 0 20px
+    padding-right: 20px

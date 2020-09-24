@@ -1,0 +1,56 @@
+.aethiopian-page
+  +media-max($bp-lg)
+    &:after
+      position: fixed
+      content: ''
+      left: 0
+      top: 0
+      right: 0
+      background-color: $color-primary
+      bottom: 0
+      z-index: -1
+  &__container
+    margin-left: 260px
+    display: flex
+    flex-direction: column
+    height: 100vh
+    padding: 0 20px 20px
+    +media-max($bp-xl)
+      margin-left: 0
+    +media-max($bp-lg)
+      padding: 0
+      height: auto
+  &__wrap
+    display: flex
+    flex: 1
+    min-height: 0
+    flex-direction: column
+    border-radius: $radius-primary
+    overflow: hidden
+  &__menu
+    padding: 20px 0
+    +media-max($bp-lg)
+      padding: 20px 20px 0 20px
+  &__content
+    flex: 1
+    min-height: 0
+    border-radius: $radius-primary
+    background-color: $color-primary
+  &__row
+    height: 100%
+    display: flex
+    flex-wrap: wrap
+  &__left
+    width: 50%
+    height: 100%
+    +media-max($bp-lg)
+      width: 100%
+      order: 1
+  &__right
+    width: 50%
+    height: 100%
+    +media-max($bp-lg)
+      width: 100%
+      order: 0
+  &__box
+    padding: 20px

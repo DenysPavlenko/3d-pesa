@@ -1,0 +1,24 @@
+extends layouts/main
+include /partials/sidebar
+
+block variables
+  - var title = 'Hyperloop articles'
+  - var tabName = 'articles'
+
+block content
+  .hyperloop-page
+    .hyperloop-page__sidebar
+      +sidebar({navActive:'hyperloop'})
+    .hyperloop-page__container
+      include /pages/hyperloop/header
+      .hyperloop-page__wrap
+        .hyperloop-page__row
+          .hyperloop-page__left
+            div(data-simplebar class="custom-scroll hyperloop-page__box")
+              include /pages/hyperloop/contractor-form
+          .hyperloop-page__right
+            div(data-simplebar class="custom-scroll")
+              .hyperloop-page__image
+                img(src="images/hyperloop/contractor/image.svg", class="image" alt="contractor-image")
+
+    include /pages/hyperloop/mobile-footer

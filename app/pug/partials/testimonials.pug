@@ -1,0 +1,8 @@
+include /partials/testimonial
+
+mixin testimonials(props = {})
+
+  .list-group
+    +times(3)
+      .list-group__item
+        +testimonial()

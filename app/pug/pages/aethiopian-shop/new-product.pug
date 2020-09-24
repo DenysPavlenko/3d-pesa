@@ -1,0 +1,60 @@
+include /partials/upload-files
+include /partials/textarea
+
+form.form
+  .form__line
+    h3 New equipment
+  .form__line
+    .form__group
+      .form-group__header
+        label.p Title
+      input(type="text" class="input" placeholder="")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Category
+      +select({
+        label:{name:'Book', selected:true},
+        options:[
+          {name:'Book'},
+          {name:'Magazine'},
+          {name:'Newspaper'},
+        ]
+      })
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Subcategory
+      +select({
+        label:{name:'Nonfiction', selected:true},
+        options:[
+          {name:'Nonfiction'},
+          {name:'Fiction'},
+        ]
+      })
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Add photos
+      +upload-files([{title: 'Add photos'}, {placeholder:true}, {placeholder:true}, {placeholder:true}])
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Item description
+      +textarea()(placeholder="Tell a little bit more about this product")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Set your price
+      .input-group
+        +input({classes:'input-group__input'})(type="text" placeholder="0G coins")
+        .input-group__append
+          .input-group__box
+            p.text-muted per hour
+  .form__line
+    .form__group
+      .form-group__header
+        label.p Quanity
+      +input()(type="number" class="input" value="1")
+  .form__line
+    +button({size:'xl', fluid:true})(type="button" data-popup-open="verification-popup")| Place your order

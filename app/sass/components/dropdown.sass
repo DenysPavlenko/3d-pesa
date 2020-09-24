@@ -1,0 +1,33 @@
+.dropdown
+  position: relative
+  height: 100%
+  min-width: 100%
+  // Modifiers
+  &--left
+    .dropdown__body
+      left: 0
+      right: auto
+  &--radius-top-0
+    .dropdown__body
+      border-radius: 0px 0px $radius-primary $radius-primary
+  &__toggle
+    display: flex
+    flex-direction: column
+    justify-content: center
+    height: 100%
+    cursor: pointer
+  &__body
+    position: absolute
+    top: 100%
+    right: 0
+    display: none
+    min-width: 100%
+    z-index: 200
+    overflow: hidden
+    border: 1px solid $border-primary
+    border-radius: $radius-primary
+    background-color: $color-secondary
+    box-shadow: $shadow-secondary
+    margin-bottom: 20px
+    &--mt-10
+      margin-top: 10px

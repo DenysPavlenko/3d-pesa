@@ -1,0 +1,40 @@
+include /partials/cart-item
+include /partials/button
+
+mixin cart(props = {})
+  -const { cartTitle, items, upcomingItems, scroll, checkout, history, boxed } = props;
+  -
+    const classnames = classNames({
+      'cart': true,
+      'cart--boxed': boxed,
+    })
+
+  div(class=classnames)
+    .cart__header
+      .cart__header-title
+        h4 #{cartTitle} Cart total (3 items): 42G
+      if(history)
+        a(href=history).cart__header-icon
+          +icon('history', 'svg-icon--light cart-dropdown__toggle-icon-svg')(width="20" height="20")
+    div(class=`cart__items ${scroll ? 'cart__items--scroll custom-scroll': ''}` data-simplebar=scroll)
+      .column-group
+        each item in items
+          .column-group__item
+            +cart-item(item)
+
+    if(checkout)
+      .cart__button
+        +button({size:'xl', fluid:true})(href=checkout class="button button--xl button--fluid")
+          span.button__icon
+            +icon('checkout', 'svg-icon--light')(width="20" height="22")
+          span Proceed to checkout
+
+    if(upcomingItems)
+      .cart__header.cart__header--border-top
+        .cart__header-title
+          h4.text-center Upcomings
+      .cart__items
+        .column-group
+          each item in upcomingItems
+            .column-group__item
+              +cart-item(item)

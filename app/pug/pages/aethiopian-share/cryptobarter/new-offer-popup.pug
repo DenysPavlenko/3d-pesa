@@ -1,0 +1,108 @@
+include /partials/select
+include /partials/avatar
+include /partials/close
+include /partials/input
+include /partials/button
+include /partials/checkbox
+
+.popup.modal(data-popup="new-offer-popup")
+
+  .popup__header-offset
+  .popup__header
+    .content-header.content-header--md-border-0
+      .content-header__center
+        h3 New offer
+      .content-header__right.content-header__right--md-left
+        +close({mdLight:true})(data-popup-close="new-offer-popup")
+
+  .popup__body
+    .column-group.column-group--justify-items-center
+      .column-group__item
+        .exchange-card
+          .exchange-card__header
+            .column-group.column-group--xs.column-group--align-center
+              .column-group__item
+                +avatar({image:'images/user/avatar.jpg'})
+              .column-group__item
+                h4 You offer
+          .exchange-card__content
+            form.form
+              .form__line
+                .form-group
+                  .form-group__header
+                    label.p What you want to exchange
+                  +input({bg:'primary'})(type="text" placeholder="Carrot")
+              .form__line
+                .form-group
+                  .form-group__header
+                    label.p How many
+                  +select({
+                    modifiers:'select--bg-primary',
+                    label:{name:'3', selected:false, right:'<p class="text-muted">Kg</p>'},
+                    options:[
+                      {name:'1', right:'<p class="text-muted">Kg</p>'},
+                      {name:'2', right:'<p class="text-muted">Kg</p>'},
+                      {name:'3', right:'<p class="text-muted">Kg</p>'},
+                    ],
+                  })
+
+      .column-group__item
+        .row-group.row-group--align-center.row-group--xs
+          .row-group__item
+            +icon('circle-arrows', 'svg-icon--muted')(width="20" height="20")
+          .row-group__item
+            h4.text-muted.text-uppercase Exchange for
+
+      .column-group__item
+        div(data-popup-content="add-user")
+          .exchange-card.exchange-card--mt-0
+            .exchange-card__content
+              form.form
+                .form__line
+                  .form-group
+                    .form-group__header
+                      label.p Add user you want to barter with
+                    +input({bg:'primary'})(type="text" placeholder="Email address or nickname")
+                .form__line
+                  .form-group
+                    +button({size:'xl', type:'bordered', fluid:true, classes:'js-popup-switcher'})(type="button" data-popup-content-hide="add-user" data-popup-content-show="added-user")| Add user
+
+    div(data-popup-content="added-user")
+      .column-group
+        .column-group__item
+          .exchange-card
+            .exchange-card__header
+              .column-group.column-group--xs.column-group--align-center
+                .column-group__item
+                  +avatar({image:'images/user/avatar.jpg'})
+                .column-group__item
+                  h4
+                    span Rachel Cole
+                    span.icon-inline
+                      +close({})
+            .exchange-card__content
+              form.form
+                .form__line
+                  .form-group
+                    .form-group__header
+                      label.p What you want to exchange
+                    input(type="text" class="input input--bg-primary" placeholder="Carrot")
+                .form__line
+                  .form-group
+                    .form-group__header
+                      label.p How many
+                    +select({
+                      modifiers:'select--bg-primary',
+                      label:{name:'3', selected:false, right:'<p class="text-muted">Kg</p>'},
+                      options:[
+                        {name:'1', right:'<p class="text-muted">Kg</p>'},
+                        {name:'2', right:'<p class="text-muted">Kg</p>'},
+                        {name:'3', right:'<p class="text-muted">Kg</p>'},
+                      ],
+                    })
+                .form__line
+                  +checkbox({squere:true, label:'Change'})
+
+        .column-group__item
+          div(data-popup-content="added-user")
+            +button({size:'xl', fluid:true, type:'white'})(type="button" data-popup-close="new-offer-popup") Send offer

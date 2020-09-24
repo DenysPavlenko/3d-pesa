@@ -1,0 +1,14 @@
+mixin catalog-header(props = {})
+  -const { left, right } = props
+
+  .catalog-header
+    .catalog-header__left
+      if(typeof left == 'object')
+        +#{left.partial}(left.params)
+      else
+        | !{left}
+    .catalog-header__right
+      if(typeof right == 'object')
+        +#{right.partial}(right.params)
+      else
+        | !{right}

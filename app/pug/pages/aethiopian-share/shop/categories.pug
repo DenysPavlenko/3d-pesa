@@ -1,0 +1,26 @@
+include /partials/catalog-header
+include /partials/shop-card
+-
+  var categories = [
+    {link:'aethiopian-share-shop-category.html', image: 'images/aethiopian/farm-equipment-categories/category-1.jpg', title: 'Animal Feeders'},
+    {link:'aethiopian-share-shop-category.html', image: 'images/aethiopian/farm-equipment-categories/category-2.jpg', title: 'Cleaning Equipments'},
+    {link:'aethiopian-share-shop-category.html', image: 'images/aethiopian/farm-equipment-categories/category-3.jpg', title: 'Tractors'},
+    {link:'aethiopian-share-shop-category.html', image: 'images/aethiopian/farm-equipment-categories/category-4.jpg', title: 'Material Handling'},
+  ]
+
+.catalog
+  .catalog__header
+    +catalog-header({
+      left: `<h3>Electric Farm Equipment</h3>`,
+    })
+  .catalog__items
+    +times(2)
+      each category in categories
+        .catalog__item
+          +shop-card({
+            link:category.link,
+            image:category.image,
+            content:[
+              `<h4 class="text-center">${category.title}</h4>`
+            ]
+          })

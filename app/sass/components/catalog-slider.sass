@@ -1,0 +1,16 @@
+.catalog-slider
+  position: relative
+  &__arrows
+    position: absolute
+    top: 50%
+    left: -20px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: calc(100% + 40px)
+    transform: translateY(-50%)
+    z-index: 20
+  &__slides
+    +row()
+  &__slide
+    padding: 10px

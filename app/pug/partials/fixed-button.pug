@@ -1,0 +1,18 @@
+include /partials/button
+
+mixin fixed-button(props = {})
+  -const { icon, svg, modifiers } = props
+  -const { href } = attributes
+  -const tag = href ? 'a' : 'div'
+  -
+    const classnames = classNames({
+      'fixed-button': true,
+      [modifiers]: modifiers,
+    })
+
+  #{tag}(class=classnames)&attributes(attributes)
+    +button({type:'round'})(type="button")
+      if(props.icon)
+        img(src=icon, alt="icon")
+      if(props.svg)
+        +icon(`${svg.name}`, `svg-icon ${svg.class}`)(width=svg.width height=svg.height)

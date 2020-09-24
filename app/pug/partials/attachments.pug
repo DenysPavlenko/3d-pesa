@@ -1,0 +1,9 @@
+include /partials/attachment
+
+mixin attachments(props = {})
+  -const { cnt, bgColor } = props
+
+  .row-group.row-group--xs
+    +times(cnt || 1)
+      .row-group__item
+        +attachment({bgColor: bgColor})

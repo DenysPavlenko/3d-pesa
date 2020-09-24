@@ -1,0 +1,11 @@
+mixin todo-item(props = {})
+  -const { icon = {}, title, content = [] } = props
+
+  .todo-item.todo-item--events
+    .todo-item__heading
+      .todo-item__icon
+        +icon(icon.name, `svg-icon--${icon.color}`)(width=icon.width height=icon.height)
+      h6.text-muted.text-uppercase.todo-item__title #{title}
+    each item in content
+      .todo-item__line
+        | !{item}

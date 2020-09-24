@@ -1,0 +1,14 @@
+include /partials/checkbox
+
+mixin food-shop-choose(props = {})
+
+  .food-shop-choose
+    .food-shop-choose__title
+      h4 Choose a meat
+    .food-shop-choose__items
+      .food-shop-choose__item
+        +checkbox({checked:true, label:'Sausage'})
+      .food-shop-choose__item
+        +checkbox({label:'Ham'})
+      .food-shop-choose__item
+        +checkbox({label:'Bacon'})

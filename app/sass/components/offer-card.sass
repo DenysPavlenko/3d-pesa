@@ -1,0 +1,21 @@
+.offer-card
+  background-color: $color-secondary
+  border-radius: $radius-primary
+  display: flex
+  flex-direction: column
+  padding: 20px
+  cursor: pointer
+  &__heading
+    text-align: center
+    margin-bottom: 5px
+  &__group
+    display: flex
+    flex-wrap: wrap
+    &:not(:last-child)
+      padding-bottom: 15px
+      margin-bottom: 15px
+      border-bottom: 1px solid $border-primary
+  &__left
+    margin-right: 15px
+  &__right
+    flex: 1

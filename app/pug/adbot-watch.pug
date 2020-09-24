@@ -1,0 +1,26 @@
+extends layouts/main
+include /partials/sidebar
+
+block variables
+  - var title = 'Adbot'
+  - var tabName = 'watch'
+
+block content
+  .adbot-page
+    include /pages/adbot/popups/adbot-client-video-popup
+    include /pages/adbot/popups/adbot-client-music-popup
+    include /pages/adbot/popups/adbot-client-image-popup
+    include /pages/adbot/popups/adbot-client-writings-popup
+    include /pages/adbot/popups/adbot-finish-popup
+
+    .adbot-page__sidebar
+      +sidebar({navActive:'adbot'})
+
+    .adbot-page__container
+      include /pages/adbot/header
+      include /pages/adbot/greetings
+      .adbot-page__wrap
+        div(data-simplebar class="custom-scroll adbot-page__box")
+          include /pages/adbot/watch
+
+    include /pages/adbot/mobile-footer

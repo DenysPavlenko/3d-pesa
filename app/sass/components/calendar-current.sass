@@ -1,0 +1,16 @@
+.calendar-current
+  width: 100%
+  display: flex
+  align-items: center
+  overflow: hidden
+  &:before,
+  &:after
+    content: ''
+    background-color: $color-yellow
+  &:before
+    width: 10px
+    height: 10px
+    border-radius: 50%
+  &:after
+    flex: 1
+    height: 2px

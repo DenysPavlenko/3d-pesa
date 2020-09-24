@@ -1,0 +1,43 @@
+include /partials/avatar
+include /partials/country-select
+include /partials/state-select
+include /partials/input
+include /partials/button
+include /partials/upload-button
+
+form.form
+  .form__line
+    .column-group
+      .column-group__item
+        +avatar({image:'images/user/avatar.jpg', size:'xl'})
+      .column-group__item
+        +upload-button({title: 'Change photo'})
+  .form__line
+    h3 Location
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Country
+      +country-select()
+  .form__line
+    .row
+      .col-7
+        .form__group
+          .form-group__header
+            label.p State/Province
+          +state-select()
+      .col-5
+        .form__group
+          .form-group__header
+            label.p Zip code
+          +input()(type="number", placeholder="0000")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p City
+      +input()(type="number", placeholder="Your city")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Address
+      +input()(type="number", placeholder="Your address")

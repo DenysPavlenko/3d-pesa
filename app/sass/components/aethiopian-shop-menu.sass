@@ -1,0 +1,34 @@
+.aethiopian-shop-menu
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  align-items: center
+  &__left
+    display: flex
+    align-items: center
+    margin-right: 20px
+  &__title
+    margin-right: 6px
+  &__icon
+    margin-right: 17px
+    cursor: pointer
+    &-svg
+      transition: 0.2s
+    &:hover
+      .aethiopian-shop-menu__icon-svg
+        fill: $color-light
+
+  &__right
+    display: flex
+    align-items: center
+    +media-max($bp-md)
+      display: none
+  &__orders
+    display: flex
+    padding: 5px 0
+    align-items: center
+    &-title
+      margin-right: 8px
+
+
+

@@ -1,0 +1,12 @@
+mixin checkout-list(props = [])
+
+  .checkout-list
+    each prop in props
+      -const {item, value, bold, firstLight, lastLight} = prop
+      .checkout-list__item
+        if(bold)
+          h4 #{item}
+          h4 #{value}
+        else
+          p(class=`${firstLight ? '' : 'text-muted'}`) #{item}
+          p(class=`${lastLight ? '' : 'text-muted'}`) #{value}

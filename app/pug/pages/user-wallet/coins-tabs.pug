@@ -1,0 +1,9 @@
+include /partials/currency
+
+.row.js-tabs
+  .col-4
+    +currency({type:'g-coin', className:'js-tab is-active', clickable:true, icon:'images/icons/l-coin.svg', title:'g coin', buy:'400g'})(data-tab="g-coin")
+  .col-4
+    +currency({type:'l-coin', className:'js-tab', clickable:true, icon:'images/icons/l-coin.svg', title:'l coin', buy:'400l'})(data-tab="l-coin")
+  .col-4
+    +currency({type:'b-coin', icon:'images/icons/b-coin.svg', title:'b coin', buy:'400b'})

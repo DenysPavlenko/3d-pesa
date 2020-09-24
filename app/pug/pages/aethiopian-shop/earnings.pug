@@ -1,0 +1,24 @@
+include /partials/currencies
+include /partials/transaction
+
+.column-group
+  .column-group__item
+    h3 Earnings
+  .column-group__item
+    +currencies()
+  .column-group__item
+    .column-group
+      .column-group__item
+        .column-group.column-group--md
+          +times(8)
+            .column-group__item
+              +transaction({image:'images/icons/g-coin.svg', iconColor:'green',
+                description:[
+                  `<h5>Hot dipped galvanized farm equipment</h5>`,
+                  `<p class="text-muted">14 hours by John Doe</p>`,
+                ],
+                receipt:[
+                  `<h5 class="text-green">+ 40 G Coins</h5>`,
+                  `<p class="text-muted">7:15 PM</p>`,
+                ]
+              })

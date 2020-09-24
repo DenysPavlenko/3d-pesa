@@ -1,0 +1,25 @@
+include /partials/close
+include /partials/button
+
+mixin payment-popup(props = {})
+  -const { auto } = props
+
+  .popup.modal(data-popup="payment-popup" data-popup-auto=auto)
+
+    .popup__close
+      +close({mdLight:true})(data-popup-close="payment-popup")
+
+    .popup__body.popup__body--pt-60
+      .column-group.column-group--justify-items-center
+        .column-group__item
+          img(src="images/verification-popup/verification.svg", alt="verification")
+        .column-group__item
+          h3 Payment
+        .column-group__item
+          p You have:
+        .column-group__item
+          h2 0.2414 G coins
+        .column-group__item
+          +button({type:'white'})(type="button")| Add funds
+        .column-group__item
+          +button({size:'xl', fluid:true})(type="button")| Pay

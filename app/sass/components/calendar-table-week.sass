@@ -1,0 +1,51 @@
+.calendar-table-week
+  position: relative
+  width: 100%
+  padding-bottom: 20px
+  &__row
+    position: relative
+    display: flex
+  &__time
+    width: 60px
+    display: flex
+    align-items: flex-end
+    justify-content: flex-end
+    padding-right: 10px
+    +media-max($bp-sm)
+      width: 18px
+      padding-right: 0
+    &-text
+      display: inline-block
+      margin-bottom: -5px
+      +media-max($bp-sm)
+        position: relative
+        left: -20px
+        transform: rotate(90deg)
+        transform-origin: bottom right
+        margin-bottom: 0
+  &__cols
+    display: flex
+    flex: 1
+  &__col
+    width: calc(100% / 7)
+    min-height: 60px
+    border-bottom: 1px solid $border-primary
+    border-left: 1px solid $border-primary
+    &:last-child
+      border-right: 1px solid $border-primary
+  &__current
+    margin-top: 20px
+  &__events
+    position: relative
+    overflow: hidden
+    height: 100%
+  &__event
+    position: absolute
+    top: 0
+    height: 100%
+    &:first-child
+      width: 100% !important
+      left: 0 !important
+    &:last-child
+      width: 50%
+      left: 50%

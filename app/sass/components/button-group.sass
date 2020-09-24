@@ -1,0 +1,32 @@
+.button-group
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  margin-bottom: -10px
+  // Modifiers
+  &--justify-center
+    justify-content: center
+  &--xs
+    .button-group__button
+      &:not(:last-child)
+        margin-right: 5px
+  &--sm
+    .button-group__button
+      &:not(:last-child)
+        margin-right: 10px
+  &--sm-column
+    +media-max($bp-sm)
+      flex-direction: column
+      .button-group__button
+        width: 100%
+        &:not(:last-child)
+          margin-right: 0
+  &--fluid
+    width: 100%
+    .button-group__button
+      flex: 1
+  &__button
+    margin-bottom: 10px
+    &:not(:last-child)
+      margin-right: 20px
+

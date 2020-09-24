@@ -1,0 +1,78 @@
+.popup
+  position: relative
+  max-width: 485px
+  width: 100%
+  margin: 10px auto
+  background-color: $color-primary
+  border-radius: 4px
+  padding: 0
+  padding-bottom: 20px
+  +media-max($bp-md)
+    position: fixed
+    left: 0
+    top: 0
+    bottom: 0
+    right: 0
+    max-width: 100%
+    margin: 0
+    border-radius: 0
+    overflow: scroll
+    z-index: 200
+  &--mw-800
+    max-width: 800px
+  &--mw-560
+    max-width: 560px
+  &--mw-650
+    max-width: 650px
+  &--mw-360
+    max-width: 360px
+  &--md-mw-360
+    +media-max($bp-md)
+      max-width: 360px
+  &--static
+    padding-bottom: 0
+    +media-max($bp-md)
+      position: static
+      padding-top: 0
+  &__close
+    position: absolute
+    top: 20px
+    right: 20px
+    z-index: 20
+    &--outer
+      top: -20px
+      right: -20px
+      +media-max($bp-md)
+        position: static
+        display: flex
+        justify-content: flex-end
+        padding-top: 20px
+        padding-right: 20px
+  &__header
+    width: 100%
+    +media-max($bp-md)
+      position: fixed
+      top: 0
+      left: 0
+      background-color: $color-secondary
+      z-index: 200
+    &-control
+      display: flex
+      justify-content: flex-end
+      padding: 20px 20px 0
+  &__header-offset
+    +media-max($bp-md)
+      height: $header-height
+  &__body
+    padding: 20px
+    &--pt-40
+      padding-top: 40px
+    &--pt-60
+      padding-top: 60px
+    &--p-0
+      padding: 0
+    &--px-0
+      padding-left: 0
+      padding-right: 0
+  &__box
+    padding: 0 20px

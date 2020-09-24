@@ -1,0 +1,20 @@
+extends layouts/main
+include /partials/sidebar
+
+block variables
+  - const title = 'Marketplace'
+  - const heading = 'Marketplace'
+
+block content
+  .marketplace-page
+    .marketplace-page__sidebar
+      +sidebar({navActive:'marketplace'})
+
+    .marketplace-page__container
+      include /pages/marketplace/header
+      .marketplace-page__wrap
+        .marketplace-page__content
+          div(data-simplebar class="custom-scroll marketplace-page__box")
+            include /pages/marketplace/cart-history
+
+    include /pages/marketplace/mobile-footer

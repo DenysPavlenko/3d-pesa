@@ -1,0 +1,13 @@
+include /partials/avatar
+
+mixin notification(props = {})
+  -const { icon, iconColor, image, content, buttons } = props
+
+  .notification
+    .notification__icon
+      +avatar({image:image, icon:icon, size:'xs', color:iconColor})
+
+    .notification__content
+      each item in content
+        .notification__line
+          | !{item}

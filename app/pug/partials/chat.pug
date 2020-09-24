@@ -1,0 +1,40 @@
+include /partials/go-back
+include /partials/new-message
+
+mixin chat(props = {})
+  -const { headerContent, remove } = props
+
+  .chat
+    .content-header.content-header--bg-secondary
+      .content-header__left
+        +go-back({content:headerContent, arrowHide:'d-none d-lg-block'})(data-directory-close="find-shop-map")
+      .content-header__right
+        .row-group.row-group--align-center.row-group--md
+          a(href="social-app-call.html").row-group__item
+            +icon('phone-light', 'svg-icon--light')(width="17" height="17")
+          .row-group__item.cursor-pointer(data-popup-open="contact-popup")
+            +icon('info-filled', 'svg-icon--light')(width="21" height="21")
+          if(remove)
+            .row-group__item.cursor-pointer
+              +icon('trash-can', 'svg-icon--light')(width="18" height="18")
+
+
+    .chat__body
+      div(data-simplebar class="custom-scroll chat__body-box")
+        +times(3)
+          h6.text-muted.font-regular.text-center.chat__timing May 23 AT 6:25 PM
+          .chat__message-wrap.chat__message-wrap--right
+            .chat__message.chat__message--first
+              p.chat__message-text It olny takes one minute It olny takes one minute It olny takes one minute
+            .chat__message
+              p.chat__message-text Okay than
+            .chat__message.chat__message--last
+              p.chat__message-text Okay than
+          .chat__message-wrap
+            .chat__message.chat__message--first
+              p.chat__message-text It olny takes one minute
+            .chat__message.chat__message--last
+              p.chat__message-text Okay than
+
+    .chat__footer
+      +new-message()

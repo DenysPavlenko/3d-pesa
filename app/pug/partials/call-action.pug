@@ -1,0 +1,15 @@
+mixin call-action(props  = {})
+  -const { icon, title, color, modifiers, filled } = props
+  -
+    const classnames = classNames({
+      'call-action': true,
+      [`call-action--bg-${color}`]: color,
+      'call-action--filled': filled,
+      [modifiers]: modifiers,
+    })
+
+  div(class=classnames)
+    .call-action__icon
+      +icon(icon.name, 'svg-icon--light call-action__icon-svg')(width=icon.width height=icon.height)
+    if(title)
+      p.call-action__title #{title}

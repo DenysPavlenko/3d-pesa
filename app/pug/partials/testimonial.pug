@@ -1,0 +1,16 @@
+include ./star-rating
+
+mixin testimonial(props = {})
+  -const { noStars } = props
+
+  .testimonial
+    .testimonial__stars
+      if(!noStars)
+        +star-rating({total: false})
+    .testimonial__info
+      .testimonial__user
+        p.p-sm By John Doe
+      .testimonial__date
+        p.p-sm Feb 19, 2020
+    .testimonial__text
+      p.text-muted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id lacus, ac, mi duis amet, nisl, lorem felis porttitor. Aenean condimentum tincidunt arcu mauris. Nisl aliquet hendrerit adipiscing porta.

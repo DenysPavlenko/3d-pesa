@@ -1,0 +1,52 @@
+.sidebar
+  position: fixed
+  top: 0
+  left: 0
+  width: 260px
+  background-color: $color-primary
+  height: 100%
+  display: flex
+  flex-direction: column
+  +media-max($bp-xl)
+    box-shadow: 0px 0px 43px -10px rgba(0,0,0,0.75)
+    transition: 0.2s
+    z-index: 210
+    transform: translateX(-100%)
+    opacity: 0
+    &.is-active
+      opacity: 1
+      transform: translateX(0)
+  +media-max($bp-md)
+    width: 100%
+    box-shadow: none
+  &__overlay
+    display: none
+    +media-max($bp-xl)
+      position: fixed
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      z-index: 209
+      background-color: $overlay-secondary
+  &__header
+    position: relative
+    z-index: 200
+    +bg-img('../images/sidebar/sidebar-user-bg.png', cover, center)
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    padding: 25px 15px
+    text-align: center
+    +media-max($bp-md)
+      display: none
+    &-logo
+      margin-bottom: 10px
+  &__header-mobile
+    display: none
+    +media-max($bp-xl)
+      display: block
+  &__body
+    flex: 1
+    min-height: 0

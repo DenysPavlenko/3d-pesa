@@ -1,0 +1,82 @@
+.dashboard-page
+  +media-max($bp-md)
+    &:after
+      position: fixed
+      content: ''
+      left: 0
+      top: 0
+      right: 0
+      background-color: $color-primary
+      bottom: 0
+      z-index: -1
+  &__container
+    display: flex
+    flex-direction: column
+    margin-left: 260px
+    height: 100vh
+    padding: 0 20px 20px
+    +media-max($bp-xl)
+      margin-left: 0
+    +media-max($bp-lg)
+      padding: 0
+      height: auto
+  &__wrap
+    +row()
+    flex: 1
+    min-height: 0
+    +media-max($bp-lg)
+      margin: 0
+
+  &__content
+    display: flex
+    flex-wrap: wrap
+    flex: 1
+    height: 100%
+    border-radius: $radius-primary
+    background-color: $color-primary
+    margin: 0 10px
+    +media-max($bp-lg)
+      flex: auto
+      width: 100%
+      height: calc( 100vh - #{$header-height} )
+      border-radius: 0
+      margin: 0
+    +media-max($bp-md)
+      display: none
+  &__col
+    width: 50%
+    height: 100%
+  &__box
+    padding: 20px
+
+  &__widgets
+    display: flex
+    flex-direction: column
+    border-radius: $radius-primary
+    overflow: hidden
+    margin: 0 10px
+    width: 35%
+    height: 100%
+    +media-max($bp-lg)
+      width: 100%
+      margin: 0
+      margin-top: 20px
+      border-radius: 0
+  &__clock
+    background-color: $color-primary
+    border-radius: $radius-primary
+    padding: 20px
+    margin-bottom: 20px
+    +media-max($bp-lg)
+      border-radius: 0
+    +media-max($bp-md)
+      margin-bottom: 0
+  &__weather
+    margin-bottom: 20px
+    +media-max($bp-lg)
+      padding: 0 20px
+  &__currencies
+    overflow: hidden
+    +media-max($bp-lg)
+      padding: 0 20px
+      margin-bottom: 20px

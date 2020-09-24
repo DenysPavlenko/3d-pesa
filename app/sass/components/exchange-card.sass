@@ -1,0 +1,45 @@
+.exchange-card
+  background-color: $color-secondary
+  border-radius: $radius-primary
+  display: flex
+  flex-direction: column
+  width: 100%
+  margin-top: 30px
+  &--mt-0
+    margin-top: 0
+  &__header
+    margin-top: -30px
+    display: flex
+    justify-content: center
+  &__preview
+    height: 140px
+    width: 100%
+    border-radius: $radius-primary $radius-primary 0 0
+    overflow: hidden
+    figure
+      width: 100%
+      height: 100%
+      background:
+        size: cover
+        repeat: no-repeat
+        position: top center
+  &__content
+    padding: 20px
+  &__info
+    flex: 1
+    &-item
+      display: flex
+      justify-content: space-between
+      &:not(:last-child)
+        margin-bottom: 9px
+  &__checkout
+    &-item
+      &:not(:last-child)
+        margin-bottom: 20px
+    &-line
+      margin-bottom: 5px
+      &:last-child
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 0

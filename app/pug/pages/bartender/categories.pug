@@ -1,0 +1,26 @@
+include /partials/catalog-header
+include /partials/shop-card
+-
+  var categories = [
+    {link:'bartender-category.html', image: 'images/bartender/categories/category-1.jpg', title: 'Vegetables'},
+    {link:'bartender-category.html', image: 'images/bartender/categories/category-1.jpg', title: 'Vegetables'},
+    {link:'bartender-category.html', image: 'images/bartender/categories/category-1.jpg', title: 'Vegetables'},
+    {link:'bartender-category.html', image: 'images/bartender/categories/category-1.jpg', title: 'Vegetables'},
+  ]
+
+.catalog
+  .catalog__header
+    +catalog-header({
+      left: `<h3>Shop by categories</h3>`,
+    })
+  .catalog__items
+    +times(2)
+      each category in categories
+        .catalog__item
+          +shop-card({
+            link:category.link,
+            image:category.image,
+            content:[
+              `<h4 class="text-center">${category.title}</h4>`,
+            ]
+          })

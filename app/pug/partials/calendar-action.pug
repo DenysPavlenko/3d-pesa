@@ -1,0 +1,22 @@
+mixin calendar-action(props = {})
+  -const { icon, title, time, color } = props
+  -
+    const classnames = classNames({
+      'calendar-action': true,
+      [`calendar-action--bg-${color}`]: color,
+      'calendar-action--fluid': time,
+    })
+
+  div(class=classnames)&attributes(attributes)
+    .calendar-action__header
+      if(icon)
+        .calendar-action__header-icon
+          +icon(icon.name, 'svg-icon--light')(width=icon.width height=icon.height)
+        .calendar-action__header-title
+          p.p-xs.font-medium #{title}
+      else
+        .calendar-action__header-title
+          p.p-xs.font-medium #{title}
+    if(time)
+      .calendar-action__body
+        p.p-xs #{time}

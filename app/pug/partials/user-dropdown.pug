@@ -1,0 +1,25 @@
+include /partials/avatar
+include /partials/user-dropdown-menu
+include /partials/close
+
+mixin user-dropdown(props = {})
+
+  .dropdown.dropdown--radius-top-0.js-dropdown(data-dropdown="user").user-dropdown
+    .dropdown__toggle(data-dropdown-toggle="user").user-dropdown__toggle
+      .user-dropdown__toggle-wrap
+        .user-dropdown__avatar
+          +avatar({image:'images/user/avatar.jpg', size:'sm', classes:'user-dropdown__avatar-image'})
+        .user-dropdown__name
+          p John Doe
+        .user-dropdown__chevron
+          +icon('chevron-down', 'svg-icon--light')(width="8" height="5")
+    .dropdown__body.js-dropdown-body.user-dropdown__body
+      .user-dropdown__wrap
+        .user-dropdown__header
+          .content-header.content-header--bg-secondary
+            .content-header__left
+              +close({light:true})(data-dropdown-close="user")
+            .content-header__center
+              h3 John Doe
+        div(data-simplebar class="user-dropdown__content custom-scroll")
+          +user-dropdown-menu()

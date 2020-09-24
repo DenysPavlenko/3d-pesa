@@ -1,0 +1,35 @@
+include /partials/slider-arrows
+include /partials/button
+
+.product-details
+  .product-details__row
+
+    .product-details__preview
+      .product-details__slider
+        .product-details__slider-arrows
+          +slider-arrows({prev: 'js-product-details-slider-prev', next: 'js-product-details-slider-next'})
+        .product-details__slider-slides.js-product-details-slider
+          +times(5)
+            .product-details__slider-slide
+              img(src="images/aethiopian/farm-equipment-products/product-1.jpg", class="image" alt="product-2")
+      .product-details__navigation.js-product-details-navigation
+        +times(5)
+          .product-details__navigation-item
+            .product-details__navigation-thumb
+              img(src="images/aethiopian/farm-equipment-products/product-1.jpg", class="image" alt="product-2")
+
+    .product-details__description
+      .list-group
+        .list-group__item
+          .column-group.column-group--sm
+            .column-group__item
+              h3 Hot dipped galvaniz farm equipment round bale steel feeder
+            .column-group__item
+              h3 12 G/hour
+              p.text-muted $450
+        .list-group__item
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id lacus, ac, mi duis amet, nisl, lorem felis porttitor. Aenean condimentum tincidunt arcu mauris. Nisl aliquet hendrerit adipiscing porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id lacus, ac, mi duis amet, nisl, lorem felis porttitor. Aenean condimentum tincidunt arcu mauris. Nisl aliquet hendrerit adipiscing porta.
+        .list-group__item
+          .button-group
+            +button({type:'bordered', size:'xl', width:'210', classes:'button-group__button'})(type="button" data-popup-open="delete-confirmation-popup")| Delete this item
+            a(href="aethiopian-shop-edit-product.html" class="button button--xl button--210 button--white button-group__button") Edit

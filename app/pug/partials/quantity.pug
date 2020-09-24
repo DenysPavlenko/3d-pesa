@@ -1,0 +1,12 @@
+include /partials/button
+
+mixin quantity(props = {})
+
+  .quantity
+    .quantity__title
+      p Quantity: 1
+    .quantity__buttons
+      button(type="button" class="quantity__button")
+        span
+      button(type="button" class="quantity__button quantity__button--plus")
+        span

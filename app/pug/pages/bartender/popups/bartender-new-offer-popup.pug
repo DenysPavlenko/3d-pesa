@@ -1,0 +1,85 @@
+include /partials/close
+include /partials/select
+include /partials/avatar
+include /partials/input
+include /partials/checkbox
+include /partials/button
+
+.popup.modal(data-popup="bartender-new-offer-popup")
+
+  .popup__header-offset
+  .popup__header
+    .content-header.content-header--md-border-0
+      .content-header__center
+        h3 New offer
+      .content-header__right.content-header__right--md-left
+        +close({mdLight:true})(data-popup-close="bartender-new-offer-popup")
+
+  .popup__body
+    .column-group.column-group--justify-items-center
+      .column-group__item
+        .exchange-card
+          .exchange-card__header
+            .exchange-card__preview
+              figure(style="background-image:url('images/bartender/products/product-1.jpg')")
+          .exchange-card__content
+            form.form
+              .form__line
+                .form-group
+                  .form-group__header
+                    label.p What you want to exchange
+                  +input({bg:'primary'})(type="text" value="Carrot")
+              .form__line
+                .form-group
+                  .form-group__header
+                    label.p How many
+                  +select({
+                    modifiers:'select--bg-primary',
+                    label:{name:'1', selected:true, right:'<p class="text-muted">Kg</p>'},
+                    options:[
+                      {name:'1', right:'<p class="text-muted">Kg</p>'},
+                      {name:'2', right:'<p class="text-muted">Kg</p>'},
+                      {name:'3', right:'<p class="text-muted">Kg</p>'},
+                    ],
+                  })
+
+      .column-group__item
+        .row-group.row-group--align-center.row-group--xs
+          .row-group__item
+            +icon('circle-arrows', 'svg-icon--muted')(width="20" height="20")
+          .row-group__item
+            h4.text-muted.text-uppercase Exchange for
+
+      .column-group__item
+        .exchange-card
+          .exchange-card__header
+            .column-group.column-group--xs.column-group--align-center
+              .column-group__item
+                +avatar({image:'images/user/avatar.jpg'})
+              .column-group__item
+                h4 You offer
+          .exchange-card__content
+            form.form
+              .form__line
+                .form-group
+                  .form-group__header
+                    label.p What you want to recieve
+                  +input({bg:'primary'})(type="text" placeholder="Onions")
+              .form__line
+                .form-group
+                  .form-group__header
+                    label.p How many
+                  +select({
+                    modifiers:'select--bg-primary',
+                    label:{name:'3', selected:false, right:'<p class="text-muted">Kg</p>'},
+                    options:[
+                      {name:'1', right:'<p class="text-muted">Kg</p>'},
+                      {name:'2', right:'<p class="text-muted">Kg</p>'},
+                      {name:'3', right:'<p class="text-muted">Kg</p>'},
+                    ],
+                  })
+              .form__line
+                +checkbox({squere:true, label:'Change'})
+
+      .column-group__item
+        +button({size:'xl', fluid:true, type:'white'})(type="button" data-popup-close="new-offer-popup")| Send offer

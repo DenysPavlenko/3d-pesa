@@ -1,0 +1,114 @@
+include /partials/upload-files
+include /partials/country-select
+include /partials/state-select
+include /partials/inter-tel-input
+include /partials/button
+include /partials/input
+include /partials/time-select
+include /partials/checkbox
+
+form.form
+  .form__line
+    h3 Edit your shop
+  .form__line
+    .form__group
+      .form-group__header
+        label.p Shop name
+      input(type="text" class="input" placeholder="")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Country
+      +country-select()
+  .form__line
+    .row
+      .col-7
+        .form-group
+          .form-group__header
+            label.p State/Province
+          +state-select()
+      .col-5
+        .form-group
+          .form-group__header
+            label.p Zip code
+          +input()(type="number" placeholder="0000")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p City
+      +input()(type="text" placeholder="Your city")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Address
+      +input()(type="text" placeholder="Your address")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Mobile phone
+      +inter-tel-input()
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Email
+      +input()(type="text" placeholder="Your email")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Add photos
+      +upload-files([{title: 'Add cover image'}, {title: 'Add image'}, {placeholder:true}, {placeholder:true}])
+  .form__line
+    span.p Working hours
+  .form__line
+    .form-group
+      .form-group__header
+        +checkbox({label:'Monday', checked:true})(data-checkbox-toggle="monday")
+    div(data-checkbox-toggle-content="monday")
+      .row
+        .col-6
+          .form-group
+            .form-group__header
+              label.p From
+            +time-select()
+        .col-6
+          .form-group
+            .form-group__header
+              label.p To
+            +time-select()
+  .form__line
+    .form-group
+      .form-group__header
+        +checkbox({label:'Thuesday'})(data-checkbox-toggle="thuesday")
+    div(data-checkbox-toggle-content="thuesday")
+      .row
+        .col-6
+          .form-group
+            .form-group__header
+              label.p From
+            +time-select()
+        .col-6
+          .form-group
+            .form-group__header
+              label.p To
+            +time-select()
+  .form__line
+    .form-group
+      .form-group__header
+        +checkbox({label:'Wednesday', checked:true})(data-checkbox-toggle="wednesday")
+    div(data-checkbox-toggle-content="wednesday")
+      .row
+        .col-6
+          .form-group
+            .form-group__header
+              label.p From
+            +time-select()
+        .col-6
+          .form-group
+            .form-group__header
+              label.p To
+            +time-select()
+  .form__line
+    .form-group
+      .button-group.button-group--fluid
+        +button({type:'bordered', size:'xl', classes:'button-group__button'})(type="button" data-popup-open="delete-confirmation-popup")| Delete shop
+        +button({size:'xl', classes:'button-group__button'})(type="button")| Save

@@ -1,0 +1,73 @@
+include /partials/notification
+
+mixin notifications(props = {})
+  -const { title } = props
+
+  .column-group
+    if(title)
+      .column-group__item
+        .row-group.row-group--sm.row-group--align-center
+          .row-group__item
+            +icon('bell', 'svg-icon--muted')(width="16" height="19")
+          .row-group__item
+            h3 Notifications
+
+    .column-group__item
+      .column-group.column-group--md
+        .column-group__item
+          h4.text-muted.column-group__day Today
+        .column-group__item
+          +notification({image:'images/user/avatar.jpg', content:[
+            `<p><span class="font-semibold">Rachel</span> sent you a message</p>`,
+            `<p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis donec porttitor aliquam volutpat.”</p>`,
+            `<p class="text-muted text-uppercase">1 MIN</p>`,
+          ]})
+        .column-group__item
+          +notification({icon:{name:'calendar', width:'14', height:'14'}, iconColor:'green', content:[
+            `<p><span class="font-semibold">Frank’s</span> Birthday</p>`,
+            `<p class="text-muted text-uppercase">2 MIN</p>`,
+          ]})
+
+    .column-group__item
+      .column-group.column-group--md
+        .column-group__item
+          h4.text-muted.column-group__day Yesterday
+        .column-group__item
+          +notification({icon:{name:'calendar', width:'14', height:'14'}, iconColor:'green', content:[
+            `<p>Meeting with <span class="font-semibold">John Doe</span></p>`,
+            `<p class="text-muted text-uppercase">6:30 PM</p>`,
+          ]})
+        .column-group__item
+          +notification({image:'images/user/avatar.jpg', content:[
+            `<p>Rachel</span> sent you a friend request</p>`,
+            `<div class="button-group button-group--xs">
+              <button type="button" class="button button--xs button--bordered button-group__button">Decline</button>
+              <button type="button" class="button button--xs button--white button-group__button">Accept</button>
+            </div>`,
+            `<p class="text-muted text-uppercase">7:15 PM</p>`,
+          ]})
+        .column-group__item
+          +notification({icon:{name:'marketplace', width:'13', height:'13'}, iconColor:'orange', content:[
+            `<p>Somebody bought your item</p>`,
+            `<p class="text-muted text-uppercase">6:30 PM</p>`,
+          ]})
+
+    .column-group__item
+      .column-group.column-group--md
+        .column-group__item
+          h4.text-muted.column-group__day Sun, March 11
+        .column-group__item
+          +notification({icon:{name:'car', width:'16', height:'14'}, iconColor:'purple', content:[
+            `<p>Your driver has arrived</p>`,
+            `<p class="text-muted text-uppercase">10:45 PM</p>`,
+          ]})
+        .column-group__item
+          +notification({icon:{name:'person', width:'13', height:'13'}, iconColor:'red', content:[
+            `<p><span class="font-semibold">Rachel</span> sent you a friend request</p>`,
+            `<p class="text-muted text-uppercase">6:30 PM</p>`,
+          ]})
+        .column-group__item
+          +notification({icon:{name:'marketplace', width:'13', height:'13'}, iconColor:'orange', content:[
+            `<p>Somebody bought your item</p>`,
+            `<p class="text-muted text-uppercase">6:30 PM</p>`,
+          ]})

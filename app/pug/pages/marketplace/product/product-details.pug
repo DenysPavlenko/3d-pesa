@@ -1,0 +1,44 @@
+include /partials/slider-arrows
+include /partials/star-rating
+include /partials/chip
+include /partials/user-badge
+include /partials/location-pin
+include /partials/add-to-cart
+
+.product-details
+  .product-details__row
+
+    .product-details__preview
+      .product-details__slider
+        .product-details__slider-arrows
+          +slider-arrows({prev: 'js-product-details-slider-prev', next: 'js-product-details-slider-next'})
+        .product-details__slider-slides.js-product-details-slider
+          +times(5)
+            .product-details__slider-slide
+              img(src="images/marketplace/products/product-2.jpg", class="image" alt="product-2")
+      .product-details__navigation.js-product-details-navigation
+        +times(5)
+          .product-details__navigation-item
+            .product-details__navigation-thumb
+              img(src="images/marketplace/products/product-2.jpg", class="image" alt="product-2")
+
+    .product-details__description
+      .list-group
+        .list-group__item
+          .column-group.column-group--sm
+            .column-group__item
+              h3 The Golden Thread: How Fabric Changed History
+            .column-group__item
+              +star-rating({total:'5.0 (20 ratings)'})
+            .column-group__item
+              h3 12G
+            .column-group__item
+              +chip({title:'Brand new'})
+        .list-group__item
+          +user-badge({name:'<h4>Rachel Cole</h4>', link:'marketplace.html'})
+        .list-group__item
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id lacus, ac, mi duis amet, nisl, lorem felis porttitor. Aenean condimentum tincidunt arcu mauris. Nisl aliquet hendrerit adipiscing porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id lacus, ac, mi duis amet, nisl, lorem felis porttitor. Aenean condimentum tincidunt arcu mauris. Nisl aliquet hendrerit adipiscing porta.
+        .list-group__item
+          +location-pin()
+      .product-details__description-footer
+        +add-to-cart()

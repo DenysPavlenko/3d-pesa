@@ -1,0 +1,49 @@
+.social-app-profile
+  &__header
+    margin-bottom: 25px
+    width: 100%
+    padding: 20px
+    display: table
+    &-avatar
+      margin-right: 25px
+      float: left
+      +media-max($bp-md)
+        width: 80px
+        height: 80px
+        margin-right: 15px
+    &-line
+      margin-bottom: 5px
+      &:nth-last-child(2)
+        margin-bottom: 15px
+
+  &__tabs
+    display: flex
+    align-items: centerc
+    position: relative
+    margin-bottom: 10px
+    padding: 0 20px
+    border-bottom: 1px solid $border-primary
+  &__tab
+    position: relative
+    padding-bottom: 10px
+    cursor: pointer
+    transition: 0.2s
+    &:hover
+      color: $text-yellow
+    &:after
+      position: absolute
+      content: ''
+      left: 0
+      bottom: 0
+      width: 100%
+      height: 2px
+      background-color: $color-yellow
+      opacity: 0
+      visibility: hidden
+    &:not(:last-child)
+      margin-right: 20px
+    &.is-active
+      color: $text-yellow
+      &:after
+        opacity: 1
+        visibility: visible

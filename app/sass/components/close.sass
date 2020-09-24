@@ -1,0 +1,34 @@
+.close
+  cursor: pointer
+  transition: 0.2s
+  opacity: 0.5
+  // Modifiers
+  &--light
+    opacity: 1
+  &--primary
+    .close__icon
+      fill: $color-primary
+  &--sm
+    .close__icon
+      width: 11px
+      height: 11px
+  &--circle
+    background-color: $color-primary
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 24px
+    height: 24px
+    .close__svg
+      width: 8px
+      height: 8px
+  &--md-light
+    +media-max($bp-md)
+        opacity: 1
+  &__icon
+    width: 16px
+    height: 16px
+    fill: $color-light
+  &:hover
+    opacity: 1

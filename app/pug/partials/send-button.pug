@@ -1,0 +1,10 @@
+mixin send-button(props = {})
+  -const { isActive } = props
+  -
+    const classnames = classNames({
+      'send-button': true,
+      'is-active': isActive,
+    })
+
+  div(class=classnames)
+    +icon('paper-plane', 'svg-icon--muted send-button__svg')(width="21" height="18")

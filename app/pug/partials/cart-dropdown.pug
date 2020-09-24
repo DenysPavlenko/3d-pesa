@@ -1,0 +1,17 @@
+include /partials/close
+include /partials/cart
+
+mixin cart-dropdown(props = {})
+  -const { title, cartItems, checkout, history, upcomingItems } = props
+
+  .dropdown.dropdown--radius-top-0.js-dropdown(data-dropdown="cart").cart-dropdown
+    .dropdown__toggle(data-dropdown-toggle="user").cart-dropdown__toggle
+      .cart-dropdown__toggle-wrap
+        span.h4.cart-dropdown__toggle-title My cart
+        .cart-dropdown__toggle-icon
+          .badge.badge--round.badge--bg-red
+            +icon('cart', 'svg-icon--light cart-dropdown__toggle-icon-svg')(width="24" height="23")
+            .badge__wrapper
+              h6 3
+    .dropdown__body.js-dropdown-body.cart-dropdown__body
+      +cart({title:title, items:cartItems, scroll:true, checkout:checkout, history:history, upcomingItems:upcomingItems})

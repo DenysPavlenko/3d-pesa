@@ -1,0 +1,21 @@
+include /partials/select
+
+mixin time-select(props = {})
+
+  +select({
+    label:{name:'8:00 am', selected:true},
+    options:[
+      {name:'1:00 am'},
+      {name:'2:00 am'},
+      {name:'3:00 am'},
+      {name:'4:00 am'},
+      {name:'5:00 am'},
+      {name:'6:00 am'},
+      {name:'7:00 am'},
+      {name:'8:00 am'},
+      {name:'9:00 am'},
+      {name:'10:00 am'},
+      {name:'11:00 am'},
+      {name:'12:00 am'},
+    ]
+  })

@@ -1,0 +1,22 @@
+include /partials/navigation
+include /partials/close
+
+mixin sidebar(props = {})
+
+  .sidebar__overlay.js-sidebar-overlay
+  aside.sidebar.js-sidebar
+    .sidebar__header-mobile
+      .content-header.content-header--bg-secondary
+        .content-header__left
+          +close({light:true})(class="js-sidebar-close")
+        .content-header__center
+          h3 Menu
+    .sidebar__header
+      .sidebar__header-logo
+        img(src="images/logo.svg", alt="logo.svg")
+      .sidebar__header-user
+        p.sidebar__header-user-greetings Good Morning,
+        h3.sidebar__header-user-name John Doe
+    .sidebar__body
+      div(data-simplebar class="custom-scroll")
+        +navigation(props)

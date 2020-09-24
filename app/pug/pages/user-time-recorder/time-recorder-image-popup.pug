@@ -1,0 +1,25 @@
+include /partials/close
+include /partials/description-item
+
+mixin time-recorder-image-popup(props = {})
+
+  .popup.popup--mw-800.modal(data-popup="time-recorder-image-popup")
+
+    .popup__close.popup__close--outer
+      +close({mdLight:true})(data-popup-close="time-recorder-image-popup")
+
+    .popup__body
+      .column-group.column-group--sm
+        .column-group__item
+          img(src="images/social-app/post/post-image.jpg", class="image" alt="adbot-image")
+        .column-group__item
+          +description-item({
+            header:`
+              <h3>Rynok Square</h3>
+              <p class="text-muted">23/07/2020</p>
+            `,
+            body:[
+              `<p class="text-muted">Image by John Doe</p>`,
+              `<p class="text-muted">Source: Social Network</p>`,
+            ]
+          })

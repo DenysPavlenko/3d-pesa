@@ -1,0 +1,25 @@
+extends layouts/main
+include /partials/sidebar
+include /partials/header
+include /partials/advertisement-popup
+include /partials/terms-popup
+
+block variables
+  - var title = 'Settings'
+  - var heading = 'Settings'
+  - var navigation = 'settings'
+
+block content
+  .settings-page
+    +advertisement-popup()
+    +terms-popup()
+
+    .settings-page__sidebar
+      +sidebar({navActive:'settings'})
+
+    .settings-page__container
+      +header({title:'Settings'})
+      .settings-page__wrap
+        .settings-page__content
+          div(data-simplebar class="custom-scroll settings-page__box")
+            include /pages/settings/home

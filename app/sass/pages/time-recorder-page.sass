@@ -1,0 +1,46 @@
+.time-recorder-page
+  &__container
+    display: flex
+    flex-direction: column
+    height: 100vh
+    margin-left: 260px
+    padding: 0 20px 20px
+    +media-max($bp-xl)
+      margin-left: 0
+    +media-max($bp-lg)
+      padding: 0
+
+  &__wrap
+    flex: 1
+    width: 100%
+    border-radius: $radius-primary
+    background-color: $color-primary
+    overflow: hidden
+    +media-max($bp-lg)
+      border-radius: 0
+
+  &__tabs-mobile
+    display: none
+    +media-max($bp-sm)
+      display: block
+      padding: 10px 20px 0
+
+  &__tabs
+    display: flex
+    justify-content: center
+    margin-bottom: 20px
+    +media-max($bp-sm)
+      display: none
+  &__content
+    +row()
+    margin-bottom: -10px
+    &-item
+      +col(3)
+      padding-top: 10px
+      padding-bottom: 10px
+      +media-max($bp-lg)
+        +col(6)
+      +media-max($bp-xs)
+        +col(12)
+  &__box
+    padding: 20px

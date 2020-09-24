@@ -1,0 +1,20 @@
+include /partials/close
+include /partials/send-button
+include /partials/post-input
+
+mixin new-post-popup(props = {})
+
+  .popup.modal(data-popup="new-post-popup")
+
+    .popup__header-offset
+    .popup__header
+      .content-header.content-header--md-border-0
+        .content-header__left.content-header__left--md-right
+          .d-block.d-md-none
+            +send-button()
+        .content-header__center
+          h3 New post
+        .content-header__right.content-header__right--md-left
+          +close({mdLight:true})(data-popup-close="new-post-popup")
+    .popup__body
+      +post-input()

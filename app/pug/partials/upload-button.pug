@@ -1,0 +1,7 @@
+include /partials/input
+
+mixin upload-button(props = {})
+  -const { title } = props;
+
+  +button({tag:'label', type:'bordered', size:'xl', width:'170'})| #{title}
+    +input({hidden:true})(type="file")

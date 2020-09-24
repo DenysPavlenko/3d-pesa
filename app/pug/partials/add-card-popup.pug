@@ -1,0 +1,81 @@
+include /partials/select
+include /partials/close
+include /partials/input
+include /partials/button
+
+mixin add-card-popup(props = {})
+  .popup.modal(data-popup="add-card-popup")
+
+    .popup__header-offset
+    .popup__header
+      .content-header.content-header--md-border-0
+        .content-header__center
+          h3 Add a card
+        .content-header__right.content-header__right--md-left
+          +close({mdLight:true})(data-popup-close="add-card-popup")
+
+    .content-header
+      p.text-muted Please note that we only accept Visa and Mastercard, and charge 3.75% convenience fees
+
+    .popup__body
+      form.form
+        .form__line
+          .form-group
+            .form-group__header
+              label.p Name on card
+            +input({classes:'input-group__input'})(type="text", placeholder="Jogn Doe")
+        .form__line
+          .form-group
+            .form-group__header
+              label.p Card number
+            +input({classes:'input-group__input'})(type="text", placeholder="Card number")
+        .form__line
+          .form-group
+            .form-group__header
+              label.p Expires
+          .row
+            .col-6
+              .form-group
+                +select({
+                  label:{name:'-Month-', selected:false},
+                  options:[
+                    {name:'12'},
+                    {name:'11'},
+                    {name:'10'},
+                    {name:'9'},
+                    {name:'8'},
+                    {name:'7'},
+                    {name:'6'},
+                    {name:'5'},
+                    {name:'4'},
+                    {name:'3'},
+                    {name:'2'},
+                    {name:'1'},
+                  ],
+                })
+            .col-6
+              .form-group
+                +select({
+                  label:{name:'-Year-', selected:false},
+                  options:[
+                    {name:'2024'},
+                    {name:'2023'},
+                    {name:'2022'},
+                    {name:'2021'},
+                    {name:'2020'},
+                  ],
+                })
+        .form__line
+          .row
+            .col-6
+              .form-group
+                .form-group__header
+                  label.p CVC number
+                +input({type:'text', placeholder:'000'})
+        .form__line
+          .form-group__header
+            label.p Billing Address
+          +input({classes:'input-group__input'})(type="text", placeholder="Franklin  Street 12, California, USA")
+
+        .form__line
+          +button({fluid:true, size:'xl'})(type="submit")| Add card

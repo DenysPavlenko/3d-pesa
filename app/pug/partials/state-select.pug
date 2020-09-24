@@ -1,0 +1,16 @@
+include /partials/select
+
+mixin state-select(props = {})
+
+  +select({
+    label:{name:'State/Province', selected:false},
+    options:[
+      {name:'Alabama'},
+      {name:'Alaska'},
+      {name:'Arizona'},
+      {name:'Arkansas'},
+      {name:'California'},
+      {name:'Colorado'},
+      {name:'Connecticut'},
+    ]
+  })

@@ -1,0 +1,17 @@
+include /partials/input
+
+mixin time-picker-dropdown(props = {})
+  -const { alt } = props
+
+  .dropdown.dropdown--bordered.dropdown--bg-secondary.dropdown--left.js-dropdown(data-dropdown="time-picker" data-dropdown-min="767")
+    if(alt)
+      +input({classes:'js-input-highlight js-input-auto-width js-dropdown-toggle'})(type="text" value="6:00 PM" data-popup-open="time-picker-popup" data-popup-max="768" data-dropdown-toggle="time-picker")
+    else
+      +input({classes:'js-input-highlight js-input-auto-width js-dropdown-toggle', size:'sm'})(type="text" value="6:00 PM" data-popup-open="time-picker-popup" data-popup-max="768" data-dropdown-toggle="time-picker")
+    .dropdown__body.dropdown__body--mt-10.js-dropdown-body
+      .time-picker
+        .time-picker__content
+          div(data-simplebar class="custom-scroll")
+            - var t = 1;
+            while t < 12
+              p.time-picker__item #{t++}:00 PM

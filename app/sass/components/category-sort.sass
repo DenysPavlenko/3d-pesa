@@ -1,0 +1,20 @@
+.category-sort
+  &__desktop
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    +media-max($bp-lg)
+      display: none
+  &__mobile
+    display: none
+    +media-max($bp-lg)
+      display: block
+  &__item
+    display: flex
+    align-items: center
+    &:not(:last-child)
+      margin-right: 25px
+  &__title
+    margin-right: 9px
+    display: flex
+    flex-wrap: nowrap

@@ -1,0 +1,23 @@
+extends layouts/main
+include /partials/sidebar
+include /partials/delete-confirmation-popup
+
+block variables
+  - const title = 'Aethiopian'
+  - const heading = 'Aethiopian'
+  - const tabName = 'myGoods'
+
+block content
+  .aethiopian-page
+    +delete-confirmation-popup()
+    .aethiopian-page__sidebar
+      +sidebar({navActive:'aethiopian', innerNavigation:'myShop'})
+
+    .aethiopian-page__container
+      include /pages/aethiopian-shop/header
+      .aethiopian-page__wrap
+        .aethiopian-page__content
+          div(data-simplebar class="custom-scroll aethiopian-page__box")
+            include /pages/aethiopian-shop/product
+
+    include /pages/aethiopian-shop/mobile-footer

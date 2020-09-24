@@ -1,0 +1,29 @@
+extends layouts/main
+include /partials/button
+include /partials/video-box
+
+block variables
+  - var title = 'Welcome to hyperloop'
+
+block content
+  .start-page
+    .start-page__navigation
+      .start-page__navigation-circle
+        +icon('chevron-left', 'svg-icon--stroke-light start-page__navigation-icon')
+      h5.text-muted.text-uppercase.start-page__navigation-title Dashboard
+
+    .start-page__container
+      .start-page__content
+        .start-page__content-box
+          div(data-simplebar class="custom-scroll start-page__content-scroll")
+            .column-group
+              .column-group__item
+                h2 Welcome to Æthiopian Super-Hyperloop
+              .column-group__item
+                p.text-muted A proposed mode of passenger and freight transportation. The Hyperloop could convey people or objects at airline or hypersonic speeds while being very energy efficient. This would drastically reduce travel times versus trains as well as planes over distances of under approximately 1,500 kilometres (930 miles)
+              .column-group__item
+                +button({type:'white', size:'xl', fluid:true})(type="button")| Learn more
+
+      .start-page__image
+        .start-page__image-box
+          +video-box({js:true, cover:'images/hyperloop/welcome/welcome-image.jpg', video:'https://www.youtube.com/embed/Bw9zSMsKcwk'})

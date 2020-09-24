@@ -1,0 +1,43 @@
+include /partials/burger
+include /partials/notifications-dropdown
+include /partials/user-dropdown
+include /partials/search-input
+include /partials/cart-dropdown
+include /partials/location-picker
+
+-
+  var cartItems = [
+    {image:'images/car-share/products/product-1.png', link:'marketplace-product.html', info:'<h3 class="font-regular">Breakfast burrito</h3><p class="text-muted">Choice of bacon, ham or sausage with scramble eggs, cheddar</p>', details:'<h4>14G</h4>', remove:true},
+    {image:'images/car-share/products/product-1.png', link:'marketplace-product.html', info:'<h3 class="font-regular">Breakfast burrito</h3><p class="text-muted">Choice of bacon, ham or sausage with scramble eggs, cheddar</p>', details:'<h4>14G</h4>', remove:true},
+    {image:'images/car-share/products/product-1.png', link:'marketplace-product.html', info:'<h3 class="font-regular">Breakfast burrito</h3><p class="text-muted">Choice of bacon, ham or sausage with scramble eggs, cheddar</p>', details:'<h4>14G</h4>', remove:true},
+  ]
+-
+  var upcomingItems = [
+    {image:'images/car-share/products/product-1.png', info:'<h3>Breakfast burrito</h3><p class="text-muted">Choice of bacon, ham or sausage with scramble eggs, cheddar</p>', details: '<h4>14G coins</h4>'},
+  ]
+
+.header
+  .header__wrap
+    .header__left
+      .header__burger
+        +burger({classes:'js-burger'})
+
+      .header__title
+        h3 Eats
+
+      .header__logo
+        .header__logo-icon
+          img(src="images/logo.svg", alt="logo.svg")
+        span.header__logo-title 3D-Pesa
+
+      .header__location
+          +location-picker()
+
+    .header__right
+      .header__dropdowns
+        .header__dropdown.header__dropdown--lg-hide
+          +cart-dropdown({cartItems:cartItems, title:'Cart total (3 items): 42G', checkout:'car-share-eats-checkout.html', history:'car-share-eats-cart-history.html', upcomingItems:upcomingItems})
+        .header__dropdown
+          +notifications-dropdown()
+        .header__dropdown
+          +user-dropdown()

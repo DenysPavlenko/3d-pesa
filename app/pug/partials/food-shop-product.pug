@@ -1,0 +1,32 @@
+include /partials/food-shop-choose
+include /partials/plus-minus
+include /partials/quantity
+include /partials/button
+
+mixin food-shop-product(props = {})
+  -const { image, title, text, price } = props
+
+  .food-shop-product.js-food-shop-product
+    .food-shop-product__header
+      .food-shop-product__status
+        +plus-minus()
+      .food-shop-product__info
+        .food-shop-product__data
+          .food-shop-product__line
+            h3 #{title}
+          .food-shop-product__line
+            p.text-muted #{text}
+          .food-shop-product__line
+            h4 #{price}
+        .food-shop-product__image
+          figure(style=`background-image: url(${image})`)
+    .food-shop-product__body
+      .list-group
+        .list-group__item
+          +food-shop-choose()
+        .list-group__item
+          .column-group.column-group--md
+            .column-group__item
+              +quantity()
+            .column-group__item
+              +button({size:'xl', type:'white', fluid:true})(type="button")| Add to cart

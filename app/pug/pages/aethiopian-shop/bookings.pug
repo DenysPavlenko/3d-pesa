@@ -1,0 +1,48 @@
+include /partials/star-rating
+include /partials/user-badge
+include /partials/shop-card
+
+.column-group
+  .column-group__item
+    .catalog
+      .catalog__header
+        .catalog-header
+          .catalog-header__left
+            h3 Active
+      .catalog__items
+        +times(4)
+          .catalog__item
+            +shop-card({
+              link:'aethiopian-shop-product.html',
+              image:'images/aethiopian/farm-equipment-products/product-1.jpg',
+              content:[
+                `<p class="p-xl text-muted">The Golden Thread: How Fabric Changed History</p>`,
+                `<h4>12 G/hour</h4>`,
+                {partial:'user-badge', params:{badgeSize:'sm', avatarSize:'xs', name:'<p>Rachel Cole</p>'}},
+                `<p class="text-muted">From 12/04/ 2020</p>
+                 <p class="text-muted">Till 13/04/ 2020</p>
+                `
+              ]
+            })
+
+  .column-group__item
+    .catalog
+      .catalog__header
+        .catalog-header
+          .catalog-header__left
+            h3 Closed
+      .catalog__items
+        +times(4)
+          .catalog__item
+            +shop-card({
+              link:'aethiopian-shop-product.html',
+              image:'images/aethiopian/farm-equipment-products/product-1.jpg',
+              content:[
+                `<p class="p-xl text-muted">The Golden Thread: How Fabric Changed History</p>`,
+                `<h4>12 G/hour</h4>`,
+                {partial:'user-badge', params:{badgeSize:'sm', avatarSize:'xs', name:'<p>Rachel Cole</p>'}},
+                `<p class="text-muted">From 12/04/ 2020</p>
+                 <p class="text-muted">Till 13/04/ 2020</p>
+                `
+              ]
+            })

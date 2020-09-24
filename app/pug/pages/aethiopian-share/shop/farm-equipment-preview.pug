@@ -1,0 +1,37 @@
+include /partials/catalog-header
+include /partials/slider-arrows
+include /partials/shop-card
+include /partials/see-all
+-
+  var categories = [
+    {link:'aethiopian-share-shop-category.html', image: 'images/aethiopian/farm-equipment-categories/category-1.jpg', title: 'Animal Feeders'},
+    {link:'aethiopian-share-shop-category.html', image: 'images/aethiopian/farm-equipment-categories/category-2.jpg', title: 'Cleaning Equipments'},
+    {link:'aethiopian-share-shop-category.html', image: 'images/aethiopian/farm-equipment-categories/category-3.jpg', title: 'Tractors'},
+    {link:'aethiopian-share-shop-category.html', image: 'images/aethiopian/farm-equipment-categories/category-4.jpg', title: 'Material Handling'},
+    {link:'aethiopian-share-shop-category.html', image: 'images/aethiopian/farm-equipment-categories/category-5.jpg', title: 'Animal Feeders'},
+    {link:'aethiopian-share-shop-category.html', image: 'images/aethiopian/farm-equipment-categories/category-6.jpg', title: 'Cleaning Equipments'},
+    {link:'aethiopian-share-shop-category.html', image: 'images/aethiopian/farm-equipment-categories/category-7.jpg', title: 'Tractors'},
+    {link:'aethiopian-share-shop-category.html', image: 'images/aethiopian/farm-equipment-categories/category-8.jpg', title: 'Material Handling'},
+  ]
+
+.catalog
+  .catalog__header
+    +catalog-header({
+      left: `<h3>Electric Construction Equipment</h3>`,
+      right: {partial:'see-all', params:{link:'aethiopian-share-shop-categories.html'}}
+    })
+
+  .catalog-slider
+    .catalog-slider__arrows
+      +slider-arrows({prev: 'js-catalog-slider-prev', next: 'js-catalog-slider-next'})
+    .row.catalog-slider__slides.js-catalog-slider
+      +times(3)
+        each category in categories
+          .catalog-slider__slide
+            +shop-card({
+              link:category.link,
+              image:category.image,
+              content:[
+                `<h4 class="text-center">${category.title}</h4>`
+              ]
+            })

@@ -1,0 +1,17 @@
+include /partials/switch
+
+mixin clock(props = {})
+
+  .clock
+    .clock__wrap
+      img(src="images/clock/clock-image.svg", alt="clock")
+    .clock__details
+      .clock__date
+        .clock__date-icon
+          +icon('calendar-alt', 'svg-icon--light cart-dropdown__toggle-icon-svg')(width="21" height="23")
+        p.text-muted.clock__date-title Today: 03/01/2020
+      .clock__format
+        p.text-uppercase.clock__format-type Am
+        .clock__switch
+          +switch({classes:'switch__checkbox', checked:true})
+        p.text-uppercase.clock__format-type Pm

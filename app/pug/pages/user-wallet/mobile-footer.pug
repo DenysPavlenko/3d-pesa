@@ -1,0 +1,11 @@
+include /partials/menu-tabs
+
+-
+  var tabs = [
+    {popup:'qr-code-popup', title:'Share qr code', name:'ride', icon:{name:'qr-code', width:'20', height:'20'}, light:true},
+    {popup:'send-popup', title:'Send', name:'ride', icon:{name:'paper-plane-angled', width:'20', height:'20'}, light:true},
+  ]
+
+.mobile-footer.js-mobile-footer
+  .mobile-footer__tabs
+    +menu-tabs(tabs)

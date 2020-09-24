@@ -1,0 +1,33 @@
+include /partials/shop-item
+include /partials/location-picker
+
+.directory
+  .directory__list
+    div(data-simplebar class="custom-scroll")
+
+      .content-header
+        .content-header__left
+          h3 Find a shop
+        .content-header__right
+          +location-picker()
+
+      .content-header.content-header--border-0
+        .content-header__center.content-header__center--mw-100
+          .input-group.input-group--bg-secondary
+            .input-group__prepend
+              .input-group__wrap
+                +icon('search', 'svg-icon--muted')(width="18" height="18")
+            input(type="text" class="input input-group__input" placeholder="Search for contacts")
+        .content-header__right.content-header__right--static.d-block.d-lg-none
+          div(data-directory-open="find-shop-map")
+            +icon('map', 'svg-icon--light')(width="20" height="18")
+
+      .select-list
+        -var cnt = 0
+        while cnt < 8
+          div(class=`select-list__item ${cnt === 0 ? 'is-active' : ''}`)
+            +shop-item()
+          -cnt++
+
+  .directory__content(data-directory-content="find-shop-map")
+    include ./shop-finder-map

@@ -1,0 +1,22 @@
+.mobile-footer
+  display: none
+  +media-max($bp-lg)
+    display: block
+    position: fixed
+    bottom: 0
+    left: 0
+    width: 100%
+    background-color: $color-primary
+    padding: 0 10px
+    border-top: 1px solid $border-primary
+    z-index: 200
+  &__button
+    +media-max($bp-lg)
+      padding: 10px 10px 0 10px
+      display: flex
+      justify-content: center
+  &__tabs
+    +media-max($bp-lg)
+      display: flex
+      justify-content: center
+      align-items: center

@@ -1,0 +1,8 @@
+include /partials/menu-tabs
+-
+  var tabs = [
+    {link:'hyperloop-articles.html', title:'Articles', isActive:tabName === 'articles', icon:{name:'article', width:'20', height:'20'}},
+    {link:'hyperloop-requests.html', title:'My requests', isActive:tabName === 'requests', icon:{name:'requests', width:'19', height:'20'}},
+  ]
+
++menu-tabs(tabs)

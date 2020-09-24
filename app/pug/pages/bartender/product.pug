@@ -1,0 +1,57 @@
+include /partials/slider-arrows
+include /partials/user-badge
+include /partials/location-pin
+include /partials/chip
+include /partials/input
+
+.product-details
+  .product-details__row
+
+    .product-details__preview
+      .product-details__slider
+        .product-details__slider-arrows
+          +slider-arrows({prev: 'js-product-details-slider-prev', next: 'js-product-details-slider-next'})
+        .product-details__slider-slides.js-product-details-slider
+          +times(5)
+            .product-details__slider-slide
+              img(src="images/bartender/products/product-1.jpg", class="image" alt="product-2")
+      .product-details__navigation.js-product-details-navigation
+        +times(5)
+          .product-details__navigation-item
+            .product-details__navigation-thumb
+              img(src="images/bartender/products/product-1.jpg", class="image" alt="product-2")
+
+    .product-details__description
+      .list-group
+        .list-group__item
+          .column-group.column-group--sm
+            .column-group__item
+              h3 Carrot
+            .column-group__item
+              .row-group.row-group--align-center
+                .row-group__item
+                  h3 12 L\Kg
+                .row-group__item
+                  +chip({title:'Barter only', color:'green'})
+        .list-group__item
+          +user-badge({name:'<h4>Rachel Cole</h4>', link:'bartender-home.html'})
+        .list-group__item
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id lacus, ac, mi duis amet, nisl, lorem felis porttitor. Aenean condimentum tincidunt arcu mauris. Nisl aliquet hendrerit adipiscing porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id lacus, ac, mi duis amet, nisl, lorem felis porttitor. Aenean condimentum tincidunt arcu mauris. Nisl aliquet hendrerit adipiscing porta.
+        .list-group__item
+          +location-pin()
+        .list-group__item
+          .column-group.column-group--xl
+            .column-group__item
+              .row-group.row-group--align-center
+                .row-group__item
+                  p Quanity:
+                .row-group__item
+                  .input-group.input-group--bg-secondary
+                    +input({classes:'input-group__input'})(type="text" class="input" value="1")
+                    .input-group__append
+                      .input-group__wrap
+                        p.text-muted kg
+            .column-group__item
+              .button-group.button-group--column
+                +button({size:'xl', width:'400', classes:'button-group__button'})(type="button")| Buy now
+                +button({size:'xl', width:'400', type:'white', classes:'button-group__button'})(type="button" data-popup-open="bartender-new-offer-popup")| Send barter request

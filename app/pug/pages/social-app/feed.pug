@@ -1,0 +1,15 @@
+include /partials/post
+-
+  const posts = [
+    {profileLink:'social-app-profile.html', postLink:'social-app-post.html', name:'Michael Hunnigun', images:true},
+    {profileLink:'social-app-profile.html', postLink:'social-app-post.html', name:'Michael Hunnigun', liked:true},
+    {profileLink:'social-app-profile.html', postLink:'social-app-post.html', name:'Michael Hunnigun', reposted:true},
+    {profileLink:'social-app-profile.html', postLink:'social-app-post.html', name:'Michael Hunnigun', reposted:true},
+    {profileLink:'social-app-profile.html', postLink:'social-app-post.html', name:'Michael Hunnigun', reposted:true},
+  ]
+
+.posts
+  .posts__wrap
+    each post in posts
+      .posts__post
+        +post(post)

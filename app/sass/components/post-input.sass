@@ -1,0 +1,42 @@
+.post-input
+  display: flex
+  &__avatar
+    margin-right: 15px
+    margin-top: 5px
+  &__form
+    background-color: $color-secondary
+    flex: 1
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    border-radius: 4px
+  &__attachments
+    display: flex
+    padding: 0 15px
+  &__attachment
+    position: relative
+    flex: 1
+    &:not(:last-child)
+      margin-right: 10px
+  &__attachment-close
+    position: absolute
+    top:  5px
+    right:  5px
+  &__input
+    flex: 1
+  &__actions
+    display: flex
+    padding: 15px
+    margin-left: auto
+    margin-top: auto
+    align-items: center
+  &__action
+    cursor: pointer
+    +media-max($bp-md)
+      margin-right: 0
+      &:not(:last-child)
+        margin-right: 0
+      &:last-child
+        display: none
+    &:not(:last-child)
+      margin-right: 15px

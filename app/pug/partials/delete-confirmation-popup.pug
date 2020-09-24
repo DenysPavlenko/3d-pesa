@@ -1,0 +1,14 @@
+include /partials/button
+
+mixin delete-confirmation-popup(props = {})
+  -const title = props.title || 'Are you sure you want to delete this item?'
+
+  .popup.popup--mw-650.modal(data-popup="delete-confirmation-popup")
+    .popup__body.popup__body--pt-40
+      .column-group
+        .column-group__item
+          h3.text-center #{title}
+        .column-group__item
+          .button-group.button-group--justify-center
+            +button({width:'170', type:'bordered', classes:'button-group__button'})(type="button")| Yes
+            +button({width:'170', classes:'button-group__button'})(type="button" data-popup-close="delete-confirmation-popup")| No

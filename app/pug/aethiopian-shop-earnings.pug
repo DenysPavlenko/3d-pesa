@@ -1,0 +1,25 @@
+extends layouts/main
+include /partials/sidebar
+include /partials/fixed-button
+
+block variables
+  - const title = 'Aethiopian'
+  - const heading = 'Aethiopian'
+  - const tabName = 'earnings'
+
+block content
+  .aethiopian-page
+    +fixed-button({modifiers: 'fixed-button--lg-bottom-80', icon:'images/icons/plus-colored.svg'})(href="aethiopian-shop-new-product.html")
+    .aethiopian-page__sidebar
+      +sidebar({navActive:'aethiopian', innerNavigation:'myShop'})
+
+    .aethiopian-page__container
+      include /pages/aethiopian-shop/header
+      .aethiopian-page__wrap
+        .aethiopian-page__content
+          .aethiopian-page__row
+            .aethiopian-page__left
+              div(data-simplebar class="custom-scroll aethiopian-page__box")
+                include /pages/aethiopian-shop/earnings
+
+    include /pages/aethiopian-shop/mobile-footer

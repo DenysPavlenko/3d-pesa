@@ -1,0 +1,52 @@
+.input-group
+  position: relative
+  display: flex
+  width: 100%
+
+  &--bg-primary
+    .input-group__prepend,
+    .input-group__append
+      background-color: $color-primary
+  &--bg-secondary
+    .input-group__prepend,
+    .input-group__append
+      background-color: $color-secondary
+
+  &__prepend,
+  &__append
+    position: relative
+    display: flex
+    flex-shrink: 0
+  &__prepend
+    border-radius: $radius-primary 0 0 6px
+    .input-group__wrap
+      padding-left: 15px
+    .input-group__box
+      border-radius: 6px 0 0 6px
+  &__append
+    border-radius: 0 $radius-primary $radius-primary 0
+    .input-group__wrap
+      padding-right: 15px
+    .input-group__box
+      border-radius: 0 6px 6px 0
+    &--border-left
+      border-left: 1px solid $border-primary
+  &__wrap
+    display: flex
+    justify-content: center
+    align-items: center
+  &__box
+    background-color: $color-primary
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 2px solid $color-secondary
+    min-width: 60px
+    padding: 0 10px
+  &__input
+    &:not(:last-child)
+      border-top-right-radius: 0
+      border-bottom-right-radius: 0
+    &:not(:first-child)
+      border-top-left-radius: 0
+      border-bottom-left-radius: 0

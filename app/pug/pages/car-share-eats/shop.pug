@@ -1,0 +1,68 @@
+include /partials/star-rating
+include /partials/shop-item
+include /partials/timetable
+include /partials/food-shop-product
+include /partials/button
+include /partials/time-preview
+-
+  const product = {image:'images/car-share/products/product-1.png', title:'Breakfast burrito', text: 'Choice of bacon, ham or sausage with scramble eggs, cheddar cheese and roasted potato', price: '14G coins'}
+
+.food-shop
+  div(class="custom-scroll js-scroll-menu-bar")
+    .food-shop__header(style="background-image:url('images/car-share/food-shop/food-shop-bg.jpg')")
+      .food-shop__time
+        +timetable({light: true, absolute: true})
+      .food-shop__description
+        .food-shop__info
+          .food-shop__info-line
+            h2 Wendy’s
+          .food-shop__info-line
+            +star-rating({textLight:true, total:'5.0 (20 ratings)'})
+          .food-shop__info-line
+            +time-preview({time:`Delivery: <span class="font-medium">Free</span>`})
+        .food-shop__rate
+          +button({width:'170', type:'bordered'})(type="button" data-popup-open="rate-popup")| Rate this
+
+    .food-shop__body.js-scroll-menu
+      .food-shop__list.js-scroll-menu-list
+        .food-shop__list-wrap
+          .food-shop__list-item.h5.text-uppercase.is-active(data-scroll-item="popular") POPULAR ITEMS
+          .food-shop__list-item.h5.text-uppercase(data-scroll-item="salads") SALADS
+          .food-shop__list-item.h5.text-uppercase(data-scroll-item="rolls") SPRING ROLLS
+          .food-shop__list-item.h5.text-uppercase(data-scroll-item="sandwiches") BREAKFAST SANDWICHES
+          .food-shop__list-item.h5.text-uppercase(data-scroll-item="bakery") BAKERY
+
+      .food-shop__content.js-scroll-menu-content
+        .column-group
+          .column-group__item(data-scroll-content="popular")
+            .column-group.column-group--md
+              .column-group__item
+                h3.text-uppercase POPULAR ITEMS
+              +times(2)
+                .column-group__item
+                  +food-shop-product(product)
+          .column-group__item(data-scroll-content="salads")
+            .column-group.column-group--md
+              .column-group__item
+                h3.text-uppercase SALADS
+              .column-group__item
+                +food-shop-product(product)
+          .column-group__item(data-scroll-content="rolls")
+            .column-group.column-group--md
+              .column-group__item
+                h3.text-uppercase SPRING ROLLS
+              .column-group__item
+                +food-shop-product(product)
+          .column-group__item(data-scroll-content="sandwiches")
+            .column-group.column-group--md
+              .column-group__item
+                h3.text-uppercase BREAKFAST SANDWICHES
+              +times(2)
+                .column-group__item
+                  +food-shop-product(product)
+          .column-group__item(data-scroll-content="bakery")
+            .column-group.column-group--md
+              .column-group__item
+                h3.text-uppercase bakery
+              .column-group__item
+                +food-shop-product(product)

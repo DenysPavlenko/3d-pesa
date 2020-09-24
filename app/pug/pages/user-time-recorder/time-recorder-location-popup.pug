@@ -1,0 +1,26 @@
+include /partials/close
+include /partials/description-item
+
+mixin time-recorder-location-popup(props = {})
+
+  .popup.popup--mw-800.modal(data-popup="time-recorder-location-popup")
+
+    .popup__close.popup__close--outer
+      +close({mdLight:true})(data-popup-close="time-recorder-location-popup")
+
+    .popup__body
+      .column-group.column-group--sm
+        .column-group__item
+          .location-box
+            .location-box__map.js-time-recorder-map
+        .column-group__item
+          +description-item({
+            header:`
+              <h3>46.125236.12516</h3>
+              <p class="text-muted">23/07/2020</p>
+            `,
+            body:[
+              `<p class="text-muted">Location by John Doe</p>`,
+              `<p class="text-muted">Source: Social Network</p>`,
+            ]
+          })

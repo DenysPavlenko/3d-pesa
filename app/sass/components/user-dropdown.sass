@@ -1,0 +1,44 @@
+.user-dropdown
+  &__toggle
+    &.is-active
+      .user-dropdown__chevron
+        transform: rotate(180deg)
+  &__toggle-wrap
+    display: flex
+    align-items: center
+    >*:not(:last-child)
+      margin-right: 10px
+      +media-max($bp-md)
+        margin-right: 0
+  &__avatar-image
+    +media-max($bp-sm)
+      width: 30px
+      height: 30px
+  &__name,
+  &__chevron
+    +media-max($bp-md)
+      display: none
+  &__chevron
+    transition: 0.2s
+  &__body
+    width: 250px
+    min-height: 0
+    +media-max($bp-md)
+      position: fixed
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: $color-primary
+  &__wrap
+    display: flex
+    flex-direction: column
+    height: 100%
+  &__header
+    display: none
+    +media-max($bp-md)
+      display: block
+  &__content
+    padding: 20px
+    min-height: 0
+    flex: 1

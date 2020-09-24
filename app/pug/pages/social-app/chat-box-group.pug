@@ -1,0 +1,22 @@
+include /partials/contact-item
+include /partials/chat
+include /partials/button
+
+.directory
+  .directory__list
+    div(data-simplebar class="custom-scroll")
+      .select-list
+        div(class="select-list__item is-active")
+          +contact-item({title:'My group', image:'images/social-app/post/post-image.jpg', data: true})
+        -var cnt = 0
+        while cnt < 13
+          div(class=`select-list__item` data-directory-open="chat")
+            +contact-item({data: true})
+          -cnt++
+
+    .directory__list-button
+      +button({type:'round'})(type="button" data-popup-open="create-group-popup")
+        +icon('people', 'svg-icon--primary')(width="22" height="14")
+
+  .directory__content(data-directory-content="chat")
+    +chat({headerContent:`<h4>My group</h4><p class="text-muted">5 members</p>`, remove:true})

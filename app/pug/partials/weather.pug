@@ -1,0 +1,12 @@
+mixin weather(props = {})
+
+  .weather(style="background-image:url('images/weather/weather-bg.jpg')")
+    .weather__details
+      .weather__temperature 15 <sup>°</sup>
+      .weather__city
+        h3.font-regular New York
+    .weather__interactive
+      .weather__interactive-icon
+        +icon('cloud', 'svg-icon--light')(width="42" height="42")
+      .weather__interactive-title
+       p.text-muted Cloudy

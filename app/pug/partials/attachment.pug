@@ -1,0 +1,17 @@
+include /partials/close
+
+mixin attachment(props = {})
+  -const { bgColor } = props
+  -
+    const classnames = classNames({
+      'attachment': true,
+      [`attachment--bg-${bgColor}`]: bgColor,
+    })
+
+  div(class=classnames)
+    .attachment__icon
+      +icon('pictogram', 'svg-icon--light')(width="20" height="16")
+    .attachment__title
+      p.p-xs image
+    .attachment__delete
+      +close({sm:true})

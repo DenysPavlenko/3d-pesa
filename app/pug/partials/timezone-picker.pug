@@ -1,0 +1,6 @@
+include /partials/input
+
+mixin timezone-picker(props)
+
+  div(data-popup-open="timezone-picker-popup")
+    +input({size:'sm', classes:'js-input-auto-width cursor-pointer'})(type="text" value="(GMT +03:00)")

@@ -1,0 +1,21 @@
+extends layouts/main
+include /partials/search-input
+include /partials/sidebar
+
+block variables
+  - var title = 'Bartender'
+  - var tabName = 'search'
+
+block content
+  .bartender-page
+    .bartender-page__sidebar
+      +sidebar({navActive:'bartender'})
+
+    .bartender-page__container
+      include /pages/bartender/header
+      .bartender-page__wrap
+        .bartender-page__content
+          .bartender-page__box
+            +search-input({placeholder:'Search for anything', bg:'secondary'})
+
+    include /pages/bartender/mobile-footer

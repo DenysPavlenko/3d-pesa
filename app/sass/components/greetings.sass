@@ -1,0 +1,50 @@
+.greetings
+  position: relative
+  padding: 20px 50px 0 50px
+  border-radius: 4px
+  +media-max($bp-xl)
+    padding: 20px 35px 0 35px
+  +media-max($bp-lg)
+    padding: 20px 5px 0 5px
+  &--yellow
+    background-color: $color-yellow
+  &--orange
+    background-color: $color-orange
+  &--blue
+    background-color: $color-blue
+    .greetings__title
+      color: $text-light
+  &--pink
+    background-color: $color-pink
+  &__wrap
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+  &__description
+    width: 65%
+    padding: 0 15px
+    margin-bottom: 40px
+    +media-max($bp-md)
+      width: 100%
+      padding-right: 40px
+    +media-max($bp-xs)
+      padding-right: 0
+
+  &__title
+    margin-bottom: 5px
+  &__image
+    margin-top: auto
+    width: 35%
+    padding: 0 15px
+    +media-max($bp-md)
+      display: none
+    +media-max($bp-sm)
+      display: none
+  &__close
+    position: absolute
+    top: 15px
+    right: 15px
+    padding: 5px
+    +media-max($bp-xs)
+      top: 5px
+      right: 5px

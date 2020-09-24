@@ -1,0 +1,19 @@
+include /partials/input
+
+mixin checkbox(props = {})
+  -const { checked, classes, squere, label, start } = props
+  -
+    const classnames = classNames({
+      'checkbox': true,
+      'checkbox--squere': squere,
+      [classes]: boxed,
+    })
+
+  label(class=classnames)
+    if(label && start)
+      span.checkbox__name #{label}
+    .checkbox__box
+      +input({classes:'checkbox__input'})(type="checkbox" checked=checked placeholder="1")&attributes(attributes)
+      span.checkbox__checkmark
+    if(label && !start)
+      span.checkbox__name #{label}

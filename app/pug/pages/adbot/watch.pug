@@ -1,0 +1,16 @@
+include /partials/ads-card
+-
+  var cards = [
+    {image:'images/adbot/ads/image-1.png', title:'How to meditate', text:'Video by John Doe', popup:'adbot-client-video-popup'},
+    {image:'images/adbot/ads/image-2.png', title:'Strawberry Fields Forever', text:'Song by John Doe', popup:'adbot-client-music-popup'},
+    {image:'images/adbot/ads/image-3.png', title:'How to meditate', text:'Poem by John Doe', popup:'adbot-client-writings-popup'},
+    {image:'images/adbot/ads/image-1.png', title:'How to meditate', text:'Image by John Doe', popup:'adbot-client-image-popup'},
+  ]
+
+.ads
+  .ads__title
+    h3 Available 140 Ads
+  .ads__cards
+    each card in cards
+      .ads__card
+        +ads-card(card)

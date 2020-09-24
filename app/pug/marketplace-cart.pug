@@ -1,0 +1,29 @@
+extends layouts/main
+include /partials/sidebar
+include /partials/cart
+
+block variables
+  - var title = 'Marketplace'
+  - var heading = 'Marketplace'
+  - var tabName = 'cart'
+  - var mobFooterButton = true
+  -
+    var cartItems = [
+      {image:'images/marketplace/products/product-1.jpg', link:'marketplace-product.html', info:'<h4 class="font-regular">Apple iPhone 8 Plus 64GB 256GB A1864 GSM...</h4>', details:'<h3>12G</h3>', remove:true},
+      {image:'images/marketplace/products/product-1.jpg', link:'marketplace-product.html', info:'<h4 class="font-regular">Apple iPhone 8 Plus 64GB 256GB A1864 GSM...</h4>', details:'<h3>12G</h3>', remove:true},
+      {image:'images/marketplace/products/product-1.jpg', link:'marketplace-product.html', info:'<h4 class="font-regular">Apple iPhone 8 Plus 64GB 256GB A1864 GSM...</h4>', details:'<h3>12G</h3>', remove:true},
+    ]
+
+block content
+  .marketplace-page
+    .marketplace-page__sidebar
+      +sidebar({navActive:'marketplace'})
+
+    .marketplace-page__container
+      include /pages/marketplace/header
+      .marketplace-page__wrap
+        .marketplace-page__content
+          div(data-simplebar class="custom-scroll")
+            +cart({title:'Cart total (3 items): 42G', items:cartItems, history:'marketplace-cart-history.html'})
+
+    include /pages/marketplace/mobile-footer

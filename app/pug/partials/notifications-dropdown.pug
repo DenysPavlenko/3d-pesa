@@ -1,0 +1,18 @@
+include /partials/notifications
+include /partials/close
+
+mixin notifications-dropdown(props = {})
+
+  .dropdown.dropdown--radius-top-0.js-dropdown(data-dropdown="notifications").notifications-dropdown
+    .dropdown__toggle(data-dropdown-toggle="notifications").notifications-dropdown__toggle
+      +icon('bell', 'svg-icon--muted notifications-dropdown__toggle-icon')(width="16" height="19")
+    .dropdown__body.js-dropdown-body.notifications-dropdown__body
+      .notifications-dropdown__wrap
+        .notifications-dropdown__header
+          .content-header.content-header--bg-secondary
+            .content-header__left
+              +close({light:true})(data-dropdown-close="notifications")
+            .content-header__center
+              h3 Notifications
+        div(data-simplebar class="notifications-dropdown__content custom-scroll")
+          +notifications()

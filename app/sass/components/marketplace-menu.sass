@@ -1,0 +1,51 @@
+.marketplace-menu
+  display: flex
+  align-items: center
+  justify-content: space-between
+  +media-max($bp-lg)
+    flex-wrap: nowrap
+    overflow-x: scroll
+  &__list
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    +media-max($bp-lg)
+      flex-wrap: nowrap
+    &-item
+      padding: 4px 0
+      margin-right: 30px
+      transition: 0.2s
+      &:hover
+        opacity: 0.7
+      +media-max($bp-lg)
+        background-color: $color-secondary
+        border-radius: $radius-primary
+        padding: 8px 10px
+        white-space: nowrap
+        margin-right: 6px
+        &:last-child
+          margin-right: 0
+  &__aside
+    display: flex
+    justify-content: flex-end
+    flex: 1
+    margin-left: 30px
+    +media-max($bp-lg)
+      display: none
+  &__badge
+    position: relative
+    display: flex
+    align-items: center
+    &:after
+      position: absolute
+      left: -29px
+      top: 0
+      content: ''
+      width: 1px
+      height: 100%
+      cursor: auto
+      background-color: $border-primary
+    &-icon
+      margin-right: 5px
+      svg
+        fill: $color-muted

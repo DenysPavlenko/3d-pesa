@@ -1,0 +1,54 @@
+.menu-tab
+  position: relative
+  min-width: 110px
+  padding: 0 10px
+  height: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  cursor: pointer
+  +media-max($bp-lg)
+    min-width: auto
+    padding: 0
+    flex: 1
+    &:after
+      display: none
+  &--light
+    .menu-tab__title
+      color: $text-light
+    .menu-tab__icon-svg
+      fill: $color-light
+  &:after
+    position: absolute
+    content: ''
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 2px
+    background-color: $color-light
+    transition: 0.2s
+    opacity: 0
+  &__icon-wrap
+    position: relative
+    padding-top: 14px
+    margin-bottom: 5px
+  &__title
+    margin-top: auto
+    padding-bottom: 10px
+    transition: 0.2s
+    +media-max($bp-lg)
+      font-size: rem(14px)
+  &:hover
+    &:after
+      opacity: 1
+      background-color: $color-muted
+  &.is-active
+    &:after
+      opacity: 1
+    .menu-tab__title
+      color: $text-light
+    .menu-tab__icon-svg
+      fill: $color-light
+    &:hover
+      &:after
+        background-color: $color-light

@@ -1,0 +1,44 @@
+.switch
+  position: relative
+  display: inline-block
+  width: 47px
+  height: 30px
+  &__checkbox
+    opacity: 0
+    width: 0
+    height: 0
+    &:checked + .switch__slider:after
+      transform: translateX(18px)
+  &__slider
+    position: absolute
+    cursor: pointer
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    border: 1px solid $color-light
+    transition: .4s
+    border-radius: 24px
+    &:after
+      position: absolute
+      content: ''
+      height: 24px
+      width: 24px
+      left: 2px
+      top: 2px
+      border-radius: 50%
+      background-color: white
+      transition: .4s
+      z-index: 2
+  &--with-check
+    .switch__slider
+      &:before
+        position: absolute
+        content: ''
+        left: 5px
+        top: 50%
+        transform: translateY(-50%)
+        width: 12px
+        height: 9px
+        +bg-img('../images/icons/check.svg')
+        z-index: 1

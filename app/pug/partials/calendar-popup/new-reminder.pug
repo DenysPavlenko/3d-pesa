@@ -1,0 +1,52 @@
+include /partials/date-picker-dropdown
+include /partials/time-picker-dropdown
+include /partials/checkbox
+include /partials/select
+include /partials/input
+include /partials/button
+
+.calendar-options
+
+  .calendar-options__option
+    .calendar-option
+      .calendar-option__icon.calendar-option__icon--center
+        +icon('clock', 'svg-icon--muted')(width="20" height="20")
+      .calendar-option__content
+        .event-schedule
+          .event-schedule__group.event-schedule__group--row
+            .event-schedule__item
+              +date-picker-dropdown()
+            .event-schedule__item
+              +time-picker-dropdown()
+
+  .calendar-options__option
+    .calendar-option
+      .calendar-option__icon.calendar-option__icon--center
+        +icon('repeat', 'svg-icon--muted')(width="20" height="20")
+      .calendar-option__content
+        .event-schedule
+          .event-schedule__group.event-schedule__group--row
+            .event-schedule__item
+              +select({
+                modifiers:'select--inline select--left',
+                label:{name:'Do not repeat', selected:true},
+                options:[
+                  {name:'Do not repeat'},
+                  {name:'Daily'},
+                  {name:'Weekly'},
+                  {name:'Monthly'},
+                ]
+              })
+            .event-schedule__item
+              +checkbox({squere:true, label:'Whole day'})
+
+  .calendar-options__option
+    .calendar-option
+      .calendar-option__icon.calendar-option__icon--center
+        +icon('pin', 'svg-icon--muted')(width="16" height="20")
+      .calendar-option__content
+        +input({type:'transparent'})(type="text" placeholder="Add location")
+
+  .calendar-options__option
+    .calendar-option.calendar-option--end
+      +button()(type="button" class="button")| Save

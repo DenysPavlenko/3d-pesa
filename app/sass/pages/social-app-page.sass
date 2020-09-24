@@ -1,0 +1,74 @@
+.social-app-page
+  +media-max($bp-lg)
+    &:after
+      position: fixed
+      content: ''
+      left: 0
+      top: 0
+      right: 0
+      background-color: $color-primary
+      bottom: 0
+      z-index: -1
+  &__container
+    display: flex
+    flex-direction: column
+    height: 100vh
+    margin-left: 260px
+    padding: 0 20px 20px
+    +media-max($bp-xl)
+      margin-left: 0
+    +media-max($bp-lg)
+      padding: 0
+      height: auto
+  &__row
+    display: flex
+    flex: 1
+    min-height: 0
+    margin: 0 -10px
+    +media-max($bp-lg)
+      height: 100%
+      margin: 0
+
+  &__main
+    display: flex
+    flex-direction: column
+    flex: 1
+    border-radius: $radius-primary
+    overflow: hidden
+    margin: 0 10px
+    +media-max($bp-lg)
+      margin: 0
+      border-radius: 0
+  &__content
+    flex: 1
+    min-height: 0
+    border-radius: $radius-primary
+    background-color: $color-primary
+    +media-max($bp-lg)
+      border-radius: 0
+  &__top-bar
+    border-radius: $radius-primary
+    background-color: $color-primary
+    padding: 20px
+    margin-bottom: 20px
+    +media-max($bp-lg)
+      display: none
+
+  &__widgets
+    width: 40%
+    border-radius: $radius-primary
+    overflow: hidden
+    margin: 0 10px
+    display: flex
+    flex-direction: column
+    +media-max($bp-lg)
+      display: none
+  &__clock
+    background-color: $color-primary
+    border-radius: $radius-primary
+    padding: 20px
+    margin-bottom: 20px
+  &__weather
+    margin-bottom: 20px
+  &__currencies
+    overflow: hidden

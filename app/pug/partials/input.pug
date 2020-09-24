@@ -1,0 +1,13 @@
+mixin input(props = {})
+  -const { classes, bg, size, type, hidden } = props
+  -
+    const classnames = classNames({
+      'input': true,
+      [`input--bg-${bg}`]: bg,
+      [`input--${size}`]: size,
+      [`input--${type}`]: type,
+      'input--hidden': hidden,
+      [classes]: classes,
+    })
+
+  input(class=classnames)&attributes(attributes)

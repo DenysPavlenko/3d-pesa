@@ -1,0 +1,17 @@
+include /partials/button
+
+mixin time-picker-popup(props = {})
+
+  .modal.popup.popup--mw-360.popup--md-mw-360.popup--static(data-popup="time-picker-popup")
+    .popup__body
+      .time-picker
+        .time-picker__content
+          div(data-simplebar class="custom-scroll")
+            - var t = 1;
+            while t <= 12
+              p.time-picker__item #{t++}:00 PM
+
+        .time-picker__footer
+          .button-group.button-group--fluid
+            +button({type:'bordered', classes:'button-group__button'})(type="button" data-popup-close="time-picker-popup")| Cancel
+            +button({type:'white', classes:'button-group__button'})(type="button")| Ok

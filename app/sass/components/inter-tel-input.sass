@@ -1,0 +1,70 @@
+.inter-tel-input
+  position: relative
+  display: flex
+  align-items: center
+  width: 100%
+  &.is-expanded
+    .inter-tel-input__current
+      border-bottom-left-radius: 0
+      &:after
+        transform: rotate(180deg)
+    .inter-tel-input__input
+      border-bottom-right-radius: 0
+  &__select
+    height: 100%
+  &__current
+    position: relative
+    height: 100%
+    display: flex
+    align-items: center
+    background-color: $color-secondary
+    border-top-left-radius: 6px
+    border-bottom-left-radius: 6px
+    padding-left: 15px
+    padding-right: 15px
+    cursor: pointer
+    &:after
+      position: absolute
+      content: ''
+      top: 50%
+      right: 0
+      margin-top: -3px
+      width: 11px
+      height: 6px
+      transition: 0.1s
+      +bg-img('../images/icons/triangle-down.svg')
+  &__icon
+    width: 20px
+    height: 20px
+    border-radius: 50%
+    background:
+      size: cover
+      repeat: no-repeat
+      position: center
+  &__options
+    position: absolute
+    display: none
+    top: 100%
+    width: 100%
+    background-color: $color-secondary
+    z-index: 200
+    border-radius: 0 0 6px 6px
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15)
+  &__scroll
+    max-height: 232px
+  &__option
+    display: flex
+    align-items: center
+    padding: 18px 15px 19px
+    border-top: 1px solid $border-primary
+    cursor: pointer
+    transition: 0.2s
+    &:hover
+      background-color: rgba($color-light, 0.1)
+    &-country
+      margin-left: 5px
+      margin-right: 5px
+  &__input
+    padding-left: 10px
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0

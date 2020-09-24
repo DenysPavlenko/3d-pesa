@@ -1,0 +1,30 @@
+include /partials/catalog-header
+include /partials/shop-card
+include /partials/user-badge
+include /partials/chip
+-
+  var products = [
+    {image: 'images/bartender/products/product-1.jpg', title: 'Carrot', price:'12 L/\Kg'},
+    {image: 'images/bartender/products/product-1.jpg', title: 'Carrot', price:'12 L/\Kg'},
+    {image: 'images/bartender/products/product-1.jpg', title: 'Carrot', price:'12 L/\Kg'},
+    {image: 'images/bartender/products/product-1.jpg', title: 'Carrot', price:'12 L/\Kg'},
+  ]
+
+.catalog
+  .catalog__header
+    +catalog-header({
+      left: `<h3>Closed orders</h3>`,
+    })
+
+  .catalog__items
+    each product in products
+      .catalog__item
+        +shop-card({
+          image:product.image,
+          content:[
+            `<p class="p-xl">${product.title}</p>`,
+            `<h3>${product.price}</h3>`,
+            {partial:'chip', params:{title:'Barter only', color:'green'}},
+            {partial:'user-badge', params:{badgeSize:'sm', avatarSize:'xs', name:'<p>Rachel Cole</p>'}},
+          ]
+        })

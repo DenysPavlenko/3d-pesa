@@ -1,0 +1,23 @@
+extends /layouts/main
+include /partials/sidebar
+include /partials/header
+include /partials/rating-popup
+include /partials/tracking-popup
+
+block variables
+  - const title = 'Orders & Purchases'
+  - const userMenu = 'orders'
+
+block content
+  .orders-page
+    +rating-popup({image:'images/marketplace/products/product-1.jpg', title:'Rate this product?', review:true, skip:true, done:true})
+    +tracking-popup()
+    .orders-page__sidebar
+      +sidebar()
+
+    .orders-page__container
+      +header({title:'Orders & Purchases'})
+      .orders-page__wrap
+        div(data-simplebar class="custom-scroll orders-page__box")
+          .orders-page__content
+            include /pages/user-orders/orders

@@ -1,0 +1,37 @@
+include /partials/slider-arrows
+include /partials/star-rating
+include /partials/catalog-header
+include /partials/shop-card
+
+-
+  var products = [
+    {link:'marketplace-product.html', image: 'images/marketplace/products/product-2.jpg', title: 'The Golden Thread: How Fabric Changed History', price:'12G'},
+    {link:'marketplace-product.html', image: 'images/marketplace/products/product-3.jpg', title: 'The Golden Thread: How Fabric Changed History', price:'12G'},
+    {link:'marketplace-product.html', image: 'images/marketplace/products/product-4.jpg', title: 'The Golden Thread: How Fabric Changed History', price:'12G'},
+    {link:'marketplace-product.html', image: 'images/marketplace/products/product-5.jpg', title: 'The Golden Thread: How Fabric Changed History', price:'12G'},
+    {link:'marketplace-product.html', image: 'images/marketplace/products/product-6.jpg', title: 'The Golden Thread: How Fabric Changed History', price:'12G'},
+    {link:'marketplace-product.html', image: 'images/marketplace/products/product-7.jpg', title: 'The Golden Thread: How Fabric Changed History', price:'12G'},
+    {link:'marketplace-product.html', image: 'images/marketplace/products/product-8.jpg', title: 'The Golden Thread: How Fabric Changed History', price:'12G'},
+    {link:'marketplace-product.html', image: 'images/marketplace/products/product-9.jpg', title: 'The Golden Thread: How Fabric Changed History', price:'12G'},
+  ]
+
+.catalog
+  .catalog__header
+    +catalog-header({
+      left:`<h3>Customers who viewed this item also viewed</h3>`,
+      right:`<h5>Page 1 of 5</h5>`,
+    })
+
+
+  .catalog__body
+    .catalog-slider
+      .catalog-slider__arrows
+        +slider-arrows({prev: 'js-catalog-slider-prev', next: 'js-catalog-slider-next'})
+      .catalog-slider__slides.js-catalog-slider
+        each product in products
+          .catalog-slider__slide
+            +shop-card({link:product.link, image:product.image, content:[
+              `<p class="p-xl">${product.title}</p>`,
+              {partial: 'star-rating', params:{total:'5.0 (20 ratings)'}},
+              `<h3>${product.price}</h3>`
+            ]})

@@ -1,0 +1,50 @@
+.input
+  width: 100%
+  display: block
+  border-radius: $radius-primary
+  background-color: $color-secondary
+  padding: 14px 15px 15px
+  font-size: rem(16px)
+  line-height: 1
+  font-weight: 400
+  color: $text-light
+  &::placeholder
+    color: $text-muted
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+  &[type=number]
+    -moz-appearance: textfield
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+    background-color: $color-secondary
+    -webkit-text-fill-color: $text-light
+    -webkit-box-shadow: 0 0 0px 1000px $color-secondary inset
+  // Modifiers
+  &--bg-primary
+    background-color: $color-primary
+  &--bg-secondary
+    background-color: $color-secondary
+  &--code
+    text-align: center
+    max-width: 54px
+    padding: 17px 0
+  &--hidden
+    display: none
+  &--transparent
+    background-color: transparent
+    padding: 0
+  &--sm
+    padding: 6px 0
+    text-align: center
+    width: auto
+    border: none
+    &.is-active
+      border-color: $color-yellow
+  &--disabled
+    pointer-events: none
+  &--info
+    padding-left: 0
+    background-color: transparent

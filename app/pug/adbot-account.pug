@@ -1,0 +1,26 @@
+extends layouts/main
+include /partials/sidebar
+include /partials/fixed-button
+
+block variables
+  - var title = 'Adbot'
+  - var tabName = 'account'
+
+block content
+  .adbot-page
+    include /pages/adbot/popups/adbot-owner-video-popup
+    include /pages/adbot/popups/adbot-owner-music-popup
+    include /pages/adbot/popups/adbot-owner-image-popup
+    include /pages/adbot/popups/adbot-owner-writings-popup
+    +fixed-button({modifiers: 'fixed-button--lg-bottom-80', icon:'images/icons/plus-colored.svg'})(href="adbot-create-ad.html")
+
+    .adbot-page__sidebar
+      +sidebar({navActive:'adbot'})
+
+    .adbot-page__container
+      include /pages/adbot/header
+      .adbot-page__wrap
+        div(data-simplebar class="custom-scroll adbot-page__box")
+          include /pages/adbot/account
+
+    include /pages/adbot/mobile-footer

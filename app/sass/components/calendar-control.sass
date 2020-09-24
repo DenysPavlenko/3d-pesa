@@ -1,0 +1,22 @@
+.calendar-control
+  display: flex
+  align-items: center
+  &__left,
+  &__right
+    padding: 0 5px
+    cursor: pointer
+    &:hover
+      .calendar-control__svg
+        fill: $color-light
+  &__svg
+    transition: 0.2s
+  &__left
+    margin-right: 10px
+  &__right
+    transform: rotate(180deg)
+
+
++media-max($bp-sm)
+  .calendar-control
+    &__left
+      margin-right: 15px

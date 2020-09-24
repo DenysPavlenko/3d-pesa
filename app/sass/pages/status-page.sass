@@ -1,0 +1,37 @@
+.status-page
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100%
+  min-height: 100vh
+  padding: 40px
+  +media-max($bp-lg)
+    padding: 0
+    background-color: $color-primary
+    padding: 40px 0 60px
+  &__wrap
+    background-color: $color-primary
+    min-height: 90vh
+    height: 100%
+    width: 90vw
+    padding: 60px 40px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    text-align: center
+    +media-max($bp-lg)
+      padding: 0
+  &__box
+    width: 100%
+    max-width: 690px
+    +media-max($bp-lg)
+      max-width: 100%
+  &__image
+    display: flex
+    justify-content: center
+    margin-bottom: 30px
+  &__title
+    margin-bottom: 20px
+  &__text
+    margin-bottom: 30px

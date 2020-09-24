@@ -1,0 +1,19 @@
+include /partials/menu-tabs
+include /partials/button
+-
+  var tabs = [
+    {link:'marketplace.html', title:'Marketplace', isActive:tabName === 'marketplace', icon:{name:'house', width:'21', height:'20'}},
+    {link:'marketplace-sellings.html', title:'Sell', isActive:tabName === 'sell', icon:{name:'badge', width:'20', height:'20'}},
+    {link:'marketplace-search.html', title:'Search', isActive:tabName === 'search', icon:{name:'search', width:'20', height:'20'}},
+    {link:'marketplace-cart.html', title:'My cart', isActive:tabName === 'cart', icon:{name:'cart', width:'21', height:'20'}, badge: {cnt: 3, color: 'red', round: true}},
+  ]
+
+.mobile-footer.js-mobile-footer
+  if(mobFooterButton)
+    .mobile-footer__button
+      +button({size:'xl', fluid:true, width:'400'})(href="marketplace-checkout.html")
+        span.button__icon
+          +icon('checkout', 'svg-icon--light')(width="20" height="22")
+        span Proceed to checkout
+  .mobile-footer__tabs
+    +menu-tabs(tabs)

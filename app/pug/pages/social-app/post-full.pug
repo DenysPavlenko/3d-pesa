@@ -1,0 +1,22 @@
+include /partials/go-back
+include /partials/post
+-
+  const posts = [
+    {profileLink:'social-app-profile.html', postLink:'social-app-post.html', name:'Michael Hunnigun', images:true, full:true, liked:true},
+    {profileLink:'social-app-profile.html', postLink:'social-app-post.html', name:'Michael Hunnigun'},
+    {profileLink:'social-app-profile.html', postLink:'social-app-post.html', name:'Michael Hunnigun',
+      replies: {profileLink:'social-app-profile.html', postLink:'social-app-post.html', name:'Michael Hunnigun'}
+    },
+    {profileLink:'social-app-profile.html', postLink:'social-app-post.html', name:'Michael Hunnigun'},
+  ]
+
+.full-post
+  .full-post__header-offset
+  .full-post__header
+    .content-header
+      .content-header__left
+        +go-back({content:'<h3>Post</h3>'})(href="social-app-feed.html")
+
+  .full-post__posts
+    each post in posts
+      +post(post)

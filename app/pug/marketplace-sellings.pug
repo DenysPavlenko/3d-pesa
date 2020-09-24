@@ -1,0 +1,26 @@
+extends layouts/main
+include /partials/sidebar
+include /partials/fixed-button
+
+block variables
+  - const title = 'Marketplace'
+  - const heading = 'Marketplace'
+  - const tabName = 'sell'
+
+block content
+  .marketplace-page
+    +fixed-button({modifiers: 'fixed-button--lg-bottom-80', icon:'images/icons/plus-colored.svg'})(href="marketplace-sell.html")
+
+    .marketplace-page__sidebar
+      +sidebar({navActive:'marketplace'})
+
+    .marketplace-page__container
+      include /pages/marketplace/header
+      .marketplace-page__wrap
+        .marketplace-page__menu
+          include /pages/marketplace/menu
+        .marketplace-page__content
+          div(data-simplebar class="custom-scroll marketplace-page__box")
+            include /pages/marketplace/sellings
+
+    include /pages/marketplace/mobile-footer

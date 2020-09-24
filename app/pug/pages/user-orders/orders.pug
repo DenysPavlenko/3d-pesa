@@ -1,0 +1,60 @@
+include /partials/cart-item
+include /partials/delivery-info
+include /partials/target-shop
+
+.list-group.list-group--xl
+  .list-group__item
+    .list-group__header
+      h4.text-uppercase ORDERED 03/06/2020 AT 6:30PM IN MARKETPLACE
+    .column-group
+      +times(2)
+        .column-group__item
+          +cart-item({
+            image: 'images/marketplace/products/product-1.jpg',
+            link:'marketplace-product.html',
+            info: `<p class="p-xl">Apple iPhone 8 Plus 64GB 256GB A1864 GSM...</p>`,
+            details: `<h3>12G</h3>`,
+            delivery: true,
+            tracking: true,
+          })
+
+  .list-group__item
+    .list-group__header
+      h4.text-uppercase ORDERED 03/06/2020 AT 6:30PM IN MARKETPLACE
+    .column-group
+      +times(2)
+        .column-group__item
+          +cart-item({
+            image: 'images/car-share/products/product-1.png',
+            link:'marketplace-product.html',
+            info: `
+              <h3 class="font-regular">Breakfast burrito</h3>
+              <p class="text-muted">Choice of bacon, ham or sausage with scramble eggs, cheddar</p>
+            `,
+            details: `<h3>12G</h3>`,
+            delivery: true,
+            tracking: false,
+          })
+
+  .list-group__item
+    .list-group__header
+      h4.text-uppercase ORDERED 03/06/2020 AT 6:30PM IN EQUIPMENT SHARE
+    .column-group
+      .column-group__item
+        +cart-item({
+          image: 'images/aethiopian/farm-equipment-products/product-1.jpg',
+          link:'marketplace-product.html',
+          info: `
+            <h3>Hot dipped galvaniz..</h3>
+            <p class="text-muted">Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet</p>
+          `,
+          details: `<h4>12 G/hour</h4>`,
+          delivery: true,
+          tracking: false,
+        })
+      .column-group__item
+        .list-group.list-group--reversed
+          .list-group__item
+            +delivery-info()
+          .list-group__item
+            +target-shop()

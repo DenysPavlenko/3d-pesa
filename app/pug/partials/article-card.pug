@@ -1,0 +1,12 @@
+mixin article-card(props = {})
+  -const { image, title, text, date } = props
+
+  .article-card
+    a(href="hyperloop-article.html").article-card__image
+      img(src=image, class="image" alt="article-image")
+    .article-card__line
+      a(href="hyperloop-article.html" class="h3") #{title}
+    .article-card__line
+      p.text-muted #{text}
+    .article-card__line
+      p.text-muted #{date}

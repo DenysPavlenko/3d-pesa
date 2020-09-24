@@ -1,0 +1,20 @@
+include /partials/star-rating
+include /partials/shop-card
+
+.catalog
+  .catalog__header
+    .catalog-header
+      .catalog-header__left
+        h3 My goods
+
+  .catalog__items
+    +times(8)
+      .catalog__item
+        +shop-card({
+          link:'aethiopian-shop-product.html',
+          image:'images/aethiopian/farm-equipment-products/product-1.jpg',
+          content:[
+            `<p class="p-xl text-muted">The Golden Thread: How Fabric Changed History</p>`,
+            `<h4>12 G/hour</h4>`
+          ]
+        })

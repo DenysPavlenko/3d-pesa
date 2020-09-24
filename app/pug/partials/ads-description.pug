@@ -1,0 +1,27 @@
+mixin ads-description(props = {})
+  -const {title, text, noWidgets, comments} = props
+
+  .ads-description
+    .ads-description__info
+      .ads-description__title
+        h3 #{title}
+      .ads-description__text
+        p #{text}
+    if(!noWidgets)
+      .ads-description__widgets
+        .ads-description__widget
+          .ads-description__widget-icon
+            +icon('views-eye', 'svg-icon--light')(width="24" height="16")
+          .ads-description__widget-title
+            h4 15
+        .ads-description__widget
+          .ads-description__widget-title
+            +icon('heart-filled', 'svg-icon--light')(width="24" height="16")
+          .ads-description__widget-title
+            h4 9
+        if(comments)
+          .ads-description__widget
+            .ads-description__widget-title
+              +icon('comment-filled', 'svg-icon--light')(width="24" height="16")
+            .ads-description__widget-title
+              h4 9

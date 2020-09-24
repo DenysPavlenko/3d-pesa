@@ -1,0 +1,21 @@
+extends layouts/main
+include /partials/search-input
+include /partials/sidebar
+
+block variables
+  - var title = 'Marketplace'
+  - var tabName = 'search'
+
+block content
+  .marketplace-page
+    .marketplace-page__sidebar
+      +sidebar({navActive:'marketplace'})
+
+    .marketplace-page__container
+      include /pages/marketplace/header
+      .marketplace-page__wrap
+        .marketplace-page__content
+          .marketplace-page__box
+            +search-input({placeholder:'Search for anything', bg:'secondary'})
+
+    include /pages/marketplace/mobile-footer

@@ -1,0 +1,50 @@
+include /partials/checkout-list
+include /partials/date-picker-dropdown
+include /partials/time-picker-dropdown
+include /partials/select
+
+form.form
+  .form__line
+    h3 Order
+  .form__line
+    p.text-muted Choose pick up and drop down date
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Pickup date and time:
+    .row
+      .col-7.col-lg-9
+        +date-picker-dropdown({alt:true})
+      .col-5.col-lg-3
+        +time-picker-dropdown({alt:true})
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Drop down date and time:
+    .row
+      .col-7.col-lg-9
+        +date-picker-dropdown({alt:true})
+      .col-5.col-lg-3
+        +time-picker-dropdown({alt:true})
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Quanity
+      +select({
+        label:{name:'1', selected:true},
+        options:[
+          {name:'1'},
+          {name:'2'},
+          {name:'3'},
+          {name:'4'},
+          {name:'5'},
+        ]
+      })
+
+  .form__line
+    +checkout-list([
+      {item: 'Total hours', value: '24 hours'},
+      {item: 'Order Total', value: '120 G', bold:true},
+    ])
+  .form__line
+    button(type="button" class="button button--xl button--fluid" data-popup-open="verification-popup") Pay

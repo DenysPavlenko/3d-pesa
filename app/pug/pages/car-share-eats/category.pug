@@ -1,0 +1,35 @@
+include /partials/catalog-header
+include /partials/see-all
+include /partials/slider-arrows
+include /partials/shop-card
+include /partials/star-rating
+include /partials/time-preview
+-
+  var products = [
+    {link:'car-share-eats-shop.html', image:'images/car-share/products/product-1.png', title:'Wendy’s', time:'50-70 minutes'},
+    {link:'car-share-eats-shop.html', image:'images/car-share/products/product-1.png', title:'Wendy’s', time:'50-70 minutes'},
+    {link:'car-share-eats-shop.html', image:'images/car-share/products/product-1.png', title:'Wendy’s', time:'50-70 minutes'},
+    {link:'car-share-eats-shop.html', image:'images/car-share/products/product-1.png', title:'Wendy’s', time:'50-70 minutes'},
+    {link:'car-share-eats-shop.html', image:'images/car-share/products/product-1.png', title:'Wendy’s', time:'50-70 minutes'},
+    {link:'car-share-eats-shop.html', image:'images/car-share/products/product-1.png', title:'Wendy’s', time:'50-70 minutes'},
+    {link:'car-share-eats-shop.html', image:'images/car-share/products/product-1.png', title:'Wendy’s', time:'50-70 minutes'},
+    {link:'car-share-eats-shop.html', image:'images/car-share/products/product-1.png', title:'Wendy’s', time:'50-70 minutes'},
+  ]
+
+.catalog
+  .catalog__header
+    +catalog-header({
+      left: `<h3>Featured partners</h3>`,
+      right: {partial:'see-all', params:{link:'car-share-eats-category.html'}}
+    })
+
+  .catalog__items
+    each product in products
+      .catalog__item
+        +shop-card({link:product.link, image:product.image,
+          content:[
+            `<h3>${product.title}</h3>`,
+            {partial: 'star-rating', params:{total:'5.0 (20 ratings)'}},
+            {partial: 'time-preview', params:{time:product.time}},
+          ]
+        })

@@ -1,0 +1,20 @@
+include /partials/contact-detail
+include /partials/button
+
+mixin contact-details(props = {})
+  -
+    const contactDetails = [
+      {icon:{name: 'phone', width:'17', height: '18'}, title:'+1 43 625 652', badge: 'Phone number'},
+      {icon:{name: 'bell', width:'16', height: '19'}, title:'Notifications', badge: 'On', control: true},
+      {icon:{name: 'picture', width:'19', height: '20'}, title:'Media files', badge: '0 files'},
+    ]
+
+  .contact-details
+    each contactDetail in contactDetails
+      .contact-details__line
+        +contact-detail(contactDetail)
+
+    .contact-details__line
+      .button-group
+        +button({type:'bordered', classes:'button-group__button'})(type="button")| Send a friend request
+        +button({classes:'button-group__button'})(type="button")| Send message

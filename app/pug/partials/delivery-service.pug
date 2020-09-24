@@ -1,0 +1,38 @@
+include /partials/checkbox
+
+mixin delivery-service(props = {})
+
+  .delivery-service
+    .delivery-service__title
+      h4 Delivery service
+    .delivery-service__items
+      .delivery-service__item
+        .delivery-service__check
+          +checkbox({type:'', checked:true})
+        .delivery-service__type
+          .delivery-service__name
+            h4 Fed Ex
+          .delivery-service__weight
+            p.text-muted 25kg
+        .delivery-service__price
+          p.text-muted $25
+      .delivery-service__item
+        .delivery-service__check
+          +checkbox({type:''})
+        .delivery-service__type
+          .delivery-service__name
+            h4 Sendle
+          .delivery-service__weight
+            p.text-muted 25kg
+        .delivery-service__price
+          p.text-muted $25
+      .delivery-service__item
+        .delivery-service__check
+          +checkbox({type:''})
+        .delivery-service__type
+          .delivery-service__name
+            h4 UPS
+          .delivery-service__weight
+            p.text-muted 25kg
+        .delivery-service__price
+          p.text-muted $25

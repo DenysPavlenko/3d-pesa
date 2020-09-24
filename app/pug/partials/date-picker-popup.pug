@@ -1,0 +1,6 @@
+include /partials/calendar
+
+mixin date-picker-popup(props = {})
+
+  .modal.popup.popup--mw-360.popup--md-mw-360.popup--static(data-popup="date-picker-popup")
+    +calendar({footer:true, popupClose:'date-picker-popup'})

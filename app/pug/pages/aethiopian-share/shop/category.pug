@@ -1,0 +1,28 @@
+include /partials/star-rating
+include /partials/catalog-header
+include /partials/star-rating
+include /partials/shop-card
+include /partials/category-sort
+include /partials/button
+include ./category-sort
+
+.catalog
+  .catalog__header
+    +catalog-header({
+      left: `<h3>Animal Feeders</h3>`,
+      right: {partial:'category-sort', params:'{}'}
+    })
+
+  .catalog__items
+    +times(8)
+      .catalog__item
+        +shop-card({
+          link:'aethiopian-share-shop-product.html',
+          image:'images/aethiopian/farm-equipment-products/product-1.jpg',
+          content:[
+            `<p class="p-xl text-muted ">The Golden Thread: How Fabric Changed History</p>`,
+            {partial: 'star-rating', params:{total:'5.0 (20 ratings)'}},
+            `<h4>12 G/hour</h4>`,
+            `<button class="button button--bordered button--fluid">Order now<button>`
+          ]
+        })

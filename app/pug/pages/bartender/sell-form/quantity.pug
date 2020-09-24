@@ -1,0 +1,43 @@
+include /partials/button
+include /partials/select
+include /partials/input
+
+.form__line
+  .form-group
+    .form-group__header
+      label.p Quanity<span class="text-red">*</span>
+  .row.js-tabs
+    .col-6
+      +button({fluid:true, type:'info', classes:'js-tab is-active'})(type="button" data-tab="weight")| Weight
+    .col-6
+      +button({fluid:true, type:'info', classes:'js-tab'})(type="button" data-tab="quanity")| Quanity
+
+.js-tab-content(data-content="weight")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Country
+      include /partials/country-select
+  .form__line
+    .form-group
+      .form-group__header
+        label.p State/Province
+      include /partials/state-select
+  .form__line
+    .form-group
+      .form-group__header
+        label.p City
+      +input()(type="text" placeholder="City")
+
+.js-tab-content(data-content="quanity")
+  .form__line
+    +select({
+      label:{name:'How many items do you have?', selected:false},
+      options:[
+        {name:'1'},
+        {name:'2'},
+        {name:'3'},
+        {name:'4'},
+        {name:'5'},
+      ]
+    })

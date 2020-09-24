@@ -1,0 +1,45 @@
+.clock
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  +media-max($bp-lg)
+    flex-direction: row
+  &__wrap
+    margin-bottom: 20px
+    +media-max($bp-lg)
+      order: 1
+      max-width: 40%
+  &__details
+    +media-max($bp-lg)
+      display: flex
+      flex-direction: column
+      align-items: center
+      order: 0
+      min-width: 180px
+      margin-right: 20px
+    +media-max($bp-xs)
+      min-width: 160px
+      margin-right: 20px
+  &__date
+    display: none
+    +media-max($bp-lg)
+      display: flex
+      align-items: center
+      margin-bottom: 20px
+    +media-max($bp-xs)
+      flex-direction: column
+      justify-content: center
+  &__date-icon
+    +media-max($bp-lg)
+      margin-right: 10px
+      svg
+        fill: $color-light
+    +media-max($bp-xs)
+      margin-right: 0
+      margin-bottom: 10px
+  &__format
+    display: flex
+    align-items: center
+  &__switch
+    margin: 0 10px

@@ -1,0 +1,22 @@
+mixin shop-card(props = {})
+  -const { link, popup, image, content, sold } = props
+  -const tag = link ? 'a' : 'div'
+
+  #{tag}(href=link class="shop-card" data-popup-open=popup)
+    .shop-card__image
+      img(src=image, class="image" alt="product")
+    .shop-card__body
+      .column-group.column-group--sm
+        each item in content
+          .column-group__item
+            if(typeof item == 'object')
+              +#{item.partial}(item.params)
+            else
+              | !{item}
+    if(sold)
+      .shop-card__overlay
+        .column-group.column-group--align-center.column-group--sm
+          .column-group__item
+            +icon('sold', 'svg-icon svg-icon--light')(width="52" height="52")
+          .column-group__item
+            h3.text-uppercase Sold

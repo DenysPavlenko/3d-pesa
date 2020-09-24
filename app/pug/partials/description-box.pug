@@ -1,0 +1,23 @@
+include /partials/attachments
+include /partials/attach-file
+include /partials/textarea
+include /partials/button
+
+mixin description-box(props = {})
+
+  .description-box
+    .description-box__content
+
+      .description-box__attachments
+        +attachments({cnt: 2})
+
+      .description-box__textarea
+        +textarea({resize:true, size:'sm', transparent:true, rows:'1'})(placeholder="Description")
+
+      .description-box__footer
+        .description-box__limit
+          .description-box__limit-text
+            h6.font-regular.text-muted Maximum upload file size: 10mb
+          +button({type:'action'})(href="subscription.html")| GET UNLIMITED
+        .description-box__attach
+          +attach-file()

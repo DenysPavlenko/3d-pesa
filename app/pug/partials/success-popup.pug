@@ -1,0 +1,15 @@
+include /partials/close
+
+mixin success-popup(props = {})
+
+  .popup.modal(data-popup="success-popup")
+    .popup__close
+      +close({mdLight:true})(data-popup-close="success-popup")
+    .popup__body.popup__body--pt-60
+      .column-group.column-group--justify-items-center
+        .column-group__item
+          img(src="images/success-popup/success-popup-image.svg", alt="success-popup-image")
+        .column-group__item
+          h2 Success!
+        .column-group__item
+          p Your password has been changed successfully.

@@ -1,0 +1,17 @@
+include /partials/ads-description
+
+mixin ads-card(props = {})
+  -var {image, title, text, noWidgets, comments, del, popup} = props;
+
+  .ads-card(style=`background-image:url('${image}')` data-popup-open=popup)
+    .ads-card__icon
+      +icon('video-play', 'svg-icon--light ads-card__icon-svg')(width="57" height="57")
+    .ads-card__description
+      +ads-description({title, text, noWidgets, comments})
+
+    if(del)
+      .ads-card__delete
+        .ads-card__delete-icon
+          +icon('trash-can', 'svg-icon--light')(width="18" height="18")
+        .ads-card__delete-title
+          h4 Delete

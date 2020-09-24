@@ -1,0 +1,8 @@
+mixin see-all(props = {})
+  -const { link } = props
+
+  a(href=link class="row-group row-group--sm row-group--align-center")
+    .row-group__item
+      h4 See all
+    .row-group__item
+      +icon('arrow-right', 'svg-icon--light close-icon__svg')(width="18" height="15")

@@ -1,0 +1,14 @@
+mixin description-item(props = {})
+  -const { header, body = [], test } = props
+
+  .description-item
+    .description-item__header
+      | !{header}
+    .description-item__body
+      each item in body
+        .description-item__line
+          if(typeof item == 'object')
+            +#{item.partial}(item.params)
+          else
+            | !{item}
+    .description-item__test

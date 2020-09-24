@@ -1,0 +1,25 @@
+extends /layouts/main
+include /partials/sidebar
+include /partials/contact-popup
+
+block variables
+  - const title = 'Social Network'
+  - const tabName = 'contacts'
+
+block content
+  .social-app-page
+    +contact-popup()
+
+    .social-app-page__sidebar
+      +sidebar({navActive:'social'})
+
+    .social-app-page__container
+      .d-none.d-lg-block
+        include /pages/social-app/header
+
+      .social-app-page__row
+        .social-app-page__main
+          .social-app-page__content
+            include /pages/social-app/users-nearby
+
+    include /pages/social-app/mobile-footer

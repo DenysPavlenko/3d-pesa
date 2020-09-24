@@ -1,0 +1,13 @@
+mixin close(props = {})
+  -const { mdLight, light, sm, primary } = props
+  -
+    const classnames = classNames({
+      'close' : true,
+      'close--md-light': mdLight,
+      'close--light': light,
+      'close--primary': primary,
+      'close--sm': sm,
+    })
+
+  div(class=classnames)&attributes(attributes)
+    +icon('close', 'close__icon')

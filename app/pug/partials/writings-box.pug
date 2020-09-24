@@ -1,0 +1,10 @@
+mixin writings-box(props = {})
+  -const { title, text } = props
+
+    .writings-box
+      div(data-simplebar class="custom-scroll")
+        .writings-box__wrap
+          .writings-box__title
+            h3 #{title}
+          .writings-box__text
+            p !{text}

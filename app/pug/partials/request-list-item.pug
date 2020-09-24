@@ -1,0 +1,11 @@
+mixin request-list-item(props = {})
+  -const { title, date } = props
+
+  .request-list-item
+    .request-list-item__description
+      .request-list-item__title
+        h4 #{title}
+      .request-list-item__date
+        p.p-sm.text-muted #{date}
+    .request-list-item__icon
+      +icon('chevron-right', 'svg-icon svg-icon--stroke-muted')(width="6" height="12" stroke-width="2")

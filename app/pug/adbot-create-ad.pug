@@ -1,0 +1,19 @@
+extends layouts/main
+include /partials/sidebar
+
+block variables
+  - var title = 'Adbot'
+
+block content
+  .adbot-page
+    .adbot-page__sidebar
+      +sidebar({navActive:'adbot'})
+
+    .adbot-page__container
+      include /pages/adbot/header
+      .adbot-page__wrap
+        .adbot-page__half
+          div(data-simplebar class="custom-scroll adbot-page__box")
+            include /pages/adbot/create-add/create-add
+
+    include /pages/adbot/mobile-footer

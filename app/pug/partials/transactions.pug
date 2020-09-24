@@ -1,0 +1,54 @@
+include /partials/transaction
+
+mixin transactions(props = {})
+  .column-group
+
+    .column-group__item
+      h3 Transactions
+
+    .column-group__item
+      .column-group.column-group--md
+        +times(3)
+          .column-group__item
+            +transaction({icon:{name:'check', width:'12', height:'9'}, iconColor:'green',
+              description:[
+                `<h5>Deposit from ATL</h5>`,
+                `<p class="text-muted text-uppercase">7:15 PM</p>`,
+              ],
+              receipt:[
+                `<h5 class="text-green">+ 40 L Coins</h5>`,
+                `<p class="text-muted">+ $2, 456</p>`,
+              ]
+            })
+          .column-group__item
+            +transaction({icon:{name:'cancel', width:'12', height:'12'}, iconColor:'red',
+              description:[
+                `<h5>Cancelled</h5>`,
+                `<p class="text-muted text-uppercase">2 MIN</p>`,
+              ],
+              receipt:[
+                `<h5 class="text-red">- 40 L Coins</h5>`,
+                `<p class="text-muted">- $2, 456</p>`,
+              ]
+            })
+          .column-group__item
+            +transaction({icon:{name:'b-coin', width:'12', height:'15'}, iconColor:'blue',
+              description:[
+                `<h5>B Coin Refil</h5>`,
+                `<p class="text-muted text-uppercase">6:30 PM</p>`,
+              ],
+              receipt:[
+                `<h5 class="text-green">+ 40 L Coins</h5>`,
+              ]
+            })
+          .column-group__item
+            +transaction({icon:{name:'cancel', width:'12', height:'12'}, iconColor:'red',
+              description:[
+                `<h5>Cancelled</h5>`,
+                `<p class="text-muted text-uppercase">2 MIN</p>`,
+              ],
+              receipt:[
+                `<p class="text-muted">0</p>`,
+                `<p class="text-muted">0</p>`,
+              ]
+            })

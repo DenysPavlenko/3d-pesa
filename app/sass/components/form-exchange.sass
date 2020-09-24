@@ -1,0 +1,23 @@
+.form-exchange
+  display: flex
+  align-items: center
+  width: 100%
+  +media-max($bp-sm)
+    position: relative
+    flex-wrap: wrap
+  &__icon
+    padding: 0 10px
+    +media-max($bp-sm)
+      position: absolute
+      right: 0
+      top: 50%
+      transform: translateY(-50%)
+      padding: 0 10px
+  &__input
+    flex: 1
+    +media-max($bp-sm)
+      flex: auto
+      width: 100%
+      padding-right: 50px
+      &:first-child
+        margin-bottom: 20px

@@ -1,0 +1,54 @@
+include /partials/logout
+
+mixin navigation(props = {})
+
+  -const { navActive, innerNavigation } = props
+  -
+    var items = [
+      {link:'dashboard.html', title:'Dashboard', name:'dashboard', icon:'house', iconWidth:'20', iconHeight:'19'},
+      {link:'calendar.html', title:'Calendar', name:'calendar', icon:'calendar', iconWidth:'20', iconHeight:'20'},
+      {link:'social-app-feed.html', title:'Social', name:'social', icon:'chat', iconWidth:'20', iconHeight:'20', undread:'25'},
+      {link:'marketplace.html', title:'Marketplace', name:'marketplace', icon:'marketplace', iconWidth:'20', iconHeight:'19', undread:'5'},
+      {link: false, title:'Car sharing', name:'carShare', icon:'car', iconWidth:'20', iconHeight:'16', undread:'2',
+        inner: [
+          {link:'car-share-ride.html', title:'Ride', name:'ride', icon:'car', iconWidth:'20', iconHeight:'16'},
+          {link:'car-share-eats.html', title:'Eats', name:'eats', icon:'eats', iconWidth:'20', iconHeight:'18'},
+        ]
+      },
+      {link: false, title:'Æthiopian', name:'aethiopian', icon:'planet', iconWidth:'20', iconHeight:'20',
+        inner: [
+          {link:'aethiopian-share-shop-finder.html', title:'Equipment Share', name:'share', icon:'truck', iconWidth:'20', iconHeight:'13'},
+          {link:'aethiopian-shop-my-goods.html', title:'My shop', name:'myShop', icon:'shop', iconWidth:'19', iconHeight:'19'},
+          {link:'aethiopian-share-cryptobarter.html', title:'Cryptobarter', name:'cryptobarter', icon:'badge', iconWidth:'20', iconHeight:'20'},
+        ]
+      },
+      {link:'hyperloop-articles.html', title:'Hyperloop', name:'hyperloop', icon:'hyperloop', iconWidth:'20', iconHeight:'17'},
+      {link:'adbot-watch.html', title:'Adbot', name:'adbot', icon:'ad', iconWidth:'20', iconHeight:'14'},
+      {link:'bartender-home.html', title:'Bartender trading', name:'bartender', icon:'sold', iconWidth:'20', iconHeight:'20'},
+      {link:'settings.html', title:'Settings', name:'settings', icon:'settings', iconWidth:'20', iconHeight:'20'},
+    ]
+
+  .navigation
+    ul.navigation__items
+      each item in items
+        li(class=`navigation__item js-navigation-item ${navActive === item.name ? 'is-active' : ''}`)
+          a(href=item.link).navigation__link
+            .navigation__icon
+              +icon(item.icon, 'svg-icon--muted navigation__icon-svg')(width=item.iconWidth height=item.iconHeight)
+            h5.text-muted.navigation__title #{item.title}
+            if(item.undread)
+              .navigation__badge
+                .badge.badge--static
+                  .badge__wrapper
+                    p #{item.undread}
+          if(item.inner)
+            ul(class=`navigation__items navigation__items--inner js-navigation-items-inner ${navActive === item.name ? '' : 'navigation__items--hidden'}`)
+              each itemInner in item.inner
+                li(class=`navigation__item ${innerNavigation === itemInner.name ? 'is-active' : ''}`)
+                  a(href=itemInner.link).navigation__link
+                    .navigation__icon
+                      +icon(itemInner.icon, 'svg-icon--muted navigation__icon-svg')(width=itemInner.iconWidth height=itemInner.iconHeight)
+                    h5.text-muted.navigation__title #{itemInner.title}
+
+    .navigation__footer
+      +logout()

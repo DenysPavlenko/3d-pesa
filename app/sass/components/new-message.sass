@@ -1,0 +1,65 @@
+.new-message
+  user-select: none
+  width: 100%
+  &__wrap
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    background-color: $color-secondary
+  &__emojis
+    cursor: pointer
+    max-width: 20px
+  &__input
+    flex: 1
+  &__buttons
+    display: flex
+    align-items: center
+  &__button
+    cursor: pointer
+    &:not(:last-child)
+      margin-right: 20px
+      +media-max($bp-lg)
+        margin-right: 15px
+  &__expand
+    &.is-active
+      .new-message__expand-icon
+        fill: $color-light
+  &__actions-desktop
+    display: none
+  &__actions
+    display: flex
+    align-items: center
+    +media-max($bp-lg)
+      justify-content: space-between
+      max-width: 280px
+      margin: 0 auto
+  &__action
+    display: flex
+    flex-direction: column
+    align-items: center
+    cursor: pointer
+    margin-right: 20px
+    +media-max($bp-lg)
+      margin: 0
+    &-icon
+      +media-max($bp-lg)
+        background-color: $color-secondary
+        width: 50px
+        height: 50px
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+        margin-bottom: 5px
+    &-icon-svg
+      transition: 0.2s
+    &-title
+      display: none
+      +media-max($bp-lg)
+        display: block
+  &__actions-mobile
+    display: none
+    +media-max($bp-lg)
+      width: 100%
+      background-color: $color-primary
+      padding: 20px 0

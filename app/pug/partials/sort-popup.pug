@@ -1,0 +1,63 @@
+include /partials/state-select
+include /partials/country-select
+include /partials/input
+include /partials/close
+include /partials/button
+
+mixin sort-popup(props = {})
+
+  .popup.modal(data-popup="sort-popup")
+    .popup__header-offset
+    .popup__header
+      .content-header.content-header--md-border-0
+        .content-header__center
+          h3 Sort & Filter
+        .content-header__right.content-header__right--md-left
+          +close({mdLight:true})(data-popup-close="sort-popup")
+
+    .popup__body
+      form.form
+        .form__line
+          .form-group
+            .form-group__header
+              label.p Sort By
+            +select({
+              label:{name:'Price: Low to High', selected:true},
+              options:[
+                {name:'Price: Low to High'},
+                {name:'Price: High to low'},
+              ]
+            })
+        .form__line
+          .form-group
+            .form-group__header
+              label.p Condition
+            +select({
+              label:{name:'Brand new', selected:true},
+              options:[
+                {name:'Brand new'},
+                {name:'Open box'},
+                {name:'Refurbished'},
+                {name:'Used'},
+              ]
+            })
+
+        .form__line
+          .form-group
+            .form-group__header
+              label.p Location
+            +input()(type="text" placeholder="California, USA")
+        .form__line
+          .form-group
+            .form-group__header
+              label.p Enter a price range:
+          .row
+            .col-6
+              .form-group
+                +input()(type="number" placeholder="From")
+            .col-6
+              .form-group
+                +input()(type="number" placeholder="To")
+
+        .form__line
+          +button({size:'xl', fluid:true})(type="button" data-popup-close="sort-popup")| Apply

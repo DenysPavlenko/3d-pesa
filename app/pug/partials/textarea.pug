@@ -1,0 +1,12 @@
+mixin textarea(props = {})
+  -const { resize, classes, rows, size, transparent } = props
+  -
+    const classnames = classNames({
+      'textarea': true,
+      'js-textarea-resize': resize,
+      [`textarea--${size}`]: size,
+      [`textarea--${transparent}`]: transparent,
+      [classes]: classes,
+    })
+
+  textarea(class=classnames rows=rows)&attributes(attributes)

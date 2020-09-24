@@ -1,0 +1,34 @@
+extends layouts/main
+include /partials/sidebar
+include /partials/choose-location-popup
+include /partials/cart
+
+block variables
+  - const title = 'Eats'
+  - const tabName = 'cart'
+  - const mobFooterButton = true
+
+  -
+    var cartItems = [
+      {image:'images/car-share/products/product-1.png', link:'marketplace-product.html', info:'<h3 class="font-regular">Breakfast burrito</h3><p class="text-muted">Choice of bacon, ham or sausage with scramble eggs, cheddar</p>', details:'<h4>14G</h4>', remove:true},
+      {image:'images/car-share/products/product-1.png', link:'marketplace-product.html', info:'<h3 class="font-regular">Breakfast burrito</h3><p class="text-muted">Choice of bacon, ham or sausage with scramble eggs, cheddar</p>', details:'<h4>14G</h4>', remove:true},
+      {image:'images/car-share/products/product-1.png', link:'marketplace-product.html', info:'<h3 class="font-regular">Breakfast burrito</h3><p class="text-muted">Choice of bacon, ham or sausage with scramble eggs, cheddar</p>', details:'<h4>14G</h4>', remove:true},
+    ]
+  -
+    var upcomingItems = [
+      {image:'images/car-share/products/product-1.png', info:'<h3>Breakfast burrito</h3><p class="text-muted">Choice of bacon, ham or sausage with scramble eggs, cheddar</p>', details: '<h4>14G coins</h4>'},
+    ]
+
+block content
+  .car-share-eats-page
+    +choose-location-popup()
+    .car-share-eats-page__sidebar
+      +sidebar({navActive:'carShare', innerNavigation:'cart'})
+
+    .car-share-eats-page__container
+      include /pages/car-share-eats/header
+      .car-share-eats-page__wrap
+        div(data-simplebar class="custom-scroll")
+          +cart({title:'Cart total (3 items): 42G', items:cartItems, history:'car-share-eats-cart-history.html', upcomingItems:upcomingItems})
+
+    include /pages/car-share/mobile-footer

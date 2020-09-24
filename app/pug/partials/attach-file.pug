@@ -1,0 +1,11 @@
+include /partials/input
+
+mixin attach-file(props = {})
+
+  label(class="attach-file")
+    .attach-file__input
+      +input({type:'hidden'})(type="file")
+    .attach-file__icon
+      +icon('attach', 'svg-icon--light')(width="11" height="22")
+    .attach-file__title
+      p Attach file

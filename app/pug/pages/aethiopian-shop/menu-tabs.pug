@@ -1,0 +1,9 @@
+include /partials/menu-tabs
+-
+  var tabs = [
+    {title:'My goods', link:'aethiopian-shop-my-goods.html', isActive:tabName === 'myGoods', icon:{name:'box', width:'21', height:'21'}},
+    {title:'Bookings', link:'aethiopian-shop-bookings.html', isActive:tabName === 'bookings', icon:{name:'notebook', width:'24', height:'19'}},
+    {title:'Earnings', link:'aethiopian-shop-earnings.html', isActive:tabName === 'earnings', icon:{name:'coins', width:'22', height:'24'}},
+  ]
+
++menu-tabs(tabs)

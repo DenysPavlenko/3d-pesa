@@ -1,0 +1,44 @@
+include /partials/country-select
+include /partials/state-select
+include /partials/close
+include /partials/input
+include /partials/button
+
+mixin choose-location-popup(props = {})
+
+  .popup.modal.popup(data-popup="choose-location-popup")
+    .popup__header-offset
+    .popup__header
+      .content-header.content-header--md-border-0
+        .content-header__center
+          h3 Choose location
+        .content-header__right.content-header__right--md-left
+          +close({mdLight:true})(data-popup-close="choose-location-popup")
+
+    .popup__body
+      form.form
+        .form__line
+          .form-group
+            .form-group__header
+              label.p Country
+            +country-select()
+        .form__line
+          .row
+            .col-7
+              .form-group
+                .form-group__header
+                  label.p State/Province
+              +state-select()
+            .col-5
+              .form-group
+                .form-group__header
+                  label.p Zip code
+                +input()(type="text", placeholder="0000")
+        .form__line
+          .form-group
+            .form-group__header
+              label.p City
+            +input()(type="text", placeholder="City")
+
+        .form__line
+          +button({fluid:true, size:'xl'})(type="submit")| Apply

@@ -1,0 +1,18 @@
+extends layouts/main
+include /partials/button
+
+block variables
+  - var title = 'Payment is successful'
+
+block content
+  .status-page
+    .status-page__wrap
+      .status-page__box
+        .status-page__image
+          img(src="images/payment-successful/payment-successful-image.svg", alt="success")
+        .status-page__title
+          h2 Your Payment is Successfull
+        .status-page__text
+          p.text-muted Thank you for your payment. An automated payment reciept will be sent to your registred email
+        .status-page__button
+          +button({size:'xl', width:'400'})(href="marketplace.html")| Back to marketplace

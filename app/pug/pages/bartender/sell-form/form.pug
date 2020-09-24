@@ -1,0 +1,47 @@
+include /partials/input
+include /partials/textarea
+include /partials/checkbox
+include /partials/button
+include /partials/upload-button
+include /partials/upload-files
+include /partials/select
+
+form.form
+  .form__line
+    h3 Tell us what you're selling
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Title
+      +input()(type="text" placeholder="Strawberry Fields Forever")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Category
+      +select({
+        label:{name:'Vegetables', selected:true},
+        options:[
+          {name:'Vegetables'},
+          {name:'Fruits'},
+        ]
+      })
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Item description
+      +textarea()(placeholder="Tell a little bit more about this product")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Cover image
+      +upload-files([{title: 'Add photo'}])
+
+  include ./price
+  include ./quantity
+
+  .form__line
+    +checkbox({squere:true, label:'Use my current location'})
+  .form__line
+    include /partials/range
+  .form__line
+    +button({fluid:true, size:'xl'})(type="submit")| Add product

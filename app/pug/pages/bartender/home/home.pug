@@ -1,0 +1,8 @@
+include /partials/choose-location-button
+.column-group
+  .column-group__item
+    +choose-location-button({popup:'choose-location-radius-popup'})
+  .column-group__item
+    include ./recently-added
+  .column-group__item
+    include ./categories-preview

@@ -1,0 +1,14 @@
+include /partials/avatar
+include /partials/contact-details
+
+mixin contact(props = {})
+  .contact
+    .contact__header
+      +avatar({image:'images/user/avatar.jpg', classes:'contact__avatar', size:'xl'})
+      .contact__name
+        h2 John Doe
+        h4.text-muted last seen 5 minutes ago
+
+    .contact__body
+      .contact__line
+        +contact-details()

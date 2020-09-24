@@ -1,0 +1,37 @@
+include /partials/close
+include /partials/avatar
+include /partials/star-rating
+include /partials/textarea
+include /partials/button
+
+mixin rating-popup(props = {})
+  -const { auto, image, title, review, skip, done } = props
+  -const isAuto = auto ? 'rating-popup' : false
+
+  .popup.modal(data-popup="rating-popup" data-popup-auto=isAuto)
+
+    .popup__close
+      +close({mdLight:true})(data-popup-close="rating-popup")
+
+    .popup__body.popup__body--pt-60
+      .column-group.column-group--justify-items-center
+        .column-group__item
+          +avatar({image:image, size:'md'})
+        .column-group__item
+          h3.text-center #{title}
+        .column-group__item
+          +star-rating({total: false, size: 'xl'})
+        if(review)
+          .column-group__item
+            .form-group
+              .form-group__header
+                label.p Write a review
+              +textarea({resize:true})(placeholder="Your review")
+        if(skip && done)
+          .column-group__item
+            .button-group.button-group--fluid
+              +button({type:'bordered', size:'xl', fluid:true, classes:'button-group__button'})(type="button" data-popup-close="rating-popup")| Skip
+              +button({type:'white', size:'xl', fluid:true, classes:'button-group__button'})(type="button" data-popup-close="rating-popup")| Done
+        else
+          .column-group__item
+            +button({size:'xl', type:'white', width:'170'})(type="button" data-popup-close="rating-popup")| Done

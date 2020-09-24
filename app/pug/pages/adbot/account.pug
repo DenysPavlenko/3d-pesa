@@ -1,0 +1,16 @@
+include /partials/ads-card
+-
+  var cards = [
+    {image:'images/adbot/ads/image-1.png', title:'How to meditate', text:'Video by John Doe', del:true, comments:true, popup:'adbot-owner-video-popup'},
+    {image:'images/adbot/ads/image-2.png', title:'Strawberry Fields Forever', text:'Song by John Doe', del:true, comments:true, popup:'adbot-owner-music-popup'},
+    {image:'images/adbot/ads/image-3.png', title:'How to meditate', text:'Poem by John Doe', del:true, comments:true, popup:'adbot-owner-writings-popup'},
+    {image:'images/adbot/ads/image-1.png', title:'How to meditate', text:'Image by John Doe', del:true, comments:true, popup:'adbot-owner-image-popup'},
+  ]
+
+.ads
+  .ads__title
+    h3 Your works
+  .ads__cards
+    each card in cards
+      .ads__card
+        +ads-card(card)

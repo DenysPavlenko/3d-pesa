@@ -1,0 +1,33 @@
+include /partials/go-back
+include /partials/contact-details
+include /partials/range
+
+mixin users-nearby-map(props = {})
+
+  .users-nearby-map
+    .map-box
+      .d-block.d-lg-none
+        .content-header.content-header--bg-secondary
+          .content-header__left
+            +go-back({content: '<h3>Users nearby</h3>'})(data-directory-close="users-nearby-map")
+
+      .map-box__range
+        +range()
+      .map-box__wrap
+        .map-box__controls-top
+          .map-compass
+        .map-box__controls-bottom
+          .map-current-location
+          .map-zoom
+            .map-zoom__plus
+            .map-zoom__minus
+
+        .map-box__map.js-users-nearby-map
+
+      .map-box__infowindow
+        .map-box__infowindow-content.users-nearby-map__infowindow.js-users-nearby-map-infowindow
+          .list-group
+            .list-group__item
+              +contact-item({text:'last seen 5 minutes later'})
+            .list-group__item
+              +contact-details()

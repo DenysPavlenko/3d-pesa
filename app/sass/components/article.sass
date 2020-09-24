@@ -1,0 +1,30 @@
+.article
+  width: 100%
+  padding-bottom: 40px
+  &__body
+    margin: 0 auto
+    max-width: 650px
+    margin-bottom: 60px
+  &__line
+    &:not(:last-child)
+      margin-bottom: 10px
+  &__image
+    box-shadow: $shadow-primary
+    border-radius: $radius-primary
+    overflow: hidden
+  &__footer
+    position: relative
+    text-align: center
+    padding: 90px 0
+    +media-max($bp-sm)
+      padding: 20px 0
+    &-pattern
+      position: absolute
+      top: 0
+      left: -20px
+      display: flex
+      align-items: center
+      width: calc( 100% + 40px )
+      height: 100%
+    &-title
+      margin-bottom: 20px

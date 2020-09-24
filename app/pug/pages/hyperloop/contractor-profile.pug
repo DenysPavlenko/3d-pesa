@@ -1,0 +1,50 @@
+include /partials/contact-detail
+include /partials/avatar
+include /partials/testimonial
+include /partials/textarea
+include /partials/button
+-
+  var contactDetails = [
+    {icon:{name: 'phone', width:'17', height: '18'}, title:'+1 43 625 652', badge: 'Phone number'},
+    {icon:{name: 'pin', width:'16', height: '20'}, title:'Franklin 124, Cairo, Province, Africa', badge: 'Location'},
+    {icon:{name: 'envelope', width:'16', height: '20'}, title:'johndoe@gmail.com', badge: 'Email'},
+  ]
+
+.contact
+
+  .contact__header
+    +avatar({image:'images/user/avatar.jpg', classes:'contact__avatar', size:'xl'})
+    .contact__name
+      h2 John Doe
+      h4.text-muted Contractor
+
+  .contact__body
+    .contact__line
+      .contact-details
+        each contactDetail in contactDetails
+          .contact-details__line
+            +contact-detail(contactDetail)
+
+    .contact__line
+      .list-group
+        .list-group__item
+          .column-group.column-group--sm
+            .column-group__item
+              h3 Details about your request:
+            .column-group__item
+              p.text-muted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, nisl, justo, volutpat netus quam et tellus dignissim. Sagittis convallis bibendum augue ornare adipiscing vitae.
+        .list-group__item
+          .column-group.column-group--sm
+            .column-group__item
+              h3 Comments 3
+            .column-group__item
+              +testimonial({noStars:true})
+        .list-group__item
+          form.form
+            .form__line
+              .form-group
+                .form-group__header
+                  label.p Write a comment
+                +textarea()(placeholder="Your review")
+            .form__line
+              +button({type:'white', width:'170', size:'xl'})(type="submit")| Send

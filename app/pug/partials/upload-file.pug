@@ -1,0 +1,25 @@
+include /partials/close
+include /partials/input
+include /partials/button
+
+mixin upload-file(props = {})
+  -const { title, placeholder } = props
+
+  if(placeholder)
+    .upload-file
+      .upload-file__icon
+        img(src="images/icons/upload-placeholder.svg", class="image" alt="placeholder")
+  else
+    if(title)
+      .upload-file
+        +input({classes:'upload-file__input'})(type="file")
+        .upload-file__button
+          +button({type:'round'})(type="button")
+            +icon('plus', 'svg-icon--primary')(width="19" height="19")
+        .upload-files__add-title
+          h4 !{title}
+    else
+      .upload-file.upload-file--uploaded
+        figure(style="background-image:url('images/marketplace/products/product-1.jpg');" class="upload-file__image")
+        .upload-file__remove
+          +close({sm:true})

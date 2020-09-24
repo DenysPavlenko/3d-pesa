@@ -1,0 +1,95 @@
+include /partials/upload-button
+include /partials/upload-files
+include /partials/select
+include /partials/input
+include /partials/textarea
+include /partials/checkbox
+include /partials/button
+
+form.form
+  .form__line
+    h3 Create new ad
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Title
+      +input()(type="text" placeholder="Strawberry Fields Forever")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Description
+      +textarea()(placeholder="What it’s about?")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Purpose
+      +select({
+        label:{name:'Promote', selected:true},
+        optionsClass:'js-tabs',
+        options:[
+          {name:'Promote', optionClass:'js-tab is-active', dataAttr:{'data-tab':"promote"}},
+          {name:'Sell', optionClass:'js-tab', dataAttr:{'data-tab':"sell"}}
+        ]
+      })
+
+  .js-tab-content(data-content="promote")
+    include ./purpose-promote
+  .js-tab-content(data-content="sell")
+    include ./purpose-sell
+
+  .form__line
+    .form-group
+      .form-group__header
+        label.p File type
+      +select({
+        label:{name:'Video', selected:true},
+        optionsClass:'js-tabs',
+        options:[
+          {name:'Video', optionClass:'js-tab is-active', dataAttr:{'data-tab':"video"}},
+          {name:'Image', optionClass:'js-tab', dataAttr:{'data-tab':"image"}},
+          {name:'Writings', optionClass:'js-tab', dataAttr:{'data-tab':"writings"}},
+          {name:'Music', optionClass:'js-tab', dataAttr:{'data-tab':"music"}},
+        ]
+      })
+
+  .js-tab-content(data-content="video")
+  .js-tab-content(data-content="image")
+    .form__line
+      .form-group
+        .form-group__header
+          label.p Add photos
+        +upload-files([{title: 'Cover image'}, {title: 'Image file'}, {title: 'Image file'}, {title: 'Image file'}])
+  .js-tab-content(data-content="writings")
+    .form__line
+      .form-group
+        .form-group__header
+          label.p Add photos
+        +upload-files([{title: 'Cover image'}])
+  .js-tab-content(data-content="music")
+    .form__line
+      .form-group
+        .form-group__header
+          label.p Add photos
+        +upload-files([{title: 'Cover image'}, {title: 'Music file </br> .mp3 .flac'}])
+
+  .form__line
+    .column-group.column-group--sm
+      .column-group__item
+        p Upload source file
+      .column-group__item
+        p.text-muted .psd, .xd, Zip, .Rip
+      .column-group__item
+        +upload-button({title: 'Upload'})
+
+  .js-tab-content(data-content="writings")
+    .form__line
+      .form-group
+        .form-group__header
+          label.p Put your writings here
+        +textarea()(placeholder="What it’s about?")
+
+  .form__line
+    +checkbox({squere:true, label:'Show my name', checked:true})
+
+  .form__line
+    +button({type:'white', size:'xl', fluid:true})(type="submit")| Submit

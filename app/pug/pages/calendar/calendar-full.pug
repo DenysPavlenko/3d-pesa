@@ -1,0 +1,31 @@
+include /partials/select
+include /partials/button
+
+.calendar-full
+  .calendar-full__toolbar
+    .calendar-toolbar
+      +button({type:'info', classes:'calendar-toolbar__today'})(type="button")| Today
+      span.calendar-toolbar__title March 17
+      .calendar-control.calendar-toolbar__control
+        .calendar-control__left
+          +icon('chevron', 'svg-icon--muted calendar-control__svg')(width="10" height="16")
+        .calendar-control__right
+          +icon('chevron', 'svg-icon--muted calendar-control__svg')(width="10" height="16")
+      .calendar-toolbar__select
+        +select({
+          modifiers:'select--alt',
+          label:{name:'Day', selected:true},
+          optionsClass:'js-tabs',
+          options:[
+            {name:'Day', optionClass:'js-tab is-active', dataAttr:{'data-tab':"day"}},
+            {name:'Week', optionClass:'js-tab', dataAttr:{'data-tab':"week"}},
+            {name:'Year', optionClass:'js-tab', dataAttr:{'data-tab':"year"}},
+          ]
+        })
+
+  .calendar-full__item.js-tab-content(data-content="day")
+    include ./day
+  .calendar-full__item.js-tab-content(data-content="week")
+    include ./week
+  .calendar-full__item.js-tab-content(data-content="year")
+    include ./year

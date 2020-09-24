@@ -1,0 +1,23 @@
+extends layouts/main
+include /partials/sidebar
+include /partials/fixed-button
+
+block variables
+  - var title = 'Bartender'
+  - var tabName = 'sell'
+
+block content
+  .bartender-page
+    include /pages/bartender/popups/bartender-sell-offer-popup
+    +fixed-button({modifiers: 'fixed-button--lg-bottom-80', icon:'images/icons/plus-colored.svg'})(href="bartender-sell-form.html")
+
+    .bartender-page__sidebar
+      +sidebar({navActive:'bartender'})
+
+    .bartender-page__container
+      include /pages/bartender/header
+      .bartender-page__wrap
+        div(data-simplebar class="custom-scroll bartender-page__box")
+          include /pages/bartender/sell/sell
+
+    include /pages/bartender/mobile-footer

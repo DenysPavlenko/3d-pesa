@@ -1,0 +1,26 @@
+extends /layouts/main
+include /partials/sidebar
+include /partials/header
+include /partials/success-popup
+include /partials/phone-change-confirmation-popup
+
+block variables
+  - const title = 'Profile'
+  - const userMenu = 'profile'
+
+block content
+  .profile-page
+    +success-popup()
+    +phone-change-confirmation-popup()
+    .profile-page__sidebar
+      +sidebar()
+
+    .profile-page__container
+      +header({title:'Profile'})
+      .profile-page__wrap
+        .profile-page__col
+          div(data-simplebar class="custom-scroll profile-page__box")
+            include /pages/user-profile/form-left
+        .profile-page__col
+          div(data-simplebar class="custom-scroll profile-page__box")
+            include /pages/user-profile/form-right

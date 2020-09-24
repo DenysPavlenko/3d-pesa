@@ -1,0 +1,8 @@
+include /partials/upload-file
+
+mixin upload-files(props = [])
+
+  .upload-files
+    each item in props
+      .upload-files__item
+        +upload-file(item)

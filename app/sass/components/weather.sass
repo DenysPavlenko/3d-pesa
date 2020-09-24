@@ -1,0 +1,53 @@
+.weather
+  position: relative
+  overflow: hidden
+  border-radius: 4px
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  justify-content: space-between
+  padding: 35px 30px
+  background:
+    size: cover
+    repeat: no-repeat
+    position: center
+  z-index: 1
+  +media-max($bp-xl)
+    padding: 35px 20px
+  &:after
+    position: absolute
+    content: ''
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: $overlay-primary
+    z-index: -1
+  &__details
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    margin-right: 20px
+  &__temperature
+    font-size: rem(48px)
+    line-height: 1
+    font-weight: 400
+    +lh-crop(1.5, 1)
+    margin-right: 15px
+    color: $text-light
+    sup
+      position: relative
+      top: 10px
+      margin-left: -10px
+  &__interactive
+    display: flex
+    margin-left: auto
+    flex-wrap: wrap
+    flex-direction: column
+    align-items: center
+    &-icon
+      margin-bottom: 2px
+      svg
+        fill: $color-light
+
+

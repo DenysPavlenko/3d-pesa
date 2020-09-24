@@ -1,0 +1,28 @@
+include /partials/star-rating
+include /partials/rating-histogram
+include /partials/testimonials
+include /partials/button
+
+.product-reviews
+  .product-reviews__header
+    h3 Reviews
+  .product-reviews__row
+    .product-reviews__rating
+      .list-group
+        .list-group__item
+          .column-group
+            .column-group__item
+              h4 Ratings & Reviews
+              +star-rating({total:'5.0 (20 ratings)'})
+            .column-group__item
+              +rating-histogram()
+        .list-group__item
+          .column-group.column-group--sm
+            .column-group__item
+              h4 Review this product
+            .column-group__item
+              p.text-muted Share your thoughts with other customers
+            .column-group__item
+              +button({type:'bordered', size:'xl', width:'400'})(type="button" data-popup-open="rate-popup")| Write a customer review
+    .product-reviews__testimonials
+      +testimonials()

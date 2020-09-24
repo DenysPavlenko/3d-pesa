@@ -1,0 +1,11 @@
+include /partials/input
+
+.form__line
+  .form-group
+    .form-group__header
+      label.p Price
+    .input-group.input-group--bg-secondary
+      +input({bg:'secondary', classes:'input-group__input'})(type="text" placeholder="")
+      .input-group__append
+        .input-group__wrap
+          p.text-muted Gift

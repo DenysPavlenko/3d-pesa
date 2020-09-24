@@ -1,0 +1,34 @@
+include /partials/catalog-header
+include /partials/shop-card
+include /partials/user-badge
+include /partials/category-sort
+include /partials/chip
+-
+  var products = [
+    {link:'bartender-product.html', image: 'images/bartender/products/product-1.jpg', title: 'Carrot', price:'12 L/\Kg'},
+    {link:'bartender-product.html', image: 'images/bartender/products/product-1.jpg', title: 'Carrot', price:'12 L/\Kg'},
+    {link:'bartender-product.html', image: 'images/bartender/products/product-1.jpg', title: 'Carrot', price:'12 L/\Kg'},
+    {link:'bartender-product.html', image: 'images/bartender/products/product-1.jpg', title: 'Carrot', price:'12 L/\Kg'},
+  ]
+
+.catalog
+  .catalog__header
+    +catalog-header({
+      left: `<h3>Recently added</h3>`,
+      right: {partial:'category-sort'},
+    })
+
+  .catalog__items
+    +times(2)
+      each product in products
+        .catalog__item
+          +shop-card({
+            link:product.link,
+            image:product.image,
+            content:[
+              `<p class="p-xl">${product.title}</p>`,
+              `<h3>${product.price}</h3>`,
+              {partial:'chip', params:{title:'Barter only', color:'green'}},
+              {partial:'user-badge', params:{badgeSize:'sm', avatarSize:'xs', name:'<p>Rachel Cole</p>'}},
+            ]
+          })

@@ -1,0 +1,20 @@
+extends layouts/main
+include /partials/sidebar
+
+block variables
+  - var title = 'Bartender'
+
+block content
+  .bartender-page
+
+    .bartender-page__sidebar
+      +sidebar({navActive:'bartender'})
+
+    .bartender-page__container
+      include /pages/bartender/header
+      .bartender-page__wrap
+        .bartender-page__half
+          div(data-simplebar class="custom-scroll bartender-page__box")
+            include /pages/bartender/sell-form/form
+
+    include /pages/bartender/mobile-footer

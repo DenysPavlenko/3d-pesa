@@ -1,0 +1,17 @@
+include /partials/calendar
+include /partials/input
+
+mixin date-picker-dropdown(props = {})
+  -const { alt } = props
+
+  .dropdown.dropdown--left.js-dropdown.date-picker-dropdown(data-dropdown="date-picker" data-dropdown-min="767")
+    if(alt)
+      .input-group.input-group--bg-secondary(data-dropdown-toggle="date-picker")
+        +input({classes:'js-input-highlight input-group__input'})(type="text" value="Mar 19, 2044" data-popup-open="date-picker-popup" data-popup-max="768")
+        .input-group__append
+          .input-group__wrap
+            +icon('calendar-alt', 'svg-icon--light')(width="15" height="16")
+    else
+      +input({classes:'js-input-highlight js-input-auto-width', size:'sm'})(type="text" value="Mar 19, 2044" data-popup-open="date-picker-popup" data-popup-max="768" data-dropdown-toggle="date-picker")
+    .dropdown__body.dropdown__body--mt-10.date-picker-dropdown__body.js-dropdown-body
+      +calendar()

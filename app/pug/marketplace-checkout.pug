@@ -1,0 +1,27 @@
+extends layouts/main
+include /partials/sidebar
+include /partials/verification-popup
+
+block variables
+  - const title = 'Marketplace'
+  - const tabName = 'marketplace'
+
+block content
+  .marketplace-page
+    +verification-popup()
+    .marketplace-page__sidebar
+      +sidebar({navActive:'marketplace'})
+
+    .marketplace-page__container
+      include /pages/marketplace/header
+      .marketplace-page__wrap
+        .marketplace-page__content
+          .marketplace-page__row
+            .marketplace-page__left
+              div(data-simplebar class="custom-scroll marketplace-page__box")
+                include /pages/marketplace/checkout-form
+            .marketplace-page__right
+              div(data-simplebar class="custom-scroll marketplace-page__box")
+                include /pages/marketplace/cart-total
+
+    include /pages/marketplace/mobile-footer

@@ -1,0 +1,11 @@
+include /partials/menu-tabs
+-
+  var tabs = [
+    {link:'adbot-watch.html', title:'Watch Ad', isActive:tabName === 'watch', icon:{name:'video-play', width:'20', height:'22'}},
+    {link:'adbot-purchases.html', title:'Purchases', isActive:tabName === 'purchases', icon:{name:'cart', width:'20', height:'20'}},
+    {link:'adbot-account.html', title:'Account', isActive:tabName === 'account', icon:{name:'user', width:'19', height:'20'}},
+    {link:'adbot-history.html', title:'History', isActive:tabName === 'history', icon:{name:'history', width:'23', height:'20'}},
+  ]
+
+
++menu-tabs(tabs)

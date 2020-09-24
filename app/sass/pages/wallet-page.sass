@@ -1,0 +1,56 @@
+.wallet-page
+  +media-max($bp-md)
+    &:after
+      position: fixed
+      content: ''
+      left: 0
+      top: 0
+      right: 0
+      background-color: $color-primary
+      bottom: 0
+      z-index: -1
+  &__container
+    display: flex
+    flex-direction: column
+    height: 100vh
+    margin-left: 260px
+    padding: 0 20px 20px
+    +media-max($bp-xl)
+      margin-left: 0
+    +media-max($bp-lg)
+      padding: 0
+      height: auto
+  &__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    flex: 1
+    min-height: 0
+  &__left,
+  &__right
+    width: calc( 50% - 10px )
+    height: 100%
+    border-radius: $radius-primary
+    +media-max($bp-lg)
+      width: 100%
+      border-radius: 0
+  &__left
+    display: flex
+    flex-direction: column
+    +media-max($bp-lg)
+      padding-top: 12px
+    &-widgets
+      width: 100%
+      margin-bottom: 20px
+      +media-max($bp-lg)
+        padding: 0 10px
+    &-body
+      flex: 1
+      min-height: 0
+      background-color: $color-primary
+  &__right
+    background-color: $color-primary
+    +media-max($bp-lg)
+      height: calc( 100vh - #{$header-height * 2} )
+  &__box
+    padding: 20px

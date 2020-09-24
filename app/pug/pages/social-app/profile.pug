@@ -1,0 +1,57 @@
+include /partials/avatar
+include /partials/post
+include /partials/location-pin
+include /partials/mediafiles
+include /partials/button
+
+-
+  const posts = [
+    {profileLink:'social-app-profile.html', postLink:'social-app-post.html', name:'Michael Hunnigun', del:true, liked:true, repost:false},
+    {profileLink:'social-app-profile.html', postLink:'social-app-post.html', name:'Michael Hunnigun', del:true, images:true, repost:false},
+    {profileLink:'social-app-profile.html', postLink:'social-app-post.html', name:'Michael Hunnigun', del:true, repost:false}
+  ]
+-
+  const likes = [
+    {profileLink:'social-app-profile.html', postLink:'social-app-post.html', name:'Michael Hunnigun', liked:true, repost:false},
+    {profileLink:'social-app-profile.html', postLink:'social-app-post.html', name:'Michael Hunnigun', liked:true, repost:false},
+    {profileLink:'social-app-profile.html', postLink:'social-app-post.html', name:'Michael Hunnigun', liked:true, repost:false},
+  ]
+
+.social-app-profile
+  .social-app-profile__header
+    +avatar({image:'images/user/avatar.jpg', classes:'social-app-profile__header-avatar', size:'xl'})
+    .social-app-profile__header-info
+      .social-app-profile__header-line
+        h3 John Doe
+      .social-app-profile__header-line
+        +location-pin()
+      .social-app-profile__header-line
+        p.text-muted last seen 10 minutes ago
+      .social-app-profile__header-line
+        +button({type:'bordered', classes:'js-social-app-button'})(type="button" data-switch-name="profile-button" data-switch-show="profile-buttons" data-switch-hide="profile-button")
+          span.button__icon
+            +icon('add-person', 'svg-icon--light')(width="16" height="18")
+          span Add friend
+        div(data-switch-hidden data-switch-name="profile-buttons")
+          .button-group
+            +button({type:'bordered', classes:'button-group__button'})(type="button" data-switch-show="profile-button" data-switch-hide="profile-buttons")
+              span.button__icon
+                +icon('unfollow', 'svg-icon--light')(width="18" height="18")
+              span Unfollow
+            +button({classes:'button-group__button'})(type="button" class="button button-group__button")| Send message
+
+  .social-app-profile__tabs.js-tabs
+    .h4.social-app-profile__tab.js-tab.is-active(data-tab="posts") Posts
+    .h4.social-app-profile__tab.js-tab(data-tab="mediafiles") Mediafiles
+    .h4.social-app-profile__tab.js-tab(data-tab="likes") Likes
+
+  .js-tab-content.social-app-profile__content(data-content="posts")
+    each post in posts
+      +post(post)
+
+  .js-tab-content.social-app-profile__content(data-content="mediafiles")
+    +mediafiles()
+
+  .js-tab-content.social-app-profile__content(data-content="likes")
+    each like in likes
+      +post(like)

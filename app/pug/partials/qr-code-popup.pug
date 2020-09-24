@@ -1,0 +1,37 @@
+include /partials/select
+include /partials/close
+include /partials/button
+
+mixin qr-code-popup(props = {})
+
+  .popup.modal.qr-code-popup(data-popup="qr-code-popup")
+
+    .popup__header-offset
+    .popup__header
+      .content-header.content-header--md-border-0
+        .content-header__center
+          h3 B Coin Address
+        .content-header__right.content-header__right--md-left
+          +close({mdLight:true})(data-popup-close="qr-code-popup")
+
+    .popup__body.qr-code-popup__body
+      .column-group.column-group--justify-items-center
+        .column-group__item
+          .qr-code
+            figure(style="background-image:url('images/qr-code-popup/qr-code-popup-image.svg')" class="qr-code__image")
+        .column-group__item
+          .form-group
+            .form-group__header
+              label.p Currency
+            +select({
+              label:{name:'GCN', selected:true, image:'images/icons/l-coin.svg'},
+              options:[
+                {name:'LCN', image:'images/icons/l-coin.svg'},
+                {name:'GCN', image:'images/icons/g-coin.svg'},
+                {name:'BCN', image:'images/icons/g-coin.svg'},
+              ]
+            })
+        .column-group__item
+          .button-group.button-group--fluid
+            +button({size:'xl', type:'bordered', classes:'button-group__button'})(type="button")| Share
+            +button({size:'xl', classes:'button-group__button'})(type="button")| Scan

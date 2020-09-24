@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to athiopian</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./styles/vendor.css">
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+  </head>
+  <body>
+    <div class="start-page">
+      <div class="start-page__navigation">
+        <div class="start-page__navigation-circle">
+          <svg class="svg-icon svg-icon--stroke-light start-page__navigation-icon">
+            <use href="images/svg/svg-sprite/symbol/sprite.svg#chevron-left" x="0" y="0"></use>
+          </svg>
+        </div>
+        <h5 class="text-muted text-uppercase start-page__navigation-title">Dashboard</h5>
+      </div>
+      <div class="start-page__container">
+        <div class="start-page__content">
+          <div class="start-page__content-box">
+            <div class="custom-scroll start-page__content-scroll" data-simplebar>
+              <form class="form">
+                <div class="form__line">
+                  <h2>Welcome to your Shop!</h2>
+                </div>
+                <div class="form__line">
+                  <p class="text-muted">Here you can loan your equipment to your customers</p>
+                </div>
+                <div class="form__line">
+                  <h3>Shop information</h3>
+                </div>
+                <div class="form__line">
+                  <div class="form-group">
+                    <div class="form-group__header">
+                      <label class="p">Shop name</label>
+                    </div>
+                    <input class="input" type="text" placeholder="Shop name"/>
+                  </div>
+                </div>
+                <div class="form__line">
+                  <div class="form-group">
+                    <div class="form-group__header">
+                      <label class="p">Country</label>
+                    </div>
+                    <div class="select js-select">
+                      <div class="select__label js-select-label">
+                        <div class="select__left">
+                          <p>Country</p>
+                        </div>
+                      </div>
+                      <div class="select__options  js-select-options">
+                        <div class="custom-scroll select__options-scroll" data-select-simplebar="data-select-simplebar">
+                          <div class="select__option  js-select-option" data-option="Afghanistan">
+                            <div class="select__left">
+                              <p>Afghanistan</p>
+                            </div>
+                          </div>
+                          <div class="select__option  js-select-option" data-option="Albania">
+                            <div class="select__left">
+                              <p>Albania</p>
+                            </div>
+                          </div>
+                          <div class="select__option  js-select-option" data-option="Algeria">
+                            <div class="select__left">
+                              <p>Algeria</p>
+                            </div>
+                          </div>
+                          <div class="select__option  js-select-option" data-option="Andorra">
+                            <div class="select__left">
+                              <p>Andorra</p>
+                            </div>
+                          </div>
+                          <div class="select__option  js-select-option" data-option="Antigua and Barbuda">
+                            <div class="select__left">
+                              <p>Antigua and Barbuda</p>
+                            </div>
+                          </div>
+                          <div class="select__option  js-select-option" data-option="Argentina">
+                            <div class="select__left">
+                              <p>Argentina</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form__line">
+                  <div class="form-group">
+                    <div class="form-group__header">
+                      <label class="p">Address</label>
+                    </div>
+                    <input class="input" type="text" placeholder="Your address">
+                  </div>
+                </div>
+                <div class="form__line">
+                  <div class="row">
+                    <div class="col-7">
+                      <div class="form-group">
+                        <div class="form-group__header">
+                          <label class="p">State/Province</label>
+                        </div>
+                        <div class="select js-select">
+                          <div class="select__label js-select-label">
+                            <div class="select__left">
+                              <p>State/Province</p>
+                            </div>
+                          </div>
+                          <div class="select__options  js-select-options">
+                            <div class="custom-scroll select__options-scroll" data-select-simplebar="data-select-simplebar">
+                              <div class="select__option  js-select-option" data-option="Alabama">
+                                <div class="select__left">
+                                  <p>Alabama</p>
+                                </div>
+                              </div>
+                              <div class="select__option  js-select-option" data-option="Alaska">
+                                <div class="select__left">
+                                  <p>Alaska</p>
+                                </div>
+                              </div>
+                              <div class="select__option  js-select-option" data-option="Arizona">
+                                <div class="select__left">
+                                  <p>Arizona</p>
+                                </div>
+                              </div>
+                              <div class="select__option  js-select-option" data-option="Arkansas">
+                                <div class="select__left">
+                                  <p>Arkansas</p>
+                                </div>
+                              </div>
+                              <div class="select__option  js-select-option" data-option="California">
+                                <div class="select__left">
+                                  <p>California</p>
+                                </div>
+                              </div>
+                              <div class="select__option  js-select-option" data-option="Colorado">
+                                <div class="select__left">
+                                  <p>Colorado</p>
+                                </div>
+                              </div>
+                              <div class="select__option  js-select-option" data-option="Connecticut">
+                                <div class="select__left">
+                                  <p>Connecticut</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="form-group">
+                        <div class="form-group__header">
+                          <label class="p">Zip code</label>
+                        </div>
+                        <input class="input" type="number" placeholder="0000">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form__line">
+                  <div class="form-group">
+                    <div class="form-group__header">
+                      <label class="p">Mobile phone</label>
+                    </div>
+                    <div class="inter-tel-input js-inter-tel-input">
+                      <div class="inter-tel-input__select js-inter-tel-input-select">
+                        <div class="inter-tel-input__current">
+                          <figure class="inter-tel-input__icon js-inter-tel-input-current-icon" style="background-image:url('images/flags/usa.svg')"></figure>
+                        </div>
+                        <div class="inter-tel-input__options js-inter-tel-input-options">
+                          <div class="custom-scroll inter-tel-input__scroll" data-simplebar="data-simplebar">
+                            <div class="inter-tel-input__option js-inter-tel-input-option" data-option-placeholder="+1 224 245 256">
+                              <figure class="inter-tel-input__icon js-inter-tel-input-icon" style="background-image:url('images/flags/usa.svg')"></figure>
+                              <div class="inter-tel-input__option-country">
+                                <p>United States</p>
+                              </div>
+                              <div class="inter-tel-input__option-code">
+                                <p class="text-muted">+1</p>
+                              </div>
+                            </div>
+                            <div class="inter-tel-input__option js-inter-tel-input-option" data-option-placeholder="+38 099 203 5199">
+                              <figure class="inter-tel-input__icon js-inter-tel-input-icon" style="background-image:url('images/flags/ukraine.svg')"></figure>
+                              <div class="inter-tel-input__option-country">
+                                <p>Ukraine</p>
+                              </div>
+                              <div class="inter-tel-input__option-code">
+                                <p class="text-muted">+38</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <input class="input inter-tel-input__input js-inter-tel-input-input" type="text" placeholder="+1 224 245 256"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="form__line">
+                  <div class="form-group">
+                    <div class="form-group__header">
+                      <label class="p">Email</label>
+                    </div>
+                    <input class="input" type="text" placeholder="Your address">
+                  </div>
+                </div>
+                <div class="form__line">
+                  <div class="form-group">
+                    <div class="form-group__header">
+                      <label class="p">Add photos</label>
+                    </div>
+                    <div class="upload-files">
+                      <div class="upload-files__item">
+                        <div class="upload-file">
+                          <input class="input upload-file__input" type="file"/>
+                          <div class="upload-file__button">
+                            <button class="button button--round" type="button">
+                              <svg class="svg-icon svg-icon--primary" width="19" height="19">
+                                <use href="images/svg/svg-sprite/symbol/sprite.svg#plus" x="0" y="0"></use>
+                              </svg>
+                            </button>
+                          </div>
+                          <div class="upload-files__add-title">
+                            <h4>Add cover image</h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="upload-files__item">
+                        <div class="upload-file">
+                          <input class="input upload-file__input" type="file"/>
+                          <div class="upload-file__button">
+                            <button class="button button--round" type="button">
+                              <svg class="svg-icon svg-icon--primary" width="19" height="19">
+                                <use href="images/svg/svg-sprite/symbol/sprite.svg#plus" x="0" y="0"></use>
+                              </svg>
+                            </button>
+                          </div>
+                          <div class="upload-files__add-title">
+                            <h4>Add image</h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="upload-files__item">
+                        <div class="upload-file">
+                          <div class="upload-file__icon"><img class="image" src="images/icons/upload-placeholder.svg" alt="placeholder"/></div>
+                        </div>
+                      </div>
+                      <div class="upload-files__item">
+                        <div class="upload-file">
+                          <div class="upload-file__icon"><img class="image" src="images/icons/upload-placeholder.svg" alt="placeholder"/></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form__line"><span class="p">Working hours</span></div>
+                <div class="form__line">
+                  <div class="form-group">
+                    <div class="form-group__header">
+                      <label class="checkbox">
+                        <div class="checkbox__box">
+                          <input class="input checkbox__input" type="checkbox" checked="checked" placeholder="1" data-checkbox-toggle="monday"/><span class="checkbox__checkmark"></span>
+                        </div><span class="checkbox__name">Monday</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div data-checkbox-toggle-content="monday">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="form-group__header">
+                            <label class="p">From</label>
+                          </div>
+                          <div class="select js-select">
+                            <div class="select__label js-select-label" data-selected="8:00 am">
+                              <div class="select__left">
+                                <p>8:00 am</p>
+                              </div>
+                            </div>
+                            <div class="select__options  js-select-options">
+                              <div class="custom-scroll select__options-scroll" data-select-simplebar="data-select-simplebar">
+                                <div class="select__option  js-select-option" data-option="1:00 am">
+                                  <div class="select__left">
+                                    <p>1:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="2:00 am">
+                                  <div class="select__left">
+                                    <p>2:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="3:00 am">
+                                  <div class="select__left">
+                                    <p>3:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="4:00 am">
+                                  <div class="select__left">
+                                    <p>4:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="5:00 am">
+                                  <div class="select__left">
+                                    <p>5:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="6:00 am">
+                                  <div class="select__left">
+                                    <p>6:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="7:00 am">
+                                  <div class="select__left">
+                                    <p>7:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="8:00 am">
+                                  <div class="select__left">
+                                    <p>8:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="9:00 am">
+                                  <div class="select__left">
+                                    <p>9:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="10:00 am">
+                                  <div class="select__left">
+                                    <p>10:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="11:00 am">
+                                  <div class="select__left">
+                                    <p>11:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="12:00 am">
+                                  <div class="select__left">
+                                    <p>12:00 am</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="form-group__header">
+                            <label class="p">To</label>
+                          </div>
+                          <div class="select js-select">
+                            <div class="select__label js-select-label" data-selected="8:00 am">
+                              <div class="select__left">
+                                <p>8:00 am</p>
+                              </div>
+                            </div>
+                            <div class="select__options  js-select-options">
+                              <div class="custom-scroll select__options-scroll" data-select-simplebar="data-select-simplebar">
+                                <div class="select__option  js-select-option" data-option="1:00 am">
+                                  <div class="select__left">
+                                    <p>1:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="2:00 am">
+                                  <div class="select__left">
+                                    <p>2:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="3:00 am">
+                                  <div class="select__left">
+                                    <p>3:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="4:00 am">
+                                  <div class="select__left">
+                                    <p>4:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="5:00 am">
+                                  <div class="select__left">
+                                    <p>5:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="6:00 am">
+                                  <div class="select__left">
+                                    <p>6:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="7:00 am">
+                                  <div class="select__left">
+                                    <p>7:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="8:00 am">
+                                  <div class="select__left">
+                                    <p>8:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="9:00 am">
+                                  <div class="select__left">
+                                    <p>9:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="10:00 am">
+                                  <div class="select__left">
+                                    <p>10:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="11:00 am">
+                                  <div class="select__left">
+                                    <p>11:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="12:00 am">
+                                  <div class="select__left">
+                                    <p>12:00 am</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form__line">
+                  <div class="form-group">
+                    <div class="form-group__header">
+                      <label class="checkbox">
+                        <div class="checkbox__box">
+                          <input class="input checkbox__input" type="checkbox" placeholder="1" data-checkbox-toggle="thuesday"/><span class="checkbox__checkmark"></span>
+                        </div><span class="checkbox__name">Thuesday</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div data-checkbox-toggle-content="thuesday">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="form-group__header">
+                            <label class="p">From</label>
+                          </div>
+                          <div class="select js-select">
+                            <div class="select__label js-select-label" data-selected="8:00 am">
+                              <div class="select__left">
+                                <p>8:00 am</p>
+                              </div>
+                            </div>
+                            <div class="select__options  js-select-options">
+                              <div class="custom-scroll select__options-scroll" data-select-simplebar="data-select-simplebar">
+                                <div class="select__option  js-select-option" data-option="1:00 am">
+                                  <div class="select__left">
+                                    <p>1:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="2:00 am">
+                                  <div class="select__left">
+                                    <p>2:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="3:00 am">
+                                  <div class="select__left">
+                                    <p>3:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="4:00 am">
+                                  <div class="select__left">
+                                    <p>4:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="5:00 am">
+                                  <div class="select__left">
+                                    <p>5:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="6:00 am">
+                                  <div class="select__left">
+                                    <p>6:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="7:00 am">
+                                  <div class="select__left">
+                                    <p>7:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="8:00 am">
+                                  <div class="select__left">
+                                    <p>8:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="9:00 am">
+                                  <div class="select__left">
+                                    <p>9:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="10:00 am">
+                                  <div class="select__left">
+                                    <p>10:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="11:00 am">
+                                  <div class="select__left">
+                                    <p>11:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="12:00 am">
+                                  <div class="select__left">
+                                    <p>12:00 am</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="form-group__header">
+                            <label class="p">To</label>
+                          </div>
+                          <div class="select js-select">
+                            <div class="select__label js-select-label" data-selected="8:00 am">
+                              <div class="select__left">
+                                <p>8:00 am</p>
+                              </div>
+                            </div>
+                            <div class="select__options  js-select-options">
+                              <div class="custom-scroll select__options-scroll" data-select-simplebar="data-select-simplebar">
+                                <div class="select__option  js-select-option" data-option="1:00 am">
+                                  <div class="select__left">
+                                    <p>1:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="2:00 am">
+                                  <div class="select__left">
+                                    <p>2:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="3:00 am">
+                                  <div class="select__left">
+                                    <p>3:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="4:00 am">
+                                  <div class="select__left">
+                                    <p>4:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="5:00 am">
+                                  <div class="select__left">
+                                    <p>5:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="6:00 am">
+                                  <div class="select__left">
+                                    <p>6:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="7:00 am">
+                                  <div class="select__left">
+                                    <p>7:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="8:00 am">
+                                  <div class="select__left">
+                                    <p>8:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="9:00 am">
+                                  <div class="select__left">
+                                    <p>9:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="10:00 am">
+                                  <div class="select__left">
+                                    <p>10:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="11:00 am">
+                                  <div class="select__left">
+                                    <p>11:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="12:00 am">
+                                  <div class="select__left">
+                                    <p>12:00 am</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form__line">
+                  <div class="form-group">
+                    <div class="form-group__header">
+                      <label class="checkbox">
+                        <div class="checkbox__box">
+                          <input class="input checkbox__input" type="checkbox" checked="checked" placeholder="1" data-checkbox-toggle="wednesday"/><span class="checkbox__checkmark"></span>
+                        </div><span class="checkbox__name">Wednesday</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div data-checkbox-toggle-content="wednesday">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="form-group__header">
+                            <label class="p">From</label>
+                          </div>
+                          <div class="select js-select">
+                            <div class="select__label js-select-label" data-selected="8:00 am">
+                              <div class="select__left">
+                                <p>8:00 am</p>
+                              </div>
+                            </div>
+                            <div class="select__options  js-select-options">
+                              <div class="custom-scroll select__options-scroll" data-select-simplebar="data-select-simplebar">
+                                <div class="select__option  js-select-option" data-option="1:00 am">
+                                  <div class="select__left">
+                                    <p>1:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="2:00 am">
+                                  <div class="select__left">
+                                    <p>2:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="3:00 am">
+                                  <div class="select__left">
+                                    <p>3:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="4:00 am">
+                                  <div class="select__left">
+                                    <p>4:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="5:00 am">
+                                  <div class="select__left">
+                                    <p>5:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="6:00 am">
+                                  <div class="select__left">
+                                    <p>6:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="7:00 am">
+                                  <div class="select__left">
+                                    <p>7:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="8:00 am">
+                                  <div class="select__left">
+                                    <p>8:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="9:00 am">
+                                  <div class="select__left">
+                                    <p>9:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="10:00 am">
+                                  <div class="select__left">
+                                    <p>10:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="11:00 am">
+                                  <div class="select__left">
+                                    <p>11:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="12:00 am">
+                                  <div class="select__left">
+                                    <p>12:00 am</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <div class="form-group__header">
+                            <label class="p">To</label>
+                          </div>
+                          <div class="select js-select">
+                            <div class="select__label js-select-label" data-selected="8:00 am">
+                              <div class="select__left">
+                                <p>8:00 am</p>
+                              </div>
+                            </div>
+                            <div class="select__options  js-select-options">
+                              <div class="custom-scroll select__options-scroll" data-select-simplebar="data-select-simplebar">
+                                <div class="select__option  js-select-option" data-option="1:00 am">
+                                  <div class="select__left">
+                                    <p>1:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="2:00 am">
+                                  <div class="select__left">
+                                    <p>2:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="3:00 am">
+                                  <div class="select__left">
+                                    <p>3:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="4:00 am">
+                                  <div class="select__left">
+                                    <p>4:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="5:00 am">
+                                  <div class="select__left">
+                                    <p>5:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="6:00 am">
+                                  <div class="select__left">
+                                    <p>6:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="7:00 am">
+                                  <div class="select__left">
+                                    <p>7:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="8:00 am">
+                                  <div class="select__left">
+                                    <p>8:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="9:00 am">
+                                  <div class="select__left">
+                                    <p>9:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="10:00 am">
+                                  <div class="select__left">
+                                    <p>10:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="11:00 am">
+                                  <div class="select__left">
+                                    <p>11:00 am</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="12:00 am">
+                                  <div class="select__left">
+                                    <p>12:00 am</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form__line">
+                  <div class="form-group">
+                    <div class="button-group button-group--fluid">
+                      <button class="button button--xl button--bordered button-group__button" type="button">Submit
+                      </button>
+                      <button class="button button--xl button-group__button" type="button">Cancel
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="start-page__image">
+          <div class="start-page__image-box"><img src="images/permissions/permission-success-image.svg" alt="permission"></div>
+        </div>
+      </div>
+    </div>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyC9W9zxgNdfvLuO3GEQUZrTRBJQ9wj3_PU&amp;libraries=places"></script>
+    <script src="./scripts/vendor.js"></script>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>

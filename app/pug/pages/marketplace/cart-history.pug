@@ -1,0 +1,31 @@
+include /partials/catalog-header
+include /partials/star-rating
+include /partials/shop-card
+include /partials/category-sort
+
+-
+  var products = [
+    {link:'marketplace-product.html', image: 'images/marketplace/products/product-2.jpg', title: 'The Golden Thread: How Fabric Changed History', price:'12G'},
+    {link:'marketplace-product.html', image: 'images/marketplace/products/product-3.jpg', title: 'The Golden Thread: How Fabric Changed History', price:'12G'},
+    {link:'marketplace-product.html', image: 'images/marketplace/products/product-4.jpg', title: 'The Golden Thread: How Fabric Changed History', price:'12G'},
+    {link:'marketplace-product.html', image: 'images/marketplace/products/product-5.jpg', title: 'The Golden Thread: How Fabric Changed History', price:'12G'},
+  ]
+
+.catalog
+  .catalog__header
+    +catalog-header({
+      left: `<h3>Cart history</h3>`,
+    })
+
+  .catalog__items
+    each product in products
+      .catalog__item
+        +shop-card({
+          link:product.link,
+          image:product.image,
+          content:[
+            `<p class="p-xl">${product.title}</p>`,
+            {partial: 'star-rating', params:{total:'5.0 (20 ratings)'}},
+            `<h3>${product.price}</h3>`,
+          ]
+        })

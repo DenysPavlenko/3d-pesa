@@ -1,0 +1,22 @@
+extends layouts/main
+include /partials/sidebar
+include /partials/choose-location-popup
+
+block variables
+  - var title = 'Bartender'
+  - var tabName = 'home'
+
+block content
+  .bartender-page
+    +choose-location-popup()
+
+    .bartender-page__sidebar
+      +sidebar({navActive:'bartender'})
+
+    .bartender-page__container
+      include /pages/bartender/header
+      .bartender-page__wrap
+        div(data-simplebar class="custom-scroll bartender-page__box")
+          include /pages/bartender/category
+
+    include /pages/bartender/mobile-footer

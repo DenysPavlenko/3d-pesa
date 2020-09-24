@@ -1,0 +1,57 @@
+.content-header
+  position: relative
+  width: 100%
+  min-height: $header-height
+  display: flex
+  align-items: center
+  padding: 10px 20px
+  border-bottom: 1px solid $border-primary
+  // Modifiers
+  &--lg-fixed
+    +media-max($bp-lg)
+      position: fixed
+      top: 0
+      left: 0
+      width: 100%
+      height: $header-height
+      background-color: $color-secondary
+      z-index: 200
+      border-bottom: 0
+  &--md-border-0
+    +media-max($bp-md)
+      border-bottom: 0
+  &--alig-start
+    align-items: flex-start
+  &--border-0
+    border-bottom: 0
+  &--bg-secondary
+    background-color: $color-secondary
+    border-bottom: 0
+  &__left
+    position: absolute
+    left: 20px
+    // Modifiers
+    &--md-right
+      +media-max($bp-md)
+        left: auto
+        right: 20px
+  &__center
+    flex: 1
+    max-width: 80%
+    margin: 0 auto
+    display: flex
+    justify-content: center
+    // Modifiers
+    &--mw-100
+      max-width: 100%
+  &__right
+    position: absolute
+    right: 20px
+    // Modifiers
+    &--static
+      position: static
+      padding-left: 20px
+    &--md-left
+      +media-max($bp-md)
+        right: auto
+        left: 20px

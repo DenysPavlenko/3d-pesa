@@ -1,0 +1,32 @@
+include /partials/logout
+include /partials/switch
+
+mixin user-dropdown-menu(props = {})
+
+  .user-dropdown-menu
+    .user-dropdown-menu__items
+      a(href="user-profile.html" class=`user-dropdown-menu__item ${userMenu === 'profile' && 'is-active'}`)
+        .user-dropdown-menu__icon
+          +icon('profile-settings', 'svg-icon--muted user-dropdown-menu__icon-svg')(width="20" height="23")
+        h5.text-muted.user-dropdown-menu__title Profile
+      a(href="user-wallet.html" class=`user-dropdown-menu__item ${userMenu === 'wallet' && 'is-active'}`)
+        .user-dropdown-menu__icon
+          +icon('wallet', 'svg-icon--muted user-dropdown-menu__icon-svg')(width="20" height="18")
+        h5.text-muted.user-dropdown-menu__title Wallet
+      a(href="user-orders.html" class=`user-dropdown-menu__item ${userMenu === 'orders' && 'is-active'}`)
+        .user-dropdown-menu__icon
+          +icon('box', 'svg-icon--muted user-dropdown-menu__icon-svg')(width="20" height="18")
+        h5.text-muted.user-dropdown-menu__title Orders & Purchases
+      a(href="user-time-recorder.html" class=`user-dropdown-menu__item ${userMenu === 'timeRecorder' && 'is-active'}`)
+        .user-dropdown-menu__icon
+          +icon('archive', 'svg-icon--muted user-dropdown-menu__icon-svg')(width="20" height="18")
+        h5.text-muted.user-dropdown-menu__title Time recorder
+      .user-dropdown-menu__item
+        .user-dropdown-menu__icon
+          +icon('moon', 'svg-icon--light')(width="20" height="20")
+        h5.user-dropdown-menu__title Dark theme
+        .user-dropdown-menu__switch
+          +switch({withCheck:true, checked:true})
+
+    .user-dropdown-menu__footer
+      +logout()

@@ -1,0 +1,23 @@
+mixin menu-tab(props = {})
+  -const { link, popup, icon, badge, title, light, isActive } = props
+  -const tag = link ? 'a' : 'div'
+  -
+    const classnames = classNames({
+      'menu-tab': true,
+      [`input--bg-${bg}`]: bg,
+      'menu-tab--light': light,
+      'is-active': isActive,
+    })
+
+  #{tag}(href=link class=classnames data-popup-open=popup)
+    .menu-tab__icon-wrap
+      if(badge)
+        div(class=`badge ${badge.color ? `badge--bg-${badge.color}` : ''} ${badge.round ? 'badge--round' : ''}`)
+          .menu-tab__icon
+            +icon(icon.name, 'svg-icon--muted menu-tab__icon-svg')(width=icon.width height=icon.height)
+          .badge__wrapper
+            p #{badge.cnt}
+      else
+        .menu-tab__icon
+          +icon(icon.name, 'svg-icon--muted menu-tab__icon-svg')(width=icon.width height=icon.height)
+    h5.text-muted.menu-tab__title #{title}

@@ -1,0 +1,57 @@
+include /partials/calendar
+include /partials/todo-item
+
+mixin todo-list(props = {})
+
+  .todo-list
+    .column-group
+      .column-group__item
+        +calendar()
+      .column-group__item
+        .column-group.column-group--md
+          .column-group__item
+            h4.text-muted Today
+          .column-group__item
+            +todo-item({icon:{name:'event', color:'purple', width:'18', height:'15'}, title:'Events', content:[
+              `<p><span class="font-bold">Frank’s</span> Birthday</p>`,
+              `<p>Meeting with <span class="font-semibold">John Doe</span></p>`,
+              `<p class="text-uppercase text-muted">8 PM - 9 PM</p>`,
+            ]})
+          .column-group__item
+            +todo-item({icon:{name:'reminder', color:'blue', width:'18', height:'21'}, title:'Reminders', content:[
+              `<p>Pay taxes</p>`,
+              `<p class="text-uppercase text-muted">10 PM</p>`,
+              `<p>Barbershop visit</p>`,
+              `<p class="text-uppercase text-muted">3 PM</p>`,
+            ]})
+          .column-group__item
+            +todo-item({icon:{name:'task', color:'green', width:'20', height:'20'}, title:'Tasks', content:[
+              `<p>Call parents</p>`,
+              `<p class="text-uppercase text-muted">4 PM</p>`,
+              `<p>Meditate</p>`,
+              `<p class="text-uppercase text-muted">4 PM</p>`,
+            ]})
+      .column-group__item
+        .column-group.column-group--md
+          .column-group__item
+            h4.text-muted Tomorrow
+          .column-group__item
+            +todo-item({icon:{name:'event', color:'purple', width:'18', height:'15'}, title:'Events', content:[
+              `<p><span class="font-bold">Frank’s</span> Birthday</p>`,
+              `<p>Meeting with <span class="font-semibold">John Doe</span></p>`,
+              `<p class="text-uppercase text-muted">8 PM - 9 PM</p>`,
+            ]})
+          .column-group__item
+            +todo-item({icon:{name:'reminder', color:'blue', width:'18', height:'21'}, title:'Reminders', content:[
+              `<p>Pay taxes</p>`,
+              `<p class="text-uppercase text-muted">10 PM</p>`,
+              `<p>Barbershop visit</p>`,
+              `<p class="text-uppercase text-muted">3 PM</p>`,
+            ]})
+          .column-group__item
+            +todo-item({icon:{name:'task', color:'green', width:'18', height:'18'}, title:'Tasks', content:[
+              `<p>Call parents</p>`,
+              `<p class="text-uppercase text-muted">4 PM</p>`,
+              `<p>Meditate</p>`,
+              `<p class="text-uppercase text-muted">4 PM</p>`,
+            ]})

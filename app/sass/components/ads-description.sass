@@ -1,0 +1,24 @@
+.ads-description
+  display: flex
+  justify-content: space-between
+  align-items: flex-end
+  z-index: 1
+  &__info
+    flex: 1
+  &__title
+    margin-bottom: 6px
+  &__text
+    opacity: 0.5
+  &__widgets
+    display: flex
+    width: 30%
+    align-items: center
+    justify-content: flex-end
+  &__widget
+    user-select: none
+    display: flex
+    align-items: center
+    &:not(:last-child)
+      margin-right: 10px
+    &-icon
+      margin-right: 5px

@@ -1,0 +1,27 @@
+include /partials/avatar
+include /partials/send-button
+include /partials/close
+include /partials/post
+include /partials/post-input
+
+mixin reply-popup(props = {})
+
+  .popup.popup--mw-650.modal.reply-popup(data-popup="reply-popup")
+
+    .d-block.d-md-none
+      .popup__header-offset
+      .popup__header
+        .content-header.content-header--md-border-0
+          .content-header__left
+            +close({mdLight:true})(data-popup-close="reply-popup")
+          .content-header__center
+            h3 Reply
+          .content-header__right
+            +send-button()
+
+    .d-none.d-md-block
+      .popup__close
+        +close({mdLight:true})(data-popup-close="reply-popup")
+
+    .popup__body
+      +post({profileLink:'social-app-profile.html', postLink:'social-app-post.html', name:'Michael Hunnigun', reply:true})

@@ -1,0 +1,28 @@
+include /partials/catalog-header
+include /partials/shop-card
+
+-
+  var categories = [
+    {link:'marketplace-subcategories.html', image: 'images/marketplace/categories/category-1.jpg', title: 'Electronics'},
+    {link:'marketplace-subcategories.html', image: 'images/marketplace/categories/category-2.jpg', title: 'Fashion'},
+    {link:'marketplace-subcategories.html', image: 'images/marketplace/categories/category-3.jpg', title: 'Health & Beauty'},
+    {link:'marketplace-subcategories.html', image: 'images/marketplace/categories/category-4.jpg', title: 'Home & Garden'},
+  ]
+
+.catalog
+  .catalog__header
+    +catalog-header({
+      left: `<h3>All categories</h3>`
+    })
+
+  .catalog__items
+    +times(2)
+      each category in categories
+        .catalog__item
+          +shop-card({
+            link:category.link,
+            image:category.image,
+            content:[
+              `<h4 class="text-center">${category.title}</h4>`
+            ]
+          })

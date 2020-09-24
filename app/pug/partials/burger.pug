@@ -1,0 +1,10 @@
+mixin burger(props = {})
+  -const { classes } = props
+  -
+    const classnames = classNames({
+      'burger': true,
+      [classes]: classes,
+    })
+
+  div(class=classnames)
+    span

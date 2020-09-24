@@ -1,0 +1,25 @@
+include /partials/ads-description
+include /partials/testimonial
+include /partials/writings-box
+
+.popup.popup--mw-800.modal.media-popup(data-popup="adbot-owner-writings-popup")
+
+  .popup__close.popup__close--outer
+    +close({mdLight:true})(data-popup-close="adbot-owner-writings-popup")
+
+  .popup__body
+    .column-group
+      .column-group__item
+        +writings-box({title:'Once Upon A Time', text:'Oh the enormous avenues of the holy land, the terraces of the temple! What has become of the Brahmin who explained the Proverbs to me? I can even see the old women still, of that time and place! I remember hours of silver and light by the rivers, my companion’s hand on my shoulder, our caresses as we stood on the spice-filled plains. – A flock of scarlet pigeons thunders round my thoughts. – Exiled here, I had a place to stage the theatrical masterpieces of every literature. I could show you unknown riches. I mark the history of treasures you discovered. I see what follows! My wisdom is as despised as the chaos. What is my nothingness, compared with the stupor that awaits you? <br/></br> Oh the enormous avenues of the holy land, the terraces of the temple! What has become of the Brahmin who explained the Proverbs to me? I can even see the old women still, of that time and place! I remember hours of silver and light by the rivers, my companion’s hand on my shoulder, our caresses as we stood on the spice-filled plains. – A flock of scarlet pigeons thunders round my thoughts. – Exiled here, I had a place to stage the theatrical masterpieces of every literature. I could show you unknown riches. I mark the history of treasures you discovered. I see what follows! My wisdom is as despised as the chaos. What is my nothingness, compared with the stupor that awaits you?'})
+      .column-group__item
+        .list-group
+          .list-group__item
+            +ads-description({title: 'Once Upon A Time', text: 'Poem by John Doe', comments: true})
+          .list-group__item
+            p.text-muted Oh the enormous avenues of the holy land, the terraces of the temple! What has become of the Brahmin who explained the Proverbs to me? I can even see the old women still,
+          .list-group__item
+            .column-group.column-group--sm
+              .column-group__item
+                h3 Comments 2
+              .column-group__item
+                +testimonial()

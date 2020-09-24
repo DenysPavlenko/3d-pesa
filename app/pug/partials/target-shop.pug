@@ -1,0 +1,9 @@
+include /partials/shop-item
+
+mixin target-shop(props = {})
+
+  .target-shop
+    .target-shop__icon
+      +icon('target', 'svg-icon--muted')(width="40" height="40")
+    .target-shop__info
+      +shop-item()

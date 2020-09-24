@@ -1,0 +1,25 @@
+include /partials/avatar
+include /partials/send-button
+include /partials/textarea
+
+mixin post-input(props = {})
+
+  .post-input
+    .post-input__avatar
+      +avatar({image:'images/user/avatar.jpg', size:'sm'})
+    .post-input__form
+      .post-input__input
+        +textarea({resize:true, size:'sm', rows:'1'})(placeholder="What’s going on?")
+
+      //- .post-input__attachments
+      //-   +times(2)
+      //-     .post-input__attachment
+      //-       img(src="images/social-app/post/post-image.jpg", class="image" alt="post-image")
+      //-       .close-icon.close-icon--circle.post-input__attachment-close
+      //-         +icon('close', 'svg-icon--light close-icon__svg')
+
+      .post-input__actions
+        .post-input__action
+          +icon('picture', 'svg-icon--muted svg-icon--hover-light')(width="19" height="20")
+        .post-input__action
+          +send-button({isActive:true})

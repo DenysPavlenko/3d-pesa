@@ -1,0 +1,10 @@
+mixin video-box(props = {})
+  -const { js, video, cover } = props
+
+  div(class=`video-box ${js?'js-video-box':''}`)
+    div(class=`video-box__preview ${js?'js-video-box-preview':''}`)
+      if(cover)
+        figure(style=`background-image:url('${cover}')` class="video-box__preview-image")
+        div(class=`video-box__preview-button ${js?'js-video-box-button':''}`)
+          +icon('video-play', 'svg-icon svg-icon--light')(width="57" height="57")
+    iframe(src=video frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class=`video-box__iframe ${js?'js-video-box-iframe':''}`)

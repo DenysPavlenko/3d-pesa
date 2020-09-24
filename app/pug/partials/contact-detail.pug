@@ -1,0 +1,17 @@
+include /partials/switch
+
+mixin contact-detail(props = {})
+  -const { title, icon, badge, control } = props
+
+  .contact-detail
+    .contact-detail__icon
+      +icon(icon.name, 'svg-icon--muted')(width=icon.width height=icon.height)
+    .contact-detail__info
+      .contact-detail__title
+        h4.font-regular #{title}
+      .contact-detail__badge
+        h6.font-regular.text-muted #{badge}
+
+    if(control)
+      .contact-detail__control
+        +switch({checked:true})

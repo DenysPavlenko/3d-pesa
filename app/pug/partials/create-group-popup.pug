@@ -1,0 +1,32 @@
+include /partials/close
+include /partials/upload-files
+include /partials/input
+include /partials/button
+
+mixin create-group-popup(props = {})
+
+  .popup.modal(data-popup="create-group-popup")
+    .popup__header-offset
+    .popup__header
+      .content-header.content-header--md-border-0
+        .content-header__center
+          h3 Create group
+        .content-header__right.content-header__right--md-left
+          +close({mdLight:true})(data-popup-close="create-group-popup")
+
+    .popup__body
+      form.form
+        .form__line
+          .form-group
+            .form-group__header
+              label.p Group name
+            +input()(type="text", placeholder="My group")
+        .form__line
+          .form-group
+            .form-group__header
+              label.p Cover image
+            +upload-files([{title: 'Upload'}])
+        .form__line
+          .button-group.button-group--fluid
+            +button({type:'bordered', fluid:true, size:'xl', classes:'button-group__button'})(type="button" data-popup-close="create-group-popup")| Cancel
+            +button({type:'white', fluid:true, size:'xl', classes:'button-group__button'})(type="button" data-popup-open="add-members-popup")| Next

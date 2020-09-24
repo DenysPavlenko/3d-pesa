@@ -1,0 +1,22 @@
+mixin timetable(props = {})
+  -const { light, absolute } = props
+  -const textClass = light ? '' : 'text-muted'
+  -
+    const classnames = classNames({
+      'timetable': true,
+      'js-timetable': true,
+      'timetable--absolute': absolute,
+    })
+
+
+  div(class=classnames)
+    .timetable__header.js-timetable-header
+      p(class=textClass) Closed • 11: 00 AM - 10 PM
+    .timetable__list.js-timetable-list
+      p(class=textClass) Mon • 11: 00 AM - 10 PM
+      p(class=textClass) Tue • 11: 00 AM - 10 PM
+      p(class=textClass) Wed • 11: 00 AM - 10 PM
+      p(class=textClass) Thu • 11: 00 AM - 10 PM
+      p(class=textClass) Fri • 11: 00 AM - 10 PM
+      p(class=textClass) Sat • 11: 00 AM - 10 PM
+      p(class=textClass) Sun • 11: 00 AM - 10 PM

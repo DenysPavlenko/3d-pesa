@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Aethiopian</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./styles/vendor.css">
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+  </head>
+  <body>
+    <div class="aethiopian-page">
+      <div class="popup modal" data-popup="new-offer-popup">
+        <div class="popup__header-offset"></div>
+        <div class="popup__header">
+          <div class="content-header content-header--md-border-0">
+            <div class="content-header__center">
+              <h3>New offer</h3>
+            </div>
+            <div class="content-header__right content-header__right--md-left">
+                    <div class="close close--md-light" data-popup-close="new-offer-popup">
+                      <svg class="svg-icon close__icon">
+                        <use href="images/svg/svg-sprite/symbol/sprite.svg#close" x="0" y="0"></use>
+                      </svg>
+                    </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup__body">
+          <div class="column-group column-group--justify-items-center">
+            <div class="column-group__item">
+              <div class="exchange-card">
+                <div class="exchange-card__header">
+                  <div class="column-group column-group--xs column-group--align-center">
+                    <div class="column-group__item">
+                            <div class="avatar">
+                              <figure style="background-image:url('images/user/avatar.jpg')"></figure>
+                            </div>
+                    </div>
+                    <div class="column-group__item">
+                      <h4>You offer</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="exchange-card__content">
+                  <form class="form">
+                    <div class="form__line">
+                      <div class="form-group">
+                        <div class="form-group__header">
+                          <label class="p">What you want to exchange</label>
+                        </div>
+                              <input class="input input--bg-primary" type="text" placeholder="Carrot">
+                      </div>
+                    </div>
+                    <div class="form__line">
+                      <div class="form-group">
+                        <div class="form-group__header">
+                          <label class="p">How many</label>
+                        </div>
+                              <div class="select js-select select--bg-primary">
+                                <div class="select__label js-select-label">
+                                  <div class="select__left">
+                                    <p>3</p>
+                                  </div>
+                                  <div class="select__right"><p class="text-muted">Kg</p></div>
+                                </div>
+                                <div class="select__options  js-select-options">
+                                  <div class="custom-scroll select__options-scroll" data-select-simplebar>
+                                    <div class="select__option  js-select-option" data-option="1">
+                                      <div class="select__left">
+                                        <p>1</p>
+                                      </div>
+                                      <div class="select__right"><p class="text-muted">Kg</p></div>
+                                    </div>
+                                    <div class="select__option  js-select-option" data-option="2">
+                                      <div class="select__left">
+                                        <p>2</p>
+                                      </div>
+                                      <div class="select__right"><p class="text-muted">Kg</p></div>
+                                    </div>
+                                    <div class="select__option  js-select-option" data-option="3">
+                                      <div class="select__left">
+                                        <p>3</p>
+                                      </div>
+                                      <div class="select__right"><p class="text-muted">Kg</p></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="column-group__item">
+              <div class="row-group row-group--align-center row-group--xs">
+                <div class="row-group__item">
+                  <svg class="svg-icon svg-icon--muted" width="20" height="20">
+                    <use href="images/svg/svg-sprite/symbol/sprite.svg#circle-arrows" x="0" y="0"></use>
+                  </svg>
+                </div>
+                <div class="row-group__item">
+                  <h4 class="text-muted text-uppercase">Exchange for</h4>
+                </div>
+              </div>
+            </div>
+            <div class="column-group__item">
+              <div data-popup-content="add-user">
+                <div class="exchange-card exchange-card--mt-0">
+                  <div class="exchange-card__content">
+                    <form class="form">
+                      <div class="form__line">
+                        <div class="form-group">
+                          <div class="form-group__header">
+                            <label class="p">Add user you want to barter with</label>
+                          </div>
+                                <input class="input input--bg-primary" type="text" placeholder="Email address or nickname">
+                        </div>
+                      </div>
+                      <div class="form__line">
+                        <div class="form-group">
+                                <button class="button button--xl button--bordered button--fluid js-popup-switcher" type="button" data-popup-content-hide="add-user" data-popup-content-show="added-user">Add user
+                                </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-popup-content="added-user">
+            <div class="column-group">
+              <div class="column-group__item">
+                <div class="exchange-card">
+                  <div class="exchange-card__header">
+                    <div class="column-group column-group--xs column-group--align-center">
+                      <div class="column-group__item">
+                              <div class="avatar">
+                                <figure style="background-image:url('images/user/avatar.jpg')"></figure>
+                              </div>
+                      </div>
+                      <div class="column-group__item">
+                        <h4><span>Rachel Cole</span><span class="icon-inline">
+                                  <div class="close">
+                                    <svg class="svg-icon close__icon">
+                                      <use href="images/svg/svg-sprite/symbol/sprite.svg#close" x="0" y="0"></use>
+                                    </svg>
+                                  </div></span></h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="exchange-card__content">
+                    <form class="form">
+                      <div class="form__line">
+                        <div class="form-group">
+                          <div class="form-group__header">
+                            <label class="p">What you want to exchange</label>
+                          </div>
+                          <input class="input input--bg-primary" type="text" placeholder="Carrot">
+                        </div>
+                      </div>
+                      <div class="form__line">
+                        <div class="form-group">
+                          <div class="form-group__header">
+                            <label class="p">How many</label>
+                          </div>
+                                <div class="select js-select select--bg-primary">
+                                  <div class="select__label js-select-label">
+                                    <div class="select__left">
+                                      <p>3</p>
+                                    </div>
+                                    <div class="select__right"><p class="text-muted">Kg</p></div>
+                                  </div>
+                                  <div class="select__options  js-select-options">
+                                    <div class="custom-scroll select__options-scroll" data-select-simplebar>
+                                      <div class="select__option  js-select-option" data-option="1">
+                                        <div class="select__left">
+                                          <p>1</p>
+                                        </div>
+                                        <div class="select__right"><p class="text-muted">Kg</p></div>
+                                      </div>
+                                      <div class="select__option  js-select-option" data-option="2">
+                                        <div class="select__left">
+                                          <p>2</p>
+                                        </div>
+                                        <div class="select__right"><p class="text-muted">Kg</p></div>
+                                      </div>
+                                      <div class="select__option  js-select-option" data-option="3">
+                                        <div class="select__left">
+                                          <p>3</p>
+                                        </div>
+                                        <div class="select__right"><p class="text-muted">Kg</p></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                        </div>
+                      </div>
+                      <div class="form__line">
+                              <label class="checkbox checkbox--squere">
+                                <div class="checkbox__box">
+                                        <input class="input checkbox__input" type="checkbox" placeholder="1"><span class="checkbox__checkmark"></span>
+                                </div><span class="checkbox__name">Change</span>
+                              </label>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="column-group__item">
+                <div data-popup-content="added-user">
+                        <button class="button button--xl button--white button--fluid" type="button" data-popup-close="new-offer-popup">Send offer
+                        </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup modal" data-popup="offer-popup">
+        <div class="popup__header-offset"></div>
+        <div class="popup__header">
+          <div class="content-header content-header--md-border-0">
+            <div class="content-header__center">
+              <h3>Offer</h3>
+            </div>
+            <div class="content-header__right content-header__right--md-left">
+                    <div class="close close--md-light" data-popup-close="offer-popup">
+                      <svg class="svg-icon close__icon">
+                        <use href="images/svg/svg-sprite/symbol/sprite.svg#close" x="0" y="0"></use>
+                      </svg>
+                    </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup__body">
+          <div data-popup-content="offer">
+            <div class="column-group column-group--justify-items-center">
+              <div class="column-group__item">
+                <div class="exchange-card">
+                  <div class="exchange-card__header">
+                    <div class="column-group column-group--xs column-group--align-center">
+                      <div class="column-group__item">
+                              <div class="avatar">
+                                <figure style="background-image:url('images/user/avatar.jpg')"></figure>
+                              </div>
+                      </div>
+                      <div class="column-group__item">
+                        <h4>You offer</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="exchange-card__content">
+                    <div class="exchange-card__checkout">
+                      <div class="exchange-card__checkout-item">
+                        <div class="exchange-card__checkout-line">
+                          <p class="text-muted">What you want to exchange</p>
+                        </div>
+                        <div class="exchange-card__checkout-line">
+                          <p>Carrot</p>
+                        </div>
+                      </div>
+                      <div class="exchange-card__checkout-item">
+                        <div class="exchange-card__checkout-line">
+                          <p class="text-muted">How many</p>
+                        </div>
+                        <div class="exchange-card__checkout-line">
+                          <p>5</p>
+                          <p class="text-muted">Kg</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column-group__item">
+                <div class="row-group row-group--align-center row-group--xs">
+                  <div class="row-group__item">
+                    <svg class="svg-icon svg-icon--muted" width="20" height="20">
+                      <use href="images/svg/svg-sprite/symbol/sprite.svg#circle-arrows" x="0" y="0"></use>
+                    </svg>
+                  </div>
+                  <div class="row-group__item">
+                    <h4 class="text-muted text-uppercase">Exchange for</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="column-group__item">
+                <div class="exchange-card">
+                  <div class="exchange-card__header">
+                    <div class="column-group column-group--xs column-group--align-center">
+                      <div class="column-group__item">
+                              <div class="avatar">
+                                <figure style="background-image:url('images/user/avatar.jpg')"></figure>
+                              </div>
+                      </div>
+                      <div class="column-group__item">
+                        <h4>Rachel Cole</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="exchange-card__content">
+                    <div class="exchange-card__checkout">
+                      <div class="exchange-card__checkout-item">
+                        <div class="exchange-card__checkout-line">
+                          <p class="text-muted">What you want to recieve</p>
+                        </div>
+                        <div class="exchange-card__checkout-line">
+                          <p>Onions</p>
+                        </div>
+                      </div>
+                      <div class="exchange-card__checkout-item">
+                        <div class="exchange-card__checkout-line">
+                          <p class="text-muted">How many</p>
+                        </div>
+                        <div class="exchange-card__checkout-line">
+                          <p>5</p>
+                          <p class="text-muted">Kg</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column-group__item">
+                      <button class="button button--xl button--fluid" type="button">Accept offer
+                      </button>
+              </div>
+              <div class="column-group__item">
+                <div class="button-group button-group--fluid">
+                        <button class="button button--xl button--bordered button-group__button js-popup-switcher" type="button" data-popup-content-hide="offer" data-popup-content-show="offer-change">Change terms
+                        </button>
+                        <button class="button button--xl button--bordered button--bordered-danger button-group__button" type="button">Decline offer
+                        </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-popup-content="offer-change">
+            <div class="column-group column-group--justify-items-center">
+              <div class="column-group__item">
+                <div class="exchange-card">
+                  <div class="exchange-card__header">
+                    <div class="column-group column-group--xs column-group--align-center">
+                      <div class="column-group__item">
+                              <div class="avatar">
+                                <figure style="background-image:url('images/user/avatar.jpg')"></figure>
+                              </div>
+                      </div>
+                      <div class="column-group__item">
+                        <h4>You offer</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="exchange-card__content">
+                    <form class="form">
+                      <div class="form__line">
+                        <div class="form-group">
+                          <div class="form-group__header">
+                            <label class="p">What you want to exchange</label>
+                          </div>
+                                <input class="input input--bg-primary" type="text" placeholder="Carrot">
+                        </div>
+                      </div>
+                      <div class="form__line">
+                        <div class="form-group">
+                          <div class="form-group__header">
+                            <label class="p">How many</label>
+                          </div>
+                                <div class="select js-select select--bg-primary">
+                                  <div class="select__label js-select-label">
+                                    <div class="select__left">
+                                      <p>1</p>
+                                    </div>
+                                    <div class="select__right"><p class="text-muted">Kg</p></div>
+                                  </div>
+                                  <div class="select__options  js-select-options">
+                                    <div class="custom-scroll select__options-scroll" data-select-simplebar>
+                                      <div class="select__option  js-select-option" data-option="1">
+                                        <div class="select__left">
+                                          <p>1</p>
+                                        </div>
+                                        <div class="select__right"><p class="text-muted">Kg</p></div>
+                                      </div>
+                                      <div class="select__option  js-select-option" data-option="2">
+                                        <div class="select__left">
+                                          <p>2</p>
+                                        </div>
+                                        <div class="select__right"><p class="text-muted">Kg</p></div>
+                                      </div>
+                                      <div class="select__option  js-select-option" data-option="3">
+                                        <div class="select__left">
+                                          <p>3</p>
+                                        </div>
+                                        <div class="select__right"><p class="text-muted">Kg</p></div>
+                                      </div>
+                                      <div class="select__option  js-select-option" data-option="4">
+                                        <div class="select__left">
+                                          <p>4</p>
+                                        </div>
+                                        <div class="select__right"><p class="text-muted">Kg</p></div>
+                                      </div>
+                                      <div class="select__option  js-select-option" data-option="5">
+                                        <div class="select__left">
+                                          <p>5</p>
+                                        </div>
+                                        <div class="select__right"><p class="text-muted">Kg</p></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                        </div>
+                      </div>
+                      <div class="form__line">
+                        <label class="checkbox checkbox--squere">
+                                <label class="checkbox checkbox--squere">
+                                  <div class="checkbox__box">
+                                          <input class="input checkbox__input" type="checkbox" placeholder="1"><span class="checkbox__checkmark"></span>
+                                  </div><span class="checkbox__name">Change</span>
+                                </label>
+                        </label>
+                      </div>
+                      <div class="form__line">
+                        <div class="form-group">
+                          <div class="input-group input-group--bg-primary">
+                                  <input class="input input--bg-primary input-group__input" type="number" value="12">
+                            <div class="input-group__append">
+                              <div class="input-group__wrap">
+                                      <div class="row-group row-group--xs row-group--align-center">
+                                        <div class="row-group__item"><img src="images/icons/g-coin.svg" alt="coin"></div>
+                                        <div class="row-group__item">
+                                          <h5 class="text-muted text-uppercase">GCN</h5>
+                                        </div>
+                                      </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="column-group__item">
+                <div class="row-group row-group--align-center row-group--xs">
+                  <div class="row-group__item">
+                    <svg class="svg-icon svg-icon--muted" width="20" height="20">
+                      <use href="images/svg/svg-sprite/symbol/sprite.svg#circle-arrows" x="0" y="0"></use>
+                    </svg>
+                  </div>
+                  <div class="row-group__item">
+                    <h4 class="text-muted text-uppercase">Exchange for</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="column-group__item">
+                <div class="exchange-card">
+                  <div class="exchange-card__header">
+                    <div class="column-group column-group--xs column-group--align-center">
+                      <div class="column-group__item">
+                              <div class="avatar">
+                                <figure style="background-image:url('images/user/avatar.jpg')"></figure>
+                              </div>
+                      </div>
+                      <div class="column-group__item">
+                        <h4>Rachel Cole</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="exchange-card__content">
+                    <form class="form">
+                      <div class="form__line">
+                        <div class="form-group">
+                          <div class="form-group__header">
+                            <label class="p">What you want to exchange</label>
+                          </div>
+                                <input class="input input--bg-primary" type="text" placeholder="Carrot">
+                        </div>
+                      </div>
+                      <div class="form__line">
+                        <div class="form-group">
+                          <div class="form-group__header">
+                            <label class="p">How many</label>
+                          </div>
+                                <div class="select js-select select--bg-primary">
+                                  <div class="select__label js-select-label">
+                                    <div class="select__left">
+                                      <p>3</p>
+                                    </div>
+                                    <div class="select__right"><p class="text-muted">Kg</p></div>
+                                  </div>
+                                  <div class="select__options  js-select-options">
+                                    <div class="custom-scroll select__options-scroll" data-select-simplebar>
+                                      <div class="select__option  js-select-option" data-option="1">
+                                        <div class="select__left">
+                                          <p>1</p>
+                                        </div>
+                                        <div class="select__right"><p class="text-muted">Kg</p></div>
+                                      </div>
+                                      <div class="select__option  js-select-option" data-option="2">
+                                        <div class="select__left">
+                                          <p>2</p>
+                                        </div>
+                                        <div class="select__right"><p class="text-muted">Kg</p></div>
+                                      </div>
+                                      <div class="select__option  js-select-option" data-option="3">
+                                        <div class="select__left">
+                                          <p>3</p>
+                                        </div>
+                                        <div class="select__right"><p class="text-muted">Kg</p></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                        </div>
+                      </div>
+                      <div class="form__line">
+                        <div class="form-group">
+                                <label class="checkbox checkbox--squere">
+                                  <div class="checkbox__box">
+                                          <input class="input checkbox__input" type="checkbox" placeholder="1"><span class="checkbox__checkmark"></span>
+                                  </div><span class="checkbox__name">Change</span>
+                                </label>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="column-group__item">
+                <div class="button-group button-group--fluid">
+                        <button class="button button--xl button--bordered button-group__button" type="button">Cancel
+                        </button>
+                        <button class="button button--xl button--white button-group__button" type="button">Send offer
+                        </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fixed-button fixed-button--lg-bottom-80" data-popup-open="new-offer-popup">
+              <button class="button button--round" type="button"><img src="images/icons/plus-colored.svg" alt="icon"/>
+              </button>
+      </div>
+      <div class="aethiopian-page__sidebar">
+        <div class="sidebar__overlay js-sidebar-overlay"></div>
+        <aside class="sidebar js-sidebar">
+          <div class="sidebar__header-mobile">
+            <div class="content-header content-header--bg-secondary">
+              <div class="content-header__left">
+                      <div class="close close--light js-sidebar-close">
+                        <svg class="svg-icon close__icon">
+                          <use href="images/svg/svg-sprite/symbol/sprite.svg#close" x="0" y="0"></use>
+                        </svg>
+                      </div>
+              </div>
+              <div class="content-header__center">
+                <h3>Menu</h3>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar__header">
+            <div class="sidebar__header-logo"><img src="images/logo.svg" alt="logo.svg"/></div>
+            <div class="sidebar__header-user">
+              <p class="sidebar__header-user-greetings">Good Morning,</p>
+              <h3 class="sidebar__header-user-name">John Doe</h3>
+            </div>
+          </div>
+          <div class="sidebar__body">
+            <div class="custom-scroll" data-simplebar="data-simplebar">
+              <div class="navigation">
+                <ul class="navigation__items">
+                  <li class="navigation__item js-navigation-item "><a class="navigation__link" href="dashboard.html">
+                      <div class="navigation__icon">
+                        <svg class="svg-icon svg-icon--muted navigation__icon-svg" width="20" height="19">
+                          <use href="images/svg/svg-sprite/symbol/sprite.svg#house" x="0" y="0"></use>
+                        </svg>
+                      </div>
+                      <h5 class="text-muted navigation__title">Dashboard</h5></a>
+                  </li>
+                  <li class="navigation__item js-navigation-item "><a class="navigation__link" href="calendar.html">
+                      <div class="navigation__icon">
+                        <svg class="svg-icon svg-icon--muted navigation__icon-svg" width="20" height="20">
+                          <use href="images/svg/svg-sprite/symbol/sprite.svg#calendar" x="0" y="0"></use>
+                        </svg>
+                      </div>
+                      <h5 class="text-muted navigation__title">Calendar</h5></a>
+                  </li>
+                  <li class="navigation__item js-navigation-item "><a class="navigation__link" href="social-app-feed.html">
+                      <div class="navigation__icon">
+                        <svg class="svg-icon svg-icon--muted navigation__icon-svg" width="20" height="20">
+                          <use href="images/svg/svg-sprite/symbol/sprite.svg#chat" x="0" y="0"></use>
+                        </svg>
+                      </div>
+                      <h5 class="text-muted navigation__title">Social</h5>
+                      <div class="navigation__badge">
+                        <div class="badge badge--static">
+                          <div class="badge__wrapper">
+                            <p>25</p>
+                          </div>
+                        </div>
+                      </div></a>
+                  </li>
+                  <li class="navigation__item js-navigation-item "><a class="navigation__link" href="marketplace.html">
+                      <div class="navigation__icon">
+                        <svg class="svg-icon svg-icon--muted navigation__icon-svg" width="20" height="19">
+                          <use href="images/svg/svg-sprite/symbol/sprite.svg#marketplace" x="0" y="0"></use>
+                        </svg>
+                      </div>
+                      <h5 class="text-muted navigation__title">Marketplace</h5>
+                      <div class="navigation__badge">
+                        <div class="badge badge--static">
+                          <div class="badge__wrapper">
+                            <p>5</p>
+                          </div>
+                        </div>
+                      </div></a>
+                  </li>
+                  <li class="navigation__item js-navigation-item "><a class="navigation__link">
+                      <div class="navigation__icon">
+                        <svg class="svg-icon svg-icon--muted navigation__icon-svg" width="20" height="16">
+                          <use href="images/svg/svg-sprite/symbol/sprite.svg#car" x="0" y="0"></use>
+                        </svg>
+                      </div>
+                      <h5 class="text-muted navigation__title">Car sharing</h5>
+                      <div class="navigation__badge">
+                        <div class="badge badge--static">
+                          <div class="badge__wrapper">
+                            <p>2</p>
+                          </div>
+                        </div>
+                      </div></a>
+                    <ul class="navigation__items navigation__items--inner js-navigation-items-inner navigation__items--hidden">
+                      <li class="navigation__item "><a class="navigation__link" href="car-share-ride.html">
+                          <div class="navigation__icon">
+                            <svg class="svg-icon svg-icon--muted navigation__icon-svg" width="20" height="16">
+                              <use href="images/svg/svg-sprite/symbol/sprite.svg#car" x="0" y="0"></use>
+                            </svg>
+                          </div>
+                          <h5 class="text-muted navigation__title">Ride</h5></a></li>
+                      <li class="navigation__item "><a class="navigation__link" href="car-share-eats.html">
+                          <div class="navigation__icon">
+                            <svg class="svg-icon svg-icon--muted navigation__icon-svg" width="20" height="18">
+                              <use href="images/svg/svg-sprite/symbol/sprite.svg#eats" x="0" y="0"></use>
+                            </svg>
+                          </div>
+                          <h5 class="text-muted navigation__title">Eats</h5></a></li>
+                    </ul>
+                  </li>
+                  <li class="navigation__item js-navigation-item is-active"><a class="navigation__link">
+                      <div class="navigation__icon">
+                        <svg class="svg-icon svg-icon--muted navigation__icon-svg" width="20" height="20">
+                          <use href="images/svg/svg-sprite/symbol/sprite.svg#planet" x="0" y="0"></use>
+                        </svg>
+                      </div>
+                      <h5 class="text-muted navigation__title">Æthiopian</h5></a>
+                    <ul class="navigation__items navigation__items--inner js-navigation-items-inner ">
+                      <li class="navigation__item "><a class="navigation__link" href="aethiopian-share-shop-finder.html">
+                          <div class="navigation__icon">
+                            <svg class="svg-icon svg-icon--muted navigation__icon-svg" width="20" height="13">
+                              <use href="images/svg/svg-sprite/symbol/sprite.svg#truck" x="0" y="0"></use>
+                            </svg>
+                          </div>
+                          <h5 class="text-muted navigation__title">Equipment Share</h5></a></li>
+                      <li class="navigation__item "><a class="navigation__link" href="aethiopian-shop-my-goods.html">
+                          <div class="navigation__icon">
+                            <svg class="svg-icon svg-icon--muted navigation__icon-svg" width="19" height="19">
+                              <use href="images/svg/svg-sprite/symbol/sprite.svg#shop" x="0" y="0"></use>
+                            </svg>
+                          </div>
+                          <h5 class="text-muted navigation__title">My shop</h5></a></li>
+                      <li class="navigation__item is-active"><a class="navigation__link" href="aethiopian-share-cryptobarter.html">
+                          <div class="navigation__icon">
+                            <svg class="svg-icon svg-icon--muted navigation__icon-svg" width="20" height="20">
+                              <use href="images/svg/svg-sprite/symbol/sprite.svg#badge" x="0" y="0"></use>
+                            </svg>
+                          </div>
+                          <h5 class="text-muted navigation__title">Cryptobarter</h5></a></li>
+                    </ul>
+                  </li>
+                  <li class="navigation__item js-navigation-item "><a class="navigation__link" href="hyperloop-articles.html">
+                      <div class="navigation__icon">
+                        <svg class="svg-icon svg-icon--muted navigation__icon-svg" width="20" height="17">
+                          <use href="images/svg/svg-sprite/symbol/sprite.svg#hyperloop" x="0" y="0"></use>
+                        </svg>
+                      </div>
+                      <h5 class="text-muted navigation__title">Hyperloop</h5></a>
+                  </li>
+                  <li class="navigation__item js-navigation-item "><a class="navigation__link" href="adbot-watch.html">
+                      <div class="navigation__icon">
+                        <svg class="svg-icon svg-icon--muted navigation__icon-svg" width="20" height="14">
+                          <use href="images/svg/svg-sprite/symbol/sprite.svg#ad" x="0" y="0"></use>
+                        </svg>
+                      </div>
+                      <h5 class="text-muted navigation__title">Adbot</h5></a>
+                  </li>
+                  <li class="navigation__item js-navigation-item "><a class="navigation__link" href="bartender-home.html">
+                      <div class="navigation__icon">
+                        <svg class="svg-icon svg-icon--muted navigation__icon-svg" width="20" height="20">
+                          <use href="images/svg/svg-sprite/symbol/sprite.svg#sold" x="0" y="0"></use>
+                        </svg>
+                      </div>
+                      <h5 class="text-muted navigation__title">Bartender trading</h5></a>
+                  </li>
+                  <li class="navigation__item js-navigation-item "><a class="navigation__link" href="settings.html">
+                      <div class="navigation__icon">
+                        <svg class="svg-icon svg-icon--muted navigation__icon-svg" width="20" height="20">
+                          <use href="images/svg/svg-sprite/symbol/sprite.svg#settings" x="0" y="0"></use>
+                        </svg>
+                      </div>
+                      <h5 class="text-muted navigation__title">Settings</h5></a>
+                  </li>
+                </ul>
+                <div class="navigation__footer">
+                  <div class="logout">
+                    <div class="logout__icon">
+                      <svg class="svg-icon svg-icon--muted logout__icon-svg" width="20" height="17">
+                        <use href="images/svg/svg-sprite/symbol/sprite.svg#log-out" x="0" y="0"></use>
+                      </svg>
+                    </div>
+                    <h5 class="text-muted logout__title">Logout</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="aethiopian-page__container">
+        <div class="header">
+          <div class="header__wrap">
+            <div class="header__left">
+              <div class="header__burger">
+                        <div class="burger js-burger"><span></span></div>
+              </div>
+              <div class="header__title">
+                <h3>Cryptobarter</h3>
+              </div>
+              <div class="header__logo">
+                <div class="header__logo-icon"><img src="images/logo.svg" alt="logo.svg"></div><span class="header__logo-title">3D-Pesa</span>
+              </div>
+            </div>
+            <div class="header__center">
+              <div class="input-group input-group--bg-primary">
+                <div class="input-group__prepend">
+                  <div class="input-group__wrap">
+                    <svg class="svg-icon svg-icon--muted" width="18" height="18">
+                      <use href="images/svg/svg-sprite/symbol/sprite.svg#search" x="0" y="0"></use>
+                    </svg>
+                  </div>
+                </div>
+                <input class="input input--bg-primary input-group__input" type="text" placeholder="Search for an equipment">
+                <div class="input-group__append input-group__append--border-left">
+                          <div class="select js-select select--bg-primary">
+                            <div class="select__label js-select-label" data-selected="Current shop">
+                              <div class="select__left">
+                                <p>Current shop</p>
+                              </div>
+                            </div>
+                            <div class="select__options  js-select-options">
+                              <div class="custom-scroll select__options-scroll" data-select-simplebar>
+                                <div class="select__option  js-select-option" data-option="Shop 1">
+                                  <div class="select__left">
+                                    <p>Shop 1</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="Shop 2">
+                                  <div class="select__left">
+                                    <p>Shop 2</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="Shop 3">
+                                  <div class="select__left">
+                                    <p>Shop 3</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="Shop 4">
+                                  <div class="select__left">
+                                    <p>Shop 4</p>
+                                  </div>
+                                </div>
+                                <div class="select__option  js-select-option" data-option="Shop 5">
+                                  <div class="select__left">
+                                    <p>Shop 5</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                </div>
+              </div>
+            </div>
+            <div class="header__right">
+              <div class="header__dropdowns">
+                <div class="header__dropdown">
+                          <div class="dropdown dropdown--radius-top-0 js-dropdown notifications-dropdown" data-dropdown="notifications">
+                            <div class="dropdown__toggle notifications-dropdown__toggle" data-dropdown-toggle="notifications">
+                              <svg class="svg-icon svg-icon--muted notifications-dropdown__toggle-icon" width="16" height="19">
+                                <use href="images/svg/svg-sprite/symbol/sprite.svg#bell" x="0" y="0"></use>
+                              </svg>
+                            </div>
+                            <div class="dropdown__body js-dropdown-body notifications-dropdown__body">
+                              <div class="notifications-dropdown__wrap">
+                                <div class="notifications-dropdown__header">
+                                  <div class="content-header content-header--bg-secondary">
+                                    <div class="content-header__left">
+                                              <div class="close close--light" data-dropdown-close="notifications">
+                                                <svg class="svg-icon close__icon">
+                                                  <use href="images/svg/svg-sprite/symbol/sprite.svg#close" x="0" y="0"></use>
+                                                </svg>
+                                              </div>
+                                    </div>
+                                    <div class="content-header__center">
+                                      <h3>Notifications</h3>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="notifications-dropdown__content custom-scroll" data-simplebar>
+                                          <div class="column-group">
+                                            <div class="column-group__item">
+                                              <div class="column-group column-group--md">
+                                                <div class="column-group__item">
+                                                  <h4 class="text-muted column-group__day">Today</h4>
+                                                </div>
+                                                <div class="column-group__item">
+                                                          <div class="notification">
+                                                            <div class="notification__icon">
+                                                                      <div class="avatar avatar--xs">
+                                                                        <figure style="background-image:url('images/user/avatar.jpg')"></figure>
+                                                                      </div>
+                                                            </div>
+                                                            <div class="notification__content">
+                                                              <div class="notification__line"><p><span class="font-semibold">Rachel</span> sent you a message</p></div>
+                                                              <div class="notification__line"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis donec porttitor aliquam volutpat.”</p></div>
+                                                              <div class="notification__line"><p class="text-muted text-uppercase">1 MIN</p></div>
+                                                            </div>
+                                                          </div>
+                                                </div>
+                                                <div class="column-group__item">
+                                                          <div class="notification">
+                                                            <div class="notification__icon">
+                                                                      <div class="avatar avatar--xs avatar--bg-green">
+                                                                        <svg class="svg-icon svg-icon--light" width="14" height="14">
+                                                                          <use href="images/svg/svg-sprite/symbol/sprite.svg#calendar" x="0" y="0"></use>
+                                                                        </svg>
+                                                                      </div>
+                                                            </div>
+                                                            <div class="notification__content">
+                                                              <div class="notification__line"><p><span class="font-semibold">Frank’s</span> Birthday</p></div>
+                                                              <div class="notification__line"><p class="text-muted text-uppercase">2 MIN</p></div>
+                                                            </div>
+                                                          </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="column-group__item">
+                                              <div class="column-group column-group--md">
+                                                <div class="column-group__item">
+                                                  <h4 class="text-muted column-group__day">Yesterday</h4>
+                                                </div>
+                                                <div class="column-group__item">
+                                                          <div class="notification">
+                                                            <div class="notification__icon">
+                                                                      <div class="avatar avatar--xs avatar--bg-green">
+                                                                        <svg class="svg-icon svg-icon--light" width="14" height="14">
+                                                                          <use href="images/svg/svg-sprite/symbol/sprite.svg#calendar" x="0" y="0"></use>
+                                                                        </svg>
+                                                                      </div>
+                                                            </div>
+                                                            <div class="notification__content">
+                                                              <div class="notification__line"><p>Meeting with <span class="font-semibold">John Doe</span></p></div>
+                                                              <div class="notification__line"><p class="text-muted text-uppercase">6:30 PM</p></div>
+                                                            </div>
+                                                          </div>
+                                                </div>
+                                                <div class="column-group__item">
+                                                          <div class="notification">
+                                                            <div class="notification__icon">
+                                                                      <div class="avatar avatar--xs">
+                                                                        <figure style="background-image:url('images/user/avatar.jpg')"></figure>
+                                                                      </div>
+                                                            </div>
+                                                            <div class="notification__content">
+                                                              <div class="notification__line"><p>Rachel</span> sent you a friend request</p></div>
+                                                              <div class="notification__line"><div class="button-group button-group--xs">
+              <button type="button" class="button button--xs button--bordered button-group__button">Decline</button>
+              <button type="button" class="button button--xs button--white button-group__button">Accept</button>
+            </div></div>
+                                                              <div class="notification__line"><p class="text-muted text-uppercase">7:15 PM</p></div>
+                                                            </div>
+                                                          </div>
+                                                </div>
+                                                <div class="column-group__item">
+                                                          <div class="notification">
+                                                            <div class="notification__icon">
+                                                                      <div class="avatar avatar--xs avatar--bg-orange">
+                                                                        <svg class="svg-icon svg-icon--light" width="13" height="13">
+                                                                          <use href="images/svg/svg-sprite/symbol/sprite.svg#marketplace" x="0" y="0"></use>
+                                                                        </svg>
+                                                                      </div>
+                                                            </div>
+                                                            <div class="notification__content">
+                                                              <div class="notification__line"><p>Somebody bought your item</p></div>
+                                                              <div class="notification__line"><p class="text-muted text-uppercase">6:30 PM</p></div>
+                                                            </div>
+                                                          </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="column-group__item">
+                                              <div class="column-group column-group--md">
+                                                <div class="column-group__item">
+                                                  <h4 class="text-muted column-group__day">Sun, March 11</h4>
+                                                </div>
+                                                <div class="column-group__item">
+                                                          <div class="notification">
+                                                            <div class="notification__icon">
+                                                                      <div class="avatar avatar--xs avatar--bg-purple">
+                                                                        <svg class="svg-icon svg-icon--light" width="16" height="14">
+                                                                          <use href="images/svg/svg-sprite/symbol/sprite.svg#car" x="0" y="0"></use>
+                                                                        </svg>
+                                                                      </div>
+                                                            </div>
+                                                            <div class="notification__content">
+                                                              <div class="notification__line"><p>Your driver has arrived</p></div>
+                                                              <div class="notification__line"><p class="text-muted text-uppercase">10:45 PM</p></div>
+                                                            </div>
+                                                          </div>
+                                                </div>
+                                                <div class="column-group__item">
+                                                          <div class="notification">
+                                                            <div class="notification__icon">
+                                                                      <div class="avatar avatar--xs avatar--bg-red">
+                                                                        <svg class="svg-icon svg-icon--light" width="13" height="13">
+                                                                          <use href="images/svg/svg-sprite/symbol/sprite.svg#person" x="0" y="0"></use>
+                                                                        </svg>
+                                                                      </div>
+                                                            </div>
+                                                            <div class="notification__content">
+                                                              <div class="notification__line"><p><span class="font-semibold">Rachel</span> sent you a friend request</p></div>
+                                                              <div class="notification__line"><p class="text-muted text-uppercase">6:30 PM</p></div>
+                                                            </div>
+                                                          </div>
+                                                </div>
+                                                <div class="column-group__item">
+                                                          <div class="notification">
+                                                            <div class="notification__icon">
+                                                                      <div class="avatar avatar--xs avatar--bg-orange">
+                                                                        <svg class="svg-icon svg-icon--light" width="13" height="13">
+                                                                          <use href="images/svg/svg-sprite/symbol/sprite.svg#marketplace" x="0" y="0"></use>
+                                                                        </svg>
+                                                                      </div>
+                                                            </div>
+                                                            <div class="notification__content">
+                                                              <div class="notification__line"><p>Somebody bought your item</p></div>
+                                                              <div class="notification__line"><p class="text-muted text-uppercase">6:30 PM</p></div>
+                                                            </div>
+                                                          </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                </div>
+                <div class="header__dropdown">
+                          <div class="dropdown dropdown--radius-top-0 js-dropdown user-dropdown" data-dropdown="user">
+                            <div class="dropdown__toggle user-dropdown__toggle" data-dropdown-toggle="user">
+                              <div class="user-dropdown__toggle-wrap">
+                                <div class="user-dropdown__avatar">
+                                          <div class="avatar avatar--sm user-dropdown__avatar-image">
+                                            <figure style="background-image:url('images/user/avatar.jpg')"></figure>
+                                          </div>
+                                </div>
+                                <div class="user-dropdown__name">
+                                  <p>John Doe</p>
+                                </div>
+                                <div class="user-dropdown__chevron">
+                                  <svg class="svg-icon svg-icon--light" width="8" height="5">
+                                    <use href="images/svg/svg-sprite/symbol/sprite.svg#chevron-down" x="0" y="0"></use>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="dropdown__body js-dropdown-body user-dropdown__body">
+                              <div class="user-dropdown__wrap">
+                                <div class="user-dropdown__header">
+                                  <div class="content-header content-header--bg-secondary">
+                                    <div class="content-header__left">
+                                              <div class="close close--light" data-dropdown-close="user">
+                                                <svg class="svg-icon close__icon">
+                                                  <use href="images/svg/svg-sprite/symbol/sprite.svg#close" x="0" y="0"></use>
+                                                </svg>
+                                              </div>
+                                    </div>
+                                    <div class="content-header__center">
+                                      <h3>John Doe</h3>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="user-dropdown__content custom-scroll" data-simplebar>
+                                          <div class="user-dropdown-menu">
+                                            <div class="user-dropdown-menu__items"><a class="user-dropdown-menu__item false" href="user-profile.html">
+                                                <div class="user-dropdown-menu__icon">
+                                                  <svg class="svg-icon svg-icon--muted user-dropdown-menu__icon-svg" width="20" height="23">
+                                                    <use href="images/svg/svg-sprite/symbol/sprite.svg#profile-settings" x="0" y="0"></use>
+                                                  </svg>
+                                                </div>
+                                                <h5 class="text-muted user-dropdown-menu__title">Profile</h5></a><a class="user-dropdown-menu__item false" href="user-wallet.html">
+                                                <div class="user-dropdown-menu__icon">
+                                                  <svg class="svg-icon svg-icon--muted user-dropdown-menu__icon-svg" width="20" height="18">
+                                                    <use href="images/svg/svg-sprite/symbol/sprite.svg#wallet" x="0" y="0"></use>
+                                                  </svg>
+                                                </div>
+                                                <h5 class="text-muted user-dropdown-menu__title">Wallet</h5></a><a class="user-dropdown-menu__item false" href="user-orders.html">
+                                                <div class="user-dropdown-menu__icon">
+                                                  <svg class="svg-icon svg-icon--muted user-dropdown-menu__icon-svg" width="20" height="18">
+                                                    <use href="images/svg/svg-sprite/symbol/sprite.svg#box" x="0" y="0"></use>
+                                                  </svg>
+                                                </div>
+                                                <h5 class="text-muted user-dropdown-menu__title">Orders & Purchases</h5></a><a class="user-dropdown-menu__item false" href="user-time-recorder.html">
+                                                <div class="user-dropdown-menu__icon">
+                                                  <svg class="svg-icon svg-icon--muted user-dropdown-menu__icon-svg" width="20" height="18">
+                                                    <use href="images/svg/svg-sprite/symbol/sprite.svg#archive" x="0" y="0"></use>
+                                                  </svg>
+                                                </div>
+                                                <h5 class="text-muted user-dropdown-menu__title">Time recorder</h5></a>
+                                              <div class="user-dropdown-menu__item">
+                                                <div class="user-dropdown-menu__icon">
+                                                  <svg class="svg-icon svg-icon--light" width="20" height="20">
+                                                    <use href="images/svg/svg-sprite/symbol/sprite.svg#moon" x="0" y="0"></use>
+                                                  </svg>
+                                                </div>
+                                                <h5 class="user-dropdown-menu__title">Dark theme</h5>
+                                                <div class="user-dropdown-menu__switch">
+                                                          <label class="switch switch--with-check">
+                                                                    <input class="input switch__checkbox" type="checkbox" checked><span class="switch__slider"></span>
+                                                          </label>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="user-dropdown-menu__footer">
+                                                      <div class="logout">
+                                                        <div class="logout__icon">
+                                                          <svg class="svg-icon svg-icon--muted logout__icon-svg" width="20" height="17">
+                                                            <use href="images/svg/svg-sprite/symbol/sprite.svg#log-out" x="0" y="0"></use>
+                                                          </svg>
+                                                        </div>
+                                                        <h5 class="text-muted logout__title">Logout</h5>
+                                                      </div>
+                                            </div>
+                                          </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="aethiopian-page__wrap">
+          <div class="aethiopian-page__content">
+            <div class="custom-scroll aethiopian-page__box" data-simplebar>
+              <div class="column-group">
+                <div class="column-group__item">
+                  <div class="column-group">
+                    <div class="column-group__item">
+                      <h3>Active offers</h3>
+                    </div>
+                    <div class="column-group__item">
+                      <div class="row">
+                        <div class="col-12 col-md-6">
+                                            <div class="offer-card" data-popup-open="offer-popup">
+                                              <div class="offer-card__heading">
+                                                <p>01/07/2020</p>
+                                              </div>
+                                              <div class="offer-card__group">
+                                                <div class="offer-card__left">
+                                                  <div class="column-group column-group--xs column-group--align-center">
+                                                    <div class="column-group__item">
+                                                                        <div class="avatar">
+                                                                          <figure style="background-image:url('images/user/avatar.jpg')"></figure>
+                                                                        </div>
+                                                    </div>
+                                                    <div class="column-group__item">
+                                                      <h4>John</h4>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="offer-card__right">
+                                                                    <div class="checkout-list">
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">Product:</p>
+                                                                        <p>Carrot</p>
+                                                                      </div>
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">How many:</p>
+                                                                        <p>5kg</p>
+                                                                      </div>
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">Change:</p>
+                                                                        <p>G coins</p>
+                                                                      </div>
+                                                                    </div>
+                                                </div>
+                                              </div>
+                                              <div class="offer-card__group">
+                                                <div class="offer-card__left">
+                                                  <div class="column-group column-group--xs column-group--align-center">
+                                                    <div class="column-group__item">
+                                                                        <div class="avatar">
+                                                                          <figure style="background-image:url('images/user/avatar.jpg')"></figure>
+                                                                        </div>
+                                                    </div>
+                                                    <div class="column-group__item">
+                                                      <h4>Rachel</h4>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="offer-card__right">
+                                                                    <div class="checkout-list">
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">Product:</p>
+                                                                        <p>Carrot</p>
+                                                                      </div>
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">How many:</p>
+                                                                        <p>5kg</p>
+                                                                      </div>
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">Change:</p>
+                                                                        <p>G coins</p>
+                                                                      </div>
+                                                                    </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                                            <div class="offer-card" data-popup-open="offer-popup">
+                                              <div class="offer-card__heading">
+                                                <p>01/07/2020</p>
+                                              </div>
+                                              <div class="offer-card__group">
+                                                <div class="offer-card__left">
+                                                  <div class="column-group column-group--xs column-group--align-center">
+                                                    <div class="column-group__item">
+                                                                        <div class="avatar">
+                                                                          <figure style="background-image:url('images/user/avatar.jpg')"></figure>
+                                                                        </div>
+                                                    </div>
+                                                    <div class="column-group__item">
+                                                      <h4>John</h4>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="offer-card__right">
+                                                                    <div class="checkout-list">
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">Product:</p>
+                                                                        <p>Carrot</p>
+                                                                      </div>
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">How many:</p>
+                                                                        <p>5kg</p>
+                                                                      </div>
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">Change:</p>
+                                                                        <p>G coins</p>
+                                                                      </div>
+                                                                    </div>
+                                                </div>
+                                              </div>
+                                              <div class="offer-card__group">
+                                                <div class="offer-card__left">
+                                                  <div class="column-group column-group--xs column-group--align-center">
+                                                    <div class="column-group__item">
+                                                                        <div class="avatar">
+                                                                          <figure style="background-image:url('images/user/avatar.jpg')"></figure>
+                                                                        </div>
+                                                    </div>
+                                                    <div class="column-group__item">
+                                                      <h4>Rachel</h4>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="offer-card__right">
+                                                                    <div class="checkout-list">
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">Product:</p>
+                                                                        <p>Carrot</p>
+                                                                      </div>
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">How many:</p>
+                                                                        <p>5kg</p>
+                                                                      </div>
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">Change:</p>
+                                                                        <p>G coins</p>
+                                                                      </div>
+                                                                    </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="column-group__item">
+                  <div class="column-group">
+                    <div class="column-group__item">
+                      <h3>Archive</h3>
+                    </div>
+                    <div class="column-group__item">
+                      <div class="row">
+                        <div class="col-12 col-md-6">
+                                            <div class="offer-card" data-popup-open="offer-popup">
+                                              <div class="offer-card__heading">
+                                                <p>01/07/2020</p>
+                                              </div>
+                                              <div class="offer-card__group">
+                                                <div class="offer-card__left">
+                                                  <div class="column-group column-group--xs column-group--align-center">
+                                                    <div class="column-group__item">
+                                                                        <div class="avatar">
+                                                                          <figure style="background-image:url('images/user/avatar.jpg')"></figure>
+                                                                        </div>
+                                                    </div>
+                                                    <div class="column-group__item">
+                                                      <h4>John</h4>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="offer-card__right">
+                                                                    <div class="checkout-list">
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">Product:</p>
+                                                                        <p>Carrot</p>
+                                                                      </div>
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">How many:</p>
+                                                                        <p>5kg</p>
+                                                                      </div>
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">Change:</p>
+                                                                        <p>G coins</p>
+                                                                      </div>
+                                                                    </div>
+                                                </div>
+                                              </div>
+                                              <div class="offer-card__group">
+                                                <div class="offer-card__left">
+                                                  <div class="column-group column-group--xs column-group--align-center">
+                                                    <div class="column-group__item">
+                                                                        <div class="avatar">
+                                                                          <figure style="background-image:url('images/user/avatar.jpg')"></figure>
+                                                                        </div>
+                                                    </div>
+                                                    <div class="column-group__item">
+                                                      <h4>Rachel</h4>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="offer-card__right">
+                                                                    <div class="checkout-list">
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">Product:</p>
+                                                                        <p>Carrot</p>
+                                                                      </div>
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">How many:</p>
+                                                                        <p>5kg</p>
+                                                                      </div>
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">Change:</p>
+                                                                        <p>G coins</p>
+                                                                      </div>
+                                                                    </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                                            <div class="offer-card" data-popup-open="offer-popup">
+                                              <div class="offer-card__heading">
+                                                <p>01/07/2020</p>
+                                              </div>
+                                              <div class="offer-card__group">
+                                                <div class="offer-card__left">
+                                                  <div class="column-group column-group--xs column-group--align-center">
+                                                    <div class="column-group__item">
+                                                                        <div class="avatar">
+                                                                          <figure style="background-image:url('images/user/avatar.jpg')"></figure>
+                                                                        </div>
+                                                    </div>
+                                                    <div class="column-group__item">
+                                                      <h4>John</h4>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="offer-card__right">
+                                                                    <div class="checkout-list">
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">Product:</p>
+                                                                        <p>Carrot</p>
+                                                                      </div>
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">How many:</p>
+                                                                        <p>5kg</p>
+                                                                      </div>
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">Change:</p>
+                                                                        <p>G coins</p>
+                                                                      </div>
+                                                                    </div>
+                                                </div>
+                                              </div>
+                                              <div class="offer-card__group">
+                                                <div class="offer-card__left">
+                                                  <div class="column-group column-group--xs column-group--align-center">
+                                                    <div class="column-group__item">
+                                                                        <div class="avatar">
+                                                                          <figure style="background-image:url('images/user/avatar.jpg')"></figure>
+                                                                        </div>
+                                                    </div>
+                                                    <div class="column-group__item">
+                                                      <h4>Rachel</h4>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="offer-card__right">
+                                                                    <div class="checkout-list">
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">Product:</p>
+                                                                        <p>Carrot</p>
+                                                                      </div>
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">How many:</p>
+                                                                        <p>5kg</p>
+                                                                      </div>
+                                                                      <div class="checkout-list__item">
+                                                                        <p class="text-muted">Change:</p>
+                                                                        <p>G coins</p>
+                                                                      </div>
+                                                                    </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-footer js-mobile-footer">
+        <div class="mobile-footer__tabs">
+                <div class="menu-tabs">
+                        <a class="menu-tab" href="aethiopian-share-shop.html">
+                          <div class="menu-tab__icon-wrap">
+                            <div class="menu-tab__icon">
+                              <svg class="svg-icon svg-icon--muted menu-tab__icon-svg" width="21" height="20">
+                                <use href="images/svg/svg-sprite/symbol/sprite.svg#equipment-share" x="0" y="0"></use>
+                              </svg>
+                            </div>
+                          </div>
+                          <h5 class="text-muted menu-tab__title">Equipment Share</h5>
+                        </a>
+                        <a class="menu-tab is-active" href="aethiopian-cryptobarter.html">
+                          <div class="menu-tab__icon-wrap">
+                            <div class="menu-tab__icon">
+                              <svg class="svg-icon svg-icon--muted menu-tab__icon-svg" width="20" height="20">
+                                <use href="images/svg/svg-sprite/symbol/sprite.svg#cart" x="0" y="0"></use>
+                              </svg>
+                            </div>
+                          </div>
+                          <h5 class="text-muted menu-tab__title">Cryptobarter</h5>
+                        </a>
+                </div>
+        </div>
+      </div>
+    </div>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyC9W9zxgNdfvLuO3GEQUZrTRBJQ9wj3_PU&amp;libraries=places"></script>
+    <script src="./scripts/vendor.js"></script>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>

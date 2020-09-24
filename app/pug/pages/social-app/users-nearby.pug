@@ -1,0 +1,24 @@
+include /partials/go-back
+include /partials/contact-item
+include /partials/users-nearby-map
+
+.directory
+  .directory__list
+    div(data-simplebar class="custom-scroll")
+      .content-header.content-header--lg-fixed.js-content-header
+        .content-header__left
+          +go-back({content: '<h3>Users nearby</h3>'})(href="social-app-contacts.html")
+        .content-header__right
+          .d-block.d-lg-none
+            div(data-directory-open="users-nearby-map")
+              +icon('map', 'svg-icon--light')(width="20" height="18")
+
+      .select-list
+        -var cnt = 0
+        while cnt < 10
+          div(class=`select-list__item ${cnt === 0 ? 'is-active' : ''}` data-popup-open="contact-popup" data-popup-max="992")
+            +contact-item({text:'21 m away'})
+          -cnt++
+
+  .directory__content(data-directory-content="users-nearby-map")
+    +users-nearby-map()

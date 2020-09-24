@@ -1,0 +1,21 @@
+extends layouts/main
+include /partials/sidebar
+include /partials/choose-location-popup
+
+block variables
+  - const title = 'Eats'
+  - const tabName = 'eats'
+
+block content
+  .car-share-eats-page
+    +choose-location-popup()
+    .car-share-eats-page__sidebar
+      +sidebar({navActive:'carShare', innerNavigation:'eats'})
+
+    .car-share-eats-page__container
+      include /pages/car-share-eats/header
+      .car-share-eats-page__wrap
+        div(data-simplebar class="custom-scroll car-share-eats-page__box")
+          include /pages/car-share-eats/home/home
+
+    include /pages/car-share/mobile-footer

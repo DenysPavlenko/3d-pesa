@@ -1,0 +1,25 @@
+include /partials/close
+include /partials/input
+
+mixin verification-popup(props = {})
+
+  .popup.modal(data-popup="verification-popup")
+
+    .popup__close
+      +close({mdLight:true})(data-popup-close="verification-popup")
+
+    .popup__body.popup__body--pt-60.text-center
+      .column-group.column-group--justify-items-center
+        .column-group__item
+          img(src="images/verification-popup/verification.svg", alt="verification")
+        .column-group__item
+          h3 Verification code to confirm the purchase
+        .column-group__item
+          p Please enter code sent to: <br/><span class="text-underline">+1 456 456 45</span>
+        .column-group__item
+          .row-group.row-group--xs.row-group
+            +times(6)
+              .row-group__item
+              +input({type:'code', classes:'form-group__code'})(type="number")
+        .column-group__item
+          a(href="payment-successful.html" class="button button--xl button--fluid") Verify

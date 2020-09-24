@@ -1,0 +1,11 @@
+include /partials/close
+
+mixin added-user(props = {})
+
+  .row-group.row-group--xs.row-group--align-center
+    .row-group__item
+      +avatar({image:'images/user/avatar.jpg', size:'xxs'})
+    .row-group__item
+      p John Doe
+    .row-group__item
+      +close({sm:true})

@@ -1,0 +1,17 @@
+mixin star-rating(props = {})
+  -const { size, textLight, starLight, total } = props
+  -const textClass = textLight ? '' : 'text-muted'
+  -
+    const classnames = classNames({
+      'star-rating': true,
+      [`star-rating--${size}`]: size,
+    })
+
+  div(class=classnames)
+    .star-rating__stars
+      +times(5)
+        .star-rating__star
+          img(src=`images/icons/${starLight?'star-light':'star'}.svg`, alt="star")
+    if(total)
+      .star-rating__total
+        p(class=textClass) #{total}

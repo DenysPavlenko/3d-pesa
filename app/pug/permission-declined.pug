@@ -1,0 +1,21 @@
+extends layouts/main
+include /partials/button
+
+block variables
+  - var title = 'Permission declined'
+
+block content
+  .status-page
+    .status-page__wrap
+      .status-page__box
+        .status-page__image
+          img(src="images/permissions/permission-declined-image.svg", alt="declined")
+        .status-page__title
+          h2 Your application has been declined
+        .status-page__text
+          p.text-muted You get permission to start sell products at marketplace
+        .status-page__buttons
+          .button-group.button-group--justify-center
+            +button({size:'xl', width:'250', type:'bordered', classes:'button-group__button'})(href="marketplace.html")| Back to marketplace
+            +button({size:'xl', width:'250', classes:'button-group__button'})(href="welcome-to-shop.html")| Try again
+

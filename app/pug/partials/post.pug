@@ -1,0 +1,87 @@
+include /partials/avatar
+include /partials/post-images
+include /partials/post-action
+include /partials/post-more
+include /partials/post-input
+
+mixin post(props = {})
+  -const { profileLink, postLink, name, images, liked, reposted, del, repost, full, replies, reply } = props
+  -
+    const classnames = classNames({
+      'post': true,
+      'post--has-replies': replies,
+      'post--has-replies post--px-0': reply,
+    })
+
+  div(class=classnames)
+    if(!full)
+      .post__avatar-wrap
+        a(href=profileLink class="post__avatar")
+          +avatar({image:'images/user/avatar.jpg', size:'sm'})
+    .post__content
+      if(full)
+        .post__header
+          .post__avatar-wrap
+            a(href="social-app-profile.html" class="post__avatar")
+              +avatar({image:'images/user/avatar.jpg', size:'sm'})
+          h4.post__username #{name}
+          p.text-muted.post__timing • 1m
+      else
+        .post__header
+          .post__username
+            h4 #{name}
+          .post__timing
+            p.text-muted • 1m
+          if(del)
+            .post__delete
+              +icon('trash-can', 'svg-icon--muted svg-icon--hover-light')(width="15" height="15")
+
+      .post__body
+        a(href=postLink).post__text
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis donec porttitor aliquam volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis donec porttitor aliquam volutpat.
+        if(images)
+          .post__images
+            +post-images()
+        if(!reply)
+          .post__actions
+            .post__actions-item
+              +post-action({type:'comment', icon:{name:'comment', width:'18', height:'18'}, popup:'reply-popup'})
+            .post__actions-item
+              +post-action({type:'like', icon:{name:'heart', width:'20', height:'18'}, isClicked: liked })
+            if(repost != false)
+              .post__actions-item
+                +post-action({type:'repost', icon:{name:'repost', width:'18', height:'18'}, isClicked: reposted })
+
+  if(replies)
+    div(class="post post--no-border post--pt-0")
+      .post__avatar-wrap
+        a(href=replies.profileLink class="post__avatar")
+          +avatar({image:'images/user/avatar.jpg', size:'sm'})
+      .post__content
+        .post__header
+          .post__username
+            h4 #{replies.name}
+          .post__timing
+            p.text-muted • 1m
+          if(del)
+            .post__delete
+              +icon('trash-can', 'svg-icon--muted svg-icon--hover-light')(width="15" height="15")
+
+        .post__body
+          a(href=replies.postLink).post__text
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis donec porttitor aliquam volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis donec porttitor aliquam volutpat.
+          if(images)
+            .post__images
+              +post-images()
+          .post__actions
+            .post__actions-item
+              +post-action({type:'comment', icon:{name:'comment', width:'18', height:'18'}, popup:'reply-popup'})
+            .post__actions-item
+              +post-action({type:'like', icon:{name:'heart', width:'20', height:'18'}, isClicked: liked })
+            if(repost != false)
+              .post__actions-item
+                +post-action({type:'repost', icon:{name:'repost', width:'18', height:'18'}, isClicked: reposted })
+    +post-more()
+
+  if(reply)
+    +post-input()

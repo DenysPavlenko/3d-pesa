@@ -1,0 +1,13 @@
+include /partials/input
+
+mixin switch(props = {})
+  -const { checked, withCheck } = props
+  -
+    const classnames = classNames({
+      'switch': true,
+      'switch--with-check': withCheck,
+    })
+
+  label(class=classnames)
+    +input({classes:'switch__checkbox'})(type="checkbox" checked=checked)
+    span.switch__slider

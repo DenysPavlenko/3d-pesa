@@ -1,0 +1,23 @@
+extends layouts/main
+include /partials/sidebar
+include /partials/choose-location-popup
+include /partials/rate-popup
+
+block variables
+  - const title = 'Eats'
+  - const tabName = 'eats'
+
+block content
+  .car-share-eats-page
+    +choose-location-popup()
+    +rate-popup({image:'images/marketplace/products/product-1.jpg', title:'Rate this product?', review:true, skip:true, done:true})
+
+    .car-share-eats-page__sidebar
+      +sidebar({navActive:'carShare', innerNavigation:'eats'})
+
+    .car-share-eats-page__container
+      include /pages/car-share-eats/header
+      .car-share-eats-page__wrap
+        include /pages/car-share-eats/shop
+
+    include /pages/car-share/mobile-footer

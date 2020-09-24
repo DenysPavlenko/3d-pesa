@@ -1,0 +1,19 @@
+include /partials/article-card
+-
+  var articles = [
+    {image: 'images/hyperloop/articles/article-1.jpg', title: 'Hyperloop represents the greatest leap in transport infrastructure', text: 'A Hyperloop is a proposed mode of passenger and freight transportation, first used to describe an open-source vactrain', date: 'Jul 24, 2020'},
+    {image: 'images/hyperloop/articles/article-2.jpg', title: 'What is Æthiopian Nomadic Caves?', text: 'Mobile Homes the size of Cargo Containers that can be transported within the Hyperloop. This Mobile Homes will be part of a Modular System that can be stacked in layers to', date: 'Apr, 2020'},
+    {image: 'images/hyperloop/articles/article-3.jpg', title: 'What is Æthiopian Nomadic Caves?', text: 'A Hyperloop is a proposed mode of passenger and freight transportation, first used to describe an open-source vactrain', date: 'May 13, 2020'},
+    {image: 'images/hyperloop/articles/article-4.jpg', title: 'Hyperloop Utilities', text: 'A Hyperloop is a proposed mode of passenger and freight transportation, first used to describe an open-source vactrain', date: 'Sep 4, 2020'},
+  ]
+
+.articles
+  .articles__header
+    .articles__header-title
+      h3 Available 12 Articles
+    .articles__header-button
+      a(href="hyperloop-contractor-form.html" class="button button--white") Become a Contractor
+  .articles__cards
+    each article in articles
+      .articles__card
+        +article-card(article)

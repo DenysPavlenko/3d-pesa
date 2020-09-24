@@ -1,0 +1,18 @@
+mixin category-sort(props = {})
+  .category-sort
+    .category-sort__desktop
+      .category-sort__item
+        .category-sort__title
+          h5.font-regular Sort By
+        .category-sort__sort
+          +select({
+            modifiers:'select--alt',
+            label:{name:'Top rated', selected:true},
+            options:[
+              {name:'Top rated'},
+              {name:'Top viewed'},
+            ]
+          })
+
+    .category-sort__mobile
+      button(type="button" class="button button--info" data-popup-open="sort-popup") Filters

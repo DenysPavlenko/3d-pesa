@@ -1,0 +1,33 @@
+include /partials/button
+include /partials/input
+
+.form__line
+  .form-group
+    .form-group__header
+      label.p Price<span class="text-red">*</span>
+  .row.js-tabs
+    .col-4
+      +button({fluid:true, type:'info', classes:'js-tab is-active'})(type="button" data-tab="cash")| Cash
+    .col-4
+      +button({fluid:true, type:'info', classes:'js-tab'})(type="button" data-tab="barter")| Barter
+    .col-4
+      +button({fluid:true, type:'info', classes:'js-tab'})(type="button" data-tab="both")| Both
+
+.js-tab-content(data-content="cash")
+  .form__line
+    .form-group
+      .input-group
+        .input-group__prepend
+          .input-group__box
+            p.text-muted $
+        +input({classes:'input-group__input'})(type="text" placeholder="0")
+
+.js-tab-content(data-content="barter")
+.js-tab-content(data-content="both")
+  .form__line
+    .form-group
+      .input-group
+        .input-group__prepend
+          .input-group__box
+            p.text-muted $
+        +input({classes:'input-group__input'})(type="text" placeholder="0")

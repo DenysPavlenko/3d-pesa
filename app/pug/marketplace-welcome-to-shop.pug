@@ -1,0 +1,59 @@
+extends layouts/main
+include /partials/country-select
+include /partials/state-select
+
+block variables
+  - var title = 'Welcome to shop'
+
+block content
+  .start-page
+    .start-page__navigation
+      .start-page__navigation-circle
+        +icon('chevron-left', 'svg-icon--stroke-light start-page__navigation-icon')
+      h5.text-muted.text-uppercase.start-page__navigation-title MARKETPLACE
+
+    .start-page__container
+      .start-page__content
+        .start-page__content-box
+          div(data-simplebar class="custom-scroll start-page__content-scroll")
+            form.form
+              .form__line
+                h2 Welcome to your Shop!
+              .form__line
+                p.text-muted Here you can sell products to other users. Before we start our administrators have to aprove your profile. After that you will recieve a permission to sell. Confirm your address
+              .form__line
+                .form-group
+                  .form-group__header
+                    label.p Country
+                  +country-select()
+              .form__line
+                .row
+                  .col-7
+                    .form-group
+                      .form-group__header
+                        label.p State/Province
+                      +state-select()
+                  .col-5
+                    .form-group
+                      .form-group__header
+                        label.p Zip code
+                      input(type="number" class="input" placeholder="0000")
+              .form__line
+                .form-group
+                  .form-group__header
+                    label.p City
+                  input(type="text" class="input" placeholder="Your city")
+              .form__line
+                .form-group
+                  .form-group__header
+                    label.p Address
+                  input(type="text" class="input" placeholder="Your address")
+              .form__line
+                .form-group
+                  .button-group.button-group--fluid
+                    button(type="button" class="button button--xl button--bordered button-group__button") Cancel
+                    button(type="button" class="button button--xl button-group__button") Submit
+
+      .start-page__image
+        .start-page__image-box
+          img(src="images/permissions/permission-success-image.svg" alt="permission")

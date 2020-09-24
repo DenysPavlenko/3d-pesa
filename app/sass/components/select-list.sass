@@ -1,0 +1,14 @@
+.select-list
+  width: 100%
+  &__item
+    padding: 10px 20px
+    cursor: pointer
+    &:hover
+      background: $gradient-muted
+    &.is-active
+      background: $gradient-muted
+    +media-max($bp-lg)
+      &:hover
+        background: transparent
+      &.is-active
+        background: transparent

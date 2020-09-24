@@ -1,0 +1,30 @@
+include /partials/burger
+include /partials/select
+include /partials/notifications-dropdown
+include /partials/user-dropdown
+include /partials/search-input
+include /partials/cart-dropdown
+
+.header
+  .header__wrap
+    .header__left
+      .header__burger
+        +burger({classes:'js-burger'})
+
+      .header__title
+        h3 Adbot
+
+      .header__logo
+        .header__logo-icon
+          img(src="images/logo.svg", alt="logo.svg")
+        span.header__logo-title 3D-Pesa
+
+    .header__center
+      include ./menu-tabs
+
+    .header__right
+      .header__dropdowns
+        .header__dropdown
+          +notifications-dropdown()
+        .header__dropdown
+          +user-dropdown()

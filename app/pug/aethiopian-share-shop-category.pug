@@ -1,0 +1,28 @@
+extends layouts/main
+include /partials/sidebar
+include /partials/shop-info-popup
+include /partials/sort-popup
+
+block variables
+  - const title = 'Aethiopian'
+  - const heading = 'Aethiopian'
+  - const tabName = 'shop'
+
+block content
+  .aethiopian-page
+    +shop-info-popup()
+    +sort-popup()
+    .aethiopian-page__sidebar
+      +sidebar({navActive:'aethiopian', innerNavigation:'share'})
+
+    .aethiopian-page__container
+      include /pages/aethiopian-share/header
+      .aethiopian-page__wrap
+        .aethiopian-page__menu
+          include /pages/aethiopian-share/shop/shop-menu
+
+        .aethiopian-page__content
+          div(data-simplebar class="custom-scroll aethiopian-page__box")
+            include /pages/aethiopian-share/shop/category
+
+    include /pages/aethiopian-share/mobile-footer

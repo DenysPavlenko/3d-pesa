@@ -1,0 +1,9 @@
+mixin chip(props = {})
+  -const { title, color } = props
+  -
+    const classnames = classNames({
+      'chip': true,
+      [`chip--bg-${color}`]: color,
+    })
+
+  div(class=classnames) #{title}

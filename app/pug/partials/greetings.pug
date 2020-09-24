@@ -1,0 +1,22 @@
+include /partials/close
+
+mixin greetings(props = {})
+  -const { classes, color, title, text, image, light } = props
+  -
+    const classnames = classNames({
+      'greetings': true,
+      [`greetings--${color}`]: color,
+      [classes]: classes,
+    })
+
+  div(class=classnames data-hide-content="greetings")
+    .greetings__wrap
+      .greetings__description
+        .greetings__title
+          h2(class=`h2-sm font-semibold ${light ? 'text-light' : 'text-primary'}`) #{title}
+        .greetings__text
+          p(class=`${light ? 'text-light' : 'text-primary'}`) #{text}
+      .greetings__image
+        img(src=image, class="image" alt="greetings")
+    .greetings__close
+      +close({primary: !light})(data-hide-content-hide="greetings")

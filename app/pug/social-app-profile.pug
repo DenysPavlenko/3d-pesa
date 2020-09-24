@@ -1,0 +1,37 @@
+extends /layouts/main
+include /partials/sidebar
+include /partials/clock
+include /partials/weather
+include /partials/currencies
+include /partials/reply-popup
+
+block variables
+  - const title = 'Social Network'
+  - const tabName = 'profile'
+
+block content
+  .social-app-page
+    +reply-popup()
+
+    .social-app-page__sidebar
+      +sidebar({navActive:'social'})
+
+    .social-app-page__container
+      include /pages/social-app/header
+
+      .social-app-page__row
+        .social-app-page__main
+          .social-app-page__content
+            div(data-simplebar class="custom-scroll")
+              include /pages/social-app/profile
+
+        .social-app-page__widgets
+          div(data-simplebar class="custom-scroll")
+            .social-app-page__clock
+              +clock()
+            .social-app-page__weather
+              +weather()
+            .social-app-page__currencies
+              +currencies()
+
+    include /pages/social-app/mobile-footer

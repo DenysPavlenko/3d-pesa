@@ -1,0 +1,38 @@
+include /partials/remove-button
+include /partials/button
+
+mixin cart-item(props = {})
+  -const { image, link, info, details, remove, delivery, tracking } = props
+  -const tag = link ? 'a' : 'div'
+
+  .cart-item
+    #{tag}(href=link class="cart-item__thumb")
+      img(src=image, class="image" alt="product")
+    .cart-item__description
+      #{tag}(href=link class="cart-item__info")
+        |!{info}
+      .cart-item__footer
+        .cart-item__details
+          |!{details}
+        if(remove || tracking || delivery)
+          .cart-item__control
+            if(remove)
+              +remove-button()
+            if(tracking && delivery)
+              .cart-item__buttons
+                .button-group.button-group--sm
+                  +button({type:'bordered', classes:'button-group__button'})(type="button" data-popup-open="rating-popup")| Submit delivery
+                  +button({type:'white', classes:'button-group__button'})(type="button" data-popup-open="tracking-popup")| Tracking
+            if(delivery && !tracking)
+              .cart-item__buttons
+                +button({type:'bordered'})(type="button" data-popup-open="rating-popup")| Submit delivery
+
+    if(tracking && delivery)
+      .cart-item__mobile-buttons
+        .button-group.button-group--sm
+          +button({type:'bordered', classes:'button-group__button'})(type="button")| Submit delivery
+          +button({type:'white', classes:'button-group__button'})(type="button" data-popup-open="tracking-popup")| Tracking
+
+    if(delivery && !tracking)
+      .cart-item__mobile-buttons
+        +button({type:'bordered'})(type="button" data-popup-open="rating-popup")| Submit delivery

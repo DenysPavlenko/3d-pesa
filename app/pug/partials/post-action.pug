@@ -1,0 +1,13 @@
+mixin post-action(props = {})
+  -const { type, icon, isClicked, popup } = props
+  -
+    const classnames = classNames({
+      'post-action': true,
+      [`post-action--${type}`]: type,
+      'is-clicked': isClicked,
+    })
+
+  div(class=classnames data-popup-open=popup)
+    .post-action__icon
+      +icon(icon.name, 'svg-icon--muted post-action__icon-svg')(width=icon.width height=icon.height)
+    h6.text-muted.font-regular.post-action__count 200

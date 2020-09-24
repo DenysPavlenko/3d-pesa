@@ -1,0 +1,12 @@
+include /partials/menu-tabs
+-
+  var tabs = [
+    {link:'bartender-home.html', title:'Home', isActive:tabName === 'home', icon:{name:'house', width:'21', height:'20'}},
+    {link:'bartender-sell.html', title:'Sell', isActive:tabName === 'sell', icon:{name:'badge', width:'20', height:'20'}},
+    {link:'bartender-search.html', title:'Search', isActive:tabName === 'search', icon:{name:'search', width:'20', height:'20'}},
+    {link:'bartender-orders.html', title:'Orders', isActive:tabName === 'orders', icon:{name:'box', width:'21', height:'20'}},
+  ]
+
+.mobile-footer.js-mobile-footer
+  .mobile-footer__tabs
+    +menu-tabs(tabs)

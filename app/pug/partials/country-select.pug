@@ -1,0 +1,14 @@
+include /partials/select
+
+mixin country-select(props = {})
+  +select({
+    label:{name:'Country', selected:false},
+    options:[
+      {name:'Afghanistan'},
+      {name:'Albania'},
+      {name:'Algeria'},
+      {name:'Andorra'},
+      {name:'Antigua and Barbuda'},
+      {name:'Argentina'},
+    ]
+  })

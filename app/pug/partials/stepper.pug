@@ -1,0 +1,13 @@
+mixin stepper(props = {})
+
+  .stepper
+    .stepper__step.is-active
+      .stepper__step-content
+        .stepper__step-icon
+          +icon('check', 'svg-icon--light')(width="9" height="5")
+        .stepper__step-title
+          h6 Accepted
+      .stepper__step-dot
+        span
+    .stepper__step
+    .stepper__step

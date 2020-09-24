@@ -1,0 +1,25 @@
+include /partials/close
+include /partials/ads-description
+include /partials/testimonial
+
+.popup.popup--mw-800.modal(data-popup="adbot-owner-image-popup")
+
+  .popup__close.popup__close--outer
+    +close({mdLight:true})(data-popup-close="adbot-owner-image-popup")
+
+  .popup__body
+    .column-group
+      .column-group__item
+        img(src="images/adbot/image-popup/image.jpg", class="image" alt="adbot-image")
+      .column-group__item
+        .list-group
+          .list-group__item
+            +ads-description({title: 'Strawberry Fields Forever', text: 'New Samsung F10 Only For 149G', comments: true})
+          .list-group__item
+            p.text-muted Oh the enormous avenues of the holy land, the terraces of the temple! What has become of the Brahmin who explained the Proverbs to me? I can even see the old women still,
+          .list-group__item
+            .column-group.column-group--sm
+              .column-group__item
+                h3 Comments 2
+              .column-group__item
+                +testimonial()

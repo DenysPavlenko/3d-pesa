@@ -1,0 +1,47 @@
+include /partials/select
+include /partials/button
+include /partials/input
+
+.form__line
+  .form-group
+    .form-group__header
+      label.p Link source
+  .row.js-tabs
+    .col-6
+      +button({fluid:true, type:'info', classes:'js-tab is-active'})(type="button" data-tab="internal")| Internal
+    .col-6
+      +button({fluid:true, type:'info', classes:'js-tab'})(type="button" data-tab="external")| External
+
+.js-tab-content(data-content="internal")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Select shop
+      +select({
+        label:{name:'Marketplace', selected:true},
+        options:[
+          {name:'Marketplace'},
+          {name:'Electric Equipment Share'},
+        ]
+      })
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Select the product from your shop
+      +select({
+        label:{name:'Item 1', selected:true},
+        options:[
+          {name:'Item 1'},
+          {name:'Item 2'},
+          {name:'Item 3'},
+          {name:'Item 4'},
+          {name:'All products'},
+        ]
+      })
+
+.js-tab-content(data-content="external")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Link
+      +input()(type="text" placeholder="https//")

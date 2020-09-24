@@ -1,0 +1,38 @@
+include /partials/select
+
+form.form
+  .form__line
+    h3 Time and date
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Date format
+      +select({
+        label:{name:'12.31.2020', selected:true},
+        options:[
+          {name:'12.31.2020'},
+          {name:'31.12.2020'},
+        ]
+      })
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Time format
+      +select({
+        label:{name:'1:00 AM', selected:true},
+        options:[
+          {name:'12.31.2020'},
+          {name:'31.12.2020'},
+        ]
+      })
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Time format
+      +select({
+        label:{name:'(GMT +03:00)', selected:true},
+        options:[
+          {name:'(GMT +01:00)'},
+          {name:'(GMT +02:00)'},
+        ]
+      })

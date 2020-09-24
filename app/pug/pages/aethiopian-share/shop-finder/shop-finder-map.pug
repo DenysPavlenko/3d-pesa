@@ -1,0 +1,25 @@
+include /partials/shop-item
+include /partials/go-back
+
+.shop-finder-map
+  .map-box
+
+    .d-block.d-lg-none
+      .content-header
+        .content-header__left
+          +go-back({content: '<h3>Map</h3>'})(data-directory-close="shop-finder-map")
+
+    .map-box__wrap
+      .map-box__controls-top
+        .map-compass
+      .map-box__controls-bottom
+        .map-current-location
+        .map-zoom
+          .map-zoom__plus
+          .map-zoom__minus
+
+      .map-box__map.js-shop-finder-map
+
+    .map-box__infowindow
+      .map-box__infowindow-content.shop-finder-map__infowindow.js-shop-finder-map-infowindow
+        include ./shop-finder-infowindow

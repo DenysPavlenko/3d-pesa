@@ -1,0 +1,73 @@
+include /partials/button
+
+mixin calendar(props = {})
+  -const { footer, popupClose } = props
+
+  .calendar
+    .calendar__header
+      .calendar__date
+        h3 March 2020
+      .calendar-control.calendar__contrlol
+        .calendar-control__left
+          +icon('chevron', 'svg-icon--muted calendar-control__svg')(width="10" height="16")
+        .calendar-control__right
+          +icon('chevron', 'svg-icon--muted calendar-control__svg')(width="10" height="16")
+
+    .calendar__weekdays
+      .h6.text-muted.calendar__weekday Sun
+      .h6.text-muted.calendar__weekday Mon
+      .h6.text-muted.calendar__weekday Tue
+      .h6.text-muted.calendar__weekday Wed
+      .h6.text-muted.calendar__weekday Thu
+      .h6.text-muted.calendar__weekday Fri
+      .h6.text-muted.calendar__weekday Sat
+
+    .calendar__weeks
+      .calendar__week
+        .h6.calendar__day 1
+        .h6.calendar__day 2
+        .h6.calendar__day 3
+      .calendar__week
+        .h6.calendar__day 4
+        .h6.calendar__day 5
+        .h6.calendar__day 6
+        .h6.calendar__day 7
+        .h6.calendar__day 8
+        .h6.calendar__day 9
+        .h6.calendar__day 10
+      .calendar__week.is-active
+        .h6.calendar__day 11
+          .calendar__actions
+            .calendar__action.calendar__action--event
+            .calendar__action.calendar__action--reminder
+            .calendar__action.calendar__action--task
+        .h6.calendar__day 12
+        .h6.calendar__day 13
+        .h6.calendar__day 14
+        .h6.calendar__day 15
+        .h6.calendar__day 16
+        .h6.calendar__day.is-active 17
+          .calendar__actions
+            .calendar__action.calendar__action--event
+            .calendar__action.calendar__action--task
+      .calendar__week
+        .h6.calendar__day 18
+        .h6.calendar__day 19
+        .h6.calendar__day 20
+        .h6.calendar__day 21
+        .h6.calendar__day 22
+        .h6.calendar__day 23
+        .h6.calendar__day 24
+      .calendar__week
+        .h6.calendar__day 25
+        .h6.calendar__day 26
+        .h6.calendar__day 27
+        .h6.calendar__day 28
+        .h6.calendar__day 29
+        .h6.calendar__day 30
+
+    if(footer)
+      .calendar__footer
+        .button-group.button-group--fluid
+          +button({type:'bordered', classes:'button-group__button'})(data-popup-close=popupClose)| Cancel
+          +button({type:'white', classes:'button-group__button'})(data-popup-close=popupClose)| Ok

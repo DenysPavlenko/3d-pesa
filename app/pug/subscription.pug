@@ -1,0 +1,49 @@
+extends layouts/main
+include /partials/button
+include /partials/payment-popup
+
+block variables
+  - var title = 'Welcome to shop'
+
+block content
+  .start-page
+    +payment-popup({auto:true})
+
+    .start-page__navigation
+      .start-page__navigation-circle
+        +icon('chevron-left', 'svg-icon--stroke-light start-page__navigation-icon')
+      h5.text-muted.text-uppercase.start-page__navigation-title BACK
+
+    .start-page__container
+      .start-page__content
+        .start-page__content-box
+          div(data-simplebar class="custom-scroll start-page__content-scroll")
+            .column-group
+              .column-group__item
+                h2 Get unlimited subscription
+              .column-group__item
+                .row-group.row-group--sm.row-group--align-center
+                  .row-group__item
+                    span.h2 14
+                  .row-group__item
+                    img(src="images/icons/g-coin.svg", class="subscription__price-icon" alt="bitcoin")
+              .column-group__item
+                p Unlimited subscription gives you:
+              .column-group__item
+                .icon-text
+                  .icon-text__icon
+                    +icon('file-size', 'svg-icon--light subscription__advantage-icon')(width="16" height="21")
+                  .icon-text__text
+                    p As much files size as you want
+              .column-group__item
+                .icon-text
+                  .icon-text__icon
+                    +icon('shield', 'svg-icon--light subscription__advantage-icon')(width="18" height="22")
+                  .icon-text__text
+                    p Sophisticated control and security features
+              .column-group__item
+                +button({size:'xl', fluid:true})(type="button")| Go to shop
+
+      .start-page__image
+        .start-page__image-box
+          img(src="images/subscription/subscription-image.svg" alt="subscription")

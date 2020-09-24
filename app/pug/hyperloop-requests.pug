@@ -1,0 +1,17 @@
+extends layouts/main
+include /partials/sidebar
+
+block variables
+  - var title = 'Hyperloop articles'
+  - var tabName = 'requests'
+
+block content
+  .hyperloop-page
+    .hyperloop-page__sidebar
+      +sidebar({navActive:'hyperloop'})
+    .hyperloop-page__container
+      include /pages/hyperloop/header
+      .hyperloop-page__wrap
+        include /pages/hyperloop/requests
+
+    include /pages/hyperloop/mobile-footer

@@ -1,0 +1,21 @@
+extends layouts/main
+include /partials/contact-popup
+include /partials/sidebar
+
+block variables
+  - const title = 'Social network'
+
+block content
+  .social-app-page
+    +contact-popup()
+    .social-app-page__sidebar
+      +sidebar({navActive:'social'})
+
+    .social-app-page__container
+      .d-none.d-lg-block
+        include /pages/social-app/header
+
+      .social-app-page__row
+        .social-app-page__main
+          .social-app-page__content
+            include /pages/social-app/call-screen-income

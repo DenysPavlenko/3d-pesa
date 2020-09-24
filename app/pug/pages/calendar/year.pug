@@ -1,0 +1,10 @@
+include /partials/calendar
+include /partials/select
+
+.calendar-full__item-wrap
+  div(data-simplebar class="custom-scroll")
+    .calendar-table-year
+      .calendar-table-year__items
+        +times(12)
+          .calendar-table-year__item
+            +calendar()

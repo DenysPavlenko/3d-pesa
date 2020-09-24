@@ -1,0 +1,38 @@
+include /partials/burger
+include /partials/notifications-dropdown
+include /partials/user-dropdown
+include /partials/search-input
+include /partials/cart-dropdown
+
+-
+  var cartItems = [
+    {image:'images/marketplace/products/product-1.jpg', link:'marketplace-product.html', info:'<h4 class="font-regular">Apple iPhone 8 Plus 64GB 256GB A1864 GSM...</h4>', details:'<h3>12G</h3>', remove:true},
+    {image:'images/marketplace/products/product-1.jpg', link:'marketplace-product.html', info:'<h4 class="font-regular">Apple iPhone 8 Plus 64GB 256GB A1864 GSM...</h4>', details:'<h3>12G</h3>', remove:true},
+    {image:'images/marketplace/products/product-1.jpg', link:'marketplace-product.html', info:'<h4 class="font-regular">Apple iPhone 8 Plus 64GB 256GB A1864 GSM...</h4>', details:'<h3>12G</h3>', remove:true},
+  ]
+
+.header
+  .header__wrap
+    .header__left
+      .header__burger
+        +burger({classes:'js-burger'})
+
+      .header__title
+        h3 Marketplace
+
+      .header__logo
+        .header__logo-icon
+          img(src="images/logo.svg", alt="logo.svg")
+        span.header__logo-title 3D-Pesa
+
+    .header__center
+      +search-input({placeholder:"Search for anything", bg:'primary'})
+
+    .header__right
+      .header__dropdowns
+        .header__dropdown.header__dropdown--lg-hide
+          +cart-dropdown({cartItems:cartItems, title:'Cart total (3 items): 42G', checkout:'marketplace-checkout.html', history:'marketplace-cart-history.html'})
+        .header__dropdown
+          +notifications-dropdown()
+        .header__dropdown
+          +user-dropdown()

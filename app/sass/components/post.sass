@@ -1,0 +1,70 @@
+.post
+  position: relative
+  display: flex
+  flex-wrap: wrap
+  width: 100%
+  padding: 20px
+  border-bottom: 1px solid $border-primary
+  &--no-border
+    border-bottom: none
+  &--px-0
+    padding-left: 0
+    padding-right: 0
+  &--pt-0
+    padding-top: 0
+  &--has-replies
+    border-bottom: none
+    .post__avatar-wrap
+      position: relative
+      &:after
+        position: absolute
+        content: ''
+        bottom: -10px
+        left: 50%
+        transform: translateX(-50%)
+        width: 1px
+        height: calc(100% - 40px)
+        background-color: $border-primary
+
+  &__avatar-wrap
+    margin-right: 10px
+  &__content
+    flex: 1
+  &__header
+    position: relative
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    margin-bottom: 8px
+  &__username
+    margin-right: 20px
+  &__delete
+    position: absolute
+    right: 0
+    cursor: pointer
+  &__body
+    width: 100%
+  &__text
+    display: block
+    padding-right: 20px
+    margin-bottom: 10px
+    &:last-child
+      margin-bottom: 0
+    +media-max($bp-sm)
+      padding-right: 0
+  &__images
+    margin-bottom: 10px
+  &__actions
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    +media-max($bp-xs)
+      justify-content: space-between
+    &-item
+      &:not(:last-child)
+        margin-right: 50px
+        +media-max($bp-xs)
+          margin-right: 15px
+  &__more
+    margin-top: 15px
+    cursor: pointer

@@ -1,0 +1,46 @@
+include /partials/send-button
+include /partials/textarea
+
+mixin new-message(props = {})
+
+  .new-message
+    .new-message__wrap
+      .new-message__emojis
+        +icon('smile', 'svg-icon--muted')(width="20" height="20")
+      .new-message__input
+        +textarea({resize:true, size:'sm', rows:'1'})(placeholder="Write a message...ription")
+      .new-message__actions-desktop.js-new-message-actions-desktop
+        .new-message__actions
+          .new-message__action
+            +icon('pin', 'svg-icon--muted svg-icon--hover-light')(width="14" height="18")
+          .new-message__action
+            +icon('microphone', 'svg-icon--muted svg-icon--hover-light')(width="13" height="19")
+          .new-message__action
+            +icon('picture', 'svg-icon--muted svg-icon--hover-light')(width="19" height="20")
+
+      .new-message__buttons
+        .new-message__button
+          .new-message__expand.js-new-message-expand
+            +icon('expand', 'svg-icon--muted svg-icon--hover-light new-message__expand-icon')(width="22" height="22")
+        .new-message__button
+          +icon('camera', 'svg-icon--muted svg-icon--hover-light')(width="20" height="18")
+        .new-message__button
+          +send-button()
+
+    .new-message__actions-mobile.js-new-message-actions-mobile
+      .new-message__actions
+        .new-message__action
+          .new-message__action-icon
+            +icon('pin', 'svg-icon--muted svg-icon--hover-light')(width="14" height="18")
+          .new-message__action-title
+            p.p-xs.text-muted Location
+        .new-message__action
+          .new-message__action-icon
+            +icon('microphone', 'svg-icon--muted svg-icon--hover-light')(width="13" height="19")
+          .new-message__action-title
+            p.p-xs.text-muted Voice input
+        .new-message__action
+          .new-message__action-icon
+            +icon('picture', 'svg-icon--muted svg-icon--hover-light')(width="19" height="20")
+          .new-message__action-title
+            p.p-xs.text-muted Gallery

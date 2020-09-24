@@ -1,0 +1,19 @@
+extends layouts/main
+include /partials/sidebar
+include /partials/choose-location-popup
+
+block variables
+  - const title = 'Eats'
+  - const tabName = 'ride'
+
+block content
+  .car-share-eats-page
+    .car-share-eats-page__sidebar
+      +sidebar({navActive:'carShare', innerNavigation:'eats'})
+
+    .car-share-eats-page__container
+      include /pages/car-share-ride/header
+      .car-share-eats-page__wrap
+        include /pages/car-share-ride/ride
+
+    include /pages/car-share/mobile-footer

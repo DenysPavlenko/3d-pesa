@@ -1,0 +1,32 @@
+include /partials/select
+include /partials/input
+include /partials/button
+include /partials/coin-badge
+
+.wallet-tabs.js-tabs
+  .wallet-tabs__tab.js-tab.is-active(data-tab="exchange") Exchange
+
+.wallet-page__box
+  .js-tab-content(data-content="exchange")
+    form.form
+      .form__line
+        .form-group
+          .form-group__header
+            label.p Amount
+        .form-exchange
+          .form-exchange__input
+            .input-group.input-group--bg-secondary
+              +input({classes:'input-group__input'})(type="number", value="1")
+              .input-group__append
+                .input-group__wrap
+                  +coin-badge({title:'GCN', icon:'images/icons/g-coin.svg'})
+          .form-exchange__icon
+            +icon('exchange', 'svg-icon--muted')(width="24" height="17")
+          .form-exchange__input
+            .input-group.input-group--bg-secondary
+              +input({classes:'input-group__input'})(type="number", value="1")
+              .input-group__append
+                .input-group__wrap
+                  +coin-badge({title:'GCN', icon:'images/icons/g-coin.svg'})
+      .form__line
+        +button({fluid:true, size:'xl'})(type="submit")| Exchange

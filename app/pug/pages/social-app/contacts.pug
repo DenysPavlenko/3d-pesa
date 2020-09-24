@@ -1,0 +1,35 @@
+include /partials/contact
+include /partials/contact-item
+include /partials/input
+include /partials/button
+
+.directory
+  .directory__list
+    div(data-simplebar class="custom-scroll")
+      .content-header
+        .content-header__left
+          h3 Contacts
+        .content-header__right
+          +button({type:'bordered'})(href="social-app-users-nearby.html")
+            span.button__icon
+              +icon('nearby', 'svg-icon--light')(width="20" height="20")
+            span Users Nearby
+
+      .content-header.content-header--border-0
+        .input-group.input-group--bg-secondary
+          .input-group__prepend
+            .input-group__wrap
+              +icon('search', 'svg-icon--muted')(width="18" height="18")
+          +input({classes:'input-group__input', bg:'secondary'})(type="text", placeholder="Search for contacts")
+
+      .select-list
+        -var cnt = 0
+        while cnt < 14
+          div(class=`select-list__item ${cnt === 0 ? 'is-active' : ''}` data-popup-open="contact-popup" data-popup-max="992")
+            +contact-item({text:'last seen 5 minutes later'})
+          -cnt++
+
+  .directory__content
+    div(data-simplebar class="custom-scroll")
+      .directory__content-box
+          +contact()

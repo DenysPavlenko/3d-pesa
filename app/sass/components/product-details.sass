@@ -1,0 +1,54 @@
+.product-details
+  &__row
+    +row()
+  &__preview
+    +col(5)
+    +media-max($bp-lg)
+      +col(6)
+    +media-max($bp-md)
+      +col(12)
+
+  &__slider
+    position: relative
+    &-arrows
+      display: none
+      +media-max($bp-md)
+        position: absolute
+        top: 50%
+        left: -20px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        width: calc(100% + 40px)
+        transform: translateY(-50%)
+        z-index: 20
+    &-slides
+      margin-bottom: 15px
+    &-slide
+      border-radius: $radius-primary
+      overflow: hidden
+  &__navigation
+    +row()
+    +media-max($bp-md)
+      display: none
+    .slick-current
+      .product-details__navigation-thumb
+        border: 2px solid $color-yellow
+    &-item
+      padding: 0 10px
+    &-thumb
+      cursor: pointer
+      border-radius: $radius-primary
+      overflow: hidden
+
+  &__description
+    display: flex
+    flex-direction: column
+    +col(7)
+    +media-max($bp-lg)
+      +col(6)
+    +media-max($bp-md)
+      +col(12)
+    &-footer
+      padding-top: 20px
+      margin-top: auto

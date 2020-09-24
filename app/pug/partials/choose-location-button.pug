@@ -1,0 +1,9 @@
+include /partials/button
+
+mixin choose-location-button(props = {})
+  -const { popup } = props
+
+  +button({type:'info'})(type="button" data-popup-open=popup)
+    span.button__icon
+      +icon('pin', 'svg-icon--muted')(width="13" height="16")
+    span California, USA

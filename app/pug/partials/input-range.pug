@@ -1,0 +1,7 @@
+include /partials/input
+
+mixin input-range(props = {})
+
+  .input-range
+    +input({classes:'input-range__input js-range-input'})(type="range" min="1" max="100" value="11" id="myRange")
+    .input-range__line.js-range-line

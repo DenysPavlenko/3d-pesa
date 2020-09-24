@@ -1,0 +1,59 @@
+extends layouts/main
+include /partials/select
+include /partials/input
+include /partials/upload-files
+
+block variables
+  - var title = 'Promote your product'
+
+block content
+  .start-page
+    a(href="adbot-watch.html").start-page__navigation
+      .start-page__navigation-circle
+        +icon('chevron-left', 'svg-icon--stroke-light start-page__navigation-icon')
+      h5.text-muted.text-uppercase.start-page__navigation-title Adbot
+
+    .start-page__container
+      .start-page__content
+        .start-page__content-box
+          div(data-simplebar class="custom-scroll start-page__content-scroll")
+            form.form
+              .form__line
+                h2 Promote your product
+              .form__line
+                p.text-muted Here you can sell your works to our advertisers and earn money from that. Before we start, you have to upload example of your work (art, music, poems, etc.) to our administrator so we can verify you professional level.
+              .form__line
+                .form-group
+                  .form-group__header
+                    label.p Choose your occupation
+                  +select({
+                    label:{name:'Artist', selected:true},
+                    options:[
+                      {name:'Artist'},
+                      {name:'Musician'},
+                      {name:'Poet'},
+                    ]
+                  })
+              .form__line
+                .form-group
+                  .form-group__header
+                    label.p File type
+                  +select({
+                    label:{name:'Video', selected:true},
+                    options:[
+                      {name:'Video'},
+                      {name:'Audio'},
+                      {name:'Writings'},
+                    ]
+                  })
+              .form__line
+                .form-group
+                  .form-group__header
+                    label.p Upload example of your ad
+                  +upload-files([{title: 'Add a file'}])
+              .form__line
+                +button({size:'xl',fluid:true})(type="submit")| Get Started
+
+      .start-page__image
+        .start-page__image-box
+          img(src="images/permissions/permission-success-image.svg" alt="permission")

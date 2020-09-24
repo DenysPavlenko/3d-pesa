@@ -1,0 +1,25 @@
+extends layouts/main
+include /partials/sidebar
+include /partials/fixed-button
+
+block variables
+  - const title = 'Aethiopian'
+  - const heading = 'Cryptobarter'
+  - const tabName = 'cryptobarter'
+
+block content
+  .aethiopian-page
+    include /pages/aethiopian-share/cryptobarter/new-offer-popup
+    include /pages/aethiopian-share/cryptobarter/offer-popup
+    +fixed-button({modifiers: 'fixed-button--lg-bottom-80', icon:'images/icons/plus-colored.svg'})(data-popup-open="new-offer-popup")
+    .aethiopian-page__sidebar
+      +sidebar({navActive:'aethiopian', innerNavigation:'cryptobarter'})
+
+    .aethiopian-page__container
+      include /pages/aethiopian-share/header
+      .aethiopian-page__wrap
+        .aethiopian-page__content
+          div(data-simplebar class="custom-scroll aethiopian-page__box")
+            include /pages/aethiopian-share/cryptobarter/home
+
+    include /pages/aethiopian-share/mobile-footer

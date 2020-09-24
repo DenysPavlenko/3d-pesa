@@ -1,0 +1,34 @@
+include /partials/avatar
+include /partials/checkout-list
+
+mixin offer-card(props = {})
+
+  div(class="offer-card")&attributes(attributes)
+    .offer-card__heading
+      p 01/07/2020
+    .offer-card__group
+      .offer-card__left
+        .column-group.column-group--xs.column-group--align-center
+          .column-group__item
+            +avatar({image:'images/user/avatar.jpg'})
+          .column-group__item
+            h4 John
+      .offer-card__right
+        +checkout-list([
+          {item:'Product:', value:'Carrot', lastLight:true},
+          {item:'How many:', value:'5kg', lastLight:true},
+          {item:'Change:', value:'G coins', lastLight:true}
+        ])
+    .offer-card__group
+      .offer-card__left
+        .column-group.column-group--xs.column-group--align-center
+          .column-group__item
+            +avatar({image:'images/user/avatar.jpg'})
+          .column-group__item
+            h4 Rachel
+      .offer-card__right
+        +checkout-list([
+          {item:'Product:', value:'Carrot', lastLight:true},
+          {item:'How many:', value:'5kg', lastLight:true},
+          {item:'Change:', value:'G coins', lastLight:true}
+        ])

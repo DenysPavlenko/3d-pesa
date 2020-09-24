@@ -1,0 +1,10 @@
+include /partials/currency
+
+mixin currencies(props = {})
+  .row
+    .col-4
+      +currency({type:'g-coin', icon:'images/icons/l-coin.svg', title:'g coin', buy:'400g', link:'user-wallet.html'})
+    .col-4
+      +currency({type:'l-coin', icon:'images/icons/l-coin.svg', title:'l coin', buy:'400l', link:'user-wallet.html'})
+    .col-4
+      +currency({type:'b-coin', icon:'images/icons/b-coin.svg', title:'b coin', buy:'400b', link:'user-wallet.html'})

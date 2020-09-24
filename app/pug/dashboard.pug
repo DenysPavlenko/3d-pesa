@@ -1,0 +1,39 @@
+extends /layouts/main
+include /partials/sidebar
+include /partials/header
+include /partials/notifications
+include /partials/todo-list
+include /partials/clock
+include /partials/weather
+include /partials/currencies
+include /partials/welcome-popup
+
+block variables
+  - const title = 'Dashboard'
+
+block content
+  .dashboard-page
+    +welcome-popup()
+    .dashboard-page__sidebar
+      +sidebar({navActive:'dashboard'})
+
+    .dashboard-page__container
+      +header({title:'Dashboard'})
+
+      .dashboard-page__wrap
+        .dashboard-page__content
+          .dashboard-page__col
+            div(data-simplebar class="custom-scroll dashboard-page__box")
+              +notifications({title:true})
+          .dashboard-page__col
+            div(data-simplebar class="custom-scroll dashboard-page__box")
+              +todo-list()
+
+        .dashboard-page__widgets
+          div(data-simplebar class="custom-scroll")
+            .dashboard-page__clock
+              +clock()
+            .dashboard-page__weather
+              +weather()
+            .dashboard-page__currencies
+              +currencies()

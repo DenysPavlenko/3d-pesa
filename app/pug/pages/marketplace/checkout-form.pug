@@ -1,0 +1,53 @@
+include /partials/country-select
+include /partials/state-select
+include /partials/inter-tel-input
+include /partials/delivery-service
+include /partials/checkout-list
+include /partials/input
+include /partials/button
+
+form.form
+  .form__line
+    h3 Shipping Address
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Country
+      +country-select()
+  .form__line
+    .row
+      .col-7
+        .form-group
+          .form-group__header
+            label.p State/Province
+        +state-select()
+      .col-5
+        .form-group
+          .form-group__header
+            label.p Zip code
+          +input()(type="text", placeholder="0000")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p City
+      +input()(type="text", placeholder="City")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Address
+      +input()(type="text", placeholder="Your address")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Mobile phone
+      +inter-tel-input()
+  .form__line
+      +delivery-service()
+  .form__line
+    +checkout-list([
+      {item: 'Item(s) total', value: '24 G coins'},
+      {item: 'Shipping', value: '2 G coins'},
+      {item: 'Order Total', value: '26 G coins', bold:true},
+    ])
+  .form__line
+    +button({size:'xl', fluid:true})(type="button" data-popup-open="verification-popup")| Place your order

@@ -1,0 +1,59 @@
+.marketplace-page
+  +media-max($bp-lg)
+    &:after
+      position: fixed
+      content: ''
+      left: 0
+      top: 0
+      right: 0
+      background-color: $color-primary
+      bottom: 0
+      z-index: -1
+  &__container
+    margin-left: 260px
+    padding: 0 20px 20px
+    +media-max($bp-xl)
+      margin-left: 0
+    +media-max($bp-lg)
+      padding: 0
+  &__greetings
+    +media-max($bp-lg)
+      margin-left: 20px
+      margin-right: 20px
+
+  &__wrap
+    display: flex
+    height: calc( 100vh - #{$header-height + 20px} )
+    flex-direction: column
+    border-radius: $radius-primary
+    overflow: hidden
+    +media-max($bp-lg)
+      height: auto
+      border-radius: 0
+  &__menu
+    padding: 20px 0
+    +media-max($bp-lg)
+      padding: 20px 20px 0 20px
+  &__content
+    flex: 1
+    min-height: 0
+    border-radius: $radius-primary
+    background-color: $color-primary
+    +media-max($bp-lg)
+      border-radius: 0
+  &__row
+    height: 100%
+    display: flex
+    flex-wrap: wrap
+  &__left
+    width: 50%
+    height: 100%
+    +media-max($bp-lg)
+      width: 100%
+  &__right
+    width: 50%
+    height: 100%
+    +media-max($bp-lg)
+      display: none
+  &__box
+    padding: 20px

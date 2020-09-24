@@ -1,0 +1,13 @@
+include /partials/ads-card
+-
+  var cards = [
+    {image:'images/adbot/ads/image-1.png', title:'How to meditate', text:'Video by John Doe', noWidgets:true, popup:'adbot-client-video-popup'},
+  ]
+
+.ads
+  .ads__title
+    h3 Your purchases
+  .ads__cards
+    each card in cards
+      .ads__card
+        +ads-card(card)

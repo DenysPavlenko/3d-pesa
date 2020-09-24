@@ -1,0 +1,24 @@
+include /partials/button
+
+mixin article(props = {})
+  -const { title, description, date, image, text } = props
+  .article
+    .article__body
+      .article__line
+        h3 #{title}
+      .article__line
+        p.text-muted #{description}
+      .article__line
+        p.text-muted #{date}
+      .article__line
+        .article__image
+          img(src=image, alt="article")
+      .article__line
+        p #{text}
+    .article__footer
+      .article__footer-pattern
+        img(src="images/hyperloop/article/article-pattern.svg", class="image", alt="article-1")
+      .article__footer-title
+        h3 Are you interested in Hyperloop?<br> Join us now!
+      .article__footer-button
+        +button({type:'white', size:'xl', width:'400'})(href="hyperloop-contractor-form.html")| Become a Contractor

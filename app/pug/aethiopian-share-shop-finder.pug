@@ -1,0 +1,23 @@
+extends layouts/main
+include /partials/sidebar
+include /partials/choose-location-popup
+
+block variables
+  - const title = 'Aethiopian'
+  - const heading = 'Aethiopian'
+  - const tabName = 'shop'
+
+block content
+  .aethiopian-page
+    +choose-location-popup()
+    include /pages/aethiopian-share/shop-finder/shop-finder-popup
+    .aethiopian-page__sidebar
+      +sidebar({navActive:'aethiopian', innerNavigation:'share'})
+
+    .aethiopian-page__container
+      include /pages/aethiopian-share/header
+      .aethiopian-page__wrap
+        .aethiopian-page__content
+          include /pages/aethiopian-share/shop-finder/shop-finder
+
+    include /pages/marketplace/mobile-footer

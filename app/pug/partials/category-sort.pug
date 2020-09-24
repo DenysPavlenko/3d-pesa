@@ -1,0 +1,55 @@
+include /partials/select
+include /partials/button
+
+mixin category-sort(props = {})
+
+  .category-sort
+    .category-sort__desktop
+      .category-sort__item
+        +button({type:'info'})(type="button" data-popup-open="choose-location-popup")
+          span.button__icon
+            +icon('pin', 'svg-icon--muted')(width="13" height="16")
+          span California, USA
+      .category-sort__item
+        .category-sort__title
+          h5.font-regular Condition
+        .category-sort__sort
+          +select({
+            modifiers:'select--alt',
+            label:{name:'Used', selected:true},
+            options:[
+              {name:'Brand new'},
+              {name:'Open box'},
+              {name:'Refurbished'},
+              {name:'Used'},
+            ]
+          })
+
+      .category-sort__item
+        .category-sort__title
+          h5.font-regular Sort By
+        .category-sort__sort
+          +select({
+            modifiers:'select--alt',
+            label:{name:'Price: Low to High', selected:true},
+            options:[
+              {name:'Price: Low to High'},
+              {name:'Price: High to low'},
+            ],
+            footer:
+              `
+                <div class="column-group column-group--sm">
+                  <div class="column-group__item">
+                    <p>Enter price range:</p>
+                  </div>
+                  <div class="column-group__item">
+                    <div class="row-group row-group--xs row-group--flex-1">
+                      <div class="row-group__item"><input class="input input--bg-primary" type="text" placeholder="From"></div>
+                      <div class="row-group__item"><input class="input input--bg-primary" type="text" placeholder="To"></div>
+                    </div>
+                  </div>
+                </div>
+              `
+          })
+    .category-sort__mobile
+      +button({type:'info'})(type="button" data-popup-open="sort-popup")| Filters

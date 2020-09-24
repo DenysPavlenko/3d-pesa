@@ -1,0 +1,8 @@
+mixin time-preview(props = {})
+  -const { time } = props
+
+  .row-group.row-group--xs.row-group--align-center
+    .row-group__item
+      +icon('send-clock-bordered', 'svg-icon svg-icon--muted')(width="10" height="16")
+    .row-group__item
+      p.text-muted !{time}

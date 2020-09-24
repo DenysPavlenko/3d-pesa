@@ -1,0 +1,87 @@
+include /partials/select
+include /partials/input
+include /partials/button
+include /partials/coin-badge
+
+.wallet-tabs.js-tabs
+  .wallet-tabs__tab.js-tab.is-active(data-tab="buy") Buy
+  .wallet-tabs__tab.js-tab(data-tab="sell") Sell
+
+.wallet-page__box
+  .js-tab-content(data-content="buy")
+    form.form
+      .form__line
+        .form-group
+          .form-group__header
+            label.p Payment method
+          +select({
+            label:{name:'Mastercard **** **** **** 4040', selected:true},
+            options:[
+              {name:'Mastercard **** **** **** 4040'},
+              {name:'Mastercard **** **** **** 4041'},
+              {name:'Mastercard **** **** **** 4042'},
+              {name:'Mastercard **** **** **** 4043'},
+              {name:'Mastercard **** **** **** 4044'},
+            ],
+            footer:`<div class="text-center" data-popup-open="add-card-popup">+ Add a Credit/Debit Card</div>`,
+          })
+      .form__line
+        .form-group
+          .form-group__header
+            label.p Amount
+        .form-exchange
+          .form-exchange__input
+            .input-group.input-group--bg-secondary
+              +input({classes:'input-group__input'})(type="number", value="124.54")
+              .input-group__append
+                .input-group__wrap
+                  h5.text-muted USD
+          .form-exchange__icon
+            +icon('exchange', 'svg-icon--muted')(width="24" height="17")
+          .form-exchange__input
+            .input-group.input-group--bg-secondary
+              +input({classes:'input-group__input'})(type="number", value="1")
+              .input-group__append
+                .input-group__wrap
+                  +coin-badge({title:'GCN', icon:'images/icons/g-coin.svg'})
+      .form__line
+        +button({size:'xl', fluid:true})(type="submit")| Buy
+
+  .js-tab-content(data-content="sell")
+    form.form
+      .form__line
+        .form-group
+          .form-group__header
+            label.p Amount
+        .form-exchange
+          .form-exchange__input
+            .input-group.input-group--bg-secondary
+              +input({classes:'input-group__input'})(type="number", value="1")
+              .input-group__append
+                .input-group__wrap
+                  +coin-badge({title:'GCN', icon:'images/icons/g-coin.svg'})
+          .form-exchange__icon
+            +icon('exchange', 'svg-icon--muted')(width="24" height="17")
+          .form-exchange__input
+            .input-group.input-group--bg-secondary
+              +input({classes:'input-group__input'})(type="number", value="124.54")
+              .input-group__append
+                .input-group__wrap
+                  h5.text-muted USD
+      .form__line
+        .form-group
+          .form-group__header
+            label.p To
+          +select({
+            label:{name:'Mastercard **** **** **** 4040', selected:true},
+            options:[
+              {name:'Mastercard **** **** **** 4040'},
+              {name:'Mastercard **** **** **** 4041'},
+              {name:'Mastercard **** **** **** 4042'},
+              {name:'Mastercard **** **** **** 4043'},
+              {name:'Mastercard **** **** **** 4044'},
+            ],
+            footer:`<div class="text-center" data-popup-open="add-card-popup">+ Add a Credit/Debit Card</div>`,
+          })
+      .form__line
+        +button({fluid:true, size:'xl'})(type="submit")| Sell

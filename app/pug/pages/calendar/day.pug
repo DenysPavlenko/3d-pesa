@@ -1,0 +1,61 @@
+include /partials/select
+include /partials/calendar-action
+
+.calendar-full__item-header
+  .calendar-header.calendar-header--day.calendar-day__header
+    .calendar-header__format
+      .calendar-header__format-text
+        p.p-xs.text-uppercase GMT+3
+    .calendar-header__days
+      .calendar-header__day.calendar-header__day--active
+        .calendar-header__day-info
+          h5.text-muted.calendar-header__day-name Sat
+          a(href="#" class="h3 text-muted calendar-header__day-date") 17
+        .calendar-header__day-notification
+          +calendar-action({icon:{name:'birthday', width:'12', height:'12'}, title:'Frank Jones', color:'purple'})(data-popup-open="event-popup")
+
+.calendar-full__item-wrap
+  div(data-simplebar class="custom-scroll")
+    .calendar-table-day.js-calendar-popup-open(data-calendar-popup-open-class="calendar-table-day__col")
+
+      .calendar-table-day__row
+        .calendar-table-day__time
+          .calendar-table-day__time-text
+            span.h6.font-regular 1pm
+        .calendar-table-day__col
+          .calendar-table-day__current
+            .calendar-current
+
+      .calendar-table-day__row
+        .calendar-table-day__time
+          .calendar-table-day__time-text
+            span.h6.font-regular 2pm
+        .calendar-table-day__col
+          .calendar-table-day__events
+            .calendar-table-day__event
+              +calendar-action({icon:{name:'reminder', width:'10', height:'12'}, title:'Pay taxes', color:'blue'})(data-popup-open="reminder-popup")
+      .calendar-table-day__row
+        .calendar-table-day__time
+          .calendar-table-day__time-text
+            span.h6.font-regular 3pm
+        .calendar-table-day__col
+          .calendar-table-day__events
+            .calendar-table-day__event
+              +calendar-action({icon:{name:'task', width:'12', height:'12'}, title:'Call parents', color:'green'})(data-popup-open="task-popup")
+            .calendar-table-day__event
+              +calendar-action({icon:{name:'task', width:'12', height:'12'}, title:'Meditation', color:'green'})(data-popup-open="task-popup")
+      .calendar-table-day__row
+        .calendar-table-day__time
+          .calendar-table-day__time-text
+            span.h6.font-regular 4pm
+        .calendar-table-day__col
+          .calendar-table-day__events
+            .calendar-table-day__event
+              +calendar-action({title:'Meeting with John Doe', color:'purple', time:'8 PM - 9 PM'})(data-popup-open="event-popup")
+      - var n = 5;
+      while n < 12
+        .calendar-table-day__row
+          .calendar-table-day__time
+            .calendar-table-day__time-text
+              span.h6.font-regular #{n++}pm
+          .calendar-table-day__col

@@ -1,0 +1,7 @@
+include /partials/menu-tab
+
+mixin menu-tabs(tabs = [], tabName)
+
+  .menu-tabs
+    each tab in tabs
+      +menu-tab(tab)

@@ -1,0 +1,35 @@
+.calendar-toolbar
+  display: flex
+  align-items: center
+  margin-left: 60px
+  +media-max($bp-md)
+    flex-wrap: wrap
+  +media-max($bp-sm)
+    margin-left: 18px
+  &--ml-0
+    margin-left: 0
+  &__today
+    margin-right: 10px
+    +media-max($bp-md)
+      order: 1
+      margin-right: 0
+  &__title
+    font-size: rem(30px)
+    margin-top: -5px
+    line-height: 1
+    font-weight: 500
+    color: $text-light
+    +media-max($bp-md)
+      width: 100%
+      order: 0
+      margin-bottom: 10px
+  &__control
+    margin-left: auto
+    margin-right: 40px
+    +media-max($bp-md)
+      order: 2
+    +media-max($bp-sm)
+      margin: 0 auto
+  &__select
+    +media-max($bp-md)
+      order: 3

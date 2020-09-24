@@ -1,0 +1,14 @@
+include /partials/input-range
+
+mixin range(props = {})
+
+  .range
+    .range__top
+      .range__title
+        p Radius
+      .range__value
+        p
+          span.js-range-value
+          | miles
+    .range__bottom
+      +input-range()

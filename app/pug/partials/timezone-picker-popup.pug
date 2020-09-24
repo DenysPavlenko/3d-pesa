@@ -1,0 +1,40 @@
+include /partials/select
+include /partials/checkbox
+include /partials/input
+include /partials/button
+
+mixin timezone-picker-popup(props = {})
+
+  .popup.modal.timezone-picker-popup(data-popup="timezone-picker-popup")
+    .popup__body
+      .timezone-picker-popup__title
+        h3 Event Timezone
+      .timezone-picker-popup__checkbox
+        +checkbox({squere:true, label:'Use different timezones for begin and the end'})
+      .timezone-picker-popup__inputs
+        .timezone-picker-popup__input
+          .form-group
+            .form-group__header
+              label.p Timezone for event’s begining
+            +select({
+              label:{name:'(GMT +03:00)', selected:true},
+              options:[
+                {name:'(GMT +00:00)'},
+                {name:'(GMT +01:00)'},
+                {name:'(GMT +02:00)'},
+                {name:'(GMT +03:00)'},
+                {name:'(GMT +04:00)'},
+              ]
+            })
+        .timezone-picker-popup__icon
+          +icon('switch', 'svg-icon--stroke-light')(width="18" height="16")
+        .timezone-picker-popup__input
+          .form-group.form-group--disabled
+            .form-group__header
+              label.p Timezone for event’s end
+            +input({type:'disabled'})(type="text" placeholder="(GMT +03:00)")
+      .timezone-picker-popup__buttons
+        .button-group.button-group--sm
+          +button({type:'bordered', classes:'button-group__button'})(type="button")| Delete
+          +button({type:'bordered', classes:'button-group__button'})(type="button" data-popup-close="timezone-picker-popup")| Cancel
+          +button({classes:'button-group__button'})(type="button" class="button button-group__button")| Ok

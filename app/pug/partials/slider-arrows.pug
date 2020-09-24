@@ -1,0 +1,8 @@
+mixin slider-arrows(props = {})
+  -const { prev, next } = props
+
+  .slider-arrows
+    div(class=`slider-arrows__arrow ${prev}`)
+      +icon('chevron-left', 'svg-icon--stroke-light svg-icon--transparent')(width="6" height="11" stroke-width="2")
+    div(class=`slider-arrows__arrow ${next}`)
+      +icon('chevron-right', 'svg-icon--stroke-light svg-icon--transparent')(width="6" height="11" stroke-width="2")

@@ -1,0 +1,45 @@
+.navigation
+  display: flex
+  flex-direction: column
+  height: 100%
+  // Modifiers
+  &__items
+    &--inner
+      .navigation__link
+        padding-left: 30px
+    &--hidden
+      display: none
+  &__item
+    display: flex
+    flex-direction: column
+    &:hover
+      >.navigation__link
+        background: $gradient-muted
+        .navigation__icon-svg
+          fill: $color-light
+        .navigation__title
+          color: $text-light
+    &.is-active
+      >.navigation__link
+        .navigation__icon-svg
+          fill: $color-light
+        .navigation__title
+          color: $text-light
+  &__link
+    display: flex
+    align-items: center
+    padding: 20px 15px
+    cursor: pointer
+  &__icon
+    margin-right: 13px
+    &-svg
+      transition: 0.2s
+  &__title
+    transition: 0.2s
+    line-height: 0
+  &__badge
+    margin-left: auto
+  &__unread
+    margin-left: auto
+  &__footer
+    padding: 20px 15px

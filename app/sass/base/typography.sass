@@ -1,0 +1,106 @@
+/* Typography styles */
+html, body
+  font-family: $base-font-family
+  font-size: $base-font-size
+  text-align: left
+  font-weight: 400
+  color: $text-light
+  +media-max($bp-xs)
+    font-size: 15px
+
+h1, .h1
+  font-size: rem(74px)
+  line-height: rem(80px)
+  font-weight: 500
+h2, .h2
+  font-size: rem(48px)
+  line-height: rem(54px)
+  font-weight: 500
+  +media-max($bp-sm)
+    font-size: rem(36px)
+    line-height: rem(42px)
+.h2-sm
+  font-size: rem(36px)
+  line-height: rem(42px)
+h3, .h3
+  font-size: rem(24px)
+  line-height: rem(30px)
+  font-weight: 500
+h4, .h4
+  font-size: rem(18px)
+  line-height: rem(23px)
+  font-weight: 500
+h5, .h5
+  font-size: rem(16px)
+  line-height: rem(20px)
+  font-weight: 500
+h6, .h6
+  font-size: rem(14px)
+  line-height: rem(18px)
+  font-weight: 600
+
+p, .p
+  font-size: rem(16px)
+  line-height: rem(20px)
+  font-weight: 400
+
+.p-xl
+  font-size: rem(18px)
+  line-height: rem(24px)
+  font-weight: 400
+
+.p-sm
+  font-size: rem(14px)
+  line-height: rem(16px)
+  font-weight: 400
+
+.p-xs
+  font-size: rem(12px)
+  line-height: rem(18px)
+  font-weight: 400
+
+// Colors
+.text-light
+  color: $text-light
+.text-muted
+  color: $text-muted
+.text-secondary
+  color: $text-secondary
+.text-primary
+  color: $text-primary
+.text-green
+  color: $text-green
+.text-red
+  color: $text-red
+.text-yellow
+  color: $text-yellow
+.text-gradient
+  background: $gradient-accent
+  -webkit-background-clip: text
+  -moz-background-clip: text
+  -webkit-text-fill-color: transparent
+  -moz-text-fill-color: transparent
+
+// Font weights
+.font-regular
+  font-weight: 400
+.font-medium
+  font-weight: 500
+.font-semibold
+  font-weight: 600
+
+// Text alignings
+.text-left
+  text-align: left
+.text-center
+  text-align: center
+.text-right
+  text-align: right
+
+// Text transforms
+.text-uppercase
+  text-transform: uppercase
+
+// Text decorations
+.text-underline
+  text-decoration: underline

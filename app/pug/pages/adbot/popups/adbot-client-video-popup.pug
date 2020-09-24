@@ -1,0 +1,24 @@
+include /partials/ads-description
+include /partials/close
+include /partials/video-box
+include /partials/button
+
+.popup.popup--mw-800.modal(data-popup="adbot-client-video-popup")
+
+  .popup__close.popup__close--outer
+    +close({mdLight:true})(data-popup-close="adbot-client-video-popup")
+
+  .popup__body
+    .column-group
+      .column-group__item
+        +video-box({video:'https://www.youtube.com/embed/Bw9zSMsKcwk'})
+      .column-group__item
+        .list-group
+          .list-group__item
+            +ads-description({title: 'Strawberry Fields Forever', text: 'Video by John Doe', comments: false})
+          .list-group__item
+            p.text-muted Oh the enormous avenues of the holy land, the terraces of the temple! What has become of the Brahmin who explained the Proverbs to me? I can even see the old women still,
+      .column-group__item
+        .button-group.button-group--fluid.button-group--sm-column
+          +button({size:'xl', type:'white', classes:'button-group__button'})(href="marketplace-product.html")| Go to Shop
+          +button({size:'xl', type:'bordered', classes:'button-group__button'})(type="button" data-popup-open="adbot-finish-popup")| Finish

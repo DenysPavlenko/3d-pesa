@@ -1,0 +1,23 @@
+include /partials/input
+
+mixin inter-tel-input(props = {})
+
+  .inter-tel-input.js-inter-tel-input
+    .inter-tel-input__select.js-inter-tel-input-select
+      .inter-tel-input__current
+        figure(style="background-image:url('images/flags/usa.svg')" class="inter-tel-input__icon js-inter-tel-input-current-icon")
+      .inter-tel-input__options.js-inter-tel-input-options
+        div(data-simplebar class="custom-scroll inter-tel-input__scroll")
+          .inter-tel-input__option.js-inter-tel-input-option(data-option-placeholder="+1 224 245 256")
+            figure(style="background-image:url('images/flags/usa.svg')" class="inter-tel-input__icon js-inter-tel-input-icon")
+            .inter-tel-input__option-country
+              p United States
+            .inter-tel-input__option-code
+              p.text-muted +1
+          .inter-tel-input__option.js-inter-tel-input-option(data-option-placeholder="+38 099 203 5199")
+            figure(style="background-image:url('images/flags/ukraine.svg')" class="inter-tel-input__icon js-inter-tel-input-icon")
+            .inter-tel-input__option-country
+              p Ukraine
+            .inter-tel-input__option-code
+              p.text-muted +38
+    +input({classes:'inter-tel-input__input js-inter-tel-input-input'})(type="text" placeholder="+1 224 245 256")

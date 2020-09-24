@@ -1,0 +1,40 @@
+.adbot-page
+  +media-max($bp-md)
+    &:after
+      position: fixed
+      content: ''
+      left: 0
+      top: 0
+      right: 0
+      background-color: $color-primary
+      bottom: 0
+      z-index: -1
+  &__container
+    margin-left: 260px
+    padding: 0 20px 20px
+    +media-max($bp-xl)
+      margin-left: 0
+    +media-max($bp-lg)
+      padding: 0
+  &__greetings
+    margin-bottom: 20px
+    +media-max($bp-lg)
+      margin-left: 20px
+      margin-right: 20px
+
+  &__wrap
+    height: calc( 100vh - #{$header-height + 20px} )
+    width: 100%
+    border-radius: $radius-primary
+    background-color: $color-primary
+    overflow: hidden
+    +media-max($bp-lg)
+      height: auto
+      border-radius: 0
+  &__half
+    width: 50%
+    height: 100%
+    +media-max($bp-lg)
+      width: 100%
+  &__box
+    padding: 20px

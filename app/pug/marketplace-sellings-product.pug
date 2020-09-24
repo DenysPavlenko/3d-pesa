@@ -1,0 +1,25 @@
+extends layouts/main
+include /partials/sidebar
+include /partials/delete-confirmation-popup
+
+block variables
+  - const title = 'Marketplace'
+  - const heading = 'Marketplace'
+  - const tabName = 'sell'
+
+block content
+  .marketplace-page
+    +delete-confirmation-popup()
+    .marketplace-page__sidebar
+      +sidebar({navActive:'marketplace'})
+
+    .marketplace-page__container
+      include /pages/marketplace/header
+      .marketplace-page__wrap
+        .marketplace-page__menu
+          include /pages/marketplace/menu
+        .marketplace-page__content
+          div(data-simplebar class="custom-scroll marketplace-page__box")
+            include /pages/marketplace/sellings-product
+
+    include /pages/marketplace/mobile-footer

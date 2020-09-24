@@ -1,0 +1,144 @@
+include /partials/avatar
+include /partials/input
+include /partials/country-select
+include /partials/state-select
+include /partials/inter-tel-input
+include /partials/button
+
+form.form
+  .form__line
+    h3 Contact information
+  .form__line
+    .form-group
+      .form-group__header
+        label.p First name
+      +input()(type="text", placeholder="John")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Last name
+      +input()(type="text", placeholder="Doe")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Nickname
+      +input()(type="text", placeholder="Nickname")
+
+  .form__line
+    .form-group
+      .input-edit
+        .input-edit__showed(data-switch-name="email")
+          .input-edit__title
+            p Email
+          .input-edit__text
+            p.text-muted johndoe@gmail.com
+          .input-edit__button(data-switch-hide="email" data-switch-show="email-input")
+            +button({type:'bordered'})(type="button")
+              .button__icon
+                +icon('edit', 'svg-icon--light')(width="18" height="18")
+              span Edit
+        .input-edit__hidden(data-switch-name="email-input")
+          .input-edit__line
+            .form-group
+              .form-group__header
+                label.p Email
+              +input()(type="email", placeholder="johndoe@gmail.com")
+          .input-edit__buttons
+            .button-group.button-group--end
+              +button({type:'bordered', classes:'button-group__button'})(type="button" data-switch-hide="email-input" data-switch-show="email")| Cancel
+              +button({type:'white', classes:'button-group__button'})(type="button" data-popup-open="success-popup")| Submit
+  .form__line
+    .form-group
+      .input-edit
+        .input-edit__showed(data-switch-name="mobile")
+          .input-edit__title
+            p Mobile phone
+          .input-edit__text
+            p.text-muted +1 224 245 256
+          .input-edit__button(data-switch-hide="mobile" data-switch-show="mobile-input")
+            +button({type:'bordered'})(type="button")
+              .button__icon
+                +icon('edit', 'svg-icon--light')(width="18" height="18")
+              span Edit
+        .input-edit__hidden(data-switch-name="mobile-input")
+          .input-edit__line
+            .form-group
+              .form-group__header
+                label.p Mobile phone
+              +inter-tel-input()
+          .input-edit__buttons
+            .button-group.button-group--end
+              +button({type:'bordered', classes:'button-group__button'})(type="button" data-switch-hide="mobile-input" data-switch-show="mobile")| Cancel
+              +button({type:'white', classes:'button-group__button'})(type="button" data-popup-open="phone-change-confirmation-popup")| Submit
+  .form__line
+    .form-group
+      .input-edit
+        .input-edit__showed(data-switch-name="password")
+          .input-edit__title
+            p Password
+          .input-edit__text
+            p.text-muted ****************
+          .input-edit__button.js-input-edit-button
+            +button({type:'bordered'})(type="button" data-switch-hide="password" data-switch-show="password-inputs")
+              .button__icon
+                +icon('edit', 'svg-icon--light')(width="18" height="18")
+              span Edit
+        .input-edit__hidden(data-switch-name="password-inputs")
+          .input-edit__line
+            .form-group
+              .form-group__header
+                label.p Old Password
+                p.form-group__show Show
+              +input()(type="password", placeholder="Old password")
+          .input-edit__line
+            .form-group
+              .form-group__header
+                label.p New Password
+                p.form-group__show Show
+              +input()(type="password", placeholder="New Password")
+          .input-edit__line
+            .form-group
+              .form-group__header
+                label.p Confirm
+                p.form-group__show Show
+              +input()(type="password", placeholder="Confirm")
+          .input-edit__buttons
+            .button-group.button-group--end
+              +button({type:'bordered', classes:'button-group__button'})(type="button" data-switch-show="password" data-switch-hide="password-inputs")| Cancel
+              +button({type:'white', classes:'button-group__button'})(type="button" data-popup-open="success-popup")| Submit
+  .form__line
+    .form-group
+      .input-edit
+        .input-edit__showed(data-switch-name="paypassword")
+          .input-edit__title
+            p Paypassword
+          .input-edit__text
+            p.text-muted ****************
+          .input-edit__button.js-input-edit-button
+            +button({type:'bordered'})(type="button" data-switch-hide="paypassword" data-switch-show="paypassword-inputs")
+              .button__icon
+                +icon('edit', 'svg-icon--light')(width="18" height="18")
+              span Edit
+        .input-edit__hidden(data-switch-name="paypassword-inputs")
+          .input-edit__line
+            .form-group
+              .form-group__header
+                label.p Old Password
+                p.form-group__show Show
+              +input()(type="password", placeholder="Old password")
+          .input-edit__line
+            .form-group
+              .form-group__header
+                label.p New Password
+                p.form-group__show Show
+              +input()(type="password", placeholder="New password")
+          .input-edit__line
+            .form-group
+              .form-group__header
+                label.p Confirm
+                p.form-group__show Show
+              +input()(type="password", placeholder="Confirm")
+          .input-edit__buttons
+            .button-group.button-group--end
+              +button({type:'bordered', classes:'button-group__button'})(type="button" data-switch-show="paypassword" data-switch-hide="paypassword-inputs")| Cancel
+              +button({type:'white', classes:'button-group__button'})(type="button" data-popup-open="success-popup")| Submit

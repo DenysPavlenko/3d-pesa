@@ -1,0 +1,20 @@
+mixin avatar(props = {})
+  -const { image, icon = {}, size, color, classes } = props
+  -
+    const classnames = classNames({
+      'avatar': true,
+      [`avatar--${size}`]: size,
+      [`avatar--bg-${color}`]: color,
+      [classes]: classes,
+    })
+  -
+    const iconClassnames = classNames({
+      [`svg-icon--${icon.color}`]: icon.color,
+      'svg-icon--light': !icon.color,
+    })
+
+  div(class=classnames)
+    if(image)
+      figure(style=`background-image:url('${image}')`)
+    if(Object.keys(icon).length !== 0)
+      +icon(icon.name, iconClassnames)(width=icon.width height=icon.height)

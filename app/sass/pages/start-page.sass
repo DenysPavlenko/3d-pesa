@@ -1,0 +1,103 @@
+.start-page
+  position: relative
+  z-index: 1
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  min-height: 100vh
+  height: 100%
+  +media-max($bp-lg)
+    background-color: $color-primary
+  &:before,
+  &:after
+    position: fixed
+    content: ''
+    top: 0
+    height: 100%
+    z-index: -1
+  &:before
+    background-color: $color-primary
+    left: 0
+    width: 100%
+    +media-max($bp-lg)
+      display: none
+  &:after
+    background-color: $color-secondary
+    right: 0
+    width: 50%
+    +media-max($bp-lg)
+      display: none
+  &__navigation
+    margin-top: 40px
+    margin-left: 40px
+    display: flex
+    align-items: center
+    cursor: pointer
+    z-index: 1
+    +media-max($bp-lg)
+      margin-left: 20px
+    &:hover
+      .start-page__navigation-title
+        color: $text-light
+      .start-page__navigation-circle
+        border-color: $color-light
+    &-circle
+      width: 60px
+      height: 60px
+      display: flex
+      align-items: center
+      justify-content: center
+      border: 1px solid $color-muted
+      border-radius: 50%
+      margin-right: 10px
+      transition: 0.2s
+    &-icon
+      width: 8px
+      height: 12px
+    &-title
+      transition: 0.2s
+  &__container
+    width: 100%
+    flex: 1
+    display: flex
+  &__content
+    min-height: 0
+    width: 50%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    max-height: calc( 100vh - 170px )
+    min-height: 300px
+    padding-top: 20px
+    +media-max($bp-lg)
+      width: 100%
+      max-height: none
+    &-box
+      max-width: 600px
+      width: 100%
+      padding: 0 30px
+      min-height: 0
+      overflow: hidden
+      +media-max($bp-lg)
+        max-width: 100%
+        padding: 0 20px
+        margin-bottom: 60px
+    &-scroll
+      padding: 0 10px
+      +media-max($bp-lg)
+        padding: 0
+
+  &__image
+    width: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 1
+    padding: 40px
+    +media-max($bp-lg)
+      display: none
+    &-box
+      width: 100%
+      max-width: 600px
+      margin: auto

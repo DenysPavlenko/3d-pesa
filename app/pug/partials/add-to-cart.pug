@@ -1,0 +1,10 @@
+include /partials/input
+include /partials/button
+
+mixin add-to-cart(props = {})
+
+  .add-to-cart
+    .add-to-cart__input
+      +input()(type="text", value="1")
+    .add-to-cart__button
+      +button({size:'xl', fluid:true})(type="button")| Add to cart

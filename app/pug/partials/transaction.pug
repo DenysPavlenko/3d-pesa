@@ -1,0 +1,20 @@
+include /partials/avatar
+
+mixin transaction(props = {})
+  -const {image, icon = {}, iconColor, description = [], receipt = [] } = props
+
+  .transaction
+    .transaction__info
+      .transaction__icon
+        if(image)
+          img(src=image, alt="icon")
+        else
+          +avatar({icon:icon, size:'xs', color:iconColor})
+      .transaction__description
+        each item in description
+          .transaction__line
+            | !{item}
+    .transaction__receipt
+        each item in receipt
+          .transaction__line
+            | !{item}

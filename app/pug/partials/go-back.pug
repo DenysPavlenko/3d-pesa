@@ -1,0 +1,14 @@
+mixin go-back(props = {})
+  -const { content, arrowHide } = props
+  -const { href } = attributes
+  -const tag = href ? 'a' : 'div'
+  -
+    const classnames = classNames({
+      'go-back__icon': true,
+      [arrowHide]: arrowHide,
+    })
+
+  .go-back
+    #{tag}(class=classnames)&attributes(attributes)
+      +icon('arrow-left', 'svg-icon--light')(width="18" height="15")
+    .go-back__content !{content}

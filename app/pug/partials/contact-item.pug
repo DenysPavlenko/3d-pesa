@@ -1,0 +1,20 @@
+include /partials/avatar
+
+mixin contact-item(props = {})
+
+  -const {  title ='John Doe', text = 'It olny takes one minute...', image = 'images/user/avatar.jpg' } = props
+
+  .contact-item
+    .contact-item__avatar
+      +avatar({image:`${image}`})
+    .contact-item__info
+      .contact-item__title
+        h4 #{title}
+      p.text-muted #{text}
+    if(props.data)
+      .contact-item__data
+        .contact-item__time
+          h6.text-muted.font-regular 24.05.2020
+        .badge.badge--static
+          .badge__wrapper
+            p 3

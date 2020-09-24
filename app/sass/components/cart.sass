@@ -1,0 +1,29 @@
+.cart
+  display: flex
+  flex-direction: column
+  &--boxed
+    background-color: $color-secondary
+    border-radius: 6px
+  &__header
+    position: relative
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 20px
+    border-bottom: 1px solid $border-primary
+    &--border-top
+      border-top: 1px solid $border-primary
+    &-title
+      flex: 1
+    &-icon
+      margin-left: 20px
+      svg
+        fill: $color-light
+  &__items
+    flex: 1
+    padding: 20px
+    &--scroll
+      max-height: 280px
+  &__button
+    padding: 20px

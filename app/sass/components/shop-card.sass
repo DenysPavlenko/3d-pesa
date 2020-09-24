@@ -1,0 +1,24 @@
+.shop-card
+  position: relative
+  display: block
+  background-color: $color-secondary
+  border-radius: 5px
+  padding: 6px
+  overflow: hidden
+  cursor: pointer
+  &__image
+    border-radius: $radius-primary
+    overflow: hidden
+  &__body
+    padding: 14px 6px 12px 6px
+  &__overlay
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    background-color: rgba($color-primary, 0.7)

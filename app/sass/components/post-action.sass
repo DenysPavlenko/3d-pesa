@@ -1,0 +1,26 @@
+.post-action
+  display: flex
+  align-items: center
+  cursor: pointer
+  // Modifiers
+  &--like
+    &.is-clicked,
+    &.is-clicked:hover
+      .post-action__icon-svg
+        fill: $color-red
+  &--repost
+    &.is-clicked,
+    &.is-clicked:hover
+      .post-action__icon-svg
+        fill: $color-yellow
+  &:hover
+    .post-action__icon-svg
+      fill: $color-light
+    .post-action__count
+      color: $text-light
+  &__icon
+    margin-right: 10px
+    &-svg
+      transition: 0.2s
+  &__count
+    transition: 0.2s

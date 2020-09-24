@@ -1,0 +1,25 @@
+include /partials/avatar
+include /partials/call-action
+
+.call-screen
+  div(data-simplebar class="custom-scroll")
+    .call-screen__wrap
+      .call-screen__top
+        .column-group.column-group--sm.column-group--align-center
+          .column-group__item
+            +avatar({image:'images/set-avatar/set-avatar-image.svg', size:'lg'})
+          .column-group__item
+            h3 John Doe
+          .column-group__item
+            p 0:54
+
+      .call-screen__bottom
+        .call-screen__actions
+          .call-screen__action
+            +call-action({icon:{name:'speaker', width:'30', height:'21'}, title:'Speaker'})
+          .call-screen__action
+            +call-action({icon:{name:'video', width:'30', height:'21'}, title:'Video', modifiers:'is-active'})
+          .call-screen__action
+            +call-action({icon:{name:'muted', width:'28', height:'36'}, title:'Mute'})
+          .call-screen__action.call-screen__action--last
+            +call-action({icon:{name:'phone-horizontal', width:'36', height:'15'}, filled:true, color:'red'})

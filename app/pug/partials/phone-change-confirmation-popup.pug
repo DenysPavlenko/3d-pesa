@@ -1,0 +1,24 @@
+include /partials/close
+include /partials/input
+include /partials/button
+
+mixin phone-change-confirmation-popup(props = {})
+
+  .popup.popup--mw-560.modal(data-popup="phone-change-confirmation-popup")
+    .popup__close
+      +close({mdLight:true})(data-popup-close="phone-change-confirmation-popup")
+
+    .popup__body.popup__body--pt-60
+      .column-group.column-group--justify-items-center
+        .column-group__item
+          img(src="images/phone-change-confirmation-popup/phone-change-confirmation-popup-image.svg", alt="phone-change-confirmation-popup-image")
+        .column-group__item
+          h2.text-center Change phone number
+        .column-group__item
+          p.text-center Please enter the 4-digit code sent to you <br/>at +1 224 245 256
+        .column-group__item
+          .form-group.form-group--center
+            +times(4)
+              +input({classes:'form-group__code', type:'code'})(type="number")
+        .column-group__item
+          +button({fluid:true, size:'xl'})(type="button" data-popup-close="phone-change-confirmation-popup")| Back to Profile

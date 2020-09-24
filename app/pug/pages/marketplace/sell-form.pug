@@ -1,0 +1,107 @@
+include /partials/upload-files
+include /partials/input
+include /partials/textarea
+include /partials/select
+include /partials/country-select
+include /partials/button
+
+form.form
+  .form__line
+    h3 Tell us what you're selling
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Title
+      +input()(type="text", placeholder="My product")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Category
+      +select({
+        label:{name:'Book', selected:false},
+        options:[
+          {name:'Book'},
+          {name:'Magazine'},
+          {name:'Newspaper'},
+        ]
+      })
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Subcategory
+      +select({
+        label:{name:'Nonfiction', selected:false},
+        options:[
+          {name:'Nonfiction'},
+          {name:'Nonfiction 2'},
+        ]
+      })
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Condition
+      +select({
+        label:{name:'-', selected:false},
+        options:[
+          {name:'Good'},
+          {name:'Medium'},
+          {name:'Bad'},
+        ]
+      })
+
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Country
+      +country-select()
+  .form__line
+    .form-group
+      .form-group__header
+        label.p City
+      +input()(type="text", placeholder="City")
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Add photos
+      +upload-files([{}, {title: 'Add photo'}, {title: 'Add photo'}, {title: 'Add photo'}])
+  .form__line
+    .form-group
+      .form-group__header
+        label.p Item description
+      +textarea({resize:true})(placeholder="Description")
+  .form__line
+    .row
+      .col-6
+        .form-group
+          .form-group__header
+            label.p Weight
+          .input-group
+            .input-group__prepend
+              .input-group__box
+                p.text-muted kg
+            +input({classes:'input-group__input'})(type="text", placeholder="Weight")
+      .col-6
+        .form-group
+          .form-group__header
+            label.p Quanity
+          +input()(type="number", placeholder="1")
+  .form__line
+    .row
+      .col-8
+        .form-group
+          .form-group__header
+            label.p Price (+10% Fee)
+          .input-group
+            .input-group__prepend
+              .input-group__box
+                p.text-muted $
+            +input({classes:'input-group__input'})(type="text", placeholder="G coins")
+      .col-4
+        .form-group
+          .form-group__header
+            label.p Displayed price
+          .form-group__info
+            +input({classes:'input-group__input', type:'info'})(type="text", placeholder="G coins" disabled value="0")
+  .form__line
+    .form-group
+      +button({size:'xl', fluid:true})(type="submit" class="button button--xl button--fluid") Place your order

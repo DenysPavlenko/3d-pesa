@@ -1,0 +1,8 @@
+mixin coin-badge(props = {})
+  -const { icon, title } = props
+
+  .row-group.row-group--xs.row-group--align-center
+    .row-group__item
+      img(src=icon, alt="coin")
+    .row-group__item
+      h5.text-muted.text-uppercase #{title}

@@ -1,0 +1,26 @@
+include /partials/request-list-item
+include /partials/go-back
+
+.directory
+  .directory__list
+    div(data-simplebar class="custom-scroll")
+      .content-header
+        .content-header__left
+          h3 My requests
+
+      .select-list
+        -var cnt = 0
+        while cnt < 10
+          div(class=`select-list__item ${cnt === 0 ? 'is-active' : ''}` data-directory-open="contractor-profile")
+            +request-list-item({title: `Request #${cnt}`, date: 'Jul 24, 2020'})
+          -cnt++
+
+  .directory__content(data-directory-content="contractor-profile")
+    .d-block.d-lg-none
+      .content-header.content-header--bg-secondary
+        .content-header__left
+          +go-back({content: '<h3>Request</h3>'})(data-directory-close="contractor-profile")
+    .directory__content-wrap
+      div(data-simplebar class="custom-scroll")
+        .directory__content-box
+          include ./contractor-profile

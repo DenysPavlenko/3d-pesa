@@ -1,0 +1,33 @@
+.event-schedule
+  display: flex
+  flex-wrap: wrap
+  width: 100%
+  margin-bottom: -8px
+  &__group
+    position: relative
+    display: flex
+    flex-wrap: wrap
+    flex-direction: column
+    &:not(:last-child)
+      margin-right: 25px
+    &--with-line
+      &:after
+        position: absolute
+        content: ''
+        top: 18px
+        right: -15px
+        display: inline-block
+        height: 1px
+        width: 5px
+        background-color: $color-light
+        bottom: 0
+    &--row
+      display: flex
+      flex-direction: row
+      align-items: center
+      .event-schedule__item
+        &:not(:last-child)
+          margin-right: 8px
+
+  &__item
+    margin-bottom: 8px

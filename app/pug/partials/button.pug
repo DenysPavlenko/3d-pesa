@@ -1,0 +1,16 @@
+mixin button(props = {})
+  -const { width, size, type, classes, tag, fluid, state } = props
+  -const tagType = tag ? tag : (attributes.href ? 'a' : 'button')
+  -
+    const classnames = classNames({
+      'button': true,
+      [`button--${width}`]: width,
+      [`button--${size}`]: size,
+      [`button--${type}`]: type,
+      [`button--${state}`]: state,
+      'button--fluid' : fluid,
+      [classes]: classes
+    })
+
+  #{tagType}(href=attributes.href class=classnames)&attributes(attributes)
+    block

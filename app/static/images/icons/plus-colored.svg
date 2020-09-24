@@ -1,0 +1,14 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.9892 0.400146H11.0103C11.1899 0.400146 11.2797 0.471258 11.2797 0.61348V19.3868C11.2797 19.529 11.1899 19.6001 11.0103 19.6001H8.9892C8.80955 19.6001 8.71973 19.529 8.71973 19.3868V0.61348C8.71973 0.471258 8.80955 0.400146 8.9892 0.400146Z" fill="url(#calendar-add-1)"/>
+<path d="M0.62267 8.71997H19.3762C19.525 8.71997 19.5994 8.8098 19.5994 8.98944V11.0105C19.5994 11.1901 19.525 11.28 19.3762 11.28H0.62267C0.473833 11.28 0.399414 11.1901 0.399414 11.0105V8.98944C0.399414 8.8098 0.473833 8.71997 0.62267 8.71997Z" fill="url(#calendar-add-2)"/>
+<defs>
+<linearGradient id="calendar-add-1" x1="9.99973" y1="0.400146" x2="9.99973" y2="19.6001" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F8A441"/>
+<stop offset="1" stop-color="#AB47A2"/>
+</linearGradient>
+<linearGradient id="calendar-add-2" x1="19.2869" y1="-2.07245" x2="-3.04953" y2="17.8565" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F8A441"/>
+<stop offset="1" stop-color="#AB47A2"/>
+</linearGradient>
+</defs>
+</svg>

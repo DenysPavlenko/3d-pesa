@@ -1,0 +1,19 @@
+extends layouts/main
+include /partials/sidebar
+
+block variables
+  - var title = 'Hyperloop articles'
+  - var tabName = 'articles'
+  - var mobFooterButton = true
+
+block content
+  .hyperloop-page
+    .hyperloop-page__sidebar
+      +sidebar({navActive:'hyperloop'})
+    .hyperloop-page__container
+      include /pages/hyperloop/header
+      .hyperloop-page__wrap
+        div(data-simplebar class="custom-scroll hyperloop-page__box")
+          include /pages/hyperloop/articles
+
+    include /pages/hyperloop/mobile-footer

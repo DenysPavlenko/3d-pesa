@@ -1,0 +1,21 @@
+mixin currency(props = {})
+  -const { type, className, icon, title, buy, link, clickable } = props
+  -
+    const classnames = classNames({
+      'currency': true,
+      [`currency--${type}`]: type,
+      'currency--clickable': clickable,
+      [className]: className,
+    })
+
+  div(class=classnames)&attributes(attributes)
+    .currency__header
+      .currency__icon
+        img(src=icon alt="coin")
+      .currency__title
+        h6.text-uppercase #{title}
+    .currency__body
+      h3.font-semibold.text-uppercase #{buy}
+    if(link)
+      .currency__footer
+        a(href=link class="currency__button") Refill

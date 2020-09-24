@@ -1,0 +1,10 @@
+include /partials/menu-tabs
+-
+  var tabs = [
+    {link:'aethiopian-share-shop.html', title:'Equipment Share', isActive:tabName === 'shop', icon:{name:'equipment-share', width:'21', height:'20'}},
+    {link:'aethiopian-cryptobarter.html', title:'Cryptobarter', isActive:tabName === 'cryptobarter', icon:{name:'cart', width:'20', height:'20'}},
+  ]
+
+.mobile-footer.js-mobile-footer
+  .mobile-footer__tabs
+    +menu-tabs(tabs)

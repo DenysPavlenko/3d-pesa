@@ -1,0 +1,28 @@
+include /partials/catalog-header
+include /partials/shop-card
+
+-
+  var subcategories = [
+    {link:'marketplace-category.html', image: 'images/marketplace/subcategories/subcategory-1.jpg', title: 'Art & Photography'},
+    {link:'marketplace-category.html', image: 'images/marketplace/subcategories/subcategory-1.jpg', title: 'Biographies & Memoirs'},
+    {link:'marketplace-category.html', image: 'images/marketplace/subcategories/subcategory-1.jpg', title: 'Children\'s Books'},
+    {link:'marketplace-category.html', image: 'images/marketplace/subcategories/subcategory-1.jpg', title: "Cookbooks, Food & Wine"},
+  ]
+
+.catalog
+  .catalog__header
+    +catalog-header({
+      left: `<h3>Books</h3>`
+    })
+
+  .catalog__items
+    +times(2)
+      each category in subcategories
+        .catalog__item
+          +shop-card({
+            link:category.link,
+            image:category.image,
+            content:[
+              `<h4 class="text-center">${category.title}</h4>`
+            ]
+          })

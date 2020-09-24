@@ -1,0 +1,9 @@
+include /partials/avatar
+
+mixin location-pin(props = {})
+
+  .row-group.row-group--xs.row-group--align-center
+    .row-group__item
+      +avatar({icon:{name:'pin', width:'10', height:'13', color:'muted'}, size:'xxs', color:'secondary'})
+    .row-group__item
+      p California, USA

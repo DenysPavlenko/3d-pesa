@@ -1,0 +1,44 @@
+extends /layouts/main
+include /partials/sidebar
+include /partials/fixed-button
+include /partials/clock
+include /partials/weather
+include /partials/currencies
+include /partials/new-post-popup
+include /partials/reply-popup
+
+block variables
+  - const title = 'Social Network'
+  - const tabName = 'feed'
+
+block content
+  .social-app-page
+    +new-post-popup()
+    +reply-popup()
+
+    .d-block.d-lg-none
+      +fixed-button({modifiers:'fixed-button--lg-bottom-80', svg:{name:'new-post', class:'svg-icon--primary', width:20, height:20 }})(data-popup-open="reply-popup")
+
+    .social-app-page__sidebar
+      +sidebar({navActive:'social'})
+
+    .social-app-page__container
+      .d-none.d-lg-block
+        include /pages/social-app/header
+
+      .social-app-page__row
+        .social-app-page__main
+          .social-app-page__content
+            div(data-simplebar class="custom-scroll")
+              include /pages/social-app/post-full
+
+        .social-app-page__widgets
+          div(data-simplebar class="custom-scroll")
+            .social-app-page__clock
+              +clock()
+            .social-app-page__weather
+              +weather()
+            .social-app-page__currencies
+              +currencies()
+
+    include /pages/social-app/mobile-footer

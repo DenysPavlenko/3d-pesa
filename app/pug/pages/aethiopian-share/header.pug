@@ -1,0 +1,46 @@
+include /partials/burger
+include /partials/select
+include /partials/notifications-dropdown
+include /partials/user-dropdown
+include /partials/search-input
+include /partials/cart-dropdown
+
+.header
+  .header__wrap
+    .header__left
+      .header__burger
+        +burger({classes:'js-burger'})
+
+      .header__title
+        h3 #{heading}
+
+      .header__logo
+        .header__logo-icon
+          img(src="images/logo.svg", alt="logo.svg")
+        span.header__logo-title 3D-Pesa
+
+    .header__center
+      .input-group.input-group--bg-primary
+        .input-group__prepend
+          .input-group__wrap
+            +icon('search', 'svg-icon--muted')(width="18" height="18")
+        input(type="text" class="input input--bg-primary input-group__input" placeholder="Search for an equipment")
+        .input-group__append.input-group__append--border-left
+          +select({
+            modifiers:'select--bg-primary',
+            label:{name:'Current shop', selected:true},
+            options:[
+              {name:'Shop 1'},
+              {name:'Shop 2'},
+              {name:'Shop 3'},
+              {name:'Shop 4'},
+              {name:'Shop 5'},
+            ]
+          })
+
+    .header__right
+      .header__dropdowns
+        .header__dropdown
+          +notifications-dropdown()
+        .header__dropdown
+          +user-dropdown()
