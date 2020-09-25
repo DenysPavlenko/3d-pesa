@@ -3,7 +3,6 @@ const pug = require('gulp-pug');
 const gulpif = require("gulp-if");
 const plumber = require('gulp-plumber');
 const browserSync = require('browser-sync');
-const fs = require('fs');
 const emitty = require("@zoxon/emitty").setup("app/pug", "pug", {
   makeVinylFile: true,
   basedir: PATHS.templates.basedir
