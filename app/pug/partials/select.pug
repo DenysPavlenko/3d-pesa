@@ -1,3 +1,5 @@
+include /partials/input
+
 mixin select(props = {})
   -const { modifiers, label, optionsClass, options, footer } = props;
   -
@@ -34,3 +36,4 @@ mixin select(props = {})
       if(footer)
         .select__footer.js-select-footer
           | !{footer}
+    +input({hidden:'true', classes:'select__input js-select-input'})

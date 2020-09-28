@@ -202,6 +202,7 @@ function select () {
     var $selectLabel = $select.find('.js-select-label');
     var $scrollbar = $select.find('[data-select-simplebar]');
     var $options = $select.find('.js-select-options');
+    var $input = $select.find('.js-select-input');
     var optionsWidth;
     $select.on('click', function (e) {
       var $target = $(e.target);
@@ -228,6 +229,7 @@ function select () {
         var $optionContent = $option.html();
         $selectLabel.attr('data-selected', $optionData);
         $selectLabel.html($optionContent);
+        $input.attr('value', $optionData);
       }
     });
 
