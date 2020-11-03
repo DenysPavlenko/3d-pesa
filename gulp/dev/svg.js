@@ -6,7 +6,7 @@ const replace = require('gulp-replace');
 
 // Svg
 const svg = () => {
-  return src(PATHS.svg.entry)
+  return src(DEV_PATHS.svg.entry)
     .pipe(svgmin({
       js2svg: {
         pretty: true
@@ -29,7 +29,7 @@ const svg = () => {
         }
       }
     }))
-    .pipe(dest(PATHS.svg.output))
+    .pipe(dest(DEV_PATHS.svg.output))
 };
 
 exports.svg = svg;

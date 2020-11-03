@@ -1,14 +1,16 @@
 'use strict';
 
 function navigation () {
-  var $items = $('.js-navigation-item');
+  var $items = $('.js-navigation-item'); // Return if $item doesn't exist
 
-  // Return if $item doesn't exist
-  if ($items.length === 0) { return; }
+  if ($items.length === 0) {
+    return;
+  }
 
   $items.on('click', function (e) {
     var $this = $(this);
     var $innerItems = $this.find('.js-navigation-items-inner');
+
     if ($innerItems && !$(e.target).parents().hasClass('js-navigation-items-inner')) {
       $innerItems.slideToggle(100);
     }
@@ -27,16 +29,17 @@ var bp = {
   lg: '992',
   md: '768',
   sm: '577',
-  xs: '361',
+  xs: '361'
 };
 
 function dropdown () {
   var $dropdowns = $('.js-dropdown');
   var fadeDuration = 100;
-  var $body = $('body');
+  var $body = $('body'); // Return if $dropdowns doesn't exist
 
-  // Return if $dropdowns doesn't exist
-  if ($dropdowns.length === 0) { return; }
+  if ($dropdowns.length === 0) {
+    return;
+  }
 
   $dropdowns.each(function () {
     var $dropdown = $(this);
@@ -47,52 +50,53 @@ function dropdown () {
     var $scrollbar = $dropdown.find('[data-simplebar]');
     var $window = $(window);
     var bpMin = $dropdown.attr('data-dropdown-min');
-    var isOpened = false;
+    var isOpened = false; // Mobile behaviour
 
-    // Mobile behaviour
     checkWindowSize('(max-width:' + bpMin + 'px)', function (e) {
       if (e.matches) {
         $dropdownBody.fadeOut(fadeDuration);
         $dropdownToggle.removeClass('is-active');
       }
     });
-
     $dropdownToggle.on('click', function () {
-      if ($window.width() <= bpMin) { return }
+      if ($window.width() <= bpMin) {
+        return;
+      }
 
       $dropdownToggle.toggleClass('is-active');
       $dropdownBody.fadeToggle(fadeDuration);
       isOpened = !isOpened;
+
       if ($scrollbar.length > 0) {
         setTimeout(function () {
           new SimpleBar($scrollbar[0]);
         }, 0);
       }
+
       if ($dropdownBody.css('position') === 'fixed') {
         $body.css('overflow-y', 'hidden');
       }
     });
-
     $window.on('click', function (e) {
       if ($(e.target).parents('[data-dropdown]')[0] !== $dropdown[0] && isOpened) {
         $dropdownBody.fadeOut(fadeDuration);
         $dropdownToggle.removeClass('is-active');
         isOpened = false;
+
         if ($dropdownBody.css('position') === 'fixed') {
           $body.css('overflow-y', 'visible');
         }
       }
     });
-
     $dropdownClose.on('click', function () {
       $dropdownBody.fadeOut(fadeDuration);
       $dropdownToggle.removeClass('is-active');
       isOpened = false;
+
       if ($dropdownBody.css('position') === 'fixed') {
         $body.css('overflow-y', 'visible');
       }
     });
-
     checkWindowSize('(min-width:' + bp.md + 'px)', function (e) {
       if (e.matches && $dropdownBody.css('position') !== 'fixed') {
         $body.css('overflow-y', 'visible');
@@ -108,10 +112,11 @@ function sidebar () {
   var $sidebarOverlay = $('.js-sidebar-overlay');
   var $burger = $('.js-burger');
   var $close = $('.js-sidebar-close');
-  var $body = $('body');
+  var $body = $('body'); // Return if $sidebar doesn't exist
 
-  // Return if $sidebar doesn't exist
-  if ($sidebar.length === 0 || $burger.length === 0) { return; }
+  if ($sidebar.length === 0 || $burger.length === 0) {
+    return;
+  }
 
   $burger.on('click', function () {
     $sidebar.addClass('is-active');
@@ -133,9 +138,8 @@ function sidebar () {
 function popup () {
   var $popupAuto = $('[data-popup-auto]');
   var $popupOpen = $('[data-popup-open]');
-  var $popupClose = $('[data-popup-close]');
+  var $popupClose = $('[data-popup-close]'); // Open on widnow load
 
-  // Open on widnow load
   if ($popupAuto.length > 0) {
     $popupAuto.each(function () {
       var $popup = $(this);
@@ -149,19 +153,22 @@ function popup () {
 
   $popupClose.on('click', function () {
     $.modal.close();
-  });
+  }); // Return if $popupOpen doesn't exist
 
-  // Return if $popupOpen doesn't exist
-  if ($popupOpen.length === 0) { return; }
+  if ($popupOpen.length === 0) {
+    return;
+  }
 
   $popupOpen.on('click', function () {
     var $this = $(this);
     var popupName = $this.attr('data-popup-open');
     var $popup = $('[data-popup="' + popupName + '"]');
     var $window = $(window);
-    var bpMax = $this.attr('data-popup-max');
-    // Mobile behaviour
-    if ($window.width() >= bpMax) { return; }
+    var bpMax = $this.attr('data-popup-max'); // Mobile behaviour
+
+    if ($window.width() >= bpMax) {
+      return;
+    }
 
     createScrollBar($popup);
     $popup.modal({
@@ -172,6 +179,7 @@ function popup () {
 
   function createScrollBar(popup) {
     var $scrollBar = popup.find('[data-simplebar]');
+
     if ($scrollBar.length > 0) {
       setTimeout(function () {
         new SimpleBar($scrollBar[0]);
@@ -183,10 +191,11 @@ function popup () {
 function videoBox () {
   var $preview = $('.js-video-box-preview');
   var $button = $('.js-video-box-button');
-  var $video = $('.js-video-box-iframe');
+  var $video = $('.js-video-box-iframe'); // Return if $preview doesn't exist
 
-  // Return if $preview doesn't exist
-  if ($preview.length === 0) { return; }
+  if ($preview.length === 0) {
+    return;
+  }
 
   $button.on('click', function () {
     $preview.fadeOut(1200);
@@ -196,7 +205,6 @@ function videoBox () {
 
 function select () {
   var $selects = $('.js-select');
-
   $selects.each(function () {
     var $select = $(this);
     var $selectLabel = $select.find('.js-select-label');
@@ -206,25 +214,31 @@ function select () {
     var optionsWidth;
     $select.on('click', function (e) {
       var $target = $(e.target);
+
       if ($target.parents().hasClass('js-select-footer') || $target.hasClass('js-select-footer')) {
         return;
       }
+
       $select.toggleClass('is-expanded');
       $options.fadeToggle(100);
       optionsWidth = optionsWidth ? optionsWidth : $options.width();
       $options.css('width', optionsWidth);
+
       if ($scrollbar.length > 0) {
         setTimeout(function () {
           new SimpleBar($scrollbar[0]);
         }, 0);
       }
+
       if ($target.attr('data-option') || $target.parents('.js-select-option')) {
         var $option;
+
         if ($target.attr('data-option')) {
           $option = $target;
         } else {
           $option = $target.parents('.js-select-option');
         }
+
         var $optionData = $option.attr('data-option');
         var $optionContent = $option.html();
         $selectLabel.attr('data-selected', $optionData);
@@ -232,7 +246,6 @@ function select () {
         $input.attr('value', $optionData);
       }
     });
-
     $(window).on('click', function (e) {
       if ($(e.target).parents('.js-select')[0] !== $select[0]) {
         $select.removeClass('is-expanded');
@@ -243,10 +256,11 @@ function select () {
 }
 
 function tabs () {
-  var $tabsContainers = $('.js-tabs');
+  var $tabsContainers = $('.js-tabs'); // Return if $tabsContainers doesn't exist
 
-  // Return if $tabsContainers doesn't exist
-  if ($tabsContainers.length === 0) { return; }
+  if ($tabsContainers.length === 0) {
+    return;
+  }
 
   $tabsContainers.each(function () {
     var $tabsContainer = $(this);
@@ -258,24 +272,22 @@ function tabs () {
       tabsNames.push('[data-content="' + $(this).attr("data-tab") + '"]');
     });
     var $tabsContent = $(tabsNames.toString());
-
     $tabsContent.hide();
     $tabsContent.each(function () {
       if ($(this).attr('data-content') === activeTabName) {
         $(this).show();
       }
     });
-
     $tabs.on('click', function () {
       var $tab = $(this);
       var dataTab = $tab.attr('data-tab');
       $tabs.removeClass('is-active');
       $tab.addClass('is-active');
-
       $tabsContent.hide();
       $tabsContent.each(function () {
         var $tab = $(this);
         var dataContent = $tab.attr('data-content');
+
         if (dataContent === dataTab) {
           $tab.show();
         }
@@ -286,13 +298,13 @@ function tabs () {
 
 function mobileFooter () {
   var $menu = $('.js-mobile-footer');
-  var $body = $('body');
+  var $body = $('body'); // Return if $menu doesn't exist
 
-  // Return if $menu doesn't exist
-  if ($menu.length === 0) { return; }
+  if ($menu.length === 0) {
+    return;
+  }
 
   setBodyPadding();
-
   var timeout;
   $(window).on('resize', function () {
     clearTimeout(timeout);
@@ -313,7 +325,6 @@ function mobileFooter () {
 
 function interTelInput () {
   var $interTelInputs = $('.js-inter-tel-input');
-
   $interTelInputs.each(function () {
     var $interTelInput = $(this);
     var $select = $interTelInput.find('.js-inter-tel-input-select');
@@ -321,23 +332,26 @@ function interTelInput () {
     var $input = $interTelInput.find('.js-inter-tel-input-input');
     var $currentIcon = $interTelInput.find('.js-inter-tel-input-current-icon');
     var $scrollbar = $select.find('[data-simplebar]');
-
     $select.on('click', function (e) {
       var $target = $(e.target);
       $interTelInput.toggleClass('is-expanded');
       $options.fadeToggle(100);
+
       if ($scrollbar.length > 0) {
         setTimeout(function () {
           new SimpleBar($scrollbar[0]);
         }, 0);
       }
+
       if ($target.attr('data-option-placeholder') || $target.parents('.js-inter-tel-input-option')) {
         var $option;
+
         if ($target.attr('data-option-placeholder')) {
           $option = $target;
         } else {
           $option = $target.parents('.js-inter-tel-input-option');
         }
+
         var $placeholder = $option.attr('data-option-placeholder');
         var $icon = $option.find('.js-inter-tel-input-icon');
         var $iconSrc = $icon.css('background-image');
@@ -345,7 +359,6 @@ function interTelInput () {
         $currentIcon.css('background-image', $iconSrc);
       }
     });
-
     $(window).on('click', function (e) {
       if ($(e.target).parents('.js-inter-tel-input-select')[0] !== $select[0]) {
         $interTelInput.removeClass('is-expanded');
@@ -356,10 +369,11 @@ function interTelInput () {
 }
 
 function timetable () {
-  var $timetables = $('.js-timetable');
+  var $timetables = $('.js-timetable'); // Return if $timetables doesn't exist
 
-  // Return if $timetables doesn't exist
-  if ($timetables.length === 0) { return; }
+  if ($timetables.length === 0) {
+    return;
+  }
 
   $timetables.each(function () {
     var $timetable = $(this);
@@ -373,10 +387,11 @@ function timetable () {
 }
 
 function textAreaResize () {
-  var textareas = document.querySelectorAll('.js-textarea-resize');
+  var textareas = document.querySelectorAll('.js-textarea-resize'); // Return if textareas don't exist
 
-  // Return if textareas don't exist
-  if (!textareas) { return; }
+  if (!textareas) {
+    return;
+  }
 
   for (var i = 0; i < textareas.length; i++) {
     textareas[i].addEventListener('keydown', function () {
@@ -389,17 +404,23 @@ function textAreaResize () {
 function timeRecorderMapPreview () {
   var mapSelectors = document.querySelectorAll('.js-time-recorder-map-preview');
   var lat = 37.7749;
-  var long = -122.4194;
 
-  // Return if mapSelectors doesn't exist
-  if (!mapSelectors) { return; }
+  var _long = -122.4194; // Return if mapSelectors doesn't exist
+
+
+  if (!mapSelectors) {
+    return;
+  }
 
   for (var i = 0; i < mapSelectors.length; i++) {
     initializeMap(mapSelectors[i]);
   }
 
   function initializeMap(map) {
-    var myLatLng = { lat: lat, lng: long };
+    var myLatLng = {
+      lat: lat,
+      lng: _long
+    };
     new google.maps.Map(map, {
       zoom: 12,
       center: myLatLng,
@@ -414,16 +435,21 @@ function timeRecorderMapPreview () {
 function timeRecorderMap () {
   var map = document.querySelector('.js-time-recorder-map');
   var lat = 37.7749;
-  var long = -122.4194;
 
-  // Return if map doesn't exist
-  if (!map) { return; }
+  var _long = -122.4194; // Return if map doesn't exist
+
+
+  if (!map) {
+    return;
+  }
 
   initializeMap(map);
 
   function initializeMap(map) {
-    var myLatLng = { lat: lat, lng: long };
-
+    var myLatLng = {
+      lat: lat,
+      lng: _long
+    };
     new google.maps.Map(map, {
       zoom: 12,
       center: myLatLng,
@@ -432,16 +458,13 @@ function timeRecorderMap () {
       streetViewControl: false,
       fullscreenControl: false
     });
-
   }
 }
 
 function switchContent () {
   var $show = $('[data-switch-show]');
   var $hidden = $('[data-switch-hidden]');
-
   $hidden.hide();
-
   $show.on('click', function () {
     var $this = $(this);
     var contentShow = $this.attr('data-switch-show');
@@ -452,14 +475,14 @@ function switchContent () {
       $contentShow.fadeIn(200);
     });
   });
-
 }
 
 function inputHighlight () {
-  var $input = $('.js-input-highlight');
+  var $input = $('.js-input-highlight'); // Return if $input doesn't exist
 
-  // Return if $input doesn't exist
-  if ($input.length === 0) { return; }
+  if ($input.length === 0) {
+    return;
+  }
 
   $input.on('click', function () {
     $(this).select();
@@ -467,10 +490,11 @@ function inputHighlight () {
 }
 
 function inputAutoWidth () {
-  var $input = $('.js-input-auto-width');
+  var $input = $('.js-input-auto-width'); // Return if $input doesn't exist
 
-  // Return if $input doesn't exist
-  if ($input.length === 0) { return; }
+  if ($input.length === 0) {
+    return;
+  }
 
   $input.each(function () {
     var $this = $(this);
@@ -480,15 +504,17 @@ function inputAutoWidth () {
 
 function calendarPopupOpen () {
   var $calendarPopup = $('[data-popup="calendar-popup"]');
-  var $calendarPopupOpen = $('.js-calendar-popup-open');
+  var $calendarPopupOpen = $('.js-calendar-popup-open'); // Return if $calendarPopupOpen doesn't exist
 
-  // Return if $calendarPopupOpen doesn't exist
-  if ($calendarPopupOpen.length === 0) { return; }
+  if ($calendarPopupOpen.length === 0) {
+    return;
+  }
 
   $calendarPopupOpen.on('click', function (e) {
     var $this = $(this);
     var calendarPopupOpenClass = $this.attr('data-calendar-popup-open-class');
     var $target = $(e.target);
+
     if ($target.hasClass(calendarPopupOpenClass)) {
       $calendarPopup.modal({
         showClose: false
@@ -498,38 +524,39 @@ function calendarPopupOpen () {
 }
 
 function postImages () {
-  var $postImages = $('.js-post-images');
+  var $postImages = $('.js-post-images'); // Return if $postImages doesn't exist
 
-  // Return if $postImages doesn't exist
-  if ($postImages.length === 0) { return; }
+  if ($postImages.length === 0) {
+    return;
+  }
 
   $postImages.magnificPopup({
     delegate: '.js-post-images-item',
     type: 'image',
     gallery: {
-      enabled: true,
-    },
+      enabled: true
+    }
   });
 }
 
 function mediafiles () {
-  var $mediafiles = $('.js-mediafiles');
+  var $mediafiles = $('.js-mediafiles'); // Return if $mediafiles doesn't exist
 
-  // Return if $mediafiles doesn't exist
-  if ($mediafiles.length === 0) { return; }
+  if ($mediafiles.length === 0) {
+    return;
+  }
 
   $mediafiles.magnificPopup({
     delegate: '.js-mediafiles-item',
     type: 'image',
     gallery: {
-      enabled: true,
-    },
+      enabled: true
+    }
   });
 }
 
 function hideContent () {
   var $hide = $('[data-hide-content-hide]');
-
   $hide.on('click', function () {
     var $this = $(this);
     var contentName = $this.attr('data-hide-content-hide');
@@ -542,10 +569,11 @@ function directory () {
   var $content = $('[data-directory-content]');
   var $open = $('[data-directory-open]');
   var $close = $('[data-directory-close]');
-  var $body = $('body');
+  var $body = $('body'); // Return if $content doesn't exist
 
-  // Return if $content doesn't exist
-  if ($content.length === 0) { return; }
+  if ($content.length === 0) {
+    return;
+  }
 
   $open.on('click', function () {
     showContent();
@@ -560,6 +588,7 @@ function directory () {
       $body.css('overflow-y', 'hidden');
     }
   }
+
   function hideContent() {
     if ($content.css('position') === 'fixed') {
       $content.removeClass('is-active');
@@ -574,7 +603,6 @@ function newMessage () {
   var $actionsMobile = $('.js-new-message-actions-mobile');
   var $window = $(window);
   var isMobileFlag = isMobile();
-
   var timer;
   $window.on('resize', function () {
     clearTimeout(timer);
@@ -587,9 +615,9 @@ function newMessage () {
       }
     }, 100);
   });
-
   $expand.on('click', function () {
     $expand.toggleClass('is-active');
+
     if (isMobile()) {
       $actionsMobile.fadeToggle();
     } else {
@@ -598,17 +626,20 @@ function newMessage () {
   });
 
   function isMobile() {
-    return $window.width() < 992
+    return $window.width() < 992;
   }
 }
 
 function usersNearbyMap () {
   var mapSelectors = document.querySelectorAll('.js-users-nearby-map');
   var lat = 37.7749;
-  var long = -122.4194;
 
-  // Return if mapSelectors doesn't exist
-  if (!mapSelectors) { return; }
+  var _long = -122.4194; // Return if mapSelectors doesn't exist
+
+
+  if (!mapSelectors) {
+    return;
+  }
 
   var $window = $(window);
   var $popup = $('[data-popup="contact-popup"]');
@@ -618,8 +649,10 @@ function usersNearbyMap () {
   }
 
   function initializeMap(map) {
-    var myLatLng = { lat: lat, lng: long };
-
+    var myLatLng = {
+      lat: lat,
+      lng: _long
+    };
     var gmap = new google.maps.Map(map, {
       zoom: 12,
       center: myLatLng,
@@ -628,34 +661,31 @@ function usersNearbyMap () {
       streetViewControl: false,
       fullscreenControl: false
     });
-
     var itm = document.querySelector('.js-users-nearby-map-infowindow');
     var cln = itm.cloneNode(true);
     var contentString = cln;
-
     var icon = {
       url: '../images/icons/user-pin.svg',
-      scaledSize: new google.maps.Size(48, 60),
+      scaledSize: new google.maps.Size(48, 60)
     };
-
     var marker = new google.maps.Marker({
       position: myLatLng,
       map: gmap,
-      icon: icon,
+      icon: icon
     });
-
     var infowindow = new google.maps.InfoWindow({
       content: contentString
     });
+
     if ($window.width() > 992) {
       infowindow.open(gmap, marker);
     }
+
     checkWindowSize('(max-width:' + bp.md + 'px)', function (e) {
       if (e.matches) {
         infowindow.close();
       }
     });
-
     marker.addListener("click", function () {
       if ($window.width() > 992) {
         infowindow.open(gmap, marker);
@@ -675,10 +705,8 @@ function range () {
   var $rangeValue = $('.js-range-value');
   var range = $rangeInput.val();
   var maxRange = $rangeInput.attr('max');
-
   setLineWidth(range);
   setInputRangeValue(range);
-
   $rangeInput.on('input', function () {
     var $this = $(this);
     range = $this.val();
@@ -687,18 +715,20 @@ function range () {
   });
 
   function setLineWidth(range) {
-    $rangeLine.css('width', range / maxRange  * 100 + '%');
+    $rangeLine.css('width', range / maxRange * 100 + '%');
   }
+
   function setInputRangeValue(range) {
     $rangeValue.html(range + ' ');
   }
 }
 
 function catalogSlider () {
-  var $sliders = $('.js-catalog-slider');
+  var $sliders = $('.js-catalog-slider'); // Return if $sliders doesn't exist
 
-  // Return if $sliders doesn't exist
-  if ($sliders.length === 0) { return; }
+  if ($sliders.length === 0) {
+    return;
+  }
 
   $sliders.each(function () {
     var $slider = $(this);
@@ -711,34 +741,29 @@ function catalogSlider () {
       arrows: true,
       prevArrow: $prevArrow,
       nextArrow: $nextArrow,
-      responsive: [
-        {
-          breakpoint: bp.lg,
-          settings: {
-            slidesToShow: 3
-          }
-        },
-        {
-          breakpoint: bp.md,
-          settings: {
-            slidesToShow: 2,
-          }
-        },
-        {
-          breakpoint: bp.sm,
-          settings: {
-            slidesToShow: 1,
-            centerMode: true
-          }
-        },
-        {
-          breakpoint: bp.xs,
-          settings: {
-            slidesToShow: 1,
-            centerMode: false
-          }
+      responsive: [{
+        breakpoint: bp.lg,
+        settings: {
+          slidesToShow: 3
         }
-      ]
+      }, {
+        breakpoint: bp.md,
+        settings: {
+          slidesToShow: 2
+        }
+      }, {
+        breakpoint: bp.sm,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true
+        }
+      }, {
+        breakpoint: bp.xs,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false
+        }
+      }]
     });
   });
 }
@@ -747,10 +772,11 @@ function productDetailsSlider () {
   var $slides = $('.js-product-details-slider');
   var $prevArrow = $('.js-product-details-slider-prev');
   var $nextArrow = $('.js-product-details-slider-next');
-  var $slidesNavigation = $('.js-product-details-navigation');
+  var $slidesNavigation = $('.js-product-details-navigation'); // Return if $slides doesn't exist
 
-  // Return if $slides doesn't exist
-  if ($slides.length === 0) { return; }
+  if ($slides.length === 0) {
+    return;
+  }
 
   $slides.slick({
     slidesToShow: 1,
@@ -760,33 +786,31 @@ function productDetailsSlider () {
     prevArrow: $prevArrow,
     nextArrow: $nextArrow,
     asNavFor: '.js-product-details-navigation',
-    responsive: [
-      {
-        breakpoint: bp.md,
-        settings: {
-          arrows: true,
-        }
-      },
-    ]
+    responsive: [{
+      breakpoint: bp.md,
+      settings: {
+        arrows: true
+      }
+    }]
   });
   $slidesNavigation.slick({
     slidesToShow: 5,
     slidesToScroll: 1,
     arrows: false,
     focusOnSelect: true,
-    asNavFor: '.js-product-details-slider',
+    asNavFor: '.js-product-details-slider'
   });
 }
 
 function contentHeader () {
   var $header = $('.js-content-header');
-  var $body = $('body');
+  var $body = $('body'); // Return if $header doesn't exist
 
-  // Return if $header doesn't exist
-  if ($header.length === 0) { return; }
+  if ($header.length === 0) {
+    return;
+  }
 
   setBodyPadding();
-
   var timeout;
   $(window).on('resize', function () {
     clearTimeout(timeout);
@@ -806,10 +830,11 @@ function contentHeader () {
 }
 
 function foodShopProduct () {
-  var $products = $('.js-food-shop-product');
+  var $products = $('.js-food-shop-product'); // Return if $products doesn't exist
 
-  // Return if $products doesn't exist
-  if ($products.length === 0) { return; }
+  if ($products.length === 0) {
+    return;
+  }
 
   $products.each(function () {
     var $product = $(this);
@@ -825,21 +850,22 @@ function foodShopProduct () {
 }
 
 function scrollSpy () {
-  var $anchorLinks = $('.js-scroll-spy-link');
+  var $anchorLinks = $('.js-scroll-spy-link'); // Return if $anchorLinks doesn't exist
 
-  // Return if $anchorLinks doesn't exist
-  if ($anchorLinks.length === 0) { return; }
+  if ($anchorLinks.length === 0) {
+    return;
+  }
 
   $(window).on('scroll', function () {
     $anchorLinks.each(function () {
-      var $link = $(this);
-      // Get section name
+      var $link = $(this); // Get section name
+
       var anchor = $link.attr('href');
-      var section = $(anchor);
-      // Offsets
+      var section = $(anchor); // Offsets
+
       var windowTop = window.pageYOffset;
-      var sectionTop = section.offset().top;
-      // Add or remove an active class from nav link
+      var sectionTop = section.offset().top; // Add or remove an active class from nav link
+
       if (windowTop > sectionTop - 1) {
         $anchorLinks.removeClass('is-active');
         $link.addClass('is-active');
@@ -857,19 +883,20 @@ function contentScrollDesktop () {
   var $listItems = $('[data-scroll-item]');
   var $content = $('.js-scroll-menu-content');
   var $contentItems = $('[data-scroll-content]');
-  var $window = $(window);
+  var $window = $(window); // Return if $container doesn't exist
 
-  // Return if $container doesn't exist
-  if ($container.length === 0) { return; }
+  if ($container.length === 0) {
+    return;
+  } // Global variables
 
-  // Global variables
+
   var topOffset = 70;
   var simpleBar = new SimpleBar($('.js-scroll-menu-bar')[0]);
   var $scrollContainer = $(simpleBar.getScrollElement());
-
   var jsMediaQuery = window.matchMedia('(min-width:' + bp.lg + 'px)');
   jsMediaQuery.addListener(WidthChange);
   WidthChange(jsMediaQuery);
+
   function WidthChange(e) {
     if (e.matches) {
       desktopScroll();
@@ -883,60 +910,84 @@ function contentScrollDesktop () {
       if ($scrollContainer) {
         $scrollContainer.off('scroll', scrollContainer);
       }
+
       $listItems.off('click');
       $window.off('resize', setContentBottomMargin);
-      $listChildren.css({ 'position': 'static' });
-      $content.css({ 'margin-bottom': 0 });
+      $listChildren.css({
+        'position': 'static'
+      });
+      $content.css({
+        'margin-bottom': 0
+      });
       $listItems.removeClass('is-active');
       $listItems.eq(0).addClass('is-active');
       return;
-    }
-    // Stick/unstick $list on $scrollContainer scroll event
-    $scrollContainer.on('scroll', scrollContainer);
-    // Scroll to the content item by $listItem click
-    $listItems.on('click', listItemsClick);
-    // Set content bottom margin
+    } // Stick/unstick $list on $scrollContainer scroll event
+
+
+    $scrollContainer.on('scroll', scrollContainer); // Scroll to the content item by $listItem click
+
+    $listItems.on('click', listItemsClick); // Set content bottom margin
+
     setTimeout(function () {
       setContentBottomMargin();
     }, 0);
     $window.on('resize', setContentBottomMargin);
-  }
-  // Container scroll logic
+  } // Container scroll logic
+
+
   function scrollContainer() {
     if ($container.offset().top <= topOffset) {
-      $listChildren.css({ 'position': 'fixed', 'top': topOffset + 20 });
+      $listChildren.css({
+        'position': 'fixed',
+        'top': topOffset + 20
+      });
     } else {
-      $listChildren.css({ 'position': 'static' });
-    }
-    // Scrollspy
+      $listChildren.css({
+        'position': 'static'
+      });
+    } // Scrollspy
+
+
     $listItems.each(function () {
       var $listItem = $(this);
       var listItemName = $listItem.attr('data-scroll-item');
       var contentItem = $('[data-scroll-content="' + listItemName + '"]');
       var contentItemOffset = contentItem.offset().top;
+
       if (contentItemOffset <= topOffset + 32) {
         $listItems.removeClass('is-active');
         $listItem.addClass('is-active');
       }
     });
-  }
-  // Menu item click logic
+  } // Menu item click logic
+
+
   function listItemsClick() {
     var $listItem = $(this);
     var listItemName = $listItem.attr('data-scroll-item');
     var contentItem = $('[data-scroll-content="' + listItemName + '"]');
     var contentItemOffset = contentItem.get(0).offsetTop;
-    $scrollContainer.animate({ scrollTop: contentItemOffset - 20 });
+    $scrollContainer.animate({
+      scrollTop: contentItemOffset - 20
+    });
     $listItems.removeClass('is-active');
     $listItem.addClass('is-active');
-  }
-  // Set bottom margin to content
+  } // Set bottom margin to content
+
+
   function setContentBottomMargin() {
     var scrollContainerHeight = $scrollContainer.height();
     var lastContentItem = $contentItems.last();
     var contentBottomMargin = scrollContainerHeight - lastContentItem.height() - topOffset + 20;
-    if (contentBottomMargin <= 0) { return; }
-    $content.css({ 'margin-bottom': contentBottomMargin + 'px' });
+
+    if (contentBottomMargin <= 0) {
+      return;
+    }
+
+    $content.css({
+      'margin-bottom': contentBottomMargin + 'px'
+    });
   }
 }
 
@@ -947,18 +998,19 @@ function contentScrollMobile () {
   var $content = $('.js-scroll-menu-content');
   var $contentItems = $('[data-scroll-content]');
   var $window = $(window);
-  var $html = $('html, body');
+  var $html = $('html, body'); // Return if $container doesn't exist
 
-  // Return if $container doesn't exist
-  if ($container.length === 0) { return; }
+  if ($container.length === 0) {
+    return;
+  } // Global variables
 
-  // Global variables
+
   var topOffset = 70;
   var listHeight = $list.outerHeight();
-
   var jsMediaQuery = window.matchMedia('(max-width:' + bp.lg + 'px)');
   jsMediaQuery.addListener(WidthChange);
   WidthChange(jsMediaQuery);
+
   function WidthChange(e) {
     if (e.matches) {
       mobileScroll();
@@ -973,74 +1025,109 @@ function contentScrollMobile () {
       $window.off('resize', setContentBottomMargin);
       $listItems.off('click', listItemsClick);
       $list.removeAttr('style');
-      $content.css({ 'margin-top': 0 });
-      $content.css({ 'margin-bottom': 0 });
+      $content.css({
+        'margin-top': 0
+      });
+      $content.css({
+        'margin-bottom': 0
+      });
       return;
     }
-    $window.on('scroll', windowScroll);
-    // Scroll to the content item by $listItem click
-    $listItems.on('click', listItemsClick);
-    // Set content bottom margin
+
+    $window.on('scroll', windowScroll); // Scroll to the content item by $listItem click
+
+    $listItems.on('click', listItemsClick); // Set content bottom margin
+
     setTimeout(function () {
       setContentBottomMargin();
     }, 0);
     $window.on('resize', setContentBottomMargin);
-  }
-  // Container scroll logic
+  } // Container scroll logic
+
+
   function windowScroll() {
     listHeight = $list.outerHeight();
     var windowTopOffset = $window.scrollTop();
+
     if (windowTopOffset >= $content.offset().top - topOffset - listHeight) {
-      $list.css({ 'position': 'fixed', width: '100%', 'top': topOffset });
-      $content.css({ 'margin-top': listHeight + 'px' });
+      $list.css({
+        'position': 'fixed',
+        width: '100%',
+        'top': topOffset
+      });
+      $content.css({
+        'margin-top': listHeight + 'px'
+      });
     } else {
-      $list.css({ 'position': 'static', width: '100vw' });
-      $content.css({ 'margin-top': 0 });
-    }
-    // Scrollspy
+      $list.css({
+        'position': 'static',
+        width: '100vw'
+      });
+      $content.css({
+        'margin-top': 0
+      });
+    } // Scrollspy
+
+
     $listItems.each(function () {
       var $listItem = $(this);
       var listItemName = $listItem.attr('data-scroll-item');
       var contentItem = $('[data-scroll-content="' + listItemName + '"]');
       var contentItemOffset = contentItem.offset().top;
       var windowTopOffset = $window.scrollTop();
+
       if (windowTopOffset >= contentItemOffset - listHeight - topOffset - 33) {
         $listItems.removeClass('is-active');
         $listItem.addClass('is-active');
       }
     });
-  }
-  // Menu item click logic
+  } // Menu item click logic
+
+
   function listItemsClick() {
     var $listItem = $(this);
     var listItemName = $listItem.attr('data-scroll-item');
     var contentItem = $('[data-scroll-content="' + listItemName + '"]');
-    $html.animate({ scrollTop: contentItem.offset().top - listHeight - topOffset });
+    $html.animate({
+      scrollTop: contentItem.offset().top - listHeight - topOffset
+    });
     $listItems.removeClass('is-active');
     $listItem.addClass('is-active');
-  }
-  // Set bottom margin to content
+  } // Set bottom margin to content
+
+
   function setContentBottomMargin() {
     var windowHeight = $window.height();
     var lastContentItem = $contentItems.last();
     var contentBottomMargin = windowHeight - lastContentItem.height() - listHeight - topOffset * 2 - 20;
-    if (contentBottomMargin <= 0) { return; }
-    $content.css({ 'margin-bottom': contentBottomMargin + 'px' });
+
+    if (contentBottomMargin <= 0) {
+      return;
+    }
+
+    $content.css({
+      'margin-bottom': contentBottomMargin + 'px'
+    });
   }
 }
 
 function carShareRide () {
-  var $mapSelector = $('.js-car-share-ride-map');
-  // var $passengerDrag = $('.js-passenger-ride-drag');
+  var $mapSelector = $('.js-car-share-ride-map'); // var $passengerDrag = $('.js-passenger-ride-drag');
   // var $passengerInfo = $('.js-passenger-ride-info');
-
   // Return if $mapSelector doesn't exist
-  if ($mapSelector.length === 0) { return; }
 
-  // Map
+  if ($mapSelector.length === 0) {
+    return;
+  } // Map
+
+
   initializeMap($mapSelector[0]);
+
   function initializeMap(map) {
-    var myLatLng = { lat: 37.7749, lng: -122.4194 };
+    var myLatLng = {
+      lat: 37.7749,
+      lng: -122.4194
+    };
     new google.maps.Map(map, {
       zoom: 14,
       center: myLatLng,
@@ -1049,20 +1136,22 @@ function carShareRide () {
       streetViewControl: false,
       fullscreenControl: false
     });
-  }
-
-  // $passengerDrag.on('click', function () {
+  } // $passengerDrag.on('click', function () {
   //   $passengerInfo.toggleClass('is-active');
   // });
+
 }
 
 function shopFinderMap () {
   var mapSelectors = document.querySelectorAll('.js-shop-finder-map');
   var lat = 37.7749;
-  var long = -122.4194;
 
-  // Return if mapSelectors doesn't exist
-  if (!mapSelectors) { return; }
+  var _long = -122.4194; // Return if mapSelectors doesn't exist
+
+
+  if (!mapSelectors) {
+    return;
+  }
 
   var $window = $(window);
   var $popup = $('[data-popup="shop-finder-popup"]');
@@ -1072,8 +1161,10 @@ function shopFinderMap () {
   }
 
   function initializeMap(map) {
-    var myLatLng = { lat: lat, lng: long };
-
+    var myLatLng = {
+      lat: lat,
+      lng: _long
+    };
     var gmap = new google.maps.Map(map, {
       zoom: 12,
       center: myLatLng,
@@ -1082,25 +1173,22 @@ function shopFinderMap () {
       streetViewControl: false,
       fullscreenControl: false
     });
-
     var itm = document.querySelector('.js-shop-finder-map-infowindow');
     var cln = itm.cloneNode(true);
     var contentString = cln;
-
     var icon = {
       url: '../images/icons/find-shop-map-pin.svg',
-      scaledSize: new google.maps.Size(60, 90),
+      scaledSize: new google.maps.Size(60, 90)
     };
-
     var marker = new google.maps.Marker({
       position: myLatLng,
       map: gmap,
-      icon: icon,
+      icon: icon
     });
-
     var infowindow = new google.maps.InfoWindow({
       content: contentString
     });
+
     if ($window.width() > 992) {
       infowindow.open(gmap, marker);
     }
@@ -1110,7 +1198,6 @@ function shopFinderMap () {
         infowindow.close();
       }
     });
-
     marker.addListener("click", function () {
       if ($window.width() > 992) {
         infowindow.open(gmap, marker);
@@ -1126,14 +1213,12 @@ function shopFinderMap () {
 
 function popupSwitcher () {
   var $switcher = $('.js-popup-switcher');
-
   $switcher.each(function () {
     var $this = $(this);
-    var $contentToHide = $('[data-popup-content="'+ $this.attr("data-popup-content-hide") + '"]');
-    var $contentToShow = $('[data-popup-content="'+ $this.attr("data-popup-content-show") + '"]');
+    var $contentToHide = $('[data-popup-content="' + $this.attr("data-popup-content-hide") + '"]');
+    var $contentToShow = $('[data-popup-content="' + $this.attr("data-popup-content-show") + '"]');
     $contentToHide.show();
     $contentToShow.hide();
-
     $this.on('click', function () {
       $contentToHide.hide();
       $contentToShow.show();
@@ -1143,15 +1228,16 @@ function popupSwitcher () {
 
 function checkboxToggleContent () {
   var $checkboxes = $('[data-checkbox-toggle]');
-  var $toggleContents = $('[data-checkbox-toggle-content]');
+  var $toggleContents = $('[data-checkbox-toggle-content]'); // Return if $checkboxes doesn't exist
 
-  // Return if $checkboxes doesn't exist
-  if ($checkboxes.length === 0) { return; }
+  if ($checkboxes.length === 0) {
+    return;
+  }
 
   $toggleContents.hide();
-
   $checkboxes.each(function () {
     var $checkbox = $(this);
+
     if ($checkbox.is(":checked") && !$checkbox.attr('data-checkbox-reversed')) {
       var checkedCheckboxName = $checkbox.attr('data-checkbox-toggle');
       $('[data-checkbox-toggle-content=' + checkedCheckboxName + ']').show();
@@ -1164,7 +1250,6 @@ function checkboxToggleContent () {
   });
 }
 
-// On document ready
 $(function () {
   svg4everybody();
   scrollSpy();
@@ -1202,7 +1287,6 @@ $(function () {
   shopFinderMap();
   popupSwitcher();
   checkboxToggleContent();
-});
+}); // On window load
 
-// On window load
-$(window).on('load', function () { });
+$(window).on('load', function () {});

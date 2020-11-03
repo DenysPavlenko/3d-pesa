@@ -1,7 +1,7 @@
 const del = require('del');
 
 const clean = () => {
-  return del(PATHS.clean)
+  return del(DEV_PATHS.clean)
 };
 
 exports.clean = clean;

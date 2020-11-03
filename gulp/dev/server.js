@@ -2,7 +2,7 @@ const browserSync = require('browser-sync');
 
 const server = (done) => {
   browserSync({
-    server: PATHS.server,
+    server: DEV_PATHS.server,
     ghostMode: {
       scroll: true
     },

@@ -21,12 +21,6 @@ mixin user-dropdown-menu(props = {})
         .user-dropdown-menu__icon
           +icon('archive', 'svg-icon--muted user-dropdown-menu__icon-svg')(width="20" height="18")
         h5.text-muted.user-dropdown-menu__title Time recorder
-      .user-dropdown-menu__item
-        .user-dropdown-menu__icon
-          +icon('moon', 'svg-icon--light')(width="20" height="20")
-        h5.user-dropdown-menu__title Dark theme
-        .user-dropdown-menu__switch
-          +switch({withCheck:true, checked:true})
 
     .user-dropdown-menu__footer
       +logout()
