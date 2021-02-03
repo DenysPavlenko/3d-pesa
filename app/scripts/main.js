@@ -31,7 +31,6 @@ import foodShopProduct from './modules/food-shop-product';
 import scrollSpy from './modules/scroll-spy';
 import contentScrollDesktop from './modules/content-scroll-desktop';
 import contentScrollMobile from './modules/content-scroll-mobile';
-import carShareRide from './modules/car-share-ride';
 import shopFinderMap from './modules/shop-finder-map';
 import popupSwitcher from './modules/popup-switcher';
 import checkboxToggleContent from './modules/checkbox-toggle-content';
@@ -70,7 +69,6 @@ $(function () {
   foodShopProduct();
   contentScrollDesktop();
   contentScrollMobile();
-  carShareRide();
   shopFinderMap();
   popupSwitcher();
   checkboxToggleContent();
