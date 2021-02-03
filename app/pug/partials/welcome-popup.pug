@@ -6,12 +6,12 @@ mixin welcome-popup(props = {})
 
   .popup.popup--mw-800.modal.welcome-popup(data-popup="welcome-popup" data-popup-auto)
     .popup__close
-      +close({mdLight:true})(data-popup-close="welcome-popup")
+      +close({mdLight:true})(data-popup-close="welcome-popup" class="js-welcome-popup-close")
     .popup__body.popup__body--pt-60
       .welcome-popup__header
         h2 Welcome to 3D-Pesa
         p.text-muted Get started your journey with this short video
       .welcome-popup__media
-        +video-box({js:true, cover:'images/welcome-popup/welcome-popup-image.jpg', video:'https://www.youtube.com/embed/Bw9zSMsKcwk'})
+        +video-box({js:true, cover:'images/welcome-popup/welcome-popup-image.jpg', video:'https://www.youtube.com/embed/ScMzIvxBSi4'})
       .welcome-popup__button
-        +button({width:'400', size:'xl'})(type="button" data-popup-close="welcome-popup")| Start your journey
+        +button({width:'400', size:'xl',  classes:'js-welcome-popup-close'})(type="button" data-popup-close="welcome-popup")| Start your journey

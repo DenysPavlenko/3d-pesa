@@ -4,6 +4,7 @@ import navigation from './modules/navigation';
 import dropdown from './modules/dropdown';
 import sidebar from './modules/sidebar';
 import popup from './modules/popup';
+import welcomePopup from './modules/welcome-popup';
 import videoBox from './modules/video-box';
 import select from './modules/select';
 import tabs from './modules/tabs';
@@ -43,6 +44,7 @@ $(function () {
   dropdown();
   sidebar();
   popup();
+  welcomePopup();
   videoBox();
   select();
   tabs();
