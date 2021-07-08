@@ -8,7 +8,7 @@ const server = (done) => {
     },
     notify: false,
     scroll: true,
-    open: false,
+    open: true,
   });
   done();
 };

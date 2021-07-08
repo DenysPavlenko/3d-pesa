@@ -20,8 +20,12 @@ global.BUILD_PATHS = {
     dest: './build/scripts',
   },
   images: {
-    src: './app/static/images/**/*.*',
+    src: ['./app/static/images/**/*.*', '!./app/static/images/svg/svg-sprite/**/*'],
     dest: './build/images',
+  },
+  svgSprite: {
+    src: './app/static/images/svg/svg-sprite/**/*',
+    dest: './build/images/svg/svg-sprite/',
   },
   fonts: {
     src: './app/static/fonts/**/*',
@@ -36,6 +40,7 @@ const templates = require('./templates').templates;
 const styles = require('./styles').styles;
 const scripts = require('./scripts').scripts;
 const images = require('./images').images;
+const svgSprite = require('./svg-sprite').svgSprite;
 const fonts = require('./fonts').fonts;
 
 exports.build = series(
@@ -45,6 +50,7 @@ exports.build = series(
     styles,
     scripts,
     images,
+    svgSprite,
     fonts
   )
 );
